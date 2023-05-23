@@ -1,10 +1,73 @@
-html{
-    background-color: #fff;
-    max-width: 
-    
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+h1{
+    font-size: 50px;
+    text-align: center;
+    color: #000000a9;
+    margin: 20px;
     
 }
-.header-main{
-    background-color: aqua;
-    height: 180px;
+h2{
+    color: rgb(16, 165, 2);
+    background-color: aliceblue;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+.name{
+    font-size: 20px;
+    margin: 0px;
+    color: #084e40;
+    display: inline-block;
+    border: solid #084e40;
+    justify-content: center;
+    
+}
+.friends{
+    display: grid;
+    background-color: #f0dfcb;
+    padding: 30px;
+    border-radius: 6px;
+    height: 740px; 
+    overflow-y: scroll;
+    box-shadow:  2px 3px 5px 0  rgba(0, 0, 0, 0.2);
+}
+.chat{
+    background-color: #D9F8F2;
+    padding: 20px;
+    border-radius: 6px;   
+    box-shadow:  2px 3px 5px 0  rgba(0, 0, 0, 0.2);
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 800px 450px;
+    gap: 20px;
+    justify-content: center;
+    
+
+}
+
+img{
+    margin-bottom: 0px;
+    margin: 15px;
+    border: solid;
+}
+
+a{
+    text-decoration: none;
+    color: #58462f;
+    align-content: center;
+    font-size: 22px;
+}
+.perfil_friends{
+    display: flex;
+    align-items: center;
+    
+    
+    
 }
