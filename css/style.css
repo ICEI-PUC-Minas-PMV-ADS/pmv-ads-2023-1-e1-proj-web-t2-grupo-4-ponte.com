@@ -49,7 +49,7 @@ html{
     max-width: 400px;
 }
 .form-container{
-    display: flex;
+    display: grid;
     float: left;
     width: 50%;
     background-color: #CABDFF;
