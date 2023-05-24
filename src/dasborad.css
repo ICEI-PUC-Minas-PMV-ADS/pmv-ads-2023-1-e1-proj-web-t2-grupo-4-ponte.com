@@ -6,51 +6,54 @@ body{
 /* Toda a parte de cima do site onde está "ponte.com */
 header{
     position: fixed;
-    background:  #22242A;
+    background:  #021e42;
     padding: 20px;
     width: 100%;
     height: 30px;
 }
 /* fim da parte de cima */
+
 /* Barra de Pesquisa. */
-form{
+/* form{
     position: absolute;
     top: 50%;
     right: 70%;
     transform: translateY(-50%);
     border: none;
 }
+
 form input[type="text"] {
     padding: 6px 10px;
     border: none;
     border-radius: 4px;
     font-size: 16px;
 }
+
 form button[type="submit"] {
     background-color: transparent;    
     border: none;
     outline: none;
     cursor: pointer;
     justify-content: space-between;
-}
+} */
 /* fim da barra de pesquisa */
- /* Edit botão "logout" e a parte do "ponte". */
-.left-area h3{
-    color: #fff;
-    margin: 0;
-    text-transform: uppercase;
-    font-size: 22px;
-    font-weight: 900;
+ 
+/* Edit botão "logout" e a parte do "ponte". */
+.left-area img{
+    width: 220px;
+    height: 40px;
 }
+
 .left-area span{ /* Somente a parte do ".com" */
     color: #1dc4e7;
 }
-.logout-btn{ /* Edit botão "logout". */
+/* Edit botão "logout". */
+.logout-btn{
     padding: 5px;
     background: #19b3d3;
     text-decoration: none;
     float: right;
-    margin-top: -30px;
+    margin-top: -45px;
     margin-right: 40px;
     border-radius: 2px;
     font-size: 15px;
@@ -59,13 +62,15 @@ form button[type="submit"] {
     transition: 0.5s;
     transition-property: background;
 }
-.logout-btn:hover{ /* "hover" para acrescentar a função no botão quando o mouse estiver em cima. */
+/* "hover" para acrescentar a função no botão quando o mouse estiver em cima. */
+.logout-btn:hover{
     background: #0d9dbb;
 }
 /* fim da parte do botão "logout". */
+
 /* Toda barra principal da parte de baixo */
 .sidebar{
-    background: #2f323a;
+    background: #0a1b35;
     margin-top: 70px;
     padding-top: 30px;
     position: fixed;
@@ -76,17 +81,20 @@ form button[type="submit"] {
     transition-property: left;
 }
 /* foto de perfil */
+
 .sidebar .foto-de-perfil{
     width: 100px;
     height: 100px;    
 }
 /* fim da foto do perfil */
+
 /* Edit menu lateral. */
 .sidebar h4{
     color: #ccc;
     margin-top: 0;
     margin-bottom: 20px;
 }
+
 .sidebar a{
     color: #fff;
     display: block;
@@ -95,15 +103,18 @@ form button[type="submit"] {
     padding-left: 40px;
     box-sizing: border-box;
 }
+
 .sidebar a:hover{/* "hover" para acrescentar a função no botão quando o mouse estiver em cima. */
     background: #0d9dbb;
 }
 /* Espaço entre icones e palavras. */
+
 .sidebar i{
     padding-right: 10px;
 }
 /* fim do menu lateral */
-/* Edit botão "bars". */
+
+/* Edit botão "bars" responsivo. */
 label #sidebar-btn{
     z-index: 1;
     color: #fff;
@@ -115,35 +126,43 @@ label #sidebar-btn{
     transition: 0.5s;
     transition-property: color;
 }
+
 label #sidebar-btn:hover{
     color: #19b3d3;
 }
-/* fim do botão "bars" */
+/* fim do botão "bars" responsivo */
+
 /* função de encolher do menu lateral */
 #check:checked ~ .sidebar{
     left: -190px;
 }
+
 #check:checked ~ .sidebar a span{
     display: none;
 }
+
 #check:checked ~ .sidebar a{ /* icones */
     font-size: 20px;
     margin-left: 170px;
     width: 80px;
 }
 /* fim da função de encolher menu lateral */
+
 /* Edit da imagem de fundo da tela". */
 .content{
     margin-left: 250px;
+    background: url(/docs/img/banner.png);
     background-position: center;
     background-size: cover;
     height: 100vh;    
     transition: 0.5s;
 }
-#check:checked ~ .content{ /* para a imagem de fundo encolher junto com a barra de menu lateral. */
+/* para a imagem de fundo encolher junto com a barra de menu lateral. */
+#check:checked ~ .content{
     margin-left: 60px;    
 }
 /* fim da imagem da fundo da tela. */
+
 #check{ /* para tirar a barra que fica do "bars" em cima da tela. */
     display: none;
 }
