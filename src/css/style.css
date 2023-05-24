@@ -327,11 +327,11 @@ p {
   }
 
   .img-right {
-    display: none;
+    display:  none;
   }
 
   .card {
-    height: 70em;
+    height: 70%;
   }
 }
 
@@ -343,7 +343,7 @@ p {
   }
 
   .card {
-    height: 70em;
+    height: 70%;
   }
 }
 
@@ -355,7 +355,7 @@ p {
   }
 
   .card {
-    height: 70em;
+    height: 70%;
   }
 } */
 /* Fim parte central homepage */
