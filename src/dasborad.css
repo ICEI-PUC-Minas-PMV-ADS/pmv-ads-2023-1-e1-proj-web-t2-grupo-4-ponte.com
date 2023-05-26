@@ -4,11 +4,10 @@ body{
     font-family: "roboto", sans-serif;
 }
 /* Toda a parte de cima do site onde está "ponte.com */
-header{
-    position: fixed;
+header{    
     background:  #021e42;
-    padding: 20px;
-    width: 100%;
+    padding: 19px;
+    width: 98%;
     height: 30px;
 }
 /* fim da parte de cima */
@@ -38,16 +37,16 @@ form button[type="submit"] {
 } */
 /* fim da barra de pesquisa */
  
-/* Edit botão "logout" e a parte do "ponte". */
+/* Edit logo. */
 .left-area img{
-    width: 220px;
+    width: 210px;
     height: 40px;
 }
 
 .left-area span{ /* Somente a parte do ".com" */
     color: #1dc4e7;
 }
-/* Edit botão "logout". */
+/* Edit logo. */
 .logout-btn{
     padding: 5px;
     background: #19b3d3;
@@ -71,12 +70,12 @@ form button[type="submit"] {
 /* Toda barra principal da parte de baixo */
 .sidebar{
     background: #0a1b35;
-    margin-top: 70px;
+    margin-top: 0px;
     padding-top: 30px;
-    position: fixed;
+    position: absolute;
     left: 0;
     width: 250px;
-    height: 100%;
+    height: 89.7%;
     transition: 0.5s;
     transition-property: left;
 }
@@ -118,7 +117,7 @@ form button[type="submit"] {
 label #sidebar-btn{
     z-index: 1;
     color: #fff;
-    position: fixed;
+    position: absolute;
     cursor: pointer;
     left: 300px;
     font-size: 20px;
@@ -154,8 +153,9 @@ label #sidebar-btn:hover{
     background: url(/docs/img/banner.png);
     background-position: center;
     background-size: cover;
-    height: 100vh;    
+    height: 92.8vh;    
     transition: 0.5s;
+    margin-top: -20px;
 }
 /* para a imagem de fundo encolher junto com a barra de menu lateral. */
 #check:checked ~ .content{
@@ -165,4 +165,72 @@ label #sidebar-btn:hover{
 
 #check{ /* para tirar a barra que fica do "bars" em cima da tela. */
     display: none;
+}
+
+/* Começa a parte do Content. */
+.titulo h2{
+    color: white;
+    padding: 10px;
+    margin-left: 5px;
+}
+
+p{
+    color: white;
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+.box-info p{
+    font-size: 20px;
+}
+
+.box-info{
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-info-single{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    color: white;
+    width: 100%;
+    margin: 0 10px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.box-info-single i{
+    font-size: 28px;
+}
+/* Fecha parte Content. */
+
+.feed{    
+    background-color: white;
+    width: 50%;
+    padding: 2px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.feed-single{
+    display: flex;
+    justify-content: space-between;
+}
+
+.feed-text i{
+    font-size: 15px;
+}
+
+.feed-text span{
+    display: flex;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.feed-time{
+    color: #444;
+    font-size: 15px;
 }
