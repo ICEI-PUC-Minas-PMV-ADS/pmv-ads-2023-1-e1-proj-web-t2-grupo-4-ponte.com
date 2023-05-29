@@ -213,6 +213,7 @@ p{
     padding: 2px;
     border-radius: 10px;
     margin-top: 15px;
+    margin-left: 10px;
 }
 
 .feed-single{
@@ -222,10 +223,10 @@ p{
 
 .feed-text i{
     font-size: 15px;
+    color: #0d9dbb;
 }
 
 .feed-text span{
-    display: flex;
     font-weight: 600;
     font-size: 15px;
 }
@@ -233,4 +234,5 @@ p{
 .feed-time{
     color: #444;
     font-size: 15px;
+    
 }
