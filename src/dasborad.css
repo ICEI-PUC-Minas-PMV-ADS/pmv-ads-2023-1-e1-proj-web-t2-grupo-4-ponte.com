@@ -207,31 +207,55 @@ p{
 }
 /* Fecha parte Content. */
 
-.feed{    
+.feed{
     background-color: white;
-    width: 50%;
-    padding: 2px;
+    width: 40%;
     border-radius: 10px;
-    margin-top: 15px;
+    margin: 20px 0;
+    padding-left: 10px;
     margin-left: 10px;
+}
+
+.feed h4{
+    font-size: 15px;
+    
 }
 
 .feed-single{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;    
 }
 
-.feed-text i{
-    font-size: 15px;
-    color: #0d9dbb;
+.feed-text{
+    display: flex;
 }
 
 .feed-text span{
+    margin: 8px;
+    display: inline-block;
     font-weight: 600;
-    font-size: 15px;
+    margin-top: 20px;  
+}
+
+.feed-text .circle-icon{
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    background-color: #B0F3E6;
+    position: relative;
+    margin-top: 15px;
+}
+
+.feed-text i{
+    font-size: 18px;
+    color: rgb(60, 60, 61);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .feed-time{
-    color: #444;
-    font-size: 15px;
+    color: #53515893;
+    margin-right: 15px;
 }
