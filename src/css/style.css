@@ -20,7 +20,15 @@
   --mediumFontSize: 14px;
   --largeFontSize: 16px;
   --titleFontSize: 20px;
+  --titleFontSizeBiger: 32px;
   --textCallsWeight: 600;
+  --mediuCallsWeight: 450;
+
+  --bgColor: FFFEFC;
+}
+
+body {
+  background-color: var(--bgColor);
 }
 
 /* INÍCIO PARTE SUPERIOR /*
@@ -375,7 +383,7 @@ p {
 }
 
 .primaryText {
-  color: var(--titleColorLight);
+  color: #fdc886;
 }
 
 /* imagens de decoração do background */
@@ -447,6 +455,7 @@ footer #footerContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: var(--darkColor);
 }
 footer #footerContainer #logoFooter img {
   width: 180px;
@@ -468,6 +477,7 @@ footer #footerContainer #formFooter #sugestionsFooter h3 {
 }
 footer #footerContainer #formFooter #sugestionsFooter p {
   font-size: var(--smallFontSize);
+  display: none;
 }
 footer #footerContainer #formFooter input[type="email"] {
   width: 100%;
@@ -493,3 +503,161 @@ footer #footerContainer #formFooter input[type="submit"] {
 
 /* ================================================================= */
 /* ================================================================ */
+
+/* ================================================================= */
+/* ================================================================ */
+
+/* estilos da página de cadastro dos voluntários */
+
+/* ================================================================= */
+/* ================================================================ */
+
+.roundBtn {
+  border-radius: 10px;
+  width: 40px;
+  height: 20px;
+  background-color: #fdc886;
+  border: none;
+}
+
+body #principal {
+  height: 300vh;
+  margin-top: 3rem;
+}
+
+#principal #containerChamada {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70vh;
+  /* background-image: url(../img/manchaTintaRosa.png);
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position: 50px 100px; */
+  /* background-color: #017071; */
+}
+
+#principal #containerChamada #textoChamada {
+  /* background-color: #017071; */
+  margin-left: 10vw;
+}
+#principal #containerChamada #textoChamada #decoration1 {
+  position: absolute;
+  width: 20%;
+  opacity: 0.7;
+  z-index: -1;
+  margin: -100px -100px;
+}
+
+#principal #containerChamada #textoChamada h2 {
+  margin-bottom: 5vh;
+  font-size: var(--titleFontSizeBiger);
+  font-weight: var(--mediuCallsWeight);
+}
+
+#principal #containerChamada #textoChamada p {
+  font-size: 18px;
+  text-align: left;
+
+  width: 100%;
+}
+#principal #containerChamada #textoChamada button {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+#principal #containerChamada img {
+  width: 42%;
+}
+
+/* Classe que define background dos forms */
+
+#principal #containerCadastros #formularios {
+  display: flex;
+  height: 200vh;
+  width: 100%;
+  flex-direction: column;
+}
+
+#formularios label {
+  display: block;
+  /* color: red; */
+  margin-bottom: 3px;
+}
+
+#principal #containerCadastros #formularios .formContainer {
+  background-color: #d9d9d9;
+  width: 30vw;
+  height: 75vh;
+  border-radius: 20px;
+  margin-left: 5rem;
+  padding: 40px;
+}
+
+.formContainer .inputText {
+  border-radius: 4px;
+  display: block;
+  height: 4.5vh;
+  width: 95%;
+  margin-bottom: 20px;
+}
+
+.formContainer .textArea {
+  width: 95%;
+  display: block;
+  border-radius: 5px;
+}
+
+.formContainer .inputDate {
+  width: 95%;
+  height: 4vh;
+}
+
+#principal #containerCadastros #formularios #dateAreaInput {
+  display: flex;
+  height: 100px;
+  width: 95%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* estilização botões formulário XP */
+
+.formBtn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px 0px 10px;
+}
+
+#principal #containerCadastros #formularios #expForm #btnArea {
+  /* background-color: #8b73eb; */
+  height: 8vh;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+#principal #containerCadastros #formularios #qualificacoesForm #btnArea {
+  /* background-color: #8b73eb; */
+  height: 8vh;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+/* estilzação do titulo H3 */
+#principal #containerCadastros #formularios h3 {
+  color: var(--titleColorDark);
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 30px;
+}
+
+#principal #containerCadastros #formularios #expForm {
+  margin-bottom: 20vh;
+}
