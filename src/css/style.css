@@ -521,7 +521,7 @@ footer #footerContainer #formFooter input[type="submit"] {
 }
 
 body #principal {
-  height: 300vh;
+  height: fit-content;
   margin-top: 3rem;
 }
 
@@ -571,6 +571,61 @@ body #principal {
   width: 42%;
 }
 
+/* Estilo da região de nuvem de interesses */
+
+#principal #containerCadastros #nuvemInteresses {
+  height: fit-content;
+  margin-bottom: 10rem;
+}
+
+#principal #containerCadastros #nuvemInteresses #formInteresses {
+  margin-left: 5rem;
+  width: fit-content;
+  height: fit-content;
+  background-color: #b6a4ff;
+  border-radius: 20px;
+  display: flex;
+}
+
+#principal
+  #containerCadastros
+  #nuvemInteresses
+  #formInteresses
+  #cadastroInteresses {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+#principal
+  #containerCadastros
+  #nuvemInteresses
+  #formInteresses
+  #cadastroInteresses
+  label {
+  display: block;
+}
+
+#principal
+  #containerCadastros
+  #nuvemInteresses
+  #formInteresses
+  #cadastroInteresses
+  input {
+  border-radius: 4px;
+  height: 4vh;
+  width: 15vw;
+}
+
+#principal
+  #containerCadastros
+  #nuvemInteresses
+  #formInteresses
+  #cadastroInteresses
+  button {
+  width: 8vw;
+}
+
 /* Classe que define background dos forms */
 
 #principal #containerCadastros #formularios {
@@ -589,7 +644,7 @@ body #principal {
 #principal #containerCadastros #formularios .formContainer {
   background-color: #d9d9d9;
   width: 30vw;
-  height: 75vh;
+  height: fit-content;
   border-radius: 20px;
   margin-left: 5rem;
   padding: 40px;
@@ -660,4 +715,14 @@ body #principal {
 
 #principal #containerCadastros #formularios #expForm {
   margin-bottom: 20vh;
+}
+
+/* seção de interesses e nuvem de interesses */
+
+#containerCadastros #nuvemInteresses h2 {
+  text-align: center;
+  margin: 50px;
+}
+#containerCadastros #nuvemInteresses {
+  height: 50vh;
 }

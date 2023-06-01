@@ -76,20 +76,36 @@
 
       <div id="containerCadastros">
         <div id="nuvemInteresses">
-          <label for="pesqInteresses"> adicione interesses</label>
-          <input
-            type="text"
-            name="pesqInteresses"
-            id="barraInteresses"
-            title="Procure por interesses"
-            placeholder="Pesquise por interesses"
-          />
-          <div id="listaInteresses">
-            <li id="interesses"></li>
-            <li id="interesses"></li>
-            <li id="interesses"></li>
-            <li id="interesses"></li>
+          <h2>pesquise e adicione seus interesses</h2>
+
+          <div id="formInteresses">
+            <form action="" id="cadastroInteresses">
+              <label for="campoInteresse">Nos diga um interesse:</label>
+              <input
+                type="text"
+                class="inputText"
+                name="campoInteresse"
+                id="campoInteresse"
+              />
+              <label for="campoPrioridade">prioridade : </label>
+              <input
+                type="range"
+                name="campoPrioridade"
+                id="campoPrioridade"
+                min="1"
+                max="5"
+                step="1"
+                value="1"
+              />
+
+              <output for="campoPrioridade" id="valorPrioridade">1</output>
+              <button id="adicionar" type="submit" class="formBtn">
+                adicionar
+              </button>
+            </form>
           </div>
+
+          <div id="listaInteresses"></div>
         </div>
 
         <div id="formularios">
@@ -264,7 +280,7 @@
         <div id="formFooter">
           <div id="sugestionsFooter">
             <h3>Sugestões?</h3>
-            <p>Envie uma mensagem</p>
+            <p>Envie-nos uma mensagem</p>
           </div>
 
           <form action="mensagem.php">
@@ -286,7 +302,7 @@
               cols="30"
               rows="5"
             >
-escreva sua mensagem
+Envie-nos sua mensagem...
             </textarea>
 
             <input
