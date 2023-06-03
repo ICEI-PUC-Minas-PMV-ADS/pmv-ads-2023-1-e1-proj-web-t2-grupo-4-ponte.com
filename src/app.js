@@ -7,9 +7,10 @@ const valorPrioridade = document.querySelector("#valorPrioridade");
 const btnInteressesLimpar = document.querySelector("#limpar");
 const btnInteressesAdicionar = document.querySelector("#adicionar");
 const tabelaInteresses = document.querySelector("#tabelaInteresses");
+const iconeLixeira = document.querySelector(".fa-trash");
 // fim da entrada de dados do formulario prioridades
 
-
+console.log(iconeLixeira);
 // dados do formulario de cadastro de experiências
 
 const campoAreaAtuacao = document.querySelector("#areaAtuacao");
@@ -107,5 +108,6 @@ btnInteressesLimpar.addEventListener("click",function(e){ //adiciona o evento cl
   adicionarInteresse();
   e.preventDefault();
 })
+
 
 // console.log(contInteresses);

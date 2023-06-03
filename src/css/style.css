@@ -667,9 +667,12 @@ body #principal {
   #containerCadastros
   #nuvemInteresses
   #listaInteresses
-  #tabelaInteresses
   {
-    /* background-color: red; */
+   background-color: red;
+   height: fit-content;
+
+
+
 
   }
 
