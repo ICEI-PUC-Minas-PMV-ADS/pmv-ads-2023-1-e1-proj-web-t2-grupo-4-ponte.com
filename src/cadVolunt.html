@@ -115,7 +115,7 @@
                 name="campoInteresse"
                 id="campoInteresse"
               />
-              <label for="campoPrioridade">prioridade : </label>
+              <label for="campoPrioridade">prioridade: <output for="campoPrioridade" id="valorPrioridade">1</output> </label>
               <input
                 type="range"
                 name="campoPrioridade"
@@ -123,14 +123,14 @@
                 min="1"
                 max="5"
                 step="1"
-                value="1"
+                value="1";
               />
 
-              <output for="campoPrioridade" id="valorPrioridade">1</output>
+
               <button id="adicionar" type="submit" class="formBtn">
                 adicionar
               </button>
-              <button id="adicionar" type="submit" class="formBtn">
+              <button id="limpar" type="submit" class="formBtn">
                 limpar
               </button>
             </form>
@@ -439,8 +439,8 @@
                 <h2>Curso 1</h2>
                 <ul>
                   <li>período: de dd/mm/aa até dd/mm/aa</li>
-                  <li>local: local da experiência</li>
-                  <li>cargo: cargo ocupado</li>
+                  <li>instituição: local onde cursou</li>
+                  <li>área do curso: informática</li>
                   <li>descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore amet blanditiis itaque neque nostrum dolorem, aliquid praesentium labore soluta doloremque in fugit nemo exercitationem expedita? Voluptates reprehenderit delectus facilis fugit?</li>
                 </ul>
                 <div class="groupBtn">
@@ -544,7 +544,7 @@ Envie-nos sua mensagem...
     </footer>
     <!-- fim do footer -->
 
-
+    <script src="app.js"></script>
 
   </body>
 
