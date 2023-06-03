@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -19,7 +20,12 @@
 
     <title>Document</title>
   </head>
+
   <body>
+
+
+
+    <!-- início do header do site. contém o menu de navegação, logo e barra de pesquisa -->
     <header class="wrapper">
       <img
         src="img/Logo Pontecom Cor.png"
@@ -49,38 +55,60 @@
         alt="Foto de perfil do usuário."
       />
     </header>
+    <!-- fim do header -->
 
+
+
+    <!-- inicio da seção principal do site que conterá a apresentação da página e as três seções de cadastro -->
     <main id="principal">
+
+      <!-- Apresentação da página -->
       <div id="containerChamada">
+
         <div id="textoChamada">
+
           <img src="img/VetorTinta1.png" alt="" id="decoration1" />
+
           <h2>Nos conte um pouco mais sobre você</h2>
+
           <p>
             Este espaço é reservado para que você nos informe seus interesses,
             experiências e qualificações. Deste modo, podemos conectá-lo as ONGs
             que mais combinam com você. Tire um tempo e preencha as informações
             abaixo.
-            <button class="roundBtn" title="clique para ir">
+
+            <button class="roundBtn" title="clique para iniciar">
+
               <i
                 class="fa-solid fa-arrow-down fa-sm"
                 style="color: #574e42"
               ></i>
+
             </button>
+
           </p>
+
         </div>
 
         <!-- <a href="https://storyset.com/work"></a>  REferenciar-->
 
         <img src="img/cadastrando.svg" alt="" />
-      </div>
 
+      </div>
+      <!-- fim da apresentação da página -->
+
+      <!-- início da seção de cadastros. Com 3 seções ao todo: cadastro de interesses, experiências e qualificações -->
       <div id="containerCadastros">
+
+              <h2>pesquise e adicione seus interesses</h2>
+
         <div id="nuvemInteresses">
-          <h2>pesquise e adicione seus interesses</h2>
 
           <div id="formInteresses">
+
             <form action="" id="cadastroInteresses">
-              <label for="campoInteresse">Nos diga um interesse:</label>
+
+              <label for="campoInteresse">nos diga um interesse:</label>
               <input
                 type="text"
                 class="inputText"
@@ -102,10 +130,98 @@
               <button id="adicionar" type="submit" class="formBtn">
                 adicionar
               </button>
+              <button id="adicionar" type="submit" class="formBtn">
+                limpar
+              </button>
             </form>
           </div>
 
-          <div id="listaInteresses"></div>
+          <div id="listaInteresses">
+            <!-- <h3>interesses e prioridades</h3> -->
+            <table id="tabelaInteresses">
+              <tr >
+                <th>Interesses</th>
+                <th>Prioridades</th>
+              </tr>
+
+              <tr class="linha">
+                <td>interesse 1</td>
+                <td>prioridade 1</td>
+                <td><i class="fa-solid fa-trash"></i></td>
+              </tr>
+
+              <tr class="linha">
+                <td>interesse 2</td>
+                <td>prioridade 2</td>
+                <td><i class="fa-solid fa-trash"></i></td>
+              </tr>
+
+              <tr class="linha">
+                <td>interesse 3</td>
+                <td>prioridade 3</td>
+                <td><i class="fa-solid fa-trash"></i></td>
+              </tr>
+            </table>
+            <!-- <ul id="cabecalhoTabela">
+              <li>interesses</li>
+              <li>prioridades</li>
+            </ul> -->
+
+            <!-- <ul id="linhasTabela">
+              <div class="linha" cl>
+                  <li>Interesse 1</li>
+                  <li>prioridade</li>
+                  <li><i class="fa-solid fa-trash"></i></li>
+              </div>
+              <div class="linha">
+                  <li>Interesse l</li>
+                  <li>prioridade</li>
+                  <li><i class="fa-solid fa-trash"></i></li>
+              </div>
+              <div class="linha">
+                  <li>Interesse 1</li>
+                  <li>prioridade</li>
+                  <li><i class="fa-solid fa-trash"></i></li>
+              </div>
+              <div class="linha">
+                  <li>Interesse 1</li>
+                  <li>prioridade</li>
+                  <li><i class="fa-solid fa-trash"></i></li>
+              </div>
+              <div class="linha">
+                  <li>Interesse 1</li>
+                  <li>prioridade</li>
+                  <li><i class="fa-solid fa-trash"></i></li>
+              </div>
+              <div class="linha">
+                  <li>Interesse 1</li>
+                  <li>prioridade</li>
+                  <li><i class="fa-solid fa-trash"></i></li>
+              </div>
+              <div class="linha">
+                  <li>Interesse 1</li>
+                  <li>prioridade</li>
+                  <li><i class="fa-solid fa-trash"></i></li>
+              </div>
+              <div class="linha">
+                  <li>Interesse 1</li>
+                  <li>prioridade</li>
+                  <li><i class="fa-solid fa-trash"></i></li>
+              </div>
+              <div class="linha">
+                  <li>Interesse 1</li>
+                  <li>prioridade</li>
+                  <li><i class="fa-solid fa-trash"></i></li>
+              </div>
+              <div class="linha">
+                  <li>Interesse 1</li>
+                  <li>prioridade</li>
+                  <li><i class="fa-solid fa-trash"></i></li>
+              </div>
+            </ul> -->
+
+          </div>
+
         </div>
 
         <div id="formularios">
@@ -267,8 +383,15 @@
           </div>
         </div>
       </div>
-    </main>
+      <!-- fim da seção de cadastros. Com 3 seções ao todo: cadastro de interesses, experiências e qualificações -->
 
+
+    </main>
+    <!-- fim da seção principal do site -->
+
+
+
+    <!-- inicio do footer -->
     <footer>
       <div id="footerContainer">
         <div id="logoFooter">
@@ -315,5 +438,10 @@ Envie-nos sua mensagem...
         </div>
       </div>
     </footer>
+    <!-- fim do footer -->
+
+
+
   </body>
+
 </html>
