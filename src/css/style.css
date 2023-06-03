@@ -756,6 +756,44 @@ body #principal {
   padding: 40px;
 }
 
+
+#principal #containerCadastros #formularios #xpListaContainer{
+  /* background-color: #017071; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+ .listaDetalhes{
+  width: 50%;
+  height: 75vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+ .listaDetalhes .campoDetalhe{
+   background-color: #9d9d9e;
+   border-radius: 20px;
+
+}
+
+ .listaDetalhes .campoDetalhe ul li{
+  /* background-color: #333; */
+  margin-bottom: 10px;
+}
+
+
+ .listaDetalhes .campoDetalhe .groupBtn{
+  /* background-color: royalblue; */
+  margin-left: 60%;
+  width: 35%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+}
 .formContainer .inputText {
   border-radius: 4px;
   display: block;
@@ -811,6 +849,12 @@ body #principal {
   flex-direction: row;
   justify-content: flex-end;
   gap: 20px;
+}
+
+#principal #containerCadastros #formularios #qualificacoesListaContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around
 }
 
 /* estilzação do titulo H3 */
