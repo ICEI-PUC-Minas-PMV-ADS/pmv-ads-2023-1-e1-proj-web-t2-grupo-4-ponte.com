@@ -663,6 +663,11 @@ body #principal {
 
   }
 
+  .fa-solid{
+    cursor: pointer;
+
+  }
+
 #principal
   #containerCadastros
   #nuvemInteresses
@@ -670,9 +675,6 @@ body #principal {
   {
    background-color: red;
    height: fit-content;
-
-
-
 
   }
 

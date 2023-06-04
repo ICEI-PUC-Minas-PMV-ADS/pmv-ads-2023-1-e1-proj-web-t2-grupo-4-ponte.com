@@ -7,10 +7,10 @@ const valorPrioridade = document.querySelector("#valorPrioridade");
 const btnInteressesLimpar = document.querySelector("#limpar");
 const btnInteressesAdicionar = document.querySelector("#adicionar");
 const tabelaInteresses = document.querySelector("#tabelaInteresses");
-const iconeLixeira = document.querySelector(".fa-trash");
+const formBtnExcluirLinha = document.querySelector("#tabelaInteresses");
 // fim da entrada de dados do formulario prioridades
 
-console.log(iconeLixeira);
+// console.log(formBtnExcluirLinha);
 // dados do formulario de cadastro de experiências
 
 const campoAreaAtuacao = document.querySelector("#areaAtuacao");
@@ -42,13 +42,19 @@ function limpaPrioridade(){
 
 function limparCampos(form){
   let inputs = form.querySelectorAll("input");
-  inputs[0].value = "";
-  inputs[1].value = 1;
-  if(form.id == "cadastroInteresses"){
+  // let i =0;
+  // let tamanho = toInt(inputs.length);
+  console.log(inputs.length);
 
-    limpaPrioridade();
+    inputs[0].value = "";
 
-  }
+      if(form.id == "cadastroInteresses"){
+        inputs[1].value = 1;
+        limpaPrioridade();
+
+      }
+
+
 
 }
 
@@ -59,18 +65,21 @@ function criarLinhaInteresse(){//cria para o formulario de interesses uma linha 
   let interesse = document.createElement('td');
   let prioridade = document.createElement('td');
   let linhaIconExcluir = document.createElement('td');
-  let iconClass = document.createElement('i');
-  iconClass.setAttribute("class","fa-solid fa-trash");
-  linhaIconExcluir.appendChild(iconClass);
-
+  let btnExcluir = document.createElement('button');
+  btnExcluir.setAttribute("class","formBtn");
+  // btnExcluir.setAttribute("class","formBtnExcluir");
+  btnExcluir.setAttribute("id", "#excluirLinhaBtn");
+  btnExcluir.innerText = "excluir";
+  // iconClass.setAttribute("class","fa-solid fa-trash");
+  // linhaIconExcluir.appendChild(iconClass);
   interesse.innerText = campoInteresse.value;
   prioridade.innerText = campoPrioridade.value;
 
-
+  // console.log(btnExcluir);
 
   linha.appendChild(interesse);
   linha.appendChild(prioridade);
-  linha.appendChild(linhaIconExcluir);
+  linha.appendChild(btnExcluir);
 
   // console.log(linha);
 
@@ -92,6 +101,17 @@ function adicionarInteresse(){
 }
 
 
+function excluirLinha(lista, e){  //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Deve excluir a linha quando clicar na lixeira
+
+ var elementoClicado = e.target;
+
+  if(elementoClicado.classList.contains("formBtn")){
+    let linha = elementoClicado.parentNode;
+    linha.remove();
+  }
+
+}
+
 
 //Fluxo Principal
 
@@ -101,13 +121,24 @@ campoPrioridade.addEventListener('input', ()=>{mostraPrioridade(campoPrioridade,
 
 btnInteressesLimpar.addEventListener("click",function(e){ //adiciona o evento click ao botão limpar
   limparCampos(formInteresses);
+
   e.preventDefault();
 });
 
- contInteresses = btnInteressesAdicionar.addEventListener('click', function(e){
+contInteresses = btnInteressesAdicionar.addEventListener('click', function(e){
   adicionarInteresse();
   e.preventDefault();
 })
+
+
+formBtnExcluirLinha.addEventListener("click", function(e){
+
+    excluirLinha(tabelaInteresses, e);
+    e.preventDefault();
+
+})
+
+
 
 
 // console.log(contInteresses);
