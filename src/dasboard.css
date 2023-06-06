@@ -75,7 +75,7 @@ form button[type="submit"] {
     position: absolute;
     left: 0;
     width: 250px;
-    height: 89.7%;
+    height: 100%;
     transition: 0.5s;
     transition-property: left;
 }
@@ -153,9 +153,9 @@ label #sidebar-btn:hover{
     background: url(/docs/img/banner.png);
     background-position: center;
     background-size: cover;
-    height: 92.8vh;    
+    height: 103.75vh;
     transition: 0.5s;
-    margin-top: -20px;
+    margin-top: -25px;
 }
 /* para a imagem de fundo encolher junto com a barra de menu lateral. */
 #check:checked ~ .content{
@@ -259,3 +259,46 @@ p{
     color: #53515893;
     margin-right: 15px;
 }
+
+.container-lembretes h3 {
+    color: white;
+    padding-left: 10px;
+}
+
+.notes-document-view{
+    background-color: #FFFFCC;
+    padding: 10px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+.container-postits {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2em;
+    flex-wrap: wrap;
+    margin-bottom: 5em;    
+}
+
+/* Post-its */
+
+#container-postits {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    padding: 10px;
+    gap: 150px;
+  }
+  
+  .note {
+    height: 200px;
+    box-sizing: border-box;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+    resize: none;
+    background-color: rgb(238, 219, 109);
+    font-family: sans-serif;
+    font-size: 16px;
+  }
