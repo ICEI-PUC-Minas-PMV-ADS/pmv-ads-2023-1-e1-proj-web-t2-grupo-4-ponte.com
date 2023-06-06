@@ -11,11 +11,18 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto&display=swap"
       rel="stylesheet"
     />
-    <title>Perfil Voluntario</title>
+    <script
+      src="https://kit.fontawesome.com/331a34d5ed.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./script-navbar.js"></script>
+    <title>Perfil</title>
   </head>
   <body>
+    <!-- Navbar -->
     <header class="wrapper">
       <img
+        id="logo"
         src="img/Logo Pontecom Cor.png"
         alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
       />
@@ -24,25 +31,28 @@
         <input
           type="text"
           class="wrapper-search-txt"
-          placeholder="Busque por vagas, instituições ou pessoas"
+          placeholder="Busque por vagas"
         />
-        <button class="wrapper-search-button">
-          <img src="img/search-icon.png" alt="Buscar..." />
-        </button>
+        <button #id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
 
+      <!-- Navbar Desktop -->
       <ul class="wrapper-navbar">
-        <li class="wrapper-li">Feed</li>
-        <li class="wrapper-li">Vagas de voluntariado</li>
-        <li class="wrapper-li">Dashboard</li>
+        <li class="wrapper-li" id="vagas">Vagas de voluntariado</li>
+        <li class="wrapper-li" id="dashboard">Dashboard</li>
       </ul>
 
       <img
         src="img/foto-perfil.png"
-        class="wrapper-foto"
+        id="foto"
         alt="Foto de perfil do usuário."
       />
     </header>
+
+    <ul id="menu-dropdown" class="">
+      <li id="dropdownlist-perfil">Meu perfil</li>
+      <li id="dropdownlist-logout">Logout</li>
+    </ul>
 
     <main>
       <div class="cabecalho">
@@ -50,7 +60,7 @@
         <div class="cabecalho-texto">
           <h1>Joana Dupre</h1>
           <h2>Bio</h2>
-          <p>
+          <p id="bio">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, hic
             maxime. Qui voluptate nam quos enim aspernatur placeat suscipit non,
             libero ipsum facilis distinctio tenetur adipisci obcaecati, sunt
@@ -58,54 +68,29 @@
             quod architecto? Quod modi veritatis sunt voluptate! Possimus, quis.
             Ab dolore blanditiis odio non.
           </p>
-          <h3><a href="https://www.linkedin.com/">Currículo completo</a></h3>
         </div>
       </div>
 
-      <div class="posts">
-        <h2>Posts</h2>
-        <p class="individual-post">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-          impedit, fugiat dignissimos ab quam quo magnam? Alias dicta dolores,
-          vel culpa adipisci neque deleniti numquam? Quo obcaecati, suscipit ea
-          recusandae earum officiis maxime numquam sit hic consectetur? Et autem
-          magni expedita maiores voluptatibus ipsam sequi obcaecati nesciunt
-          officia minima cum nam facilis ducimus accusamus ex voluptates quo
-          rerum ipsum quisquam accusantium, cumque aut illum est. Modi
-          consectetur officiis, provident minima veritatis dolor eveniet esse
-          mollitia enim vitae molestias eius. Officia, non autem consequatur
-          facilis labore exercitationem rerum fugiat tempore pariatur rem!
-          Tempora non esse commodi cumque itaque ab officia amet repellendus
-          nihil consectetur! Expedita asperiores eius non atque libero cum,
-          consequatur adipisci, aperiam, deserunt totam suscipit sequi nobis
-          quia provident.
-        </p>
-        <p class="dt-post">DD/MM/AA</p>
-        <p class="individual-post">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-          explicabo placeat molestiae necessitatibus facere nisi quia harum
-          cumque expedita pariatur? Itaque, ea ad quas quaerat consequuntur
-          labore consequatur praesentium, doloribus eveniet harum voluptates
-          dicta enim eum explicabo incidunt optio commodi quia quos doloremque
-          numquam? Quaerat architecto voluptatum delectus deleniti perferendis.
-        </p>
-        <p class="dt-post">DD/MM/AA</p>
-        <p class="individual-post">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores
-          suscipit doloribus itaque laboriosam expedita explicabo beatae
-          deleniti, cum voluptates sequi, eos hic quae delectus est voluptate
-          voluptatibus veritatis rerum consequatur dolor! Dolores nesciunt, sit
-          minima architecto commodi maxime repellendus quam asperiores itaque
-          rem repellat consectetur ratione, doloremque voluptatum pariatur
-          accusamus ipsam sint. Repellendus doloribus veritatis aspernatur
-          pariatur maxime nisi asperiores explicabo nemo alias, dolorum eaque
-          velit aperiam reiciendis quasi perferendis deleniti accusamus
-          voluptatibus necessitatibus quidem assumenda consectetur. Consequatur
-          amet numquam adipisci eius eligendi mollitia asperiores ad dolore,
-          minima tenetur inventore, sapiente incidunt cupiditate harum velit
-          accusantium dolorum culpa similique vitae?
-        </p>
-        <p class="dt-post">DD/MM/AA</p>
+      <div class="conteudo-perfil">
+        <div class="caixa">
+          <h2>Experiências</h2>
+          <ul id="lista-experiencia">
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem, ipsum dolor.</li>
+            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+          </ul>
+        </div>
+
+        <div class="caixa">
+          <h2>Qualificação</h2>
+          <ul id="lista-qualificacao">
+            <li>Lorem ipsum dolor sit amet.</li>
+            <li>Lorem, ipsum dolor.</li>
+            <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+          </ul>
+        </div>
+
+        <h3><a href="https://www.linkedin.com/">Currículo completo</a></h3>
       </div>
     </main>
 
