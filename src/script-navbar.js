@@ -11,10 +11,6 @@ document.querySelector("#dashboard").onclick = function () {
   location.assign("./dasboard.html");
 };
 
-document.querySelector("#search-button").onclick = function () {
-  location.assign("./vagas.html");
-};
-
 //Cria eventos das opções do menu Dropdown
 document.querySelector("#dropdownlist-perfil").onclick = function () {
   location.assign("./pagina-perfil.html");
