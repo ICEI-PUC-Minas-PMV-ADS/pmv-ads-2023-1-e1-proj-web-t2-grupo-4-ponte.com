@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="navbar-style.css" />
+    <script
+      src="https://kit.fontawesome.com/331a34d5ed.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./navbar-script.js"></script>
+    <title>Perfil</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="wrapper">
+      <a href="navbar.html"><img
+        id="logo"
+        src="imagens/logoPontecom.png"
+        alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
+      /></a>
+      <!-- No código, substituir caminho da imagem -->
+
+      <div class="wrapperSearch">
+        <input
+          type="text"
+          class="wrapperSearch-txt"
+          placeholder="Busque por vagas, ONGs ou voluntários..."
+        />
+        <button #id="searchButton">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <!-- Menu -->
+      <ul class="wrapperNavbar">
+        <!-- No código, substituir caminho das páginas-->
+        <a href="./sobre.html"><li class=wrapper-li id="sobre">Sobre</li></a>
+        <a href="./vagas.html"><li class="wrapper-li" id="vagas">Vagas de voluntariado</li></a>
+      </ul>
+
+      <img
+        src="imagens/foto-perfil.png"
+        id="foto"
+        alt="Foto de perfil do usuário."
+      />
+      <!-- No código, substituir caminho da imagem -->
+
+    <ul id="menuDropdown" class="">
+      <a href="./pagina-perfil.html"><li id="dropdownlist-perfil">Meu perfil</li></a>
+      <a href="./cadastro-voluntario.html"><li id="dropdownlist-editar">Editar dados</li></a>
+      <a href="./index.html"></a><li id="dropdownlist-logout">Logout</li></a>
+    </ul>
+  </header>
+  </body>
+</html>

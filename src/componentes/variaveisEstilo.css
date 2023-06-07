@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+  
+  :root {
+    --lightColor: #d8d8d8;
+    --darkColor: #333;
+    --titleColorDark: #4a4a4a;
+    --titleColorLight: #fdc886;
+    --fontPrimary: "Poppins", sans-serif;
+    --fontSecondary: "Roboto", sans-serif;
+    --smallFontSize: 16px;
+    --mediumFontSize: 18px;
+    --largeFontSize: 20px;
+    --titleFontSize: 24px;
+    --textCallsWeight: 600;
+  }

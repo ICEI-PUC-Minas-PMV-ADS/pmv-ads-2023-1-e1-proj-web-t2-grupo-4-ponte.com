@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="footer-style.css" />
+    <script
+      src="https://kit.fontawesome.com/331a34d5ed.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./navbar-script.js"></script>
+    <title>Perfil</title>
+  </head>
+<body>
+<!-- decoração do footer -->
+<div id="decFooter">
+    <img src="imagens/decfooter1.png" alt="" id="decFooter">
+  </div>
+
+<!-- Footer -->
+<footer>
+  <div id="footerContainer">
+    <div id="logoFooter">
+      <a href="#">
+        <!-- No código, substituir caminho da imagem -->
+        <img
+          src="imagens/logoCor2.png"
+          alt="logo em cor clara"
+        />
+      </a>
+    </div>
+
+    <div id="formFooter">
+      <div id="sugestionsFooter">
+        <h3>Sugestões?</h3>
+        <p>Mande uma mensagem ;)</p>
+      </div>
+
+      <form action="mensagem.php">
+        <label for="email" title="Informe seu email mais usado">
+          E-mail:
+        </label>
+        <input
+          type="email"
+          name="email"
+          id=""
+          placeholder="informe seu e-mail..."
+        />
+
+        <label for="message">Mensagem:</label>
+        <textarea
+          type="textarea"
+          name="message"
+          title="Mensagem"
+
+          cols="30"
+          rows="5"
+          placeholder="escreva aqui sua mensagem..."
+        >
+        </textarea>
+
+        <input
+          type="submit"
+          value="Enviar"
+          name="enviar"
+          class="btnLight"
+        />
+      </form>
+    </div>
+  </div>
+</footer>
+</body>

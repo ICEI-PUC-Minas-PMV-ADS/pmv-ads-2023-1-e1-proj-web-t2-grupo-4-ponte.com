@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+:root {
+  --lightColor: #d8d8d8;
+  --darkColor: #333;
+  --titleColorDark: #4a4a4a;
+  --titleColorLight: #fdc886;
+  --fontPrimary: "Poppins", sans-serif;
+  --fontSecondary: "Roboto", sans-serif;
+  --smallFontSize: 16px;
+  --mediumFontSize: 18px;
+  --largeFontSize: 20px;
+  --titleFontSize: 24px;
+  --textCallsWeight: 600;
+}
+
+#decFooter img {
+  opacity: 45%;
+  width: 100%;
+}
+footer {
+  height: 20rem;
+  background: var(--darkColor);
+  color: var(--lightColor);
+}
+footer #footerContainer {
+  height: 20rem;
+  font-family: var(--fontSecondary);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+footer #footerContainer #logoFooter img {
+  width: 180px;
+}
+footer #footerContainer #formFooter {
+  font-size: var(--smallFontSize);
+}
+footer #footerContainer #formFooter form {
+  display: flex;
+  flex-direction: column;
+}
+footer #footerContainer #formFooter #sugestionsFooter {
+  margin-bottom: 1rem;
+}
+footer #footerContainer #formFooter #sugestionsFooter h3 {
+  font-size: var(--mediumFontSize);
+  margin-bottom: 5px;
+  color: var(--titleColorLight);
+}
+footer #footerContainer #formFooter #sugestionsFooter p {
+  font-size: var(--smallFontSize);
+}
+footer #footerContainer #formFooter input[type="email"] {
+  width: 100%;
+  margin: 3px auto 10px auto;
+}
+/* footer #footerContainer #formFooter input[type="textarea"] {
+    height: 100px;
+    text-align: initial;
+  } */
+
+footer #footerContainer #formFooter textarea {
+  text-align: start;
+}
+footer #footerContainer #formFooter input[type="submit"] {
+  margin: 10px auto 10px auto;
+  width: 100%;
+}
