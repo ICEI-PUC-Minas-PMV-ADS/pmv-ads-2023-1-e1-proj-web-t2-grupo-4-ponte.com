@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="pagina-perfil-style.css" />
+    <link rel="stylesheet" href="paginaPerfilVol-style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,32 +16,33 @@
       crossorigin="anonymous"
     ></script>
     <script defer src="./script-navbar.js"></script>
-    <title>Perfil</title>
+    <title>Perfil de Voluntário</title>
   </head>
   <body>
     <!-- Navbar -->
     <header class="wrapper">
-      <img
+      <a href="navbar.html"><img
         id="logo"
-        src="img/Logo Pontecom Cor.png"
+        src="img/logoPontecom.png"
         alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
-      />
+      /></a>
 
-      <div class="wrapper-search">
+      <div class="wrapperSearch">
         <input
           type="text"
-          class="wrapper-search-txt"
-          placeholder="Busque por vagas"
+          class="wrapperSearch-txt"
+          placeholder="Busque por vagas, ONGs ou voluntários..."
         />
-        <button #id="search-button">
+        <button #id="searchButton">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </div>
 
       <!-- Menu -->
-      <ul class="wrapper-navbar">
-        <li class="wrapper-li" id="vagas">Vagas de voluntariado</li>
-        <li class="wrapper-li" id="dashboard">Dashboard</li>
+      <ul class="wrapperNavbar">
+        <!-- No código, substituir caminho das páginas-->
+        <a href="./sobre.html"><li class=wrapper-li id="sobre">Sobre</li></a>
+        <a href="./vagas.html"><li class="wrapper-li" id="vagas">Vagas de voluntariado</li></a>
       </ul>
 
       <img
@@ -49,13 +50,14 @@
         id="foto"
         alt="Foto de perfil do usuário."
       />
-    </header>
+      <!-- No código, substituir caminho da imagem -->
 
-    <ul id="menu-dropdown" class="">
-      <li id="dropdownlist-perfil">Meu perfil</li>
-      <li id="dropdownlist-editar">Editar dados</li>
-      <li id="dropdownlist-logout">Logout</li>
+    <ul id="menuDropdown" class="">
+      <a href="./pagina-perfil.html"><li id="dropdownlist-perfil">Meu perfil</li></a>
+      <a href="./cadastro-voluntario.html"><li id="dropdownlist-editar">Editar dados</li></a>
+      <a href="./index.html"></a><li id="dropdownlist-logout">Logout</li></a>
     </ul>
+  </header>
 
     <!-- Início do perfil -->
     <!-- Dados principais do usuário -->

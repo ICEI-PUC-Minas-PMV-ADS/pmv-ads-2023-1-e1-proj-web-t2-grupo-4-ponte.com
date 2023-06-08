@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="paginaPerfilONG-style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/331a34d5ed.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./script-navbar.js"></script>
+    <title>Perfil de ONG</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="wrapper">
+      <a href="navbar.html"
+        ><img
+          id="logo"
+          src="img/logoPontecom.png"
+          alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
+      /></a>
+
+      <div class="wrapperSearch">
+        <input
+          type="text"
+          class="wrapperSearch-txt"
+          placeholder="Busque por vagas, ONGs ou voluntários..."
+        />
+        <button #id="searchButton">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <!-- Menu -->
+      <ul class="wrapperNavbar">
+        <!-- No código, substituir caminho das páginas-->
+        <a href="./sobre.html"><li class="wrapper-li" id="sobre">Sobre</li></a>
+        <a href="./vagas.html"
+          ><li class="wrapper-li" id="vagas">Vagas de voluntariado</li></a
+        >
+      </ul>
+
+      <img
+        src="img/foto-perfilONG.png"
+        id="foto"
+        alt="Foto de perfil do usuário."
+      />
+      <!-- No código, substituir caminho da imagem -->
+
+      <!-- Menu Dropdown de ONG -->
+      <ul id="menuDropdown" class="">
+        <a href="./pagina-perfil.html"
+          ><li id="dropdownlist-perfil">Meu perfil</li></a
+        >
+        <a href="./cadastro-voluntario.html"
+          ><li id="dropdownlist-editar">Editar dados</li></a
+        >
+        <a href="./CRUDvagas.html"
+          ><li id="dropdownlist-anuncios">Anunciar</li></a
+        >
+        <a href="./index.html"><li id="dropdownlist-logout">Logout</li></a>
+      </ul>
+    </header>
+
+    <!-- Início do perfil -->
+    <!-- Dados principais do usuário -->
+    <main>
+      <div class="cabecalho">
+        <div class="cabecalhoUsuario">
+          <div class="cabecalhoEsq">
+            <img src="img/foto-perfilONG.png" alt="Foto de pefil do usuário." />
+          </div>
+          <div class="cabecalhoDir">
+            <section class="cabecalhoBio">
+              <h1 id="nomeUsuario">Quatro Patas</h1>
+              <p id="bio">
+                Uma breve biografia do usuário. Lorem ipsum dolor sit amet
+                consectetur, adipisicing elit. Optio, hic maxime. Qui voluptate
+                nam quos enim aspernatur placeat suscipit non, libero ipsum
+                facilis distinctio tenetur adipisci obcaecati, sunt odit
+                laudantium ipsa asperiores nemo quaerat accusamus assumenda quod
+                architecto? Quod modi veritatis sunt voluptate! Possimus, quis.
+              </p>
+              <div class="cabecalho-interesses">
+                <h3>Causas:</h3>
+                <ul id="campoInteresse">
+                  <li>interesse1</li>
+                  <li>interesse2</li>
+                  <li>interesse3</li>
+                  <li>interesse4</li>
+                  <li>interesse5</li>
+                </ul>
+              </div>
+              <div class="contato">
+                <h3>Contato:</h3>
+                <div class="social">
+                  <a href="https://www.instagram.com/" class="socialButton"
+                    ><i class="fa-brands fa-facebook fa-2xl"></i
+                  ></a>
+                  <a href="https://www.facebook.com/" class="socialButton"
+                    ><i class="fa-brands fa-instagram fa-2xl"></i
+                  ></a>
+                  <a
+                    href="https://web.whatsapp.com/send?phone=5531332323232"
+                    class="socialButton"
+                  >
+                    <i class="fa-brands fa-whatsapp fa-2xl"></i
+                  ></a>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detalhes da ONG -->
+      <div class="conteudo-perfil">
+        <h2 class="titulo">Ações</h2>
+        <!-- Ações da ONG -->
+        <section class="acoes">
+          <div class="listaAcoes">
+            <div class="campoAcoes">
+              <h3 id="nomeAcao">Ação 1</h3>
+              <ul>
+                <li id="localAcao">Local da ação</li>
+                <li id="periodoAcao">Período: de dd/mm/aa até dd/mm/aa</li>
+                <li id="descricaoAcao">
+                  Descrição da ação. Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Esse vitae laboriosam accusantium voluptatum
+                  libero minima. Sapiente asperiores commodi ex quos ratione
+                  illo optio veritatis, eveniet atque natus, dicta nesciunt
+                  corrupti aspernatur illum. Perferendis accusamus, nulla sequi
+                  tenetur dolorum dignissimos praesentium veniam! Voluptates
+                  fugiat impedit fugit, excepturi error consectetur laudantium
+                  eligendi possimus vel provident assumenda hic ipsa atque quod
+                  facilis unde officia, sunt eos odio, sequi praesentium ipsam
+                  dignissimos. Aspernatur tenetur optio, deserunt eos atque
+                  minus, fugiat non repellat hic iste nobis repellendus libero
+                  amet eum. Atque vero pariatur odio accusantium molestias
+                  illum, amet aut itaque id corrupti? Consequatur, voluptas
+                  ipsa!
+                </li>
+              </ul>
+            </div>
+
+            <div class="campoAcoes">
+              <h3 id="nomeAcao">Ação 1</h3>
+              <ul>
+                <li id="localAcao">Local da ação</li>
+                <li id="periodoAcao">Período: de dd/mm/aa até dd/mm/aa</li>
+                <li id="descricaoAcao">
+                  Descrição da ação. Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Esse vitae laboriosam accusantium voluptatum
+                  libero minima. Sapiente asperiores commodi ex quos ratione
+                  illo optio veritatis, eveniet atque natus, dicta nesciunt
+                  corrupti aspernatur illum. Perferendis accusamus, nulla sequi
+                  tenetur dolorum dignissimos praesentium veniam! Voluptates
+                  fugiat impedit fugit, excepturi error consectetur laudantium
+                  eligendi possimus vel provident assumenda hic ipsa atque quod
+                  facilis unde officia, sunt eos odio, sequi praesentium ipsam
+                  dignissimos. Aspernatur tenetur optio, deserunt eos atque
+                  minus, fugiat non repellat hic iste nobis repellendus libero
+                  amet eum. Atque vero pariatur odio accusantium molestias
+                  illum, amet aut itaque id corrupti? Consequatur, voluptas
+                  ipsa!
+                </li>
+              </ul>
+            </div>
+
+            <div class="campoAcoes">
+              <h3 id="nomeAcao">Ação 1</h3>
+              <ul>
+                <li id="localAcao">Local da ação</li>
+                <li id="periodoAcao">Período: de dd/mm/aa até dd/mm/aa</li>
+                <li id="descricaoAcao">
+                  Descrição da ação. Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Esse vitae laboriosam accusantium voluptatum
+                  libero minima. Sapiente asperiores commodi ex quos ratione
+                  illo optio veritatis, eveniet atque natus, dicta nesciunt
+                  corrupti aspernatur illum. Perferendis accusamus, nulla sequi
+                  tenetur dolorum dignissimos praesentium veniam! Voluptates
+                  fugiat impedit fugit, excepturi error consectetur laudantium
+                  eligendi possimus vel provident assumenda hic ipsa atque quod
+                  facilis unde officia, sunt eos odio, sequi praesentium ipsam
+                  dignissimos. Aspernatur tenetur optio, deserunt eos atque
+                  minus, fugiat non repellat hic iste nobis repellendus libero
+                  amet eum. Atque vero pariatur odio accusantium molestias
+                  illum, amet aut itaque id corrupti? Consequatur, voluptas
+                  ipsa!
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <h2 class="titulo">Vagas abertas</h2>
+        <section class="vagasAbertas">
+          <div class="listaVagas">
+            <div class="campoVagas">
+              <h3 id="nomeVaga">Vaga 1</h3>
+              <ul>
+                <li id="localVaga">Local da vaga</li>
+                <li id="periodoVaga">Período: de dd/mm/aa até dd/mm/aa</li>
+                <li id="descricaoVaga">
+                  Descrição da vaga. Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Esse vitae laboriosam accusantium voluptatum
+                  libero minima. Sapiente asperiores commodi ex quos ratione
+                  illo optio veritatis, eveniet atque natus, dicta nesciunt
+                  corrupti aspernatur illum. Perferendis accusamus, nulla sequi
+                  tenetur dolorum dignissimos praesentium veniam! Voluptates
+                  fugiat impedit fugit, excepturi error consectetur laudantium
+                  eligendi possimus vel provident assumenda hic ipsa atque quod
+                  facilis unde officia, sunt eos odio, sequi praesentium ipsam
+                  dignissimos. Aspernatur tenetur optio, deserunt eos atque
+                  minus, fugiat non repellat hic iste nobis repellendus libero
+                  amet eum. Atque vero pariatur odio accusantium molestias
+                  illum, amet aut itaque id corrupti? Consequatur, voluptas
+                  ipsa!
+                </li>
+              </ul>
+            </div>
+
+            <div class="campoVagas">
+              <h3 id="nomeVaga">Vaga 2</h3>
+              <ul>
+                <li id="localVaga">Local da vaga</li>
+                <li id="periodoVaga">Período: de dd/mm/aa até dd/mm/aa</li>
+                <li id="descricaoVaga">
+                  Descrição da vaga. Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Esse vitae laboriosam accusantium voluptatum
+                  libero minima. Sapiente asperiores commodi ex quos ratione
+                  illo optio veritatis, eveniet atque natus, dicta nesciunt
+                  corrupti aspernatur illum. Perferendis accusamus, nulla sequi
+                  tenetur dolorum dignissimos praesentium veniam! Voluptates
+                  fugiat impedit fugit, excepturi error consectetur laudantium
+                  eligendi possimus vel provident assumenda hic ipsa atque quod
+                  facilis unde officia, sunt eos odio, sequi praesentium ipsam
+                  dignissimos. Aspernatur tenetur optio, deserunt eos atque
+                  minus, fugiat non repellat hic iste nobis repellendus libero
+                  amet eum. Atque vero pariatur odio accusantium molestias
+                  illum, amet aut itaque id corrupti? Consequatur, voluptas
+                  ipsa!
+                </li>
+              </ul>
+            </div>
+
+            <div class="campoVagas">
+              <h3 id="nomeVaga">Vaga 3</h3>
+              <ul>
+                <li id="localVaga">Local da vaga</li>
+                <li id="periodoVaga">Período: de dd/mm/aa até dd/mm/aa</li>
+                <li id="descricaoVaga">
+                  Descrição da vaga. Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Esse vitae laboriosam accusantium voluptatum
+                  libero minima. Sapiente asperiores commodi ex quos ratione
+                  illo optio veritatis, eveniet atque natus, dicta nesciunt
+                  corrupti aspernatur illum. Perferendis accusamus, nulla sequi
+                  tenetur dolorum dignissimos praesentium veniam! Voluptates
+                  fugiat impedit fugit, excepturi error consectetur laudantium
+                  eligendi possimus vel provident assumenda hic ipsa atque quod
+                  facilis unde officia, sunt eos odio, sequi praesentium ipsam
+                  dignissimos. Aspernatur tenetur optio, deserunt eos atque
+                  minus, fugiat non repellat hic iste nobis repellendus libero
+                  amet eum. Atque vero pariatur odio accusantium molestias
+                  illum, amet aut itaque id corrupti? Consequatur, voluptas
+                  ipsa!
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- decoração do footer -->
+    <div id="decFooter">
+      <img src="img/decTintaFooter.png" alt="" id="decFooter" />
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div id="footerContainer">
+        <div id="logoFooter">
+          <a href="#">
+            <img src="img/logoCor2.png" alt="logo em cor clara" />
+          </a>
+        </div>
+
+        <div id="formFooter">
+          <div id="sugestionsFooter">
+            <h3>Sugestões?</h3>
+            <p>Mande uma mensagem ;)</p>
+          </div>
+
+          <form action="mensagem.php">
+            <label for="email" title="Informe seu email mais usado">
+              E-mail:
+            </label>
+            <input
+              type="email"
+              name="email"
+              id=""
+              placeholder="informe seu e-mail..."
+            />
+
+            <label for="message">Mensagem:</label>
+            <textarea
+              type="textarea"
+              name="message"
+              title="Mensagem"
+              cols="30"
+              rows="5"
+              placeholder="escreva aqui sua mensagem..."
+            >
+            </textarea>
+
+            <input
+              type="submit"
+              value="Enviar"
+              name="enviar"
+              class="btnLight"
+            />
+          </form>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
