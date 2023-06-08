@@ -20,7 +20,7 @@ A plataforma possui dois tipos centrais de usuário: os voluntários e as ONGs. 
 > **CADASTRO**
 <div align="center">
 
-<img width="700" src="img/userflowCadastro.png">
+<img width="800" src="img/userflowCadastro.png">
  
 </div>
 
@@ -34,7 +34,7 @@ O primeiro fluxo desenhado é também o primeiro fluxo executado no uso da aplic
 
 <div align="center">
 
-<img width="800" src="img/userflowPadraoVol.png">
+<img width="600" src="img/userflowPadraoVol.png">
  
 </div>
 
@@ -48,7 +48,7 @@ O fluxo de interação do usuário voluntário inclui a personalização de seu 
  
 <div align="center">
  
-<img width="800" src="img/userflowPadraoONG.png">
+<img width="600" src="img/userflowPadraoONG.png">
  
  </div>
 
