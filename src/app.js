@@ -1,3 +1,12 @@
+// dados e campos do formulário de informações do usuário
+
+
+const formUsuario = document.querySelector("#formInfBasica");
+const campoNomeUsuario = document.querySelector("#nomeUsuario");
+const campoBioUsuario = document.querySelector("#textoBiografia");
+
+
+
 
 // dados do formulario de prioridades
 const formInteresses = document.querySelector("#cadastroInteresses");
