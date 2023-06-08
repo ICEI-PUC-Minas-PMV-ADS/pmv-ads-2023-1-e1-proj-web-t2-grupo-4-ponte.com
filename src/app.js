@@ -13,6 +13,7 @@ const formBtnExcluirLinha = document.querySelector("#tabelaInteresses");
 // console.log(formBtnExcluirLinha);
 // dados do formulario de cadastro de experiências
 
+const formExperiencias = document.querySelector("#experiencias");
 const campoAreaAtuacao = document.querySelector("#areaAtuacao");
 const campoLocalAtuacao = document.querySelector("#localAtuacao");
 const campoCargoAtuacao = document.querySelector("#cargoAtuacao");
@@ -44,7 +45,7 @@ function limparCampos(form){
   let inputs = form.querySelectorAll("input");
   // let i =0;
   // let tamanho = toInt(inputs.length);
-  console.log(inputs.length);
+  // console.log(inputs.length);
 
     inputs[0].value = "";
 
@@ -75,6 +76,7 @@ function criarLinhaInteresse(){//cria para o formulario de interesses uma linha 
   interesse.innerText = campoInteresse.value;
   prioridade.innerText = campoPrioridade.value;
 
+
   // console.log(btnExcluir);
 
   linha.appendChild(interesse);
@@ -92,8 +94,8 @@ function adicionarInteresse(){
   let linha = criarLinhaInteresse();
   let contInteresses = 0;
   tabelaInteresses.appendChild(linha);
-  console.log(linha);
-  console.log(tabelaInteresses);
+  // console.log(linha);
+  // console.log(tabelaInteresses);
   contInteresses += 1;
 
   return(contInteresses);
@@ -113,6 +115,39 @@ function excluirLinha(lista, e){  //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Dev
 }
 
 
+function retiraAlertaParaCampoVazio(campoVazio){
+
+  campoVazio.style.border="1px solid black";
+
+}
+
+function mostrarAlertaParaCampoVazio(campoVazio){
+
+    alert("você precisa preencher todos os campos");
+    // campoVazio.style.backgroundColor ="#FFBEBE";
+    campoVazio.style.borderColor ="#FB0A0A";
+
+}
+
+
+
+function verificarCamposVazios(formulario){ //Verifica se um campo de um form está vazio, se sim o retorna.
+
+  let inputList = formulario.querySelectorAll('INPUT');
+
+    for(let i = 0; i<inputList.length; i++){
+      if(inputList[i].value==""){
+
+          return(inputList[i]);
+      }
+    }
+
+    // return vazio;
+}
+
+
+
+
 //Fluxo Principal
 
 mostraPrioridade(campoPrioridade, valorPrioridade); //Mostra e atualiza o número de prioridade do interesse conforme seleção do user.
@@ -125,8 +160,21 @@ btnInteressesLimpar.addEventListener("click",function(e){ //adiciona o evento cl
   e.preventDefault();
 });
 
-contInteresses = btnInteressesAdicionar.addEventListener('click', function(e){
-  adicionarInteresse();
+btnInteressesAdicionar.addEventListener('click', function(e){
+
+  campoVazio = verificarCamposVazios(formExperiencias);
+
+  if(campoVazio){
+
+    mostrarAlertaParaCampoVazio(campoVazio);
+    campoVazio.addEventListener("click", ()=>{retiraAlertaParaCampoVazio(campoVazio)});
+
+  }else{
+
+     adicionarInteresse();
+
+  }
+
   e.preventDefault();
 })
 
