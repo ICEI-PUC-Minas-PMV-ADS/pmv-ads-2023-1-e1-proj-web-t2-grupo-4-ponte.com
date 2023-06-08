@@ -28,7 +28,7 @@ Os testes funcionais a serem realizados no aplicativo são descritos a seguir:
  <tr>
       <td>Passos</td>
       <td> 1. Realizar testes a cada versão de um software; <p> 
-          2. Testar unidades menores de um software, de modo isolado; <p>
+       <p>2. Testar unidades menores de um software, de modo isolado; </p>
  </td>
  </tr>
  <tr>
