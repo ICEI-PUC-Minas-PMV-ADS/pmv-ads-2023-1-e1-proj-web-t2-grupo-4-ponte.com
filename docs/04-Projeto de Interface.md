@@ -66,7 +66,7 @@ A seguir, estão descritas as páginas da aplicação.
 
 <div align="center"> 
 
-<img width="300" src="https://user-images.githubusercontent.com/19398297/233782698-420826b0-7c0f-425f-a395-97b4b4a31034.png">
+<img width="300" src="img/homepage.png">
 
 </div> 
 
@@ -123,7 +123,7 @@ Do mesmo modo, o formulário detalhado para voluntários é a página onde o vol
 
 <div align="center">
 
-<img width="300" src="https://user-images.githubusercontent.com/19398297/233784303-bf8aca8e-b4e3-4029-be78-a479a6f5230f.png">
+<img width="300" src="img/profileONG.png">
             
 </div>
 
@@ -138,7 +138,7 @@ Na página de Perfil de ONG estarão listadas as informações sobre a ONG, como
 
 <div align="center"> 
 
-<img width="300" src="https://user-images.githubusercontent.com/19398297/233787332-a2db89f2-02f9-4345-a9d2-357c375e453e.png">
+<img width="300" src="img/profileVolunteer.png">
  
 </div>
 
