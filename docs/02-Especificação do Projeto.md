@@ -36,11 +36,10 @@ A partir da compreensão do cotidiano das personas identificadas para o projeto,
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Joana (Voluntário)  | Encontrar ONGs que estejam precisando de voluntários            | Poder escolher uma e me alistar como colaboradora               |
+|Joana (Voluntário)  | Encontrar ONGs que estejam precisando de voluntários            | poder escolher uma e me alistar como colaboradora               |
 |Joana (Voluntário)      | Criar um perfil que contenha minhas habilidades e minha disponibilidade para voluntariado                  | ONGs que estejam precisando de trabalho como o que faço possam me encontrar |
-|Daniel Garcia (ONG)       | Divulgar o trabalho da minha ONG e as oportunidades de colaboração                   | Encontrar voluntários capacitados e com disponibilidade |
-|Daniel Garcia (ONG)       | Gerenciar os voluntários da minha ONG                   | Marcar turnos de trabalho e ter um canal de comunicação com eles  |
-|Daniel Garcia (ONG)       | Ter a possibilidade de entrar em contato com outras ONGs                   | Fazer parcerias com outras instituições   |
+|Daniel Garcia (ONG)       | Divulgar o trabalho da minha ONG e as oportunidades de colaboração                   | encontrar voluntários capacitados e com disponibilidade |
+|Daniel Garcia (ONG)       | Ter a possibilidade de entrar em contato com outras ONGs                   | fazer parcerias com outras instituições   |
 
 
 ## Requisitos
@@ -54,12 +53,10 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-001| Possibilitar a pesquisa de novas ONGs | ALTA | 
 |RF-002| Apresentar o perfil das ONGs com informações como causas defendidas, projetos realizados, vagas para voluntariado, endereço e contato   | ALTA |
 |RF-003| Possibilitar a criação de perfil de voluntários com informações como causas defendidas, capacitações, disponibilidade para voluntariado e contato   | ALTA |
-|RF-004| Permitir que o cliente tenha meio de contato direto com as ONGs ou voluntários escolhidos (janela de chat)   | BAIXA |
+|RF-004| Permitir que o cliente tenha meio de contato direto com as ONGs ou voluntários escolhidos   | BAIXA |
 |RF-005| Possuir um filtro para perfil de voluntários a ser utilizado pelas ONGs  | ALTA |
 |RF-006| Possuir um filtro para perfil de ONGs e trabalhos voluntários disponíveis, a ser utilizado pelos voluntários   | ALTA |
-|RF-007| Permitir às ONGs o gerenciamento de atividades, turnos e voluntários através de dashboard  | MÉDIA |
-|RF-008| Permitir aos voluntários o gerenciamento de suas atividades através de dashboard   | MÉDIA |
-|RF-009| Permitir ao voluntário o compartilhamento de candidaturas de trabalhos voluntários em suas redes sociais   | MÉDIA |
+|RF-007| Permitir ao voluntário o compartilhamento de candidaturas de trabalhos voluntários em suas redes sociais   | MÉDIA |
 
 
 ### Requisitos não Funcionais
