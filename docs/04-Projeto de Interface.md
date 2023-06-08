@@ -13,20 +13,20 @@ A interface da aplicação foi projetada a partir das histórias de usuários, d
 
 <div align="justify">
  
-A plataforma possui dois tipos centrais de usuário: os voluntários e as ONGs. Da mesma forma, o fluxo de interação é dividido no uso específico de cada uma das personas. As telas serão detalhadas a seguir, na seção de Wireframes.
+A plataforma possui dois tipos centrais de usuário: os voluntários e as ONGs. Da mesma forma, o fluxo de interação é dividido no uso específico de cada uma das personas. *Todas as páginas possuem retorno direto para as demais páginas da aplicação, a pertir do menu de navegação superior*. As telas serão detalhadas a seguir, na seção de Wireframes.
 
  </div>
  
 > **CADASTRO**
 <div align="center">
 
-<img width="700" src="img/UserflowCadastro.png">
+<img width="700" src="img/userflowCadastro.png">
  
 </div>
 
 <div align="justify">
  
-O primeiro fluxo desenhado é também o primeiro fluxo executado no uso da aplicação, a etapa de cadastro. O usuário que deseja se voluntariar a trabalhos sociais possui formulário de cadastro diferente do usuário que deseja cadastrar sua ONG no site.
+O primeiro fluxo desenhado é também o primeiro fluxo executado no uso da aplicação, a etapa de cadastro. O usuário que deseja se voluntariar a trabalhos sociais possui formulário de cadastro diferente do usuário que deseja cadastrar sua ONG no site. Além disso, o usuário do tipo ONG possui uma página de cadastro de anúncio de vagas.
  
 </div>
 
@@ -34,13 +34,13 @@ O primeiro fluxo desenhado é também o primeiro fluxo executado no uso da aplic
 
 <div align="center">
 
-<img width="800" src="img/UserflowPadraoVoluntario.png">
+<img width="800" src="img/userflowPadraoVol.png">
  
 </div>
 
 <div align="justify">
  
-O fluxo de interação do usuário voluntário inclui a busca por vagas de voluntariado, a busca por ONGs e um dashboard de gerenciamento de suas atividades.
+O fluxo de interação do usuário voluntário inclui a personalização de seu perfil e a busca por vagas de voluntariado e por ONGs.
 
  </div>
  
@@ -48,15 +48,15 @@ O fluxo de interação do usuário voluntário inclui a busca por vagas de volun
  
 <div align="center">
  
-<img width="800" src="img/UserflowPadraoONG.png">
+<img width="800" src="img/userflowPadraoONG.png">
  
  </div>
 
 <div align="justify">
  
-Já o fluxo de interação do usuário inclui a busca por voluntários, assim como uma página de currículo (CV - curriculum vitae) para os voluntários, um dashboard de gerenciamento de atividades e voluntários e uma página de criação de anúncios de vagas de voluntariado.
+Já o fluxo de interação do usuário ONG inclui a personalização de seu perfil, o anúncio de vagas e a busca por voluntários.
  
- </div>
+</div>
 
 ## Wireframes
 
