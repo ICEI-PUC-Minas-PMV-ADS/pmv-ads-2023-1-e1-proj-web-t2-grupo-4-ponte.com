@@ -13,14 +13,13 @@ Nosso objetivo geral é a criação de um site para conectar organizações não
 
 * Possibilitar às ONGs a criação de perfil para a divulgação de suas causas e das oportunidades de contribuição, através de voluntariado ou doações; 
 * Possibilitar aos voluntários o acesso a um catálogo de ONGs e oportunidades de voluntariado, assim como a criação de perfil com seus interesses e capacitação; 
-* Fornecer meios para ajudar as organizações no gerenciamento de voluntários, funcionando como canal de comunicação e também como sistema para agendamento de turnos de trabalho; 
 
 ## Justificativa
 
-Muitas organizações sem fins lucrativos enfrentam desafios em captar e gerenciar voluntários devido à falta de recursos e tecnologia. A criação de canais de divulgação do trabalho para encontrar pessoas interessadas em contribuir, além do gerenciamento dos voluntários, pode ser custosa financeiramente e também tecnicamente. 
+Muitas organizações sem fins lucrativos enfrentam desafios em captar e gerenciar voluntários devido à falta de recursos e tecnologia. A criação de canais de divulgação do trabalho para encontrar pessoas interessadas em contribuir pode ser custosa financeiramente e também tecnicamente. 
 
 Do lado dos voluntários, podemos citar a falta de conhecimento sobre o trabalho de organizações e a dificuldade em encontrar oportunidades de voluntariado. Muitas pessoas possuem interesse em contribuir, mas não sabem por onde começar. As informações costumam ser descentralizadas, tornando difícil a pesquisa de oportunidades para contribuir. Nossa aplicação visa facilitar esta conexão.   
 
 ## Público-Alvo
 
-O objetivo dessa aplicação é facilitar a conexão entre as ONGs e os voluntários, para que em conjunto possam realizar diversos trabalhos em prol da sociedade. O público-alvo é composto pelos recrutadores de voluntários por parte das ONGs, como também pelos voluntários homens e mulheres em todas as faixas etárias, que desejam exercer o papel de voluntário, usando seus talentos e habilidades para o bem da sociedade.  
+O objetivo dessa aplicação é facilitar a conexão entre as ONGs e os voluntários, para que em conjunto possam realizar diversos trabalhos. O público-alvo é composto pelos recrutadores de voluntários por parte das ONGs, como também pelos voluntários homens e mulheres em todas as faixas etárias, que desejam exercer o papel de voluntário, usando seus talentos e habilidades para o bem da sociedade.  
