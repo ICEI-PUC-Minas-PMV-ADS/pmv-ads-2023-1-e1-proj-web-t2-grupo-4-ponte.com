@@ -5,7 +5,8 @@ const formUsuario = document.querySelector("#formInfBasica");
 const campoNomeUsuario = document.querySelector("#nomeUsuario");
 const campoBioUsuario = document.querySelector("#textoBiografia");
 const imagemPerfil = document.querySelector("#imagemPerfil");
-
+const btnSalvarUser = document.querySelector("#salvarUser");
+const btnResetFormUser = document.querySelector("#resetFormUser");
 
 
 // dados do formulario de prioridades
@@ -19,7 +20,7 @@ const tabelaInteresses = document.querySelector("#tabelaInteresses");
 const formBtnExcluirLinha = document.querySelector("#tabelaInteresses");
 // fim da entrada de dados do formulario prioridades
 
-// console.log(formBtnExcluirLinha);
+
 // dados do formulario de cadastro de experiências
 
 const formExperiencias = document.querySelector("#experiencias");
@@ -36,8 +37,7 @@ const btnFormXpLimpar = document.querySelector("#btnLimpar");
 // fim da entrada de dados do formulario de cadastro de experiencias
 
 function mostraPrioridade(campoPrioridade, valorPrioridade){
-//   // console.log(campoPrioridade.value);
-//   // console.log(valorPrioridade.innerText);
+
   valorPrioridade.innerText = campoPrioridade.value;
 
 }
@@ -141,11 +141,14 @@ function mostrarAlertaParaCampoVazio(campoVazio){
 function verificarCamposVazios(formulario){ //Verifica se um campo de um form está vazio, se sim o retorna.
 
   let inputList = formulario.querySelectorAll('INPUT');
+  let areaTexto = formulario.querySelectorAll("TEXTAREA");
 
     for(let i = 0; i<inputList.length; i++){
       if(inputList[i].value==""){
 
           return(inputList[i]);
+      }else if(areaTexto[i].value==""){
+          return(areaTexto[i]);
       }
     }
 
@@ -180,11 +183,12 @@ function salvarDadosDoFormInteresses(formulario){
       window.localStorage.valores = JSON.stringify(valores);
       prioridades.push(prioridadeInteresse);
       window.localStorage.prioridades = JSON.stringify(prioridades);
-      // localStorage.setItem('valores', valorInteresse);
+
 
 
 
 }
+
 
 //Fluxo Principal
 
@@ -200,31 +204,42 @@ btnInteressesLimpar.addEventListener("click",function(e){ //adiciona o evento cl
 
 btnInteressesAdicionar.addEventListener('click', function(e){
 
-  campoVazio = verificarCamposVazios(formInteresses);
+  let campoVazio = verificarCamposVazios(formInteresses);
 
   if(campoVazio){
 
     mostrarAlertaParaCampoVazio(campoVazio);
-    campoVazio.addEventListener("click", ()=>{retiraAlertaParaCampoVazio(campoVazio)});
+    campoVazio.addEventListener("click", (e)=>{
+      retiraAlertaParaCampoVazio(campoVazio)
+      e.preventDefault();
+  });
 
   }else{
 
      adicionarInteresse();
-     salvarDadosDoForm(formInteresses);
+     salvarDadosDoFormInteresses(formInteresses);
 
   }
 
   e.preventDefault();
-})
+});
 
 formBtnExcluirLinha.addEventListener("click", function(e){
 
     excluirLinha(tabelaInteresses, e);
     e.preventDefault();
 
-})
+});
 
 
-
-
-// console.log(contInteresses);
+btnFormXpSalvar.addEventListener("click", function(e){
+  let campoVazio = verificarCamposVazios(formExperiencias);
+  if(campoVazio){
+      mostrarAlertaParaCampoVazio(campoVazio);
+      campoVazio.addEventListener("click", function(e){
+      retiraAlertaParaCampoVazio(campoVazio)
+      e.preventDefault();
+    });
+  }
+  e.preventDefault();
+});
