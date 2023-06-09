@@ -32,8 +32,9 @@ const campoInicioPeriodoAtuacao = document.querySelector("#inicioPeriodoAtuacao"
 const campoFimPeriodoAtuacao = document.querySelector("#fimPeriodoAtuacao");
 const btnFormXpSalvar = document.querySelector("#btnSalvar");
 const btnFormXpLimpar = document.querySelector("#btnLimpar");
+const listaDetalhes = document.querySelector("#campoDetalhe");
 
-
+// console.log(listaDetalhes);
 // fim da entrada de dados do formulario de cadastro de experiencias
 
 function mostraPrioridade(campoPrioridade, valorPrioridade){
@@ -49,10 +50,6 @@ function limpaPrioridade(){
 
 function limparCampos(form){
   let inputs = form.querySelectorAll("input");
-  // let i =0;
-  // let tamanho = toInt(inputs.length);
-  // console.log(inputs.length);
-
     inputs[0].value = "";
 
       if(form.id == "cadastroInteresses"){
@@ -60,9 +57,6 @@ function limparCampos(form){
         limpaPrioridade();
 
       }
-
-
-
 }
 
 function criarLinhaInteresse(){//cria para o formulario de interesses uma linha e captura os valores inseridos
@@ -109,7 +103,7 @@ function adicionarInteresse(){
 }
 
 
-function excluirLinha(lista, e){  //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Deve excluir a linha quando clicar na lixeira
+function excluirLinha(lista, e){  //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Deve excluir a linha quando clicar no botao excluir
 
  var elementoClicado = e.target;
 
@@ -147,14 +141,28 @@ function verificarCamposVazios(formulario){ //Verifica se um campo de um form es
       if(inputList[i].value==""){
 
           return(inputList[i]);
-      }else if(areaTexto[i].value==""){
+      }else if(areaTexto[i] && areaTexto[i].value==""){
           return(areaTexto[i]);
+      }else{
+        return null;
       }
     }
 
     // return vazio;
 }
 
+function criarDiv(){
+  let divElemento = document.createElement("div");
+  console.log(divElemento);
+}
+
+function inserirDadosNaDiv(){
+
+}
+
+function inserirDivNaLista(divCriada, listaDeDivs){
+
+}
 
 function salvarDadosDoFormInteresses(formulario){
 
@@ -237,9 +245,11 @@ btnFormXpSalvar.addEventListener("click", function(e){
   if(campoVazio){
       mostrarAlertaParaCampoVazio(campoVazio);
       campoVazio.addEventListener("click", function(e){
-      retiraAlertaParaCampoVazio(campoVazio)
+      retiraAlertaParaCampoVazio(campoVazio);
       e.preventDefault();
     });
   }
+  // let divCriada = criarDiv();
   e.preventDefault();
+
 });
