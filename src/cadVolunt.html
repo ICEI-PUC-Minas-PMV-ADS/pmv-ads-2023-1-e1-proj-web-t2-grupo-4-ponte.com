@@ -18,7 +18,8 @@
       rel="stylesheet"
     />
       <script src="app.js" defer  ></script>
-    <title>Document</title>
+      <link rel="stylesheet" href="cadVolunt.css">
+    <title>cadastro de Voluntario</title>
   </head>
 
   <body>
@@ -104,43 +105,54 @@
         <h2>informações de usuário</h2>
 
         <div id="infBasica">
-          <form action="" class="formContainer" id="formInfBasica">
+          <form action="" class="formContainer formContainerGrande" id="formInfBasica">
             <div id="campoNome">
-              <label for="nomeUsuario" class="labelMb">Informe seu nome completo:</label>
+              <label for="nomeUsuario" class="labels">Informe seu nome completo:</label>
               <input type="text" name="nomeUsuario" id="nomeUsuario" class="inputText">
             </div>
 
+            <div id="campoEmail">
+              <label for="emailUsuario" class="labels">Informe seu e-mail:</label>
+              <input type="text" name="emailUsuario" id="emailUsuario" class="inputText">
+            </div>
+
+            <div id="campoSenha">
+              <label for="senhaUsuario" class="labels">Informe uma senha:</label>
+              <input type="password" name="senhaUsuario" id="senhaUsuario" class="inputText">
+            </div>
+
             <div id="biografia">
-              <label for="biografia" class="labelMb">Fale um pouco sobre você:</label>
-              <textarea name="biografia" id="textoBiografia" cols="30" rows="10" title="escreva um pouco sobre você"></textarea>
+              <label for="biografia" class="labels">Fale um pouco sobre você:</label>
+              <textarea name="biografia" id="textoBiografia" cols="30" rows="10" title="escreva um pouco sobre você" class="textArea"></textarea>
             </div>
 
             <div id="fotoPerfil">
-              <label for="foto" class="labelMb">Adicione uma foto ao seu perfil:</label>
-              <input type="file" accept="img/*" src="" alt="imagem do perfil" class="textArea" id="imagemPerfil">
+              <label for="foto" class="labels">Adicione uma foto ao seu perfil:</label>
+              <input type="file" accept="img/*" src="" alt="imagem do perfil" class="textArea" id="imagemPerfil" title="carregue uma imagem">
             </div>
-            <div id="botoesInfBasica">
+            <div id="botoesInfBasica" class="btnArea">
               <button type="submit" class="formBtn" id="salvarUser">salvar</button>
               <button type="reset" class="formBtn" id="reserFormUser">limpar</button>
             </div>
           </form>
         </div>
+
                               <h2>pesquise e adicione seus interesses</h2>
         <div id="nuvemInteresses">
 
           <div id="formInteresses">
 
-            <form action="" id="cadastroInteresses">
+            <form action="" id="cadastroInteresses" class="formContainerPequeno">
 
-              <label for="campoInteresse">interesse</label>
+              <label for="campoInteresse" class="labels">interesse</label>
               <input
                 type="text"
-                class="inputText"
+                class="inputs"
                 name="campoInteresse"
                 id="campoInteresse"
               />
 
-              <label for="campoPrioridade" value="prioridade">prioridade  </label><output for="campoPrioridade" id="valorPrioridade">1</output>
+              <label for="campoPrioridade" value="prioridade" class="labels">prioridade: <output for="campoPrioridade" id="valorPrioridade">1</output> </label>
               <input
                 type="range"
                 name="campoPrioridade"
@@ -151,13 +163,11 @@
                 value="1";
               />
 
+              <div id="botoes" class="btnArea">
+                <button id="adicionar" type="submit" class="formBtn">salvar</button>
+                <button id="limpar" type="reset" class="formBtn">limpar</button>
+              </div>
 
-              <button id="adicionar" type="submit" class="formBtn">
-                adicionar
-              </button>
-              <button id="limpar" type="submit" class="formBtn">
-                limpar
-              </button>
             </form>
           </div>
 
@@ -189,9 +199,9 @@
 
           <div id="xpListaContainer">
 
-            <div id="expForm" class="formContainer">
+            <div id="expForm">
 
-              <form action="" id="experiencias">
+              <form action="" id="experiencias" class="formConainer formContainerGrande">
 
                 <div id="campoAreaAtuacao">
                   <label for="areaAtuacao" class="labelForm">área de atuação:</label>
@@ -263,7 +273,7 @@
                   </div>
                 </div>
 
-                <div id="btnArea">
+                <div id="btnArea" class="btnArea">
                   <button id="btnSalvar" class="formBtn">salvar</button>
                   <button id="btnLimpar" type="reset" class="formBtn">limpar</button>
                 </div>
@@ -271,15 +281,11 @@
             </div>
 
             <div class="listaDetalhes" id="listaDetalhes">
-                <!-- <h2>Experiencias</h2> -->
-              <!-- <div class="campoDetalhe" id="campoDetalhe">
+
+              <!-- <h2>Experiencias</h2>
+              <div class="campoDetalhe" id="campoDetalhe">
                 <h2>Experiência 1</h2>
-                <ul>
-                  <li>período: de dd/mm/aa até dd/mm/aa</li>
-                  <li>local: local da experiência</li>
-                  <li>cargo: cargo ocupado</li>
-                  <li>descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore amet blanditiis itaque neque nostrum dolorem, aliquid praesentium labore soluta doloremque in fugit nemo exercitationem expedita? Voluptates reprehenderit delectus facilis fugit?</li>
-                </ul>
+
                 <div class="groupBtn">
                     <button type="reset" class="formBtn">editar</button>
                     <button type="reset" class="formBtn" title="excluir">excluir</button>
@@ -324,7 +330,7 @@
           <div id="qualificacoesForm">
             <h3>qualificações</h3>
             <div id="qualificacoesListaContainer">
-              <form action="" id="qualificacoes" class="formContainer">
+              <form action="" id="qualificacoes" class="formContainer formContainerGrande">
               <div id="campoNomeCurso">
                 <label for="nomeCurso">nome do curso:</label>
                 <input
@@ -391,7 +397,7 @@
                 </div>
               </div>
 
-              <div id="btnArea">
+              <div id="btnArea" class="btnArea">
                 <button id="btnSalvar" class="formBtn">salvar</button>
                 <button id="btnLimpar" class="formBtn">limpar</button>
               </div>

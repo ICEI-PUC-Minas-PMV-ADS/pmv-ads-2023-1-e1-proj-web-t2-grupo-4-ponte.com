@@ -3,7 +3,9 @@
 
 const formUsuario = document.querySelector("#formInfBasica");
 const campoNomeUsuario = document.querySelector("#nomeUsuario");
+const campoSenhaUsuario = document.querySelector("#senhaUsuario");
 const campoBioUsuario = document.querySelector("#textoBiografia");
+const campoEmailUsuario = document.querySelector("#emailUsuario");
 const imagemPerfil = document.querySelector("#imagemPerfil");
 const btnSalvarUser = document.querySelector("#salvarUser");
 const btnResetFormUser = document.querySelector("#resetFormUser");
@@ -164,6 +166,11 @@ function criarDivListaXP(){
   let divGroupBtn = document.createElement("div");
   let btnEditar = document.createElement("button");
   let btnExcluir = document.createElement("button");
+  let liSpanDe = document.createElement("span");
+  let liSpanAte = document.createElement("span");
+
+
+  divGroupBtn.setAttribute("class","btnArea");
 
   divDetalhes.setAttribute("class","listaDetalhes");
   campoDetalhe.setAttribute("class", ".campoDetalhe");
@@ -171,12 +178,17 @@ function criarDivListaXP(){
   btnEditar.setAttribute("class", "formBtn");
   btnExcluir.setAttribute("class", "formBtn");
 
+  liSpanDe.innerText ="de:";
+  liSpanAte.innerText ="até:"
 
-  liPeriodoInicio.innerText = campoInicioPeriodoAtuacao.value;
-  liPeriodoFim.innerText = campoFimPeriodoAtuacao.value;
-  liLocal.innerText = campoLocalAtuacao.value;
-  liCargo.innerText = campoCargoAtuacao.value;
-  liDescricao.innerText = campoDescricaoAtuacao.value;
+  liPeriodoInicio.appendChild(liSpanDe);
+  liPeriodoFim.appendChild(liSpanAte);
+
+  liPeriodoInicio.innerText = "De:  "+ campoInicioPeriodoAtuacao.value;
+  liPeriodoFim.innerText = "Até:  "+campoFimPeriodoAtuacao.value;
+  liLocal.innerText ="Local de atuação:  "+ campoLocalAtuacao.value;
+  liCargo.innerText ="Cargo ocupado:  "+ campoCargoAtuacao.value;
+  liDescricao.innerText ="Descrição das atividades:  " +campoDescricaoAtuacao.value;
 
   ul.appendChild(liPeriodoInicio);
   ul.appendChild(liPeriodoFim);
@@ -216,7 +228,7 @@ function salvarDadosDoFormInteresses(formulario){
 
 
 
-    if(!window.localStorage.valores){
+    if(!window.localStorage.valores && !window.localStorage.prioridades){
         valores = [];
         prioridades = [];
         window.localStorage.valores = [];
@@ -239,8 +251,73 @@ function salvarDadosDoFormInteresses(formulario){
 
 }
 
+function salvarDadosUser(formulario){
+    // let valorInteresse = formulario.querySelector("#campoInteresse").value;
+    // let prioridadeInteresse = formulario.querySelector("#campoPrioridade").value;
+    // // let labels = formulario.querySelector("#prioridade").value;
+    // let valores =[];
+    // let prioridades = [];
 
-//Fluxo Principal
+
+
+    // if(!window.localStorage.valores){
+    //     valores = [];
+    //     prioridades = [];
+    //     window.localStorage.valores = [];
+    //     window.localStorage.prioridades = [];
+
+    // }else{
+
+    //   valores = JSON.parse(window.localStorage.valores);
+    //   prioridades = JSON.parse(window.localStorage.prioridades);
+
+    // }
+
+    //   valores.push(valorInteresse);
+    //   window.localStorage.valores = JSON.stringify(valores);
+    //   prioridades.push(prioridadeInteresse);
+    //   window.localStorage.prioridades = JSON.stringify(prioridades);
+
+    let nomeUsuario = formulario.querySelector("#nomeUsuario").value;
+    let emailUsuario = formulario.querySelector("#emailUsuario").value;
+    let senhaUsuario = formulario.querySelector("#senhaUsuario").value;
+    let bioUsuario = formulario.querySelector("#textoBiografia").value;
+    let nomes= [];
+    let emails = [];
+    let senhas = [];
+    let bios = [];
+
+    if(!window.localStorage.nomes && !window.localStorage.emails && !window.localStorage.senhas && !window.localStorage.bios){
+        window.localStorage.nomes = nomes;
+        window.localStorage.emails = emails;
+        window.localStorage.senhas = senhas;
+        window.localStorage.bios = bios;
+    }else{
+        nomes = JSON.parse(window.localStorage.nomes);
+        emails = JSON.parse(window.localStorage.emails);
+        senhas = JSON.parse(window.localStorage.senhas);
+        bios = JSON.parse(window.localStorage.bios);
+    }
+
+   nomes.push(nomeUsuario);
+   window.localStorage.nomes = JSON.stringify(nomes);
+   emails.push(emailUsuario);
+   window.localStorage.emails = JSON.stringify(emails);
+   senhas.push(senhaUsuario);
+   window.localStorage.senhas = JSON.stringify(senhas);
+   bios.push(bioUsuario);
+   window.localStorage.bios = JSON.stringify(bios);
+
+
+    return(true);
+
+}
+
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+//Fluxo Principal<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FLUXO PRINCIPAL
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 
 mostraPrioridade(campoPrioridade, valorPrioridade); //Mostra e atualiza o número de prioridade do interesse conforme seleção do user.
 
@@ -282,7 +359,7 @@ formBtnExcluirLinha.addEventListener("click", function(e){
 
 });
 
-
+//está criando os campos e inserindo na tabela, falta local Storage
 btnFormXpSalvar.addEventListener("click", function(e){
   let campoVazio = verificarCamposVazios(formExperiencias);
   if(campoVazio){
@@ -301,3 +378,16 @@ btnFormXpSalvar.addEventListener("click", function(e){
   e.preventDefault();
 
 });
+
+
+//guardar no localStorage os dados do usuário
+btnSalvarUser.addEventListener("click",function(e){
+  let dadosSalvos = salvarDadosUser(formUsuario);
+
+  if(dadosSalvos){
+    alert("Dados Salvos com sucesso ;)");
+  }else{
+    alert("Ocorreu algum erro :_(");
+  }
+  e.preventDefault();
+})
