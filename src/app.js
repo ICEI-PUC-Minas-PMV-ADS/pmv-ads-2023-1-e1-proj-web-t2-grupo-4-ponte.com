@@ -4,7 +4,7 @@
 const formUsuario = document.querySelector("#formInfBasica");
 const campoNomeUsuario = document.querySelector("#nomeUsuario");
 const campoBioUsuario = document.querySelector("#textoBiografia");
-
+const imagemPerfil = document.querySelector("#imagemPerfil");
 
 
 
@@ -34,9 +34,6 @@ const btnFormXpLimpar = document.querySelector("#btnLimpar");
 
 
 // fim da entrada de dados do formulario de cadastro de experiencias
-
-
-
 
 function mostraPrioridade(campoPrioridade, valorPrioridade){
 //   // console.log(campoPrioridade.value);
@@ -127,13 +124,14 @@ function excluirLinha(lista, e){  //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Dev
 function retiraAlertaParaCampoVazio(campoVazio){
 
   campoVazio.style.border="1px solid black";
+  campoVazio.style.backgroundColor="#ffff";
 
 }
 
 function mostrarAlertaParaCampoVazio(campoVazio){
 
     alert("você precisa preencher todos os campos");
-    // campoVazio.style.backgroundColor ="#FFBEBE";
+    campoVazio.style.backgroundColor ="#FFBEBE";
     campoVazio.style.borderColor ="#FB0A0A";
 
 }
@@ -155,7 +153,38 @@ function verificarCamposVazios(formulario){ //Verifica se um campo de um form es
 }
 
 
+function salvarDadosDoFormInteresses(formulario){
 
+    let valorInteresse = formulario.querySelector("#campoInteresse").value;
+    let prioridadeInteresse = formulario.querySelector("#campoPrioridade").value;
+    // let labels = formulario.querySelector("#prioridade").value;
+    let valores =[];
+    let prioridades = [];
+
+
+
+    if(!window.localStorage.valores){
+        valores = [];
+        prioridades = [];
+        window.localStorage.valores = [];
+        window.localStorage.prioridades = [];
+
+    }else{
+
+      valores = JSON.parse(window.localStorage.valores);
+      prioridades = JSON.parse(window.localStorage.prioridades);
+
+    }
+
+      valores.push(valorInteresse);
+      window.localStorage.valores = JSON.stringify(valores);
+      prioridades.push(prioridadeInteresse);
+      window.localStorage.prioridades = JSON.stringify(prioridades);
+      // localStorage.setItem('valores', valorInteresse);
+
+
+
+}
 
 //Fluxo Principal
 
@@ -171,7 +200,7 @@ btnInteressesLimpar.addEventListener("click",function(e){ //adiciona o evento cl
 
 btnInteressesAdicionar.addEventListener('click', function(e){
 
-  campoVazio = verificarCamposVazios(formExperiencias);
+  campoVazio = verificarCamposVazios(formInteresses);
 
   if(campoVazio){
 
@@ -181,12 +210,12 @@ btnInteressesAdicionar.addEventListener('click', function(e){
   }else{
 
      adicionarInteresse();
+     salvarDadosDoForm(formInteresses);
 
   }
 
   e.preventDefault();
 })
-
 
 formBtnExcluirLinha.addEventListener("click", function(e){
 

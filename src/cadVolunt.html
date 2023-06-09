@@ -117,7 +117,7 @@
 
             <div id="fotoPerfil">
               <label for="foto" class="labelMb">Adicione uma foto ao seu perfil:</label>
-              <input type="image" src="" alt="imagem do perfil" class="textArea">
+              <input type="image" src="" alt="imagem do perfil" class="textArea" id="imagemPerfil">
             </div>
             <div id="botoesInfBasica">
               <button type="submit" class="formBtn" id="salvarUser">salvar</button>
@@ -132,7 +132,7 @@
 
             <form action="" id="cadastroInteresses">
 
-              <label for="campoInteresse">informe seus interesses:</label>
+              <label for="campoInteresse">interesse</label>
               <input
                 type="text"
                 class="inputText"
@@ -140,7 +140,7 @@
                 id="campoInteresse"
               />
 
-              <label for="campoPrioridade">prioridade: <output for="campoPrioridade" id="valorPrioridade">1</output> </label>
+              <label for="campoPrioridade" value="prioridade">prioridade  </label><output for="campoPrioridade" id="valorPrioridade">1</output>
               <input
                 type="range"
                 name="campoPrioridade"
@@ -228,8 +228,8 @@
 
                 <div id="campoDescricao">
 
-                  <label for="descricaoAtuacao"
-                    >Forneça uma breve descrição das atividades:
+                  <label for="descricaoAtuacao">
+                    descrição das atividades:
                   </label>
 
                   <textarea
