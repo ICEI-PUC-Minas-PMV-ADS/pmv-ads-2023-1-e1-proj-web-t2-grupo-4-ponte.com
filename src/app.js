@@ -252,31 +252,7 @@ function salvarDadosDoFormInteresses(formulario){
 }
 
 function salvarDadosUser(formulario){
-    // let valorInteresse = formulario.querySelector("#campoInteresse").value;
-    // let prioridadeInteresse = formulario.querySelector("#campoPrioridade").value;
-    // // let labels = formulario.querySelector("#prioridade").value;
-    // let valores =[];
-    // let prioridades = [];
 
-
-
-    // if(!window.localStorage.valores){
-    //     valores = [];
-    //     prioridades = [];
-    //     window.localStorage.valores = [];
-    //     window.localStorage.prioridades = [];
-
-    // }else{
-
-    //   valores = JSON.parse(window.localStorage.valores);
-    //   prioridades = JSON.parse(window.localStorage.prioridades);
-
-    // }
-
-    //   valores.push(valorInteresse);
-    //   window.localStorage.valores = JSON.stringify(valores);
-    //   prioridades.push(prioridadeInteresse);
-    //   window.localStorage.prioridades = JSON.stringify(prioridades);
 
     let nomeUsuario = formulario.querySelector("#nomeUsuario").value;
     let emailUsuario = formulario.querySelector("#emailUsuario").value;
