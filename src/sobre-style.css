@@ -275,10 +275,9 @@ main {
     list-style: none;
   }
 
-.container .sobre .creditos .licencas {
-    display: flex;
-    flex-direction: column;
+.container .sobre .creditos .orientacao-licencas {
     margin-left: 3rem;
+    text-align: center;
 }
 
 /* FOOTER */
