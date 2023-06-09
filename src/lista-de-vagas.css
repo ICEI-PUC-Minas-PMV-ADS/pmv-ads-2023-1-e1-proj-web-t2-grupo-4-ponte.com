@@ -1,0 +1,252 @@
+/* HEADER CSS*/
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  .wrapper img {
+    width: 180px;
+    margin-left: 60px;
+  }
+  
+  .wrapper .wrapper-search {
+    display: flex;
+    flex-direction: row;
+    border: solid 1px #4a4a4a;
+    border-radius: 5px;
+    opacity: 0.7;
+    padding: 5px;
+    width: 400px;
+    height: 32px;
+    margin-left: 30px;
+  }
+  
+  .wrapper .wrapper-search .wrapper-search-txt {
+    font-family: Roboto;
+    font-size: 15px;
+    color: #4a4a4a;
+    background-color: transparent;
+    border: none;
+    opacity: 0.6;
+    width: 400px;
+  }
+  
+  .wrapper .wrapper-search .wrapper-search-button {
+    width: 35px;
+    margin-left: 180px;
+    background-color: transparent;
+    border: none;
+  }
+  
+  .wrapper-search img {
+    margin: 0px;
+    width: 25px;
+  }
+  
+  .wrapper .wrapper-navbar {
+    display: flex;
+    flex-direction: row;
+    margin-right: 30px;
+    list-style: none;
+    font-family: Roboto;
+    color: #4a4a4a;
+    font-size: 18px;
+    height: 40px;
+  }
+  
+  .wrapper .wrapper-navbar .wrapper-li {
+    margin-left: 30px;
+    margin-top: 8px;
+  }
+  
+  .wrapper .wrapper-navbar .wrapper-button-active:hover {
+    color: black;
+  }
+  
+  .wrapper .wrapper-navbar .wrapper-li:hover {
+    background: white;
+    color: #fdc886;
+  }
+  
+  .wrapper .wrapper-foto {
+    width: 80px;
+    margin-right: 60px;
+    margin-left: 0px;
+  }
+
+
+  .roundBtn {
+    border-radius: 10px;
+    width: 40px;
+    height: 20px;
+    background-color: #fdc886;
+    border: none;
+  }
+  
+  body #principal {
+    height:fit-content;
+    margin-top: 3rem;
+  }
+  
+  
+  
+  #principal #containerChamada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    /* background-image: url(../img/manchaTintaRosa.png);
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: 50px 100px; */
+    /* background-color: #017071; */
+  }
+  
+  #principal #containerChamada #textoChamada {
+    /* background-color: #017071; */
+    margin-left: 10vw;
+  }
+  
+  #principal #containerChamada #textoChamada #decoration1 {
+    position: absolute;
+    width: 20%;
+    opacity: 0.7;
+    z-index: -1;
+    margin: -100px -100px;
+  }
+  
+  #principal #containerChamada #textoChamada h2 {
+    margin-bottom: 5vh;
+    font-size: var(--titleFontSizeBiger);
+    font-weight: var(--mediuCallsWeight);
+  }
+  
+  #principal #containerChamada #textoChamada p {
+    font-size: 18px;
+    text-align: left;
+  
+    width: 100%;
+  }
+  
+  #principal #containerChamada #textoChamada button {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  #principal #containerChamada img {
+    width: 42%;
+  }
+
+
+ .listaDetalhes h2 {
+    text-align: center;
+ }
+
+ .listaDetalhes{
+  width: 50%;
+  height: 75vh;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+ .listaDetalhes .campoDetalhe{
+   background-color: #9d9d9e;
+   border-radius: 20px;
+
+}
+
+ .listaDetalhes .campoDetalhe ul li{
+  /* background-color: #333; */
+  margin-bottom: 10px;
+}
+
+
+ .listaDetalhes .campoDetalhe .groupBtn{
+  /* background-color: royalblue; */
+  margin-left: 60%;
+  width: 35%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+}
+.formContainer .inputText {
+  border-radius: 4px;
+  display: block;
+  height: 4.5vh;
+  width: 95%;
+  margin-bottom: 20px;
+}
+
+.formContainer .textArea {
+  width: 95%;
+  display: block;
+  border-radius: 5px;
+}
+
+.formContainer .inputDate {
+  width: 95%;
+  height: 4vh;
+}
+
+#principal #containerCadastros #formularios #dateAreaInput {
+  display: flex;
+  height: 100px;
+  width: 95%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* estilização botões formulário XP */
+
+.formBtn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px 0px 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+#principal #containerCadastros #formularios #expForm #btnArea {
+  /* background-color: #8b73eb; */
+  height: 8vh;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+#principal #containerCadastros #formularios #qualificacoesForm #btnArea {
+  /* background-color: #8b73eb; */
+  height: 8vh;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+#principal #containerCadastros #formularios #qualificacoesListaContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around
+}
+
+/* estilzação do titulo H3 */
+#principal #containerCadastros #formularios h3 {
+  color: var(--titleColorDark);
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 30px;
+}
+
+#principal #containerCadastros #formularios #expForm {
+  margin-bottom: 20vh;
+}
