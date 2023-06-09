@@ -8,7 +8,7 @@ Antes do cadastro e/ou login o template apresenta o seguinte design, com uma nav
 <div align="center">
 <img width="550" src="img/MasterTemplate_SLogin.png"></div> 
 
-Após o login, a navbar se altera com a adição de uma barra de pesquisa. Os botões passam a ser de acesso ao "feed", às "vagas de voluntariado" e ao "dashboard". Além disso, é acrescentado um menu dropdown na lateral direita, que abre a partir da foto de perfil do usuário. Neste menu, existem as opções de acessar: "perfil", "minhas vagas", "mensagens" e "configurações". Veja a seguir:
+Após o login, a navbar se altera com a adição de uma barra de pesquisa. Os botões do menu de "sobre" e "vagas de voluntariado" se mantém, e é acrescentado um menu dropdown na lateral direita, que abre a partir da foto de perfil do usuário. Neste menu, existem as opções de acessar: "perfil", "editar dados" e "logout". Veja a seguir:
 <div align="center">
 <img width="550" src="img/MasterTemplate_Login.png"></div>
 
