@@ -32,7 +32,7 @@ const campoInicioPeriodoAtuacao = document.querySelector("#inicioPeriodoAtuacao"
 const campoFimPeriodoAtuacao = document.querySelector("#fimPeriodoAtuacao");
 const btnFormXpSalvar = document.querySelector("#btnSalvar");
 const btnFormXpLimpar = document.querySelector("#btnLimpar");
-const listaDetalhes = document.querySelector("#campoDetalhe");
+const listaDetalhes = document.querySelector("#listaDetalhes");
 
 // console.log(listaDetalhes);
 // fim da entrada de dados do formulario de cadastro de experiencias
@@ -67,23 +67,19 @@ function criarLinhaInteresse(){//cria para o formulario de interesses uma linha 
   let prioridade = document.createElement('td');
   let linhaIconExcluir = document.createElement('td');
   let btnExcluir = document.createElement('button');
+
   btnExcluir.setAttribute("class","formBtn");
-  // btnExcluir.setAttribute("class","formBtnExcluir");
   btnExcluir.setAttribute("id", "#excluirLinhaBtn");
   btnExcluir.innerText = "excluir";
-  // iconClass.setAttribute("class","fa-solid fa-trash");
-  // linhaIconExcluir.appendChild(iconClass);
+
   interesse.innerText = campoInteresse.value;
   prioridade.innerText = campoPrioridade.value;
-
-
-  // console.log(btnExcluir);
 
   linha.appendChild(interesse);
   linha.appendChild(prioridade);
   linha.appendChild(btnExcluir);
 
-  // console.log(linha);
+
 
     return (linha);
 }
@@ -94,8 +90,7 @@ function adicionarInteresse(){
   let linha = criarLinhaInteresse();
   let contInteresses = 0;
   tabelaInteresses.appendChild(linha);
-  // console.log(linha);
-  // console.log(tabelaInteresses);
+
   contInteresses += 1;
 
   return(contInteresses);
@@ -141,28 +136,75 @@ function verificarCamposVazios(formulario){ //Verifica se um campo de um form es
       if(inputList[i].value==""){
 
           return(inputList[i]);
+
       }else if(areaTexto[i] && areaTexto[i].value==""){
+
           return(areaTexto[i]);
+
       }else{
+
         return null;
+
       }
     }
 
-    // return vazio;
+
 }
 
-function criarDiv(){
-  let divElemento = document.createElement("div");
-  console.log(divElemento);
+function criarDivListaXP(){
+  let divDetalhes = document.createElement("div");
+  let campoDetalhe = document.createElement("div");
+  let titulo = document.createElement("h2");
+  let ul = document.createElement("ul");
+  let liPeriodoInicio = document.createElement("li");
+  let liPeriodoFim = document.createElement("li");
+  let liLocal = document.createElement("li");
+  let liCargo = document.createElement("li");
+  let liDescricao = document.createElement("li");
+  let divGroupBtn = document.createElement("div");
+  let btnEditar = document.createElement("button");
+  let btnExcluir = document.createElement("button");
+
+  divDetalhes.setAttribute("class","listaDetalhes");
+  campoDetalhe.setAttribute("class", ".campoDetalhe");
+  divGroupBtn.setAttribute("class", "groupBtn");
+  btnEditar.setAttribute("class", "formBtn");
+  btnExcluir.setAttribute("class", "formBtn");
+
+
+  liPeriodoInicio.innerText = campoInicioPeriodoAtuacao.value;
+  liPeriodoFim.innerText = campoFimPeriodoAtuacao.value;
+  liLocal.innerText = campoLocalAtuacao.value;
+  liCargo.innerText = campoCargoAtuacao.value;
+  liDescricao.innerText = campoDescricaoAtuacao.value;
+
+  ul.appendChild(liPeriodoInicio);
+  ul.appendChild(liPeriodoFim);
+  ul.appendChild(liLocal);
+  ul.appendChild(liCargo);
+  ul.appendChild(liDescricao);
+
+  btnEditar.innerText = "editar";
+  btnExcluir.innerText = "excluir";
+  divGroupBtn.appendChild(btnEditar);
+  divGroupBtn.appendChild(btnExcluir);
+  titulo.innerText = campoCargoAtuacao.value;
+  campoDetalhe.appendChild(titulo);
+  campoDetalhe.appendChild(ul)
+  campoDetalhe.appendChild(divGroupBtn);
+
+  // divDetalhes.appendChild(campoDetalhe);
+
+  console.log(campoDetalhe);
+
+  return(campoDetalhe);
 }
 
 function inserirDadosNaDiv(){
 
 }
 
-function inserirDivNaLista(divCriada, listaDeDivs){
 
-}
 
 function salvarDadosDoFormInteresses(formulario){
 
@@ -218,8 +260,9 @@ btnInteressesAdicionar.addEventListener('click', function(e){
 
     mostrarAlertaParaCampoVazio(campoVazio);
     campoVazio.addEventListener("click", (e)=>{
-      retiraAlertaParaCampoVazio(campoVazio)
-      e.preventDefault();
+    retiraAlertaParaCampoVazio(campoVazio);
+    e.preventDefault();
+
   });
 
   }else{
@@ -249,7 +292,12 @@ btnFormXpSalvar.addEventListener("click", function(e){
       e.preventDefault();
     });
   }
-  // let divCriada = criarDiv();
+  let divCriada = criarDivListaXP();
+  if(!divCriada){
+    console.log("erro na criação da div");
+  }else{
+    listaDetalhes.appendChild(divCriada);
+  }
   e.preventDefault();
 
 });
