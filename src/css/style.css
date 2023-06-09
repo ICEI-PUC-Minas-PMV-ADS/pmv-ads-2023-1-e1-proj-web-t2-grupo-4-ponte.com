@@ -1,4 +1,4 @@
-/* fontes e variáveis da parte Ademir e Thiago*/
+/* VARIÁVEIS DE ESTILO */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
 
 * {
@@ -6,7 +6,6 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: var(--fontSecondary);
 }
 
 :root {
@@ -16,224 +15,165 @@
   --titleColorLight: #fdc886;
   --fontPrimary: "Poppins", sans-serif;
   --fontSecondary: "Roboto", sans-serif;
-  --smallFontSize: 12px;
-  --mediumFontSize: 14px;
-  --largeFontSize: 16px;
-  --titleFontSize: 20px;
+  --smallFontSize: 16px;
+  --mediumFontSize: 18px;
+  --largeFontSize: 20px;
+  --titleFontSize: 24px;
   --textCallsWeight: 600;
 }
 
 /* INÍCIO PARTE SUPERIOR /*
 
-/* HEADER CSS */
+/* HEADER CSS 
+  NAVBAR USUÁRIO DESLOGADO */
 .wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1em;
+  margin-top: 33px;
+  font-family: var(--fontSecondary);
 }
 
-.wrapper img {
-  width: 13%;
-  margin-left: 4em;
+.wrapper #logo {
+  width: 180px;
+  margin-top: 5px;
+  margin-left: 40px;
 }
 
-.wrapper .wrapper-navbar {
+.wrapper img:hover {
+  cursor: pointer;
+}
+
+.wrapper .wrapperNavbar {
   display: flex;
   flex-direction: row;
-  margin-top: 2em;
-  margin-right: 4em;
   list-style: none;
-  font-family: Roboto;
-  color: #4a4a4a;
-  font-size: 18px;
+  align-items: center;
+  color: var(--titleColorDark);
+  font-size: var(--mediumFontSize);
+  margin-right: 60px;
 }
 
-.wrapper .wrapper-navbar .wrapper-button-active {
-  background-color: #fdc886;
+.wrapper .wrapperNavbar .wrapper-li {
+  margin-left: 4rem;
+}
+
+.wrapper .wrapperNavbar .wrapper-li:hover {
+  color: var(--titleColorLight);
+  cursor: pointer;
+}
+
+.wrapper a,
+a:visited {
+  color: inherit;
+}
+
+.wrapper .wrapperNavbar .wrapperButton-active {
+  background-color: var(--titleColorLight);
   padding: 0.5em;
   border-radius: 5px;
 }
 
-.wrapper .wrapper-navbar .wrapper-li {
-  margin-left: 2em;
-  margin-top: 8px;
-}
-
-.wrapper .wrapper-navbar .wrapper-button-active:hover {
+.wrapper .wrapperNavbar .wrapperButton-active:hover {
   color: black;
-}
-
-.wrapper .wrapper-navbar .wrapper-li:hover {
-  background: white;
-  color: #fdc886;
 }
 
 /* CONTENT CSS */
 .container {
   display: flex;
   flex-direction: row;
-  margin-left: 0em;
+  align-items: center;
+  margin: 40px 90px 10px 90px;
 }
 
-.container .container-image {
+.container .containerImage {
   display: flex;
   flex-direction: column;
-  width: 55%;
+  align-items: start;
+  flex: 2;
 }
 
-.container .container-image h1 {
+.container .containerImage img {
+  width: 65%;
+}
+
+.container .containerImage h1 {
   text-align: center;
-  font-family: Poppins;
+  font-family: var(--fontPrimary);
   font-weight: var(--textCallsWeight);
-  font-size: 36px;
-  color: #4a4a4a;
-  margin-bottom: -1em;
+  font-size: 34px;
+  color: var(--titleColorDark);
+  margin-bottom: 0.5rem;
 }
 
-.container .container-card {
+.container .containerCard {
   display: flex;
   flex-direction: column;
-  width: 45%;
-  margin: 6em 4em 8em 13em;
+  flex: 1;
   padding: 0.5em;
-  border: 1px solid #4a4a4a;
-  border-radius: 30px;
-  text-align: center;
+  height: 450px;
+  margin-left: 80px;
+  box-shadow: 12px 22px 65px -45px #4a4a4a;
+  border-radius: 15px;
+  /*background-color: red;*/
 }
 
-.container .container-card h1 {
-  font-family: Poppins;
+.container .containerCard h1 {
+  font-family: var(--fontPrimary);
   font-weight: var(--textCallsWeight);
-  color: #4a4a4a;
-  font-size: 25px;
-  margin-bottom: 2em;
+  color: var(--titleColorDark);
+  font-size: var(--titleFontSize);
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
-.container .container-card .container-content {
+.container .containerCard .container-content {
   display: flex;
   flex-direction: column;
-  font-family: Roboto;
-  font-weight: Medium;
-  font-size: 18px;
-  color: #4a4a4a;
+  font-family: var(--fontSecondary);
+  font-size: var(--mediumFontSize);
+  color: var(--titleColorDark);
 }
 
-input[type="text"],
-[type="password"] {
+.container .containerCard .container-content input {
   border: 1px solid #4a4a4a;
-  border-radius: 8px;
-  margin-bottom: 2em;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  height: 2rem;
 }
 
-.container .container-card .container-content button {
-  font-family: Roboto;
-  font-weight: Medium;
-  font-size: 15px;
-  font-family: Roboto;
-  font-weight: Bold;
-  font-size: 15px;
-  background: #fdc886;
-  color: #4a4a4a;
+.container .containerCard .container-content button {
+  font-family: var(--fontSecondary);
+  font-size: var(--mediumFontSize);
+  background: var(--titleColorLight);
+  color: var(--titleColorDark);
   border: none;
-  border-radius: 8px;
-  margin-top: 1.5em;
+  border-radius: 4px;
+  height: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.container .container-card .container-content button:hover {
-  color: black;
+.container .containerCard .container-content button:hover {
+  font-weight: var(--textCallsWeight);
+  cursor: pointer;
+}
+
+.container .containerCard .container-content p {
+  text-align: center;
+}
+
+.container .containerCard .container-content a,
+a:visited {
+  color: inherit;
+  text-decoration: underline;
 }
 
 /* UTILS CLASSNAMES */
 .margin-flexbox {
-  margin: 2em;
+  margin: 1.5em;
 }
-
-/* CONTENT CSS */
-.container {
-  display: flex;
-  flex-direction: row;
-  margin-top: 0px;
-}
-
-.container .container-image {
-  display: flex;
-  flex-direction: column;
-  width: 55%;
-  margin-left: -32px;
-}
-
-.container .container-image h1 {
-  text-align: center;
-  font-family: Poppins;
-  font-weight: Medium;
-  font-size: 36px;
-  color: #4a4a4a;
-  margin-bottom: -30px;
-}
-
-.container .container-card {
-  display: flex;
-  flex-direction: column;
-  width: 45%;
-  margin: 100px 70px 50px 250px;
-  padding: 20px;
-  border: 1px solid #4a4a4a;
-  border-radius: 30px;
-  text-align: center;
-}
-
-.container .container-card h1 {
-  font-family: Poppins;
-  font-weight: Medium;
-  color: #4a4a4a;
-  font-size: 25px;
-  margin-bottom: 40px;
-}
-
-.container .container-card .container-content {
-  display: flex;
-  flex-direction: column;
-  font-family: Roboto;
-  font-weight: Medium;
-  font-size: 18px;
-  color: #4a4a4a;
-}
-
-input[type="text"],
-[type="password"] {
-  border: 1px solid #4a4a4a;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-.container .container-card .container-content button {
-  font-family: Roboto;
-  font-weight: Medium;
-  font-size: 15px;
-  font-family: Roboto;
-  font-weight: Bold;
-  font-size: 15px;
-  background: #fdc886;
-  color: #4a4a4a;
-  border: none;
-  border-radius: 8px;
-  margin-top: 20px;
-}
-
-.container .container-card .container-content button:hover {
-  color: black;
-}
-
-/* UTILS CLASSNAMES */
-.margin-flexbox {
-  margin: 20px;
-}
-
-/* <!-- ================================================================================= -->
-    <!-- ================================================================================= -->
-    <!-- ================================================================================= --> */
 
 /* Inicio parte central homepage Jefferson. */
 
@@ -257,9 +197,9 @@ input[type="text"],
   font-size: 20px;
   position: relative;
   z-index: 1;
-  color: #4a4a4a;
+  color: var(--titleColorDark);
   bottom: -5em;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--fontPrimary);
   margin-top: 0px;
 }
 
@@ -270,7 +210,7 @@ input[type="text"],
   justify-content: right;
 }
 
-p {
+.card p {
   text-align: center;
   font-family: sans-serif;
   font-size: 14px;
@@ -432,8 +372,9 @@ p {
   line-height: 1.1rem;
 }
 
+/* FOOTER */
 #decFooter img {
-  opacity: 0.5;
+  opacity: 45%;
   width: 100%;
 }
 footer {
@@ -474,9 +415,9 @@ footer #footerContainer #formFooter input[type="email"] {
   margin: 3px auto 10px auto;
 }
 /* footer #footerContainer #formFooter input[type="textarea"] {
-  height: 100px;
-  text-align: initial;
-} */
+    height: 100px;
+    text-align: initial;
+  } */
 
 footer #footerContainer #formFooter textarea {
   text-align: start;
@@ -484,12 +425,4 @@ footer #footerContainer #formFooter textarea {
 footer #footerContainer #formFooter input[type="submit"] {
   margin: 10px auto 10px auto;
   width: 100%;
-} /*# sourceMappingURL=style.css.map */
-
-/* ================================================================= */
-/* ================================================================ */
-
-/* estilos da parte de baixo da homepage Ademir e Thiago */
-
-/* ================================================================= */
-/* ================================================================ */
+}
