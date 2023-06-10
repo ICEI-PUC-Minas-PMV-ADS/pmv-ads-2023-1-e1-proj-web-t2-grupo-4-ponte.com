@@ -32,7 +32,7 @@ body #principal {
   background-color: var(--bgColor);
   height:fit-content;
   margin-top: 3rem;
-  height: 100vh;
+  height: fit-content;
 }
 
 body footer{
@@ -101,6 +101,51 @@ body footer{
 
 }
 
+#principal #formsContainer #infBasica{
+  background-color: #d9d9d9;
+  height: fit-content;
+  width: 60vw;
+  margin: 20px auto 100px auto;
+  border-radius: 5px;
+  padding: 50px;
+
+
+}
+#principal #formsContainer h3{
+  text-align: center;
+  margin-top: 150px;
+}
+
+#principal #formsContainer #infBasica textarea{
+
+  width: 100%;
+  height: 80px;
+}
+
+#principal #formsContainer #infBasica input{
+  width: 100%;
+  height: 40px;
+}
+#principal #formsContainer #infBasica label{
+  display: block;
+  margin: 10px 0px 10px 0px;
+  color:#4a4a4a
+}
+
+#principal #formsContainer #infBasica #btnArea{
+  /* background-color: #FDC886; */
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+#principal #formsContainer #infBasica #btnArea button{
+  padding: 10px 20px;
+  border-radius: 5px;
+}
 
 
 .roundBtnDk {
@@ -109,4 +154,13 @@ body footer{
   height: 20px;
   background-color: #333;
   border: none;
+}
+
+.formContainer{
+  background-color: #d9d9d9;
+  width: 30vw;
+  height: fit-content;
+  border-radius: 5px;
+  /* margin-left: 5rem; */
+  padding: 55px;
 }

@@ -53,7 +53,7 @@
 
 
 
-          <h2>Nos conte um pouco mais sobre sua instituição</h2>
+          <h2>Conte um pouco mais sobre sua instituição</h2>
 
           <p>
             Este espaço é reservado para que você nos informe mais detalhes sobre sua missão.
@@ -65,7 +65,7 @@
 
               <i
                 class="fa-solid fa-arrow-down fa-sm"
-                style="color: #f6d6ac"
+                style="color: #f8f8f9"
               ></i>
 
             </button>
@@ -78,6 +78,65 @@
         <img src="img/cadastrando.svg" alt="" />
 
       </div>
+
+      <div id="formsContainer">
+        <h3>compartilhe sua visão</h3>
+        <form action="" id="infBasica">
+
+          <div id="inputNome" class="inputArea">
+            <label for="nomeInstituicao">nome da instituição:</label>
+            <input name="nomeInstituicao" type="text" id="nomeInstituicao"></input>
+          </div>
+
+          <div id="inputMissao" class="inputArea">
+            <label for="missao">missão:</label>
+            <!-- <input name="nomeInstituicao" type="text" id="nomeInstituicao"></input> -->
+            <textarea name="missao" id="" cols="30" rows="10" title="informe a missão de sua organização">missão...</textarea>
+          </div>
+
+          <div id="inputVisao" class="inputArea">
+            <label for="visao">visão:</label>
+            <!-- <input name="nomeInstituicao" type="text" id="nomeInstituicao"></input> -->
+            <textarea name="visao" id="visao" cols="30" rows="10" title="informe a missão de sua organização">visão...</textarea>
+          </div>
+
+          <div id="inputValores" class="inputArea">
+            <label for="valores">valores:</label>
+            <!-- <input name="nomeInstituicao" type="text" id="nomeInstituicao"></input> -->
+            <textarea name="valores" id="valores" cols="30" rows="10" title="informe a missão de sua organização">valores...</textarea>
+          </div>
+
+          <div id="btnArea">
+            <button id="salvar">salvar</button>
+            <button id="limpar">limpar</button>
+          </div>
+        </form>
+
+        <h3>informe seus contatos</h3>
+        <form action="" id="contatos">
+          <div id="inputAreaEmail">
+            <label for="email">email:</label>
+            <input type="email" name="email" id="email">
+          </div>
+
+
+          <div id="inputAreaTelefone">
+            <label for="telefone">telefone:</label>
+            <input type="tel" name="telefone" id="telefone" title="informe o telefone">
+          </div>
+
+
+          <div id="inputAreaRedes">
+            <label for="redesSociais">redes</label>
+            <input type="text" name="redesSociais" id="redesSociaisInsta" title="informe suas redes">
+            <input type="text" name="redesSociais" id="redesSociaisFace" title="informe suas redes">
+            <input type="text" name="redesSociais" id="redesSociaisSite" title="informe suas redes">
+          </div>
+
+        </form>
+
+      </div>
+
 
     </main>
 
