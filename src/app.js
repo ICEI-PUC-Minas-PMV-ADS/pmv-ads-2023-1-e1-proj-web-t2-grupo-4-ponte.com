@@ -37,8 +37,22 @@ const btnFormXpSalvar = document.querySelector("#btnSalvar");
 const btnFormXpLimpar = document.querySelector("#btnLimpar");
 const listaDetalhes = document.querySelector("#listaDetalhes");
 
-// console.log(listaDetalhes);
+
 // fim da entrada de dados do formulario de cadastro de experiencias
+
+
+//Campos do formulario de qualificações
+  const formQualificacoes = document.querySelector("#qualificacoes");
+  const nomeCurso = document.querySelector("#nomeCurso");
+  const tipoCurso = document.querySelector("#tipoCurso");
+  const nomeInstituicao = document.querySelector("#nomeInstituicao");
+  const areaCurso = document.querySelector("#areaCurso");
+  const inicioCurso = document.querySelector("#inicioCurso");
+  const fimCurso = document.querySelector("#fimCurso");
+  const btnSalvarCurso = document.querySelector("#btnSalvarCurso");
+  const listaQualificacoes = document.querySelector("#listaQualificacoes");
+
+//Fim do campo do formulario de qualificações
 
 function mostraPrioridade(campoPrioridade, valorPrioridade){
 
@@ -185,6 +199,7 @@ function criarDivListaXP(){
   titulo.setAttribute("class", "titulosH3");
   divGroupBtn.setAttribute("id","btnArea");
 
+  divDetalhes.setAttribute("class","listaDetalhes");
   divDetalhes.setAttribute("class","listaDetalhes");
   campoDetalhe.setAttribute("class", ".campoDetalhe");
   divGroupBtn.setAttribute("class", "groupBtn");
@@ -343,6 +358,61 @@ function salvarDadosUser(formulario){
 }
 
 
+function criarDivListaQualif(){
+
+  let divContainer = document.createElement("div");
+  divContainer.setAttribute("id", "cardCurso");
+  divContainer.setAttribute("class", "campoDetalhe");
+
+  let tituloH2 = document.createElement("h2");
+  tituloH2.setAttribute("class", "titulosH3");
+  tituloH2.innerText = "qualificações";
+
+  let ulDados = document.createElement("ul");
+
+  let liPeriodoInicio = document.createElement("li");
+  let liPeriodoFim = document.createElement("li");
+  let liInstituicao = document.createElement("li");
+  let liAreaCurso = document.createElement("li");
+
+
+  liPeriodoInicio.innerText ="de: "+ inicioCurso.value;
+  liPeriodoFim.innerText = "até: "+fimCurso.value;
+  liInstituicao.innerText = "instituição: "+nomeInstituicao.value;
+  liAreaCurso.innerText ="área: "+ areaCurso.value;
+
+
+  ulDados.appendChild(liPeriodoInicio);
+  ulDados.appendChild(liPeriodoFim);
+  ulDados.appendChild(liInstituicao);
+  ulDados.appendChild(liAreaCurso);
+
+
+  let divBtn = document.createElement("div");
+  divBtn.setAttribute("class", "groupBtn");
+  divBtn.setAttribute("class", "btnArea");
+  divBtn.setAttribute("id","btnArea");
+
+  let btnEditar = document.createElement("button");
+  btnEditar.innerText ="editar";
+  btnEditar.setAttribute("class", "formBtn");
+  let btnExcluir = document.createElement("button");
+  btnExcluir.setAttribute("class", "formBtn");
+  btnExcluir.innerText = "excluir";
+
+  btnEditar.setAttribute("type", "submit");
+  btnExcluir.setAttribute("type", "submit");
+
+  divBtn.appendChild(btnEditar);
+  divBtn.appendChild(btnExcluir);
+
+  divContainer.appendChild(tituloH2);
+  divContainer.appendChild(ulDados);
+  divContainer.appendChild(divBtn);
+
+  return(divContainer);
+}
+
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 //Fluxo Principal<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FLUXO PRINCIPAL
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -429,3 +499,28 @@ btnSalvarUser.addEventListener("click",function(e){
   }
   e.preventDefault();
 })
+
+
+btnSalvarCurso.addEventListener("click",function(e){
+
+  let campoVazio = verificarCamposVazios(formQualificacoes);
+
+  if(campoVazio){
+     mostrarAlertaParaCampoVazio(campoVazio);
+     campoVazio.addEventListener("click", function(e){
+     retiraAlertaParaCampoVazio(campoVazio);
+     e.preventDefault();
+  });
+
+  }else{
+
+    let divCriada = criarDivListaQualif();
+    if(!divCriada){
+     console.log("erro na criação da div");
+    }else{
+      listaQualificacoes.appendChild(divCriada);
+    }
+  }
+
+  e.preventDefault();
+});
