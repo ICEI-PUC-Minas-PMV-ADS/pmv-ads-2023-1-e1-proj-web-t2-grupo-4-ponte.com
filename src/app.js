@@ -169,14 +169,16 @@ function criarDivListaXP(){
   let liSpanDe = document.createElement("span");
   let liSpanAte = document.createElement("span");
 
-
-  divGroupBtn.setAttribute("class","btnArea");
+  titulo.setAttribute("class", "titulosH2");
+  divGroupBtn.setAttribute("id","btnArea");
 
   divDetalhes.setAttribute("class","listaDetalhes");
   campoDetalhe.setAttribute("class", ".campoDetalhe");
   divGroupBtn.setAttribute("class", "groupBtn");
   btnEditar.setAttribute("class", "formBtn");
   btnExcluir.setAttribute("class", "formBtn");
+
+
 
   liSpanDe.innerText ="de:";
   liSpanAte.innerText ="até:"
@@ -209,6 +211,7 @@ function criarDivListaXP(){
 
 
   campoDetalhe.setAttribute("classe","cardExp");
+  campoDetalhe.setAttribute("id","cardExp")
   console.log(campoDetalhe);
   return(campoDetalhe);
 }
