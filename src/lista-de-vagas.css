@@ -142,111 +142,90 @@
     width: 42%;
   }
 
+/* ================================================================= */
+/* ================================================================ */
 
- .listaDetalhes h2 {
-    text-align: center;
- }
+/* Inicio área do filtro */
 
- .listaDetalhes{
-  width: 50%;
-  height: 75vh;
-  overflow: hidden;
-  overflow-y: scroll;
+#pesquise {
+  color: #4a4a4a;
+  font-size: 18px;
+  margin-left: 25%;
 }
 
- .listaDetalhes .campoDetalhe{
-   background-color: #9d9d9e;
-   border-radius: 20px;
-
-}
-
- .listaDetalhes .campoDetalhe ul li{
-  /* background-color: #333; */
-  margin-bottom: 10px;
-}
-
-
- .listaDetalhes .campoDetalhe .groupBtn{
-  /* background-color: royalblue; */
-  margin-left: 60%;
-  width: 35%;
-  height: fit-content;
+#xpListaContainer {
+  background-color: rgb(240, 252, 250, 1);
+  border-radius: 10px;
+  margin-bottom: 30px;
+  margin-left: 25%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
-
-}
-.formContainer .inputText {
-  border-radius: 4px;
-  display: block;
-  height: 4.5vh;
-  width: 95%;
-  margin-bottom: 20px;
-}
-
-.formContainer .textArea {
-  width: 95%;
-  display: block;
-  border-radius: 5px;
-}
-
-.formContainer .inputDate {
-  width: 95%;
-  height: 4vh;
-}
-
-#principal #containerCadastros #formularios #dateAreaInput {
-  display: flex;
-  height: 100px;
-  width: 95%;
   align-items: center;
+  width: 50%;
+  gap: 10px;
+}
+
+#campoAreaAtuacao label {
+  font-family: sans-serif;
+  font-size: 15px;
+  margin-left: 10px;  
+}
+
+.formContainer .inputText {
+  border-radius: 5px;
+  height: 4.5vh;
+  /* width: 100%; */
+  margin-left: 10px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-right: 10px;
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
   justify-content: space-between;
 }
 
-/* estilização botões formulário XP */
+.filtro {
+  margin-right: 10px;
+}
 
 .formBtn {
-  padding: 10px 20px;
+  padding: 5px 10px;
   border-radius: 5px;
   margin: 10px 0px 10px;
   width: 100%;
   cursor: pointer;
 }
+/* Fim da área de filtro */
 
-#principal #containerCadastros #formularios #expForm #btnArea {
-  /* background-color: #8b73eb; */
-  height: 8vh;
-  width: 95%;
+/* área de vagas */
+
+.lista-vagas h2 {
+    text-align: center;
+ }
+
+ .lista-vagas{
+  width: 70%;
+  margin: 0 auto;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  background-color: rgb(240, 252, 250, 1);
+  /* overflow: hidden;
+  overflow-y: scroll; */
 }
 
-#principal #containerCadastros #formularios #qualificacoesForm #btnArea {
-  /* background-color: #8b73eb; */
-  height: 8vh;
-  width: 95%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  gap: 20px;
+ .lista-vagas .campo-vagas{
+   background-color: #fceedc;
+   border-radius: 10px;
+   width: 90%;
 }
 
-#principal #containerCadastros #formularios #qualificacoesListaContainer{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around
+ .lista-vagas .campo-vagas ul li{
+  /* background-color: #333; */
+  margin-bottom: 10px;
 }
-
-/* estilzação do titulo H3 */
-#principal #containerCadastros #formularios h3 {
-  color: var(--titleColorDark);
-  text-align: center;
-  margin-bottom: 50px;
-  font-size: 30px;
-}
-
-#principal #containerCadastros #formularios #expForm {
-  margin-bottom: 20vh;
-}
+/* Fim da área de vagas */
