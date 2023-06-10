@@ -13,14 +13,14 @@ let htmlPerfilVol = function (f) {
       </div>
       <div class="cabecalhoDir">
         <section class="cabecalhoBio">
-          <h1 id="nomeUsuario">${f.nome}</h1>
+          <h1 id="nomeUsuario">${f.nomeUsuario}</h1>
           <p id="bio">
             ${f.textoBio}
           </p>
           <div class="cabecalho-interesses">
             <h3>Interesses:</h3>
             <ul id="campoInteresse">
-            ${f.tabelaInteresses
+            ${f.interesses
               .map(function (e) {
                 return "<li>" + e + "</li>";
               })

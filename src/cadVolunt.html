@@ -10,7 +10,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="pagina-perfil-style.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -99,111 +99,89 @@
       <!-- fim da apresentação da página -->
 
       <!-- início da seção de cadastros. Com 3 seções ao todo: cadastro de interesses, experiências e qualificações -->
-      <div id="containerCadastros">
 
+      <h2 class="titulosH2">informações de usuário</h2>
 
-        <h2>informações de usuário</h2>
+      <form action="" class="formContainerGrande" id="formInfBasica">
 
-        <div id="infBasica">
-          <form action="" class="formContainer formContainerGrande" id="formInfBasica">
-            <div id="campoNome">
+          <div id="campoNome" class="regiaoInput">
               <label for="nomeUsuario" class="labels">Informe seu nome completo:</label>
               <input type="text" name="nomeUsuario" id="nomeUsuario" class="inputText">
-            </div>
+          </div>
 
-            <div id="campoEmail">
+          <div id="campoEmail" class="regiaoInput">
               <label for="emailUsuario" class="labels">Informe seu e-mail:</label>
               <input type="text" name="emailUsuario" id="emailUsuario" class="inputText">
-            </div>
+          </div>
 
-            <div id="campoSenha">
+          <div id="campoSenha" class="regiaoInput">
               <label for="senhaUsuario" class="labels">Informe uma senha:</label>
               <input type="password" name="senhaUsuario" id="senhaUsuario" class="inputText">
-            </div>
+          </div>
 
-            <div id="biografia">
+          <div id="biografia" class="regiaoInput">
               <label for="biografia" class="labels">Fale um pouco sobre você:</label>
               <textarea name="biografia" id="textoBiografia" cols="30" rows="10" title="escreva um pouco sobre você" class="textArea"></textarea>
-            </div>
+          </div>
 
-            <div id="fotoPerfil">
+          <div id="fotoPerfil" class="regiaoInput">
               <label for="foto" class="labels">Adicione uma foto ao seu perfil:</label>
               <input type="file" accept="img/*" src="" alt="imagem do perfil" class="textArea" id="imagemPerfil" title="carregue uma imagem">
-            </div>
-            <div id="botoesInfBasica" class="btnArea">
+          </div>
+
+          <div id="botoesInfBasica" class="btnArea">
               <button type="submit" class="formBtn" id="salvarUser">salvar</button>
               <button type="reset" class="formBtn" id="reserFormUser">limpar</button>
-            </div>
-          </form>
-        </div>
-
-                              <h2>pesquise e adicione seus interesses</h2>
-        <div id="nuvemInteresses">
-
-          <div id="formInteresses">
-
-            <form action="" id="cadastroInteresses" class="formContainerPequeno">
-
-              <label for="campoInteresse" class="labels">interesse</label>
-              <input
-                type="text"
-                class="inputs"
-                name="campoInteresse"
-                id="campoInteresse"
-              />
-
-              <label for="campoPrioridade" value="prioridade" class="labels">prioridade: <output for="campoPrioridade" id="valorPrioridade">1</output> </label>
-              <input
-                type="range"
-                name="campoPrioridade"
-                id="campoPrioridade"
-                min="1"
-                max="5"
-                step="1"
-                value="1";
-              />
-
-              <div id="botoes" class="btnArea">
-                <button id="adicionar" type="submit" class="formBtn">salvar</button>
-                <button id="limpar" type="reset" class="formBtn">limpar</button>
-              </div>
-
-            </form>
           </div>
+
+      </form>
+
+
+      <h2 class="titulosH2">pesquise e adicione seus interesses</h2>
+
+      <div id="containerInteresses" class="regiaoContainer">
+
+          <form action="" id="cadastroInteresses" class="formContainerGrande">
+            <div class="regiaoInput">
+              <label for="campoInteresse" class="labels">interesse</label>
+              <input type="text" class="inputText" name="campoInteresse" id="campoInteresse"/>
+            </div>
+
+            <div class="regiaoInput">
+              <label for="campoPrioridade" value="prioridade" class="labels">prioridade: <output for="campoPrioridade" id="valorPrioridade">1</output> </label>
+              <input  type="range" class="inputText" name="campoPrioridade" id="campoPrioridade" min="1" max="5" step="1" value="1"/>
+            </div>
+
+            <div id="botoes" class="btnArea">
+              <button id="adicionar" type="submit" class="formBtn">salvar</button>
+              <button id="limpar" type="reset" class="formBtn">limpar</button>
+            </div>
+
+          </form>
 
           <div id="listaInteresses">
-            <!-- <h3>interesses e prioridades</h3> -->
-            <table id="tabelaInteresses">
-              <tr >
-                <th>Interesses</th>
-                <th>Prioridades</th>
-              </tr>
 
-              <!-- <tr class="linha">
-                <td>interesse 1</td>
-                <td>prioridade 1</td>
-                <td><i class="fa-solid fa-trash"></i></td>
-              </tr> -->
-
-
-            </table>
-
-
+              <table id="tabelaInteresses" class="tabelaInteresses">
+                <tr>
+                  <th>Interesses e prioridades</th>
+                </tr>
+                <!-- <tr class="linha">
+                  <td>interesse 1</td>
+                  <td>prioridade 1</td>
+                  <td><i class="fa-solid fa-trash"></i></td>
+                </tr> -->
+              </table>
           </div>
 
-        </div>
+      </div>
 
-        <div id="formularios">
 
-          <h3>experiências</h3>
+      <h2 class="titulosH2">experiências</h2>
+      <div id="containerExperiencias">
 
-          <div id="xpListaContainer">
+        <form action="" id="experiencias" class="formConainer formContainerGrande">
 
-            <div id="expForm">
-
-              <form action="" id="experiencias" class="formConainer formContainerGrande">
-
-                <div id="campoAreaAtuacao">
+          <div id="campoAreaAtuacao">
                   <label for="areaAtuacao" class="labelForm">área de atuação:</label>
                   <input
                     type="text"
@@ -212,9 +190,9 @@
                     class="inputText"
                     placeholder="Informe uma experiência"
                   />
-                </div>
+          </div>
 
-                <div id="campoLocalAtuacao">
+          <div id="campoLocalAtuacao">
                   <label for="localAtuacao" class="">local onde atuou:</label>
                   <input
                     type="text"
@@ -223,9 +201,9 @@
                     class="inputText"
                     placeholder="Informe o local onde atuou"
                   />
-                </div>
+          </div>
 
-                <div id="campoCargoAtuacao">
+          <div id="campoCargoAtuacao">
                   <label for="cargoAtuacao">cargo que ocupou:</label>
                   <input
                     type="text"
@@ -234,9 +212,9 @@
                     class="inputText"
                     placeholder="Informe a instituição onde atuou"
                   />
-                </div>
+          </div>
 
-                <div id="campoDescricao">
+          <div id="campoDescricao">
 
                   <label for="descricaoAtuacao">
                     descrição das atividades:
@@ -249,88 +227,47 @@
                     cols="30"
                     rows="5"
                   ></textarea>
+          </div>
+
+          <div id="dateAreaInput" class="dateAreaInput">
+
+              <label for="inicioPeriodoAtuacao">de:</label>
+              <input
+                  type="date"
+                  name="inicioPeriodoAtuacao"
+                  id="inicioPeriodoAtuacao"
+                  class="inputDate"
+              />
+
+              <label for="fimPeriodoAtuacao">até:</label>
+                <input
+                    type="date"
+                    name="fimPeriodoAtuacao"
+                    id="fimPeriodoAtuacao"
+                    class="inputDate"
+                  />
+
                 </div>
 
-                <div id="dateAreaInput">
-                  <div id="campoInicioPeriodoAtuacao">
-                    <label for="inicioPeriodoAtuacao">de:</label>
-                    <input
-                      type="date"
-                      name="inicioPeriodoAtuacao"
-                      id="inicioPeriodoAtuacao"
-                      class="inputDate"
-                    />
-                  </div>
-
-                  <div id="campoFimPeriodoAtuacao">
-                    <label for="fimPeriodoAtuacao">até:</label>
-                    <input
-                      type="date"
-                      name="fimPeriodoAtuacao"
-                      id="fimPeriodoAtuacao"
-                      class="inputDate"
-                    />
-                  </div>
-                </div>
 
                 <div id="btnArea" class="btnArea">
                   <button id="btnSalvar" class="formBtn">salvar</button>
                   <button id="btnLimpar" type="reset" class="formBtn">limpar</button>
                 </div>
-              </form>
-            </div>
+          </form>
 
-            <div class="listaDetalhes" id="listaDetalhes">
+          <div class="listaDetalhes" id="listaDetalhes">
+            <h3 class="titulosH3">experiências</h3>
 
-              <!-- <h2>Experiencias</h2>
-              <div class="campoDetalhe" id="campoDetalhe">
-                <h2>Experiência 1</h2>
-
-                <div class="groupBtn">
-                    <button type="reset" class="formBtn">editar</button>
-                    <button type="reset" class="formBtn" title="excluir">excluir</button>
-                </div>
-
-              </div> -->
-
-              <!-- <div class="campoDetalhe">
-                <h2>Experiência 2</h2>
-                <ul>
-                  <li>período: de dd/mm/aa até dd/mm/aa</li>
-                  <li>local: local da experiência</li>
-                  <li>cargo: cargo ocupado</li>
-                  <li>descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore amet blanditiis itaque neque nostrum dolorem, aliquid praesentium labore soluta doloremque in fugit nemo exercitationem expedita? Voluptates reprehenderit delectus facilis fugit?</li>
-                </ul>
-                <div class="groupBtn">
-                  <button type="reset" class="formBtn">editar</button>
-                  <button type="reset" class="formBtn" title="excluir"><i class="fa-solid fa-trash"></i></button>
-                </div>
-
-              </div>
-
-                <div class="campoDetalhe">
-                <h2>Experiência 3</h2>
-                <ul>
-                  <li>período: de dd/mm/aa até dd/mm/aa</li>
-                  <li>local: local da experiência</li>
-                  <li>cargo: cargo ocupado</li>
-                  <li>descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore amet blanditiis itaque neque nostrum dolorem, aliquid praesentium labore soluta doloremque in fugit nemo exercitationem expedita? Voluptates reprehenderit delectus facilis fugit?</li>
-                </ul>
-
-                <div class="groupBtn">
-                  <button type="reset" class="formBtn">editar</button>
-                  <button type="reset" class="formBtn" title="excluir"><i class="fa-solid fa-trash"></i></button>
-                </div> -->
-
-              </div>
-            </div>
           </div>
 
+      </div>
 
-          <div id="qualificacoesForm">
-            <h3>qualificações</h3>
-            <div id="qualificacoesListaContainer">
-              <form action="" id="qualificacoes" class="formContainer formContainerGrande">
+
+      <h2 class="titulosH2">qualificações</h2>
+      <div id="containerQualificacoes">
+
+          <form action="" id="qualificacoes" class="formContainer formContainerGrande">
               <div id="campoNomeCurso">
                 <label for="nomeCurso">nome do curso:</label>
                 <input
@@ -375,90 +312,55 @@
                 />
               </div>
 
-              <div id="dateAreaInput">
-                <div id="campoInicioCurso">
-                  <label for="inicioCurso">de:</label>
-                  <input
+            <div id="dateAreaInput" class="dateAreaInput">
+
+              <label for="inicioPeriodoAtuacao">de:</label>
+              <input
+                  type="date"
+                  name="inicioPeriodoAtuacao"
+                  id="inicioPeriodoAtuacao"
+                  class="inputDate"
+              />
+
+              <label for="fimPeriodoAtuacao">até:</label>
+                <input
                     type="date"
-                    name="inicioCurso"
-                    id="inicioCurso"
+                    name="fimPeriodoAtuacao"
+                    id="fimPeriodoAtuacao"
                     class="inputDate"
                   />
+
                 </div>
 
-                <div id="campoFimCurso">
-                  <label for="fimCurso">até:</label>
-                  <input
-                    type="date"
-                    name="fimCurso"
-                    id="fimCurso"
-                    class="inputDate"
-                  />
+                <div id="btnArea" class="btnArea">
+                  <button id="btnSalvar" class="formBtn">salvar</button>
+                  <button id="btnLimpar" type="reset" class="formBtn">limpar</button>
                 </div>
-              </div>
+          </form>
 
-              <div id="btnArea" class="btnArea">
-                <button id="btnSalvar" class="formBtn">salvar</button>
-                <button id="btnLimpar" class="formBtn">limpar</button>
-              </div>
-            </form>
+          <div id="listaQualificacoes" class="listaDetalhes">
+            <h3 class="titulosH3">qualificações</h3>
+              <div class="campoDetalhe" class="cardExp" id="cardCurso">
 
-            <div class="listaDetalhes">
+                <h2 class="titulosH3">Curso 1</h2>
 
-              <div class="campoDetalhe">
-                <h2>Curso 1</h2>
                 <ul>
                   <li>período: de dd/mm/aa até dd/mm/aa</li>
                   <li>instituição: local onde cursou</li>
                   <li>área do curso: informática</li>
                   <li>descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore amet blanditiis itaque neque nostrum dolorem, aliquid praesentium labore soluta doloremque in fugit nemo exercitationem expedita? Voluptates reprehenderit delectus facilis fugit?</li>
                 </ul>
-                <div class="groupBtn">
+
+                <div class="groupBtn" class="btnArea" id="btnArea">
                     <button type="reset" class="formBtn">editar</button>
-                    <button type="reset" class="formBtn" title="excluir"><i class="fa-solid fa-trash"></i></button>
+                    <button type="reset" class="formBtn" title="excluir">excluir</button>
                 </div>
 
               </div>
-
-              <div class="campoDetalhe">
-                <h2>Curso 2</h2>
-                <ul>
-                  <li>período: de dd/mm/aa até dd/mm/aa</li>
-                  <li>local: local da experiência</li>
-                  <li>cargo: cargo ocupado</li>
-                  <li>descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore amet blanditiis itaque neque nostrum dolorem, aliquid praesentium labore soluta doloremque in fugit nemo exercitationem expedita? Voluptates reprehenderit delectus facilis fugit?</li>
-                </ul>
-                <div class="groupBtn">
-                  <button type="reset" class="formBtn">editar</button>
-                  <button type="reset" class="formBtn" title="excluir"><i class="fa-solid fa-trash"></i></button>
-                </div>
-
-              </div>
-
-                <div class="campoDetalhe">
-                <h2>Experiência 3</h2>
-                <ul>
-                  <li>período: de dd/mm/aa até dd/mm/aa</li>
-                  <li>local: local da experiência</li>
-                  <li>cargo: cargo ocupado</li>
-                  <li>descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore amet blanditiis itaque neque nostrum dolorem, aliquid praesentium labore soluta doloremque in fugit nemo exercitationem expedita? Voluptates reprehenderit delectus facilis fugit?</li>
-                </ul>
-
-                <div class="groupBtn">
-                  <button type="reset" class="formBtn">editar</button>
-                  <button type="reset" class="formBtn" title="excluir"><i class="fa-solid fa-trash"></i></button>
-                </div>
-
-              </div>
-            </div>
-
-            </div>
-
           </div>
-        </div>
       </div>
-      <!-- fim da seção de cadastros. Com 3 seções ao todo: cadastro de interesses, experiências e qualificações -->
 
+      <!-- fim da seção de cadastros. Com 3 seções ao todo: cadastro de interesses, experiências e qualificações -->
 
     </main>
     <!-- fim da seção principal do site -->
