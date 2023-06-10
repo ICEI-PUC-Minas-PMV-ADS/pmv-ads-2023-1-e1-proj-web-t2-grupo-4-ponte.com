@@ -326,19 +326,6 @@ function salvarDadosDoFormQualificacoes(formulario){
       datasFim = JSON.parse(window.localStorage.datasFim);
     }
 
-
-      // valores.push(valorInteresse);
-      // window.localStorage.valores = JSON.stringify(valores);
-      // prioridades.push(prioridadeInteresse);
-      // window.localStorage.prioridades = JSON.stringify(prioridades);
-
-  // console.log(nomeCurso);
-  // console.log(tipoCurso);
-  // console.log(nomeInstituicao);
-  // console.log(areaCurso);
-  // console.log(dataInicio);
-  // console.log(dataFim);
-
     nomesCursos.push(nomeCurso);
     window.localStorage.nomesCursos = JSON.stringify(nomesCursos);
     tiposCursos.push(tipoCurso);
@@ -352,6 +339,76 @@ function salvarDadosDoFormQualificacoes(formulario){
     datasFim.push(dataFim);
     window.localStorage.datasFim = JSON.stringify(datasFim);
 
+
+}
+
+function salvarDadosDoFormExp(formulario){
+  let areaAtuacao = formulario.querySelector("#areaAtuacao").value;
+  let localAtuacao = formulario.querySelector("#localAtuacao").value;
+  let cargoAtuacao = formulario.querySelector("#cargoAtuacao").value;
+  let descricaoAtuacao = formulario.querySelector("#descricaoAtuacao").value;
+  let inicioPeriodoAtuacao = formulario.querySelector("#inicioPeriodoAtuacao").value;
+  let fimPeriodoAtuacao = formulario.querySelector("#fimPeriodoAtuacao").value;
+
+  let areas = [];
+  let locais = [];
+  let cargos = [];
+  let descricoes = [];
+  let periodosInicio = [];
+  let periodosFim = [];
+
+
+  if(!window.localStorage.areas
+      && !window.localStorage.locais
+      && !window.localStorage.cargos
+      && !window.localStorage.descricoes
+      && !window.localStorage.periodosInicio
+      && !window.localStorage.periodosFim
+
+  ){
+      let areas = [];
+      let locais = [];
+      let cargos = [];
+      let descricoes = [];
+      let periodosInicio = [];
+      let periodosFim = [];
+
+      window.localStorage.areas = [];
+      window.localStorage.locais = [];
+      window.localStorage.cargos = [];
+      window.localStorage.descricoes = [];
+      window.localStorage.periodosInicio = [];
+      window.localStorage.periodosFim = [];
+  }else{
+        areas = JSON.parse(window.localStorage.areas);
+        locais = JSON.parse(window.localStorage.locais);
+        cargos = JSON.parse(window.localStorage.cargos);
+        descricoes = JSON.parse(window.localStorage.descricoes);
+        periodosInicio = JSON.parse(window.localStorage.periodosInicio);
+        periodosFim = JSON.parse(window.localStorage.periodosFim);
+
+  }
+
+
+  areas.push(areaAtuacao);
+  window.localStorage.areas = JSON.stringify(areas);
+  locais.push(localAtuacao);
+  window.localStorage.locais = JSON.stringify(locais);
+  cargos.push(cargoAtuacao);
+  window.localStorage.cargos = JSON.stringify(cargos);
+  descricoes.push(descricaoAtuacao);
+  window.localStorage.descricoes = JSON.stringify(descricoes);
+  periodosInicio.push(inicioCurso);
+  window.localStorage.periodosInicio = JSON.stringify(periodosInicio);
+  periodosFim.push(fimCurso);
+  window.localStorage.periodosFim = JSON.stringify(periodosFim);
+
+  // console.log(areaAtuacao);
+  // console.log(localAtuacao);
+  // console.log(cargoAtuacao);
+  // console.log(descricaoAtuacao);
+  // console.log(inicioPeriodoAtuacao);
+  // console.log(fimPeriodoAtuacao);
 
 }
 
@@ -553,6 +610,7 @@ btnFormXpSalvar.addEventListener("click", function(e){
     console.log("erro na criação da div");
   }else{
     listaDetalhes.appendChild(divCriada);
+    salvarDadosDoFormExp(formExperiencias);
   }
   e.preventDefault();
 
