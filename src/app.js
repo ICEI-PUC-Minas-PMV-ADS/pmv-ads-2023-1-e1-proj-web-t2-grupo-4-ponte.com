@@ -9,6 +9,7 @@ const campoEmailUsuario = document.querySelector("#emailUsuario");
 const imagemPerfil = document.querySelector("#imagemPerfil");
 const btnSalvarUser = document.querySelector("#salvarUser");
 const btnResetFormUser = document.querySelector("#resetFormUser");
+const fr = new FileReader();
 
 
 // dados do formulario de prioridades
@@ -62,28 +63,39 @@ function limparCampos(form){
 }
 
 function criarLinhaInteresse(){//cria para o formulario de interesses uma linha e captura os valores inseridos
-  let linha = document.createElement('tr');
-  linha.setAttribute("class","linha");
 
-  let interesse = document.createElement('td');
-  let prioridade = document.createElement('td');
-  let linhaIconExcluir = document.createElement('td');
+  let divInteresse = document.createElement('div');
+  divInteresse.setAttribute("class","cardInteresse");
+  divInteresse.setAttribute("id","cardInteresse");
+
+  let ulInteresse = document.createElement('ul');
+
+  let liInteresse = document.createElement('li');
+
+  let liPrioridade = document.createElement('li');
+
+  let liBotao = document.createElement('li');
+
   let btnExcluir = document.createElement('button');
-
-  btnExcluir.setAttribute("class","formBtn");
-  btnExcluir.setAttribute("id", "#excluirLinhaBtn");
   btnExcluir.innerText = "excluir";
+  btnExcluir.setAttribute("class","formBtn");
 
-  interesse.innerText = campoInteresse.value;
-  prioridade.innerText = campoPrioridade.value;
+  liBotao.appendChild(btnExcluir);
+  liInteresse.innerText = campoInteresse.value;
+  liPrioridade.innerText = campoPrioridade.value;
+  // btnExcluir.setAttribute("id", "#excluirLinhaBtn");
 
-  linha.appendChild(interesse);
-  linha.appendChild(prioridade);
-  linha.appendChild(btnExcluir);
+  ulInteresse.appendChild(liInteresse);
+  ulInteresse.appendChild(liPrioridade);
+  ulInteresse.appendChild(liBotao);
+
+
+  divInteresse.appendChild(ulInteresse);
 
 
 
-    return (linha);
+
+    return (divInteresse);
 }
 
 
@@ -133,6 +145,7 @@ function verificarCamposVazios(formulario){ //Verifica se um campo de um form es
 
   let inputList = formulario.querySelectorAll('INPUT');
   let areaTexto = formulario.querySelectorAll("TEXTAREA");
+
 
     for(let i = 0; i<inputList.length; i++){
       if(inputList[i].value==""){
@@ -255,6 +268,22 @@ function salvarDadosDoFormInteresses(formulario){
 
 }
 
+
+function lerImagemPerfil(){
+
+  imagemPerfil.addEventListener("change", function(e){
+  const fr = new FileReader();
+  fr.readAsDataURL(imagemPerfil.files[0]);
+  fr.addEventListener("load", function(e){
+    const url = fr.result;
+    return (url);
+  });
+
+
+    e.preventDefault();
+  });
+}
+
 function salvarDadosUser(formulario){
 
 
@@ -262,22 +291,39 @@ function salvarDadosUser(formulario){
     let emailUsuario = formulario.querySelector("#emailUsuario").value;
     let senhaUsuario = formulario.querySelector("#senhaUsuario").value;
     let bioUsuario = formulario.querySelector("#textoBiografia").value;
+    // let imagemPerfil = lerImagemPerfil();
+
     let nomes= [];
     let emails = [];
     let senhas = [];
     let bios = [];
+    // let imgsP = [];
 
-    if(!window.localStorage.nomes && !window.localStorage.emails && !window.localStorage.senhas && !window.localStorage.bios){
+    if(
+        !window.localStorage.nomes
+        && !window.localStorage.emails
+        && !window.localStorage.senhas
+        && !window.localStorage.bios
+        && !window.localStorage.imgsP
+      ){
+
         window.localStorage.nomes = nomes;
         window.localStorage.emails = emails;
         window.localStorage.senhas = senhas;
         window.localStorage.bios = bios;
+        // window.localStorage.imgsP = imgsP;
+
     }else{
+
         nomes = JSON.parse(window.localStorage.nomes);
         emails = JSON.parse(window.localStorage.emails);
         senhas = JSON.parse(window.localStorage.senhas);
         bios = JSON.parse(window.localStorage.bios);
+        // imgsP = JSON.parse(window.localStorage.imgsP);
     }
+
+
+
 
    nomes.push(nomeUsuario);
    window.localStorage.nomes = JSON.stringify(nomes);
@@ -287,6 +333,9 @@ function salvarDadosUser(formulario){
    window.localStorage.senhas = JSON.stringify(senhas);
    bios.push(bioUsuario);
    window.localStorage.bios = JSON.stringify(bios);
+  //  imgsP.push(imagemPerfil);
+  //  window.localStorage.imgsP = JSON.stringify(imgsP);
+
 
 
     return(true);
@@ -360,14 +409,23 @@ btnFormXpSalvar.addEventListener("click", function(e){
 });
 
 
-//guardar no localStorage os dados do usuário
+//guardar no localStorage os dados do usuário falta a imagem
 btnSalvarUser.addEventListener("click",function(e){
+  let campoVazio = verificarCamposVazios(formUsuario);
   let dadosSalvos = salvarDadosUser(formUsuario);
 
-  if(dadosSalvos){
-    alert("Dados Salvos com sucesso ;)");
+  if(campoVazio){
+
+    mostrarAlertaParaCampoVazio(campoVazio);
+    campoVazio.addEventListener("click", function(e){
+    retiraAlertaParaCampoVazio(campoVazio);
+    e.preventDefault()});
+
   }else{
-    alert("Ocorreu algum erro :_(");
+
+    salvarDadosUser(formUsuario);
+    alert("Dados Salvos");
+
   }
   e.preventDefault();
 })
