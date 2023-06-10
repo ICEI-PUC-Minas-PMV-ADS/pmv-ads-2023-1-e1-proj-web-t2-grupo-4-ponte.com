@@ -366,7 +366,7 @@ function criarDivListaQualif(){
 
   let tituloH2 = document.createElement("h2");
   tituloH2.setAttribute("class", "titulosH3");
-  tituloH2.innerText = "qualificações";
+  tituloH2.innerText = nomeCurso.value;
 
   let ulDados = document.createElement("ul");
 
