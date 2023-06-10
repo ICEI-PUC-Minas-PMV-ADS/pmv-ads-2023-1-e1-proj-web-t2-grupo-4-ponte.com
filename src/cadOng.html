@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="pagina-perfil-style.css" />
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="cadOng.css">
+  <script src="cadOng.js" defer></script>
+  <title>Cadastro de Ongs</title>
+</head>
+<body>
+
+    <!-- início do header do site. contém o menu de navegação, logo e barra de pesquisa -->
+    <header class="wrapper">
+      <img
+        src="img/Logo Pontecom Cor.png"
+        alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
+      />
+
+      <div class="wrapper-search">
+        <input
+          type="text"
+          class="wrapper-search-txt"
+          placeholder="Busque por vagas, instituições ou pessoas"
+        />
+        <button class="wrapper-search-button">
+          <img src="img/search-icon.png" alt="Buscar..." />
+        </button>
+      </div>
+
+      <ul class="wrapper-navbar">
+        <li class="wrapper-li">Feed</li>
+        <li class="wrapper-li">Vagas de voluntariado</li>
+        <li class="wrapper-li">Dashboard</li>
+      </ul>
+
+      <img
+        src="img/foto-perfil.png"
+        class="wrapper-foto"
+        alt="Foto de perfil do usuário."
+      />
+    </header>
+    <!-- fim do header -->
+
+    <main id="principal">
+      <div id="containerChamada">
+
+        <div id="textoChamada">
+
+
+
+          <h2>Nos conte um pouco mais sobre sua instituição</h2>
+
+          <p>
+            Este espaço é reservado para que você nos informe mais detalhes sobre sua missão.
+            Não se esqueça de preencher seus dados de contato também, para assim, conectarmos
+            vocês aos seus novos voluntários!
+          </p>
+          <div id="botaoChamada">
+            <button class="roundBtnDk " title="clique para iniciar">
+
+              <i
+                class="fa-solid fa-arrow-down fa-sm"
+                style="color: #f6d6ac"
+              ></i>
+
+            </button>
+          </div>
+
+        </div>
+
+        <!-- <a href="https://storyset.com/work"></a>  REferenciar-->
+
+        <img src="img/cadastrando.svg" alt="" />
+
+      </div>
+
+    </main>
+
+    <!-- inicio do footer -->
+    <footer>
+      <div id="footerContainer">
+        <div id="logoFooter">
+          <a href="#">
+            <img src="img/logoCor2.png" alt="logo em cor clara" />
+          </a>
+        </div>
+
+        <div id="formFooter">
+          <div id="sugestionsFooter">
+            <h3>Sugestões?</h3>
+            <p>Envie-nos uma mensagem</p>
+          </div>
+
+          <form action="mensagem.php">
+            <label for="email" title="Informe seu email mais usado">
+              E-mail:
+            </label>
+            <input
+              type="email"
+              name="email"
+              id=""
+              placeholder="informe seu e-mail..."
+            />
+
+            <label for="message">Mensagem:</label>
+            <textarea
+              type="textarea"
+              name="message"
+              title="Mensagem"
+              cols="30"
+              rows="5"
+            >
+Envie-nos sua mensagem...
+            </textarea>
+
+            <input
+              type="submit"
+              value="Enviar"
+              name="enviar"
+              class="btnLight"
+            />
+          </form>
+        </div>
+      </div>
+    </footer>
+    <!-- fim do footer -->
+
+</body>
+</html>
