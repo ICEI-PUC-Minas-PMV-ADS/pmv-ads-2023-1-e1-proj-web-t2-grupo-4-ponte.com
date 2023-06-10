@@ -145,6 +145,7 @@ function retiraAlertaParaCampoVazio(campoVazio){
 
 }
 
+
 function mostrarAlertaParaCampoVazio(campoVazio){
 
     alert("você precisa preencher todos os campos");
@@ -152,7 +153,6 @@ function mostrarAlertaParaCampoVazio(campoVazio){
     campoVazio.style.borderColor ="#FB0A0A";
 
 }
-
 
 
 function verificarCamposVazios(formulario){ //Verifica se um campo de um form está vazio, se sim o retorna.
@@ -249,7 +249,6 @@ function inserirDadosNaDiv(){
 }
 
 
-
 function salvarDadosDoFormInteresses(formulario){
 
     let valorInteresse = formulario.querySelector("#campoInteresse").value;
@@ -261,8 +260,8 @@ function salvarDadosDoFormInteresses(formulario){
 
 
     if(!window.localStorage.valores && !window.localStorage.prioridades){
-        valores = [];
-        prioridades = [];
+         valores = [];
+         prioridades = [];
         window.localStorage.valores = [];
         window.localStorage.prioridades = [];
 
@@ -278,7 +277,80 @@ function salvarDadosDoFormInteresses(formulario){
       prioridades.push(prioridadeInteresse);
       window.localStorage.prioridades = JSON.stringify(prioridades);
 
+}
 
+
+function salvarDadosDoFormQualificacoes(formulario){
+
+  let nomeCurso = formulario.querySelector("#nomeCurso").value;
+  let tipoCurso = formulario.querySelector("#tipoCurso").value;
+  let nomeInstituicao = formulario.querySelector("#nomeInstituicao").value;
+  let areaCurso = formulario.querySelector("#areaCurso").value;
+  let dataInicio = formulario.querySelector("#inicioCurso").value;
+  let dataFim = formulario.querySelector("#fimCurso").value;
+
+  let nomesCursos = [];
+  let tiposCursos = [];
+  let nomesInstituicoes = [];
+  let areasCursos = [];
+  let datasInicio = [];
+  let datasFim = [];
+
+
+  if(!window.localStorage.nomesCursos
+      && !window.localStorage.tiposCursos
+      && !window.localStorage.nomesInstituicoes
+      && !window.localStorage.areasCursos
+      && !window.localStorage.datasInicio
+      && !window.localStorage.datasFim
+    ){
+          let nomesCursos = [];
+          let tiposCursos = [];
+          let nomesInstituicoes = [];
+          let areasCursos = [];
+          let datasInicio = [];
+          let datasFim = [];
+
+        window.localStorage.nomesCursos = [];
+        window.localStorage.tiposCursos = [];
+        window.localStorage.nomesInstituicoes = [];
+        window.localStorage.areasCursos = [];
+        window.localStorage.datasInicio = [];
+        window.localStorage.datasFim = [];
+    }else{
+      nomesCursos = JSON.parse(window.localStorage.nomesCursos);
+      tiposCursos = JSON.parse(window.localStorage.tiposCursos);
+      nomesInstituicoes = JSON.parse(window.localStorage.nomesInstituicoes);
+      areasCursos = JSON.parse(window.localStorage.areasCursos);
+      datasInicio = JSON.parse(window.localStorage.datasInicio);
+      datasFim = JSON.parse(window.localStorage.datasFim);
+    }
+
+
+      // valores.push(valorInteresse);
+      // window.localStorage.valores = JSON.stringify(valores);
+      // prioridades.push(prioridadeInteresse);
+      // window.localStorage.prioridades = JSON.stringify(prioridades);
+
+  // console.log(nomeCurso);
+  // console.log(tipoCurso);
+  // console.log(nomeInstituicao);
+  // console.log(areaCurso);
+  // console.log(dataInicio);
+  // console.log(dataFim);
+
+    nomesCursos.push(nomeCurso);
+    window.localStorage.nomesCursos = JSON.stringify(nomesCursos);
+    tiposCursos.push(tipoCurso);
+    window.localStorage.tiposCursos = JSON.stringify(tiposCursos);
+    nomesInstituicoes.push(nomeInstituicao);
+    window.localStorage.nomesInstituicoes = JSON.stringify(nomesInstituicoes);
+    areasCursos.push(areaCurso);
+    window.localStorage.areasCursos = JSON.stringify(areasCursos);
+    datasInicio.push(dataInicio);
+    window.localStorage.datasInicio = JSON.stringify(datasInicio);
+    datasFim.push(dataFim);
+    window.localStorage.datasFim = JSON.stringify(datasFim);
 
 
 }
@@ -374,18 +446,23 @@ function criarDivListaQualif(){
   let liPeriodoFim = document.createElement("li");
   let liInstituicao = document.createElement("li");
   let liAreaCurso = document.createElement("li");
+  let liTipoCurso = document.createElement("li");
 
 
   liPeriodoInicio.innerText ="de: "+ inicioCurso.value;
   liPeriodoFim.innerText = "até: "+fimCurso.value;
+  liTipoCurso.innerText ="tipo de curso: "+ tipoCurso.value
   liInstituicao.innerText = "instituição: "+nomeInstituicao.value;
   liAreaCurso.innerText ="área: "+ areaCurso.value;
 
 
+
   ulDados.appendChild(liPeriodoInicio);
   ulDados.appendChild(liPeriodoFim);
+  ulDados.appendChild(liTipoCurso);
   ulDados.appendChild(liInstituicao);
   ulDados.appendChild(liAreaCurso);
+
 
 
   let divBtn = document.createElement("div");
@@ -460,7 +537,9 @@ formBtnExcluirLinha.addEventListener("click", function(e){
 
 //está criando os campos e inserindo na tabela, falta local Storage
 btnFormXpSalvar.addEventListener("click", function(e){
+
   let campoVazio = verificarCamposVazios(formExperiencias);
+
   if(campoVazio){
       mostrarAlertaParaCampoVazio(campoVazio);
       campoVazio.addEventListener("click", function(e){
@@ -468,6 +547,7 @@ btnFormXpSalvar.addEventListener("click", function(e){
       e.preventDefault();
     });
   }
+
   let divCriada = criarDivListaXP();
   if(!divCriada){
     console.log("erro na criação da div");
@@ -519,6 +599,7 @@ btnSalvarCurso.addEventListener("click",function(e){
      console.log("erro na criação da div");
     }else{
       listaQualificacoes.appendChild(divCriada);
+      salvarDadosDoFormQualificacoes(formQualificacoes);
     }
   }
 
