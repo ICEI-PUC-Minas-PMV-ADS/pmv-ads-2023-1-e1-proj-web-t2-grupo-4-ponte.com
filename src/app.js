@@ -169,7 +169,7 @@ function criarDivListaXP(){
   let liSpanDe = document.createElement("span");
   let liSpanAte = document.createElement("span");
 
-  titulo.setAttribute("class", "titulosH2");
+  titulo.setAttribute("class", "titulosH3");
   divGroupBtn.setAttribute("id","btnArea");
 
   divDetalhes.setAttribute("class","listaDetalhes");

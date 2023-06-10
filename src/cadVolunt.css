@@ -161,6 +161,49 @@ body #principal {
   justify-content: flex-end;
 }
 
+
+#principal #containerQualificacoes {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+#principal #containerQualificacoes #dateAreaInput{
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  width: 100%;
+  margin: 20px 0px 20px 0px;
+  /* background-color: #fdc886; */
+}
+
+
+#principal #containerQualificacoes #listaQualificacoes #cardCurso{
+    background-color: #d5d5d5;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+
+#principal #containerQualificacoes #listaQualificacoes #cardCurso li{
+  margin-bottom: 10px;
+}
+
+
+#principal #containerQualificacoes #listaQualificacoes #cardCurso #btnArea{
+  /* background-color: red; */
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: flex-end;
+}
+
 /* Classes para títulos */
 
 .titulosH2{
