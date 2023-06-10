@@ -207,8 +207,9 @@ function criarDivListaXP(){
 
   // divDetalhes.appendChild(campoDetalhe);
 
-  console.log(campoDetalhe);
 
+  campoDetalhe.setAttribute("classe","cardExp");
+  console.log(campoDetalhe);
   return(campoDetalhe);
 }
 

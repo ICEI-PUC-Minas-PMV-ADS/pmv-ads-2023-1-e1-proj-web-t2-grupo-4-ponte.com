@@ -122,6 +122,25 @@ body #principal {
 }
 
 
+#principal #containerExperiencias{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#principal #containerExperiencias #dateAreaInput{
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  width: 100%;
+  margin: 20px 0px 20px 0px;
+  /* background-color: #fdc886; */
+}
+
+
 /* Classes para títulos */
 
 .titulosH2{
@@ -129,6 +148,11 @@ body #principal {
   margin:50px 0px 50px 0px;
   font-size: var(--titleFontSizeBiger);
 
+}
+
+.titulosH3{
+  text-align: center;
+  margin: 10px 0px 10px 0px;
 }
 
 /* fim das classes para títulos */
@@ -174,6 +198,8 @@ body #principal {
 
 }
 
+
+
 /* fim das classes para componentes de formulários */
 
 
@@ -188,17 +214,35 @@ body #principal {
   gap: 5px;
 }
 
+.cardExp{
+  margin: 30px;
+  background-color: #fdc886;
+}
 
 .listaDetalhes{
   width: 50%;
   height: 75vh;
   overflow: hidden;
   overflow-y: scroll;
+  background-color:#9d9d9e;
+  border-radius: 20px;
+  scrollbar-3dlight-color: #333 ;
 }
 
 .campoDetalhe{
    background-color: #9d9d9e;
    border-radius: 20px;
+}
+
+/* .dateAreaInput{
+  height: fit-content;
+  margin: 20px 0px 20px 0px;
+  background-color: #fb8f0b;
+
+} */
+
+.inputDate{
+  height: 30px;
 }
 
 
