@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./cssStyle/paginaPerfilVol-style.css" />
+    <link rel="stylesheet" href="./componentes/navbar-style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/331a34d5ed.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./componentes/navbar-script.js"></script>
+    <script defer src="./jsScripts/perfilONG.js"></script>
+    <script defer src="./jsScripts/perfilVol.js"></script>
+    <link rel="icon" type="image/png" href="img/iconPonte.png" />
+    <title></title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="wrapper">
+      <a href="navbar.html">
+        <img
+          id="logo"
+          src="img/logoPontecom.png"
+          alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
+        />
+      </a>
+
+      <div class="wrapperSearch">
+        <input
+          type="text"
+          class="wrapperSearch-txt"
+          placeholder="Busque por ONGs ou voluntários..."
+        />
+        <button id="searchButton">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <!-- Menu -->
+      <ul class="wrapperNavbar">
+        <li class="wrapper-li"><a href="./sobre.html">Sobre</a></li>
+        <li class="wrapper-li">
+          <a href="./vagas.html">Vagas de voluntariado</a>
+        </li>
+      </ul>
+
+      <img
+        src="img/foto-perfilONG.png"
+        id="foto"
+        alt="Foto de perfil do usuário."
+      />
+
+      <ul id="menuDropdown" class="">
+        <li><a href="./paginaPerfilLog.html">Meu perfil</a></li>
+        <li><a href="./cadastro-voluntario.html">Editar dados</a></li>
+        <li><a href="./index.html">Logout</a></li>
+      </ul>
+    </header>
+
+    <div class="searchResultContainer" id="searchResults"></div>
+
+    <!-- Início do perfil -->
+    <main>
+      <section id="profileSection"></section>
+    </main>
+
+    <!-- Decoração do footer -->
+    <div id="decFooter">
+      <img src="img/decTintaFooter.png" alt="" id="decFooter" />
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div id="footerContainer">
+        <div id="logoFooter">
+          <a href="#">
+            <img src="img/logoCor2.png" alt="logo em cor clara" />
+          </a>
+        </div>
+
+        <div id="formFooter">
+          <div id="sugestionsFooter">
+            <h3>Sugestões?</h3>
+            <p>Mande uma mensagem ;)</p>
+          </div>
+
+          <form action="mensagem.php">
+            <label for="email" title="Informe seu email mais usado">
+              E-mail:
+            </label>
+            <input
+              type="email"
+              name="email"
+              id=""
+              placeholder="informe seu e-mail..."
+            />
+
+            <label for="message">Mensagem:</label>
+            <textarea
+              type="textarea"
+              name="message"
+              title="Mensagem"
+              cols="30"
+              rows="5"
+              placeholder="escreva aqui sua mensagem..."
+            ></textarea>
+
+            <input
+              type="submit"
+              value="Enviar"
+              name="enviar"
+              class="btnLight"
+            />
+          </form>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        const profileSection = document.getElementById("profileSection");
+        const perfilVol = JSON.parse(localStorage.getItem("perfilVol"));
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+
+        const ong = perfilVol.find((ong) => ong.id === id);
+
+        if (ong) {
+          const profile = perfilVol[ong.id];
+
+          document.title = profile.nomeUsuario;
+
+          const profileHtml = `
+              <div class="cabecalho">
+                <div class="cabecalhoUsuario">
+                    <div class="cabecalhoEsq">
+                      <img src="${
+                        profile.fotoPerfil
+                      }" alt="Foto de perfil do usuário." />
+                    </div>
+                    <div class="cabecalhoDir">
+                      <section class="cabecalhoBio">
+                          <h1 id="nomeUsuario">${profile.nomeUsuario}</h1>
+                          <p id="bio">${profile.textoBio}</p>
+                          <div class="cabecalho-interesses">
+                            <h3>Interesses:</h3>
+                            <ul id="campoInteresse">
+                                ${profile.interesses
+                                  .map(
+                                    (interesse) => `
+                                <li>${interesse}</li>
+                                `
+                                  )
+                                  .join("")}
+                            </ul>
+                          </div>
+                      </section>
+                    </div>
+                </div>
+              </div>
+              <div class="conteudo-perfil">
+                <h2 class="titulo">Qualificação e Experiências</h2>
+                <section class="qualificacao">
+                    <h2>Qualificação</h2>
+                    <div class="listaQuali">
+                      ${profile.qualificacao
+                        .map(
+                          (qualificacao) => `
+                      <div class="campoQuali">
+                        <h3>${qualificacao.nomeQuali}</h3>
+                        <ul>
+                            <li>Tipo do curso: ${qualificacao.tipoQuali}</li>
+                            <li>Instituição: ${qualificacao.instituicaoQuali}</li>
+                            <li>Área do curso: ${qualificacao.areaQuali}</li>
+                            <li>Período: ${qualificacao.periodoQuali}</li>
+                        </ul>
+                      </div>
+                      `
+                        )
+                        .join("")}
+                    </div>
+                </section>
+                <h2>Experiências</h2>
+                <div class="listaExp">
+                  ${profile.experiencias
+                    .map(
+                      (experiencias) => `
+                    <div class="campoExp">
+                      <h3>${experiencias.nomeExp}</h3>
+                      <ul>
+                          <li>Cargo: ${experiencias.cargoExp}</li>
+                          <li>Local: ${experiencias.localExp}</li>
+                          <li>Período: ${experiencias.periodoExp}</li>
+                          <li>
+                            Descrição: ${experiencias.descricaoExp}
+                          </li>
+                      </ul>
+                    </div> 
+                  `
+                    )
+                    .join("")}
+                </div>
+              </div>
+          `;
+
+          profileSection.innerHTML = profileHtml;
+        }
+      });
+    </script>
+  </body>
+</html>

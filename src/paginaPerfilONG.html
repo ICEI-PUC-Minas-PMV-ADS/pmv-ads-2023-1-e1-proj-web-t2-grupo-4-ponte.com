@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./cssStyle/paginaPerfilONG-style.css" />
+    <link rel="stylesheet" href="./componentes/navbar-style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/331a34d5ed.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./componentes/navbar-script.js"></script>
+    <script defer src="./jsScripts/perfilONG.js"></script>
+    <script defer src="./jsScripts/perfilVol.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="wrapper">
+      <a href="navbar.html">
+        <img
+          id="logo"
+          src="img/logoPontecom.png"
+          alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
+        />
+      </a>
+
+      <div class="wrapperSearch">
+        <input
+          type="text"
+          class="wrapperSearch-txt"
+          placeholder="Busque por ONGs ou voluntários..."
+        />
+        <button id="searchButton">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <!-- Menu -->
+      <ul class="wrapperNavbar">
+        <li class="wrapper-li"><a href="./sobre.html">Sobre</a></li>
+        <li class="wrapper-li">
+          <a href="./vagas.html">Vagas de voluntariado</a>
+        </li>
+      </ul>
+
+      <img
+        src="img/foto-perfilONG.png"
+        id="foto"
+        alt="Foto de perfil do usuário."
+      />
+
+      <ul id="menuDropdown" class="">
+        <li><a href="./paginaPerfilLog.html">Meu perfil</a></li>
+        <li><a href="./cadastro-voluntario.html">Editar dados</a></li>
+        <li><a href="./index.html">Logout</a></li>
+      </ul>
+    </header>
+
+    <div class="searchResultContainer" id="searchResults"></div>
+  </body>
+
+    <!-- Início do perfil -->
+    <!-- Dados principais do usuário -->
+    <main>
+      <section id="profileSection"></section>
+    </main>
+
+    <!-- decoração do footer -->
+    <div id="decFooter">
+      <img src="img/decTintaFooter.png" alt="" id="decFooter" />
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div id="footerContainer">
+        <div id="logoFooter">
+          <a href="#">
+            <img src="img/logoCor2.png" alt="logo em cor clara" />
+          </a>
+        </div>
+
+        <div id="formFooter">
+          <div id="sugestionsFooter">
+            <h3>Sugestões?</h3>
+            <p>Mande uma mensagem ;)</p>
+          </div>
+
+          <form action="mensagem.php">
+            <label for="email" title="Informe seu email mais usado">
+              E-mail:
+            </label>
+            <input
+              type="email"
+              name="email"
+              id=""
+              placeholder="informe seu e-mail..."
+            />
+
+            <label for="message">Mensagem:</label>
+            <textarea
+              type="textarea"
+              name="message"
+              title="Mensagem"
+              cols="30"
+              rows="5"
+              placeholder="escreva aqui sua mensagem..."
+            ></textarea>
+
+            <input
+              type="submit"
+              value="Enviar"
+              name="enviar"
+              class="btnLight"
+            />
+          </form>
+        </div>
+      </div>
+    </footer>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        const profileSection = document.getElementById("profileSection");
+        const perfilONG = JSON.parse(localStorage.getItem("perfilONG"));
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+
+        const ong = perfilONG.find((ong) => ong.id === id);
+
+        console.log(ong);
+
+        if (ong) {
+          const profile = perfilONG[ong.id];
+
+          document.title = profile.nomeUsuarioONG;
+
+          const profileHtml = ` 
+          <div class="cabecalho">
+            <div class="cabecalhoUsuario">
+              <div class="cabecalhoEsq">
+                <img src="${
+                  profile.fotoPerfil
+                }" alt="Foto de pefil do usuário." />
+              </div>
+              <div class="cabecalhoDir">
+                <section class="cabecalhoBio">
+                  <h1 id="nomeUsuario">${profile.nomeUsuarioONG}</h1>
+                  <p id="bio">
+                    ${profile.textoBio}
+                  </p>
+                </section>
+                <div class="cabecalho-interesses">
+                  <h3>Causas:</h3>
+                  <ul id="campoInteresse">
+                    ${profile.interesses
+                      .map((interesse) => `<li>${interesse}</li>`)
+                      .join("")}
+                  </ul>
+                </div>
+                <div class="contato">
+                  <h3>Contato:</h3>
+                  <div class="social">
+                    <a href="${profile.facebook}" class="socialButton"
+                      ><i class="fa-brands fa-facebook fa-2xl"></i
+                    ></a>
+                    <a href="${profile.instagram}" class="socialButton"
+                      ><i class="fa-brands fa-instagram fa-2xl"></i
+                    ></a>
+                    <a
+                      href="https://web.whatsapp.com/send?phone=${
+                        profile.whatsapp
+                      }"
+                      class="socialButton"
+                    >
+                      <i class="fa-brands fa-whatsapp fa-2xl"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="conteudo-perfil">
+            <h2 class="titulo">Ações</h2>
+            <section class="acoes">
+              <div class="listaAcoes">
+                ${profile.acoes
+                  .map(
+                    (acao) => `
+                    <div class="campoAcoes">
+                      <h3 id="nomeAcao">${acao.nomeAcao}</h3>
+                      <ul>
+                        <li id="periodoAcao">${acao.periodoAcao}</li>
+                        <li id="descricaoAcao">
+                          ${acao.descricaoAcao}
+                        </li>
+                      </ul>
+                    </div>
+                  `
+                  )
+                  .join("")}
+              </div>
+            </section>
+            <h2 class="titulo">Vagas abertas</h2>
+            <section class="vagasAbertas">
+              <div class="listaVagas">
+                ${profile.vagasAbertas
+                  .map(
+                    (vaga) => `
+                    <div class="campoVagas">
+                      <h3 id="nomeVaga">${vaga.nomeVaga}</h3>
+                      <ul>
+                        <li id="localVaga">${vaga.localVaga}</li>
+                        <li id="periodoVaga">${vaga.periodoVaga}</li>
+                        <li id="descricaoVaga">
+                          ${vaga.descricaoVaga}
+                        </li>
+                      </ul>
+                    </div>
+                  `
+                  )
+                  .join("")}
+              </div>
+            </section>
+          </div>
+          `;
+
+          profileSection.innerHTML = profileHtml;
+        }
+      });
+    </script>
+  </body>
+</html>
