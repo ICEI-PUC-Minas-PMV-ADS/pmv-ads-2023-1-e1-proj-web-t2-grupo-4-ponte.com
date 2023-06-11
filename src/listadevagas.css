@@ -297,29 +297,30 @@
 
 /* área de vagas */
 
-.lista-vagas h2 {
+#listaSection h2 {
     text-align: center;
  }
 
- .lista-vagas{
+ #listaSection{
   width: 70%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
-  background-color: rgb(240, 252, 250, 1);
-  /* overflow: hidden;
-  overflow-y: scroll; */
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 710px;
+  box-shadow: 50px 70px 60px -80px #4a4a4a;
 }
 
- .lista-vagas .campo-vagas{
-   background-color: #fceedc;
+ #listaSection .campo-vagas{
+   background-color: white;
    border-radius: 10px;
    width: 90%;
 }
 
- .lista-vagas .campo-vagas ul li{
+ #listaSection .campo-vagas ul li{
   /* background-color: #333; */
   margin-bottom: 10px;
 }
