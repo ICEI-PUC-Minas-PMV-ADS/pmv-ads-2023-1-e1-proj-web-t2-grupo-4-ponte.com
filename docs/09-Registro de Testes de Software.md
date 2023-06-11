@@ -35,6 +35,15 @@ Caso de teste 02 - Apresentar perfil de ONGs
 1 - Acessar a aplicação como usuário:
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/19398297/9424fc46-9b77-4369-a824-2d4108f320a4)
 
+2 - Pesquisa e resultado do perfil de ONG
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/19398297/54fab8cd-cefb-494d-ae4f-9d9007de3a43)
+
+3- Perfil detalhado
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/19398297/d05557ed-600a-4da3-b85d-ff87f9a0b65f)
+
+
 
 Caso de teste 03 - Possiblitar a criação de perfil de voluntário
 
