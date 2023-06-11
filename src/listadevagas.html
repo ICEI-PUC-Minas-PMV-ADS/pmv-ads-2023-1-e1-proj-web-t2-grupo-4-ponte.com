@@ -18,13 +18,7 @@
   </head>
   <body>
     <header class="wrapper">
-      <a href="navbar.html"
-        ><img
-          id="logo"
-          src="img/Logo Pontecom Cor.png"
-          alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
-      /></a>
-
+      <a href="navbar.html"><img id="logo" src="img/Logo Pontecom Cor.png" alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."></a>
       <div class="wrapperSearch">
         <input
           type="text"
@@ -38,10 +32,8 @@
 
       <!-- Menu -->
       <ul class="wrapperNavbar">
-        <a href="./inicio.html"><li class="wrapper-li" id="inicio">Inicio</li></a>
         <a href="./sobre.html"><li class="wrapper-li" id="sobre">Sobre</li></a>
-        <a href="./vagas.html"><li class="wrapper-li" id="vagas">Vagas de voluntariado</li></a
-        >
+        <a href="./vagas.html"><li class="wrapper-li" id="vagas">Vagas de voluntariado</li></a>
       </ul>
 
       <img
@@ -67,19 +59,10 @@
 
           <h2> Setor de Vagas </h2>
 
-          <p>
-            Aqui estão algumas vagas que podem conectá-lo as ONGs
-            que mais combinam com você.
-
-            <button class="roundBtn" title="clique para iniciar">
-
-              <i
-                class="fa-solid fa-arrow-down fa-sm"
-                style="color: #574e42"
-              ></i>
-
-            </button>
-
+          <p> Aqui estão algumas vagas que podem conectá-lo as ONGs que mais combinam com você.
+            <!-- <button class="roundBtn" title="clique para iniciar">
+              <i class="fa-solid fa-arrow-down fa-sm" style="color: #574e42"></i>
+            </button> -->
           </p>
 
         </div>
@@ -89,7 +72,7 @@
       
       <!-- Inicio área do filtro  -->
       <div id="pesquise">
-          <h2>Pesquise:</h2>
+        <div class="texto"><h2>Acompanhe as vagas</h2></div>
       </div>
       <div id="xpListaContainer">
         <!-- <div id="expForm" class="formContainer">
@@ -98,7 +81,7 @@
               <input type="text" name="areaAtuacao" id="areaAtuacao" class="inputText"/>
             </div>
         </div> -->
-        <div id="expForm" class="formContainer">
+<!--         <div id="expForm" class="formContainer">
           <div class="estados">
             <label>Área de Atuação:</label>
         </div>
@@ -174,47 +157,16 @@
     </div>
       
       <div class="filtro">
-        <button type="filter" class="formBtn">Filtrar</button>
+        <button type="filter" class="formBtn">Filtrar</button> -->
         <!-- Fim área do filtro -->
         
         <!-- Inicio da área de Vagas -->
     </div>
       </div>
-        <div class="lista-vagas">
-          <hr>
-          <div class="campo-vagas">
-            <h2>Vaga 1</h2>
-            <ul>
-              <li>período: de dd/mm/aa até dd/mm/aa</li>
-              <li>local: local da experiência</li>
-              <li>cargo: cargo ocupado</li>
-              <li>descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore amet blanditiis itaque neque nostrum dolorem, aliquid praesentium labore soluta doloremque in fugit nemo exercitationem expedita? Voluptates reprehenderit delectus facilis fugit?</li>
-            </ul>            
-          </div>
-          <hr>
-          <div class="campo-vagas">
-            <h2>Vaga 2</h2>
-            <ul>
-              <li>período: de dd/mm/aa até dd/mm/aa</li>
-              <li>local: local da experiência</li>
-              <li>cargo: cargo ocupado</li>
-              <li>descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore amet blanditiis itaque neque nostrum dolorem, aliquid praesentium labore soluta doloremque in fugit nemo exercitationem expedita? Voluptates reprehenderit delectus facilis fugit?</li>
-            </ul>
-          </div>
-          <hr>
-          <div class="campo-vagas">
-            <h2>Vaga 3</h2>
-            <ul>
-              <li>período: de dd/mm/aa até dd/mm/aa</li>
-              <li>local: local da experiência</li>
-              <li>cargo: cargo ocupado</li>
-              <li>descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore amet blanditiis itaque neque nostrum dolorem, aliquid praesentium labore soluta doloremque in fugit nemo exercitationem expedita? Voluptates reprehenderit delectus facilis fugit?</li>
-            </ul>          
-          </div>
-          <hr>
-        </div>
+        <section id="listaSection"></section> 
       </div>
       <!-- Fim da área de Vagas -->
+
     </main>
     <script src="listadevagas.js"></script>
     
@@ -274,100 +226,29 @@
       window.addEventListener("DOMContentLoaded", function () {
         const listaSection = document.getElementById("listaSection");
 
-        constprofilea = JSON.parse(localStorage.getItem("listadevagas"));
+        const listadevagas = JSON.parse(localStorage.getItem("listadevagas"));
 
         if (listadevagas && listadevagas.length > 0) {
-          const profile = listadevagas[0];
-
-          document.title = profile.nomeUsuarioONG;
-
-          const profileHtml = ` 
-          <div class="cabecalho">
-            <div class="cabecalhoUsuario">
-              <div class="cabecalhoEsq">
-                <img src="${profile.fotoPerfil}" alt="Foto de pefil do usuário." />
-              </div>
-              <div class="cabecalhoDir">
-                <section class="cabecalhoBio">
-                  <h1 id="nomeUsuario">${profile.nomeUsuarioONG}</h1>
-                  <p id="bio">
-                    ${profile.textoBio}
-                  </p>
-                </section>
-                <div class="cabecalho-interesses">
-                  <h3>Causas:</h3>
-                  <ul id="campoInteresse">
-                    ${profile.interesses
-                      .map((interesse) => `<li>${interesse}</li>`)
-                      .join("")}
-                  </ul>
-                </div>
-                <div class="contato">
-                  <h3>Contato:</h3>
-                  <div class="social">
-                    <a href="${profile.facebook}" class="socialButton"
-                      ><i class="fa-brands fa-facebook fa-2xl"></i
-                    ></a>
-                    <a href="${profile.instagram}" class="socialButton"
-                      ><i class="fa-brands fa-instagram fa-2xl"></i
-                    ></a>
-                    <a
-                      href="https://web.whatsapp.com/send?phone=${profile.whatsapp}"
-                      class="socialButton"
-                    >
-                      <i class="fa-brands fa-whatsapp fa-2xl"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          let listaHtml = "";
+          //const lista = listadevagas[0];
+          //});
+          //const listaHtml = `
+          listadevagas.forEach(function (lista) {
+          listaHtml += `
+          <div class="campo-vagas">
+            <h2>${lista.nomeVaga}</h2>
+            <ul>
+              <li>ONG: ${lista.ONG}</li>
+              <li>Período: ${lista.periodoVaga}</li>
+              <li>Local: ${lista.localVaga}</li>
+              <li>Descrição: ${lista.descricaoVaga}</li>
+            </ul>
           </div>
-          <div class="conteudo-perfil">
-            <h2 class="titulo">Ações</h2>
-            <section class="acoes">
-              <div class="listaAcoes">
-                ${profile.acoes
-                  .map(
-                    (acao) => `
-                    <div class="campoAcoes">
-                      <h3 id="nomeAcao">${acao.nomeAcao}</h3>
-                      <ul>
-                        <li id="periodoAcao">${acao.periodoAcao}</li>
-                        <li id="descricaoAcao">
-                          ${acao.descricaoAcao}
-                        </li>
-                      </ul>
-                    </div>
-                  `
-                  )
-                  .join("")}
-              </div>
-            </section>
-            <h2 class="titulo">Vagas abertas</h2>
-            <section class="vagasAbertas">
-              <div class="listaVagas">
-                ${profile.vagasAbertas
-                  .map(
-                    (vaga) => `
-                    <div class="campoVagas">
-                      <h3 id="nomeVaga">${vaga.nomeVaga}</h3>
-                      <ul>
-                        <li id="localVaga">${vaga.localVaga}</li>
-                        <li id="periodoVaga">${vaga.periodoVaga}</li>
-                        <li id="descricaoVaga">
-                          ${vaga.descricaoVaga}
-                        </li>
-                      </ul>
-                    </div>
-                  `
-                  )
-                  .join("")}
-              </div>
-            </section>
-          </div>
+          <hr>
           `;
+          });
 
-          listaSection.innerHTML = profileHtml;
+          listaSection.innerHTML = listaHtml;
         }
       });
     </script>
