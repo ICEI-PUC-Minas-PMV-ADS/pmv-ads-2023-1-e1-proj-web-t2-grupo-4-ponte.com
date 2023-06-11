@@ -1,513 +1,483 @@
-let perfilVol = [
+let lista = [
   {
-    nomeUsuario: "Joana Dupre",
-    email: "joanadupre@email.com",
-    senha: "123",
-    textoBio:
-      "Formada em Direito, ao atuar na área acabei percebendo que não estava realizada e sentia que precisava de algo mais. Me encontrei no trabalho voluntário. Participei de projetos sociais com moradores de rua e crianças em vulnerabilidade social. Meu foco é contribuir para um mundo melhor e ser exemplo para os demais",
-    fotoPerfil: "./img/foto-perfil.png",
-    interesses: ["Crianças", "Pessoas em situação de rua"],
-    qualificacao: [
-      {
-        nomeQuali: "Bacharel em Direito",
-        tipoQuali: "Curso de Graduação",
-        instituicaoQuali: "Puc Minas",
-        areaQuali: "Direito",
-        periodoQuali: "01/01/2009 - 01/01/2014",
-      },
-      {
-        nomeQuali: "MBA em Marketing",
-        tipoQuali: "Curso de Pós-Graduação",
-        instituicaoQuali: "Puc Minas",
-        areaQuali: "Marketing",
-        periodoQuali: "01/01/2009 - 01/01/2014",
-      },
-      {
-        nomeQuali: "Curso de Cuidador de Idosos",
-        tipoQuali: "Curso",
-        instituicaoQuali: "Instituto de Idosos",
-        areaQuali: "Saúde",
-        periodoQuali: "01/01/2019 - 01/01/2020",
-      },
-    ],
-    experiencias: [
-      {
-        nomeExp: "Advogada Senior",
-        localExp: "Escritório de Advogados e Cia",
-        cargoExp: "Advogada",
-        descricaoExp: "Advogada de direitos familiares",
-        periodoExp: "01/01/2016 - 01/01/2023",
-      },
-      {
-        nomeExp: "Voluntariado no Lar dos Idosos",
-        localExp: "Lar dos Idosos",
-        cargoExp: "Cuidadora",
-        descricaoExp: "Cuidar dos idosos",
-        periodoExp: "01/01/2020 - 10/06/2021",
-      },
-      {
-        nomeExp: "Voluntariado com Pessoas em Situação de Rua",
-        localExp: "ONG Morada",
-        cargoExp: "Social Media",
-        descricaoExp: "Criação de conteúdo para as redes sociais da ONG Morada",
-        periodoExp: "01/01/2022 - 10/06/2023",
-      },
-      {
-        nomeExp: "Voluntariado com Crianças",
-        localExp: "ONG Criança Feliz",
-        cargoExp: "Social Media",
-        descricaoExp:
-          "Criação de conteúdo para as redes sociais da ONG Criança Feliz",
-        periodoExp: "01/01/2021 - 01/02/2022",
-      },
-    ],
-  },
+  ]
+function gerarVagas() {
+  var vagasAbertas = [
+    {
+      nomeVaga: "Social Media",
+      localVaga: "Boa Viagem",
+      periodoVaga: "10/06/23 - 10/06/24",
+      descricaoVaga:
+        "Estamos em busca de uma pessoa criativa e engajada para gerenciar nossas redes sociais, criar conteúdos relevantes e impactantes, e promover nossa causa animal. Se você é apaixonado(a) por animais e tem habilidades em marketing digital, essa vaga é para você!",
+    },
+    // Adicione mais objetos de vaga aqui, se necessário
+  ];
+
+  var listaVagas = document.querySelector(".lista-vagas");
+
+  vagasAbertas.forEach(function (vaga) {
+    var vagaHTML = `
+      <hr>
+      <div class="campo-vagas">
+        <h2>${vaga.nomeVaga}</h2>
+        <ul>
+          <li>período: ${vaga.periodoVaga}</li>
+          <li>local: ${vaga.localVaga}</li>
+          <li>descrição: ${vaga.descricaoVaga}</li>
+        </ul>            
+      </div>`;
+
+    listaVagas.innerHTML += vagaHTML;
+  });
+}
+
+
+
+/* let perfilONG = [
   {
-    nomeUsuario: "Maria da Silva",
-    email: "mariadasilva@email.com",
-    senha: "123",
-    textoBio:
-      "Sou uma pessoa que gosta de ajudar os outros e estou realizando trabalhos voluntários sempre que posso",
-    fotoPerfil: "https://source.unsplash.com/180x180/?face-woman",
-    interesses: [
-      "Crianças",
-      "Animais",
-      "Pessoas com deficiência",
-      "Pessoas em situação de rua",
-    ],
-    qualificacao: [
-      {
-        nomeQuali: "Técnico em Panificação",
-        tipoQuali: "Curso Técnico",
-        instituicaoQuali: "SEBRAE",
-        areaQuali: "Panificação",
-        periodoQuali: "10/02/2010 - 10/02/2012",
-      },
-      {
-        nomeQuali: "Técnico em Confeitaria",
-        tipoQuali: "Curso Técnico",
-        instituicaoQuali: "SEBRAE",
-        areaQuali: "Confeitaria",
-        periodoQuali: "10/02/2015 - 10/02/2017",
-      },
-    ],
-    experiencias: [
-      {
-        nomeExp: "Chef de panificação e confeitaria",
-        localExp: "Padaria Pão Quentinho",
-        cargoExp: "Chef de cozinha",
-        descricaoExp:
-          "Construí o cardápio da Padaria Pão Quentinho e atuo como chef de panificação e confeitaria, comandando uma equipe de 10 pessoas",
-        periodoExp: "24/07/2019 - Atual",
-      },
-    ],
-  },
-  {
-    nomeUsuario: "Maria Santos",
-    email: "mariasantos@email.com",
-    senha: "987654",
-    textoBio:
-      "Sou apaixonada por ajudar pessoas em situação de vulnerabilidade. Trabalho como voluntária em diversos projetos sociais, especialmente com crianças e idosos. Acredito que pequenas ações podem transformar o mundo em um lugar melhor.",
-    fotoPerfil: "https://source.unsplash.com/180x180/?face-woman",
-    interesses: ["Crianças", "Idosos", "Educação", "Saúde"],
-    qualificacao: [
-      {
-        nomeQuali: "Bacharel em Enfermagem",
-        tipoQuali: "Curso de Graduação",
-        instituicaoQuali: "Universidade Federal",
-        areaQuali: "Saúde",
-        periodoQuali: "01/01/2010 - 01/01/2014",
-      },
-      {
-        nomeQuali: "Curso de Primeiros Socorros",
-        tipoQuali: "Curso",
-        instituicaoQuali: "Cruz Vermelha",
-        areaQuali: "Saúde",
-        periodoQuali: "01/01/2015 - 01/01/2016",
-      },
-      {
-        nomeQuali: "Curso de Psicologia Infantil",
-        tipoQuali: "Curso",
-        instituicaoQuali: "Instituto de Psicologia",
-        areaQuali: "Psicologia",
-        periodoQuali: "01/01/2017 - 01/01/2018",
-      },
-    ],
-    experiencias: [
-      {
-        nomeExp: "Voluntariado em Abrigo de Crianças",
-        localExp: "Abrigo Esperança",
-        cargoExp: "Voluntária",
-        descricaoExp:
-          "Atuação como voluntária no cuidado e suporte emocional de crianças em situação de abrigo.",
-        periodoExp: "01/01/2015 - 10/06/2016",
-      },
-      {
-        nomeExp: "Enfermeira em Hospital Pediátrico",
-        localExp: "Hospital Infantil Esperança",
-        cargoExp: "Enfermeira",
-        descricaoExp:
-          "Trabalho como enfermeira no setor pediátrico, cuidando das crianças internadas e auxiliando suas famílias.",
-        periodoExp: "01/07/2016 - 10/06/2021",
-      },
-      {
-        nomeExp: "Voluntariado em Asilo",
-        localExp: "Asilo Vida Feliz",
-        cargoExp: "Voluntária",
-        descricaoExp:
-          "Atuação como voluntária no asilo, auxiliando os idosos em suas necessidades diárias e proporcionando momentos de interação e carinho.",
-        periodoExp: "01/01/2022 - Atual",
-      },
-    ],
-  },
-  {
-    nomeUsuario: "André Santos",
-    email: "andre.santos@email.com",
+    nomeUsuarioONG: "Quatro Patas",
+    email: "email1@exemplo.com",
     senha: "senha123",
     textoBio:
-      "Sou apaixonado por tecnologia desde criança e hoje trabalho como desenvolvedor de software em uma empresa de TI. Busco constantemente me atualizar e aprender novas tecnologias. Nas horas livres, gosto de tocar violão e participar de projetos de desenvolvimento social com foco em educação.",
-    fotoPerfil: "https://source.unsplash.com/180x180/?face-man",
-    interesses: [
-      "Desenvolvimento de Software",
-      "Tecnologia",
-      "Música",
-      "Educação",
-    ],
-    qualificacao: [
+      "Somos uma ONG dedicada a ajudar animais de rua e promover a conscientização sobre a importância da proteção animal. Nossa missão é resgatar, reabilitar e encontrar lares amorosos para os animais abandonados, além de desenvolver ações para melhorar a qualidade de vida desses seres tão especiais. Junte-se a nós nessa causa e faça a diferença!",
+    fotoPerfil: "img/foto-perfilONG.png",
+    interesses: ["Animais", "Meio Ambiente"],
+    instagram: ["https://instagram.com/usuarioONG1"],
+    facebook: ["https://facebook.com/usuarioONG1"],
+    whatsapp: ["5531332323232"],
+    acoes: [
       {
-        nomeQuali: "Bacharel em Ciência da Computação",
-        tipoQuali: "Curso de Graduação",
-        instituicaoQuali: "Universidade Estadual",
-        areaQuali: "Ciência da Computação",
-        periodoQuali: "01/01/2012 - 01/01/2016",
+        nomeAcao: "Castração gratuita",
+        periodoAcao: "02/06/23 - 04/06/23",
+        descricaoAcao:
+          "Promoção de castração gratuita para animais no bairro de Boa Viagem. O objetivo é controlar a reprodução desordenada e contribuir para o bem-estar dos animais.",
       },
       {
-        nomeQuali: "Curso de Desenvolvimento Web",
-        tipoQuali: "Curso",
-        instituicaoQuali: "Escola de Tecnologia",
-        areaQuali: "Desenvolvimento Web",
-        periodoQuali: "01/01/2017 - 01/06/2017",
+        nomeAcao: "Feijoada Solidária",
+        periodoAcao: "17/06/23 - 18/06/23",
+        descricaoAcao:
+          "Realizamos uma feijoada solidária para arrecadar fundos destinados à compra de ração e medicamentos para animais de rua. Será um momento de confraternização e solidariedade.",
       },
     ],
-    experiencias: [
+    vagasAbertas: [
       {
-        nomeExp: "Desenvolvedor de Software",
-        localExp: "Empresa TechSolutions",
-        cargoExp: "Desenvolvedor Full Stack",
-        descricaoExp:
-          "Responsável pelo desenvolvimento e manutenção de sistemas web",
-        periodoExp: "01/07/2017 - Presente",
+        nomeVaga: "Social Media",
+        localVaga: "Boa Viagem",
+        periodoVaga: "10/06/23 - 10/06/24",
+        descricaoVaga:
+          "Estamos em busca de uma pessoa criativa e engajada para gerenciar nossas redes sociais, criar conteúdos relevantes e impactantes, e promover nossa causa animal. Se você é apaixonado(a) por animais e tem habilidades em marketing digital, essa vaga é para você!",
       },
       {
-        nomeExp: "Voluntariado em Projeto de Alfabetização",
-        localExp: "ONG Educar é Transformar",
-        cargoExp: "Instrutor",
-        descricaoExp:
-          "Ministrar aulas de leitura e escrita para crianças em idade escolar",
-        periodoExp: "01/01/2018 - Presente",
-      },
-    ],
-  },
-  {
-    nomeUsuario: "Lucas Silva",
-    email: "lucas.silva@email.com",
-    senha: "abc123",
-    textoBio:
-      "Formado em Engenharia Civil, descobri minha paixão pela construção de pontes e viadutos. Atualmente, trabalho como engenheiro de projetos em uma empresa de infraestrutura. Nas horas vagas, gosto de praticar esportes ao ar livre e ajudar em iniciativas comunitárias.",
-    fotoPerfil: "https://source.unsplash.com/180x180/?face-man",
-    interesses: ["Engenharia Civil", "Esportes", "Ações comunitárias"],
-    qualificacao: [
-      {
-        nomeQuali: "Bacharel em Engenharia Civil",
-        tipoQuali: "Curso de Graduação",
-        instituicaoQuali: "Universidade Federal",
-        areaQuali: "Engenharia Civil",
-        periodoQuali: "01/01/2010 - 01/01/2015",
+        nomeVaga: "Financeiro",
+        localVaga: "Boa Viagem",
+        periodoVaga: "10/06/23 - 10/06/24",
+        descricaoVaga:
+          "Estamos montando uma equipe financeira para cuidar das finanças da ONG. Se você possui experiência na área financeira, tem habilidades em gestão financeira e quer contribuir com a causa animal, venha fazer parte do nosso time!",
       },
       {
-        nomeQuali: "Pós-Graduação em Gerenciamento de Projetos",
-        tipoQuali: "Curso de Pós-Graduação",
-        instituicaoQuali: "Instituto de Tecnologia",
-        areaQuali: "Gerenciamento de Projetos",
-        periodoQuali: "01/01/2016 - 01/01/2017",
-      },
-    ],
-    experiencias: [
-      {
-        nomeExp: "Engenheiro de Projetos",
-        localExp: "Empresa ConstruBem",
-        cargoExp: "Engenheiro",
-        descricaoExp:
-          "Responsável por planejar e supervisionar projetos de infraestrutura",
-        periodoExp: "01/01/2017 - Presente",
-      },
-      {
-        nomeExp: "Voluntariado na Construção Civil",
-        localExp: "Associação Mãos à Obra",
-        cargoExp: "Colaborador",
-        descricaoExp:
-          "Auxílio em projetos de construção para famílias de baixa renda",
-        periodoExp: "01/01/2015 - 01/12/2016",
+        nomeVaga: "Voluntário de Eventos",
+        localVaga: "Boa Viagem",
+        periodoVaga: "10/06/23 - 10/06/24",
+        descricaoVaga:
+          "Precisamos de pessoas voluntárias para auxiliar na produção dos eventos solidários realizados pela ONG. Se você gosta de trabalhar em equipe, tem habilidades em organização e quer contribuir para o sucesso dos nossos eventos, venha fazer parte do nosso time!",
       },
     ],
   },
   {
-    nomeUsuario: "Lucas Ferreira",
-    email: "lucasferreira@email.com",
-    senha: "senha123",
+    nomeUsuarioONG: "Amigos dos Animais",
+    email: "contato@amigosdosanimais.org",
+    senha: "amigos123",
     textoBio:
-      "Sou formado em Engenharia Civil, mas descobri minha verdadeira paixão pelo voluntariado. Atuo em projetos sociais relacionados à educação e meio ambiente. Acredito que podemos construir um futuro melhor através da conscientização e da transformação das comunidades.",
-    fotoPerfil: "https://source.unsplash.com/180x180/?face-man",
-    interesses: ["Educação", "Meio Ambiente"],
-    qualificacao: [
+      "Nós somos uma ONG dedicada a resgatar, tratar e encontrar lares amorosos para animais abandonados. Trabalhamos incansavelmente para promover o bem-estar animal e conscientizar a sociedade sobre a importância da adoção responsável. Junte-se a nós nessa missão e faça parte dessa história!",
+    fotoPerfil: "https://source.unsplash.com/180x180/?pets",
+    interesses: ["Animais", "Proteção Animal"],
+    instagram: ["https://instagram.com/amigosdosanimais"],
+    facebook: ["https://facebook.com/amigosdosanimais"],
+    whatsapp: ["5511998765432"],
+    acoes: [
       {
-        nomeQuali: "Bacharel em Engenharia Civil",
-        tipoQuali: "Curso de Graduação",
-        instituicaoQuali: "Universidade Federal",
-        areaQuali: "Engenharia",
-        periodoQuali: "01/01/2010 - 01/01/2014",
+        nomeAcao: "Feira de Adoção",
+        periodoAcao: "10/07/23 - 11/07/23",
+        descricaoAcao:
+          "Realizamos uma feira de adoção de animais resgatados. Venha conhecer nossos amigos peludos e encontre um novo membro para sua família!",
+        localAcao: "Praça Central, Cidade",
       },
       {
-        nomeQuali: "Curso de Gestão Ambiental",
-        tipoQuali: "Curso",
-        instituicaoQuali: "Instituto de Meio Ambiente",
-        areaQuali: "Meio Ambiente",
-        periodoQuali: "01/01/2015 - 01/01/2016",
-      },
-      {
-        nomeQuali: "Curso de Mediação de Conflitos",
-        tipoQuali: "Curso",
-        instituicaoQuali: "Centro de Mediação",
-        areaQuali: "Conflitos",
-        periodoQuali: "01/01/2017 - 01/01/2018",
+        nomeAcao: "Campanha de Vacinação",
+        periodoAcao: "20/08/23 - 25/08/23",
+        descricaoAcao:
+          "Promovemos uma campanha de vacinação gratuita para cães e gatos. Proteja seu animal de estimação contra doenças!",
+        localAcao: "Centro Comunitário, Cidade",
       },
     ],
-    experiencias: [
+    vagasAbertas: [
       {
-        nomeExp: "Voluntariado em Escola",
-        localExp: "Escola Esperança",
-        cargoExp: "Professor",
-        descricaoExp:
-          "Atuação como professor voluntário em escola de ensino fundamental, lecionando matemática e auxiliando os alunos com dificuldades.",
-        periodoExp: "01/01/2015 - 10/06/2016",
+        nomeVaga: "Assistente Administrativo",
+        localVaga: "Cidade",
+        periodoVaga: "01/07/23 - 01/07/24",
+        descricaoVaga:
+          "Estamos em busca de um(a) assistente administrativo(a) para auxiliar nas atividades do escritório da ONG. Se você tem habilidades organizacionais e deseja contribuir para a causa animal, junte-se a nós!",
+        requisitosVaga:
+          "Conhecimento básico em administração. Habilidade em organização, atendimento telefônico e gestão de documentos.",
       },
       {
-        nomeExp: "Voluntariado em ONG Ambiental",
-        localExp: "ONG Verde Vivo",
-        cargoExp: "Coordenador",
-        descricaoExp:
-          "Coordenação de projetos de conscientização ambiental, envolvendo ações de reciclagem, reflorestamento e palestras educativas.",
-        periodoExp: "01/07/2016 - 10/06/2021",
-      },
-      {
-        nomeExp: "Voluntariado em Comunidade Carente",
-        localExp: "Comunidade Esperança",
-        cargoExp: "Assistente Social",
-        descricaoExp:
-          "Atuação como assistente social na comunidade carente, promovendo ações de inclusão social, apoio psicossocial e encaminhamento para serviços públicos.",
-        periodoExp: "01/01/2022 - Atual",
+        nomeVaga: "Voluntário de Limpeza",
+        localVaga: "Cidade",
+        periodoVaga: "01/07/23 - 01/07/24",
+        descricaoVaga:
+          "Precisamos de voluntários(as) para ajudar na limpeza dos abrigos de animais. Se você é uma pessoa dedicada e quer fazer a diferença na vida dos nossos amigos de quatro patas, venha nos ajudar!",
+        requisitosVaga:
+          "Disponibilidade de horário. Comprometimento com a limpeza e organização dos abrigos.",
       },
     ],
   },
   {
-    nomeUsuario: "Pedro Costa",
-    email: "pedrocosta@email.com",
-    senha: "987654",
+    nomeUsuarioONG: "Educa+,",
+    email: "contato@educa.org",
+    senha: "educa123",
     textoBio:
-      "Sempre tive interesse em ajudar pessoas em situação de vulnerabilidade. Meu foco principal é atuar em projetos que promovam a inclusão social e a melhoria da qualidade de vida de comunidades carentes. Acredito que pequenas ações podem fazer a diferença.",
-    fotoPerfil: "https://source.unsplash.com/180x180/?face-man",
-    interesses: ["Inclusão Social", "Comunidades Carentes"],
-    qualificacao: [
+      "Somos uma ONG dedicada a promover a educação de qualidade para todos. Acreditamos que a educação é um direito fundamental e trabalhamos para garantir o acesso igualitário à educação, oferecendo suporte educacional, recursos e oportunidades de aprendizado. Junte-se a nós e seja parte da transformação!",
+    fotoPerfil: "https://source.unsplash.com/180x180/?school",
+    interesses: ["Educação", "Igualdade"],
+    instagram: ["https://instagram.com/educaong"],
+    facebook: ["https://facebook.com/educaong"],
+    whatsapp: ["5511987654321"],
+    acoes: [
       {
-        nomeQuali: "Bacharel em Administração",
-        tipoQuali: "Curso de Graduação",
-        instituicaoQuali: "Universidade Estadual",
-        areaQuali: "Administração",
-        periodoQuali: "01/01/2010 - 01/01/2014",
+        nomeAcao: "Aula de Reforço Escolar",
+        periodoAcao: "01/08/23 - 30/11/23",
+        descricaoAcao:
+          "Oferecemos aulas de reforço escolar gratuitas para alunos do ensino fundamental, visando o acompanhamento e o fortalecimento do aprendizado.",
+        localAcao: "Escola Municipal, Cidade",
       },
       {
-        nomeQuali: "Curso de Empreendedorismo Social",
-        tipoQuali: "Curso",
-        instituicaoQuali: "Centro de Empreendedorismo",
-        areaQuali: "Empreendedorismo",
-        periodoQuali: "01/01/2015 - 01/01/2016",
-      },
-      {
-        nomeQuali: "Curso de Liderança",
-        tipoQuali: "Curso",
-        instituicaoQuali: "Instituto de Liderança",
-        areaQuali: "Liderança",
-        periodoQuali: "01/01/2017 - 01/01/2018",
+        nomeAcao: "Distribuição de Materiais",
+        periodoAcao: "01/02/23 - 28/02/23",
+        descricaoAcao:
+          "Realizamos a distribuição de materiais escolares para estudantes de baixa renda, proporcionando-lhes as ferramentas necessárias para o sucesso acadêmico.",
+        localAcao: "Centro Comunitário, Cidade",
       },
     ],
-    experiencias: [
+    vagasAbertas: [
       {
-        nomeExp: "Voluntariado em ONG de Inclusão",
-        localExp: "ONG Novo Horizonte",
-        cargoExp: "Coordenador",
-        descricaoExp:
-          "Coordenação de projetos de inclusão social, envolvendo capacitação profissional, geração de renda e apoio psicossocial para pessoas em situação de vulnerabilidade.",
-        periodoExp: "01/01/2015 - 10/06/2018",
+        nomeVaga: "Professor(a) de Matemática",
+        localVaga: "Cidade",
+        periodoVaga: "01/07/23 - 01/07/24",
+        descricaoVaga:
+          "Estamos em busca de um(a) professor(a) de matemática para ministrar aulas de reforço escolar. Se você é apaixonado(a) pela área da educação e tem habilidades em ensino, venha fazer parte da nossa equipe!",
       },
       {
-        nomeExp: "Voluntariado em Comunidade Carente",
-        localExp: "Comunidade Esperança",
-        cargoExp: "Assistente Social",
-        descricaoExp:
-          "Atuação como assistente social na comunidade carente, promovendo ações de inclusão social, apoio psicossocial e encaminhamento para serviços públicos.",
-        periodoExp: "01/07/2018 - 10/06/2021",
-      },
-      {
-        nomeExp: "Voluntariado em Projeto de Educação",
-        localExp: "Projeto Futuro Brilhante",
-        cargoExp: "Professor",
-        descricaoExp:
-          "Lecionar disciplinas de matemática e português para jovens em situação de vulnerabilidade, visando ampliar suas oportunidades de aprendizado e desenvolvimento.",
-        periodoExp: "01/01/2022 - Atual",
+        nomeVaga: "Voluntário(a) de Apoio",
+        localVaga: "Cidade",
+        periodoVaga: "01/07/23 - 01/07/24",
+        descricaoVaga:
+          "Precisamos de voluntários(as) para auxiliar nas atividades educacionais, como apoio aos professores, organização de materiais e suporte administrativo. Se você deseja contribuir para a educação e tem disponibilidade de horário, junte-se a nós!",
       },
     ],
   },
   {
-    nomeUsuario: "Isabella Santos",
-    email: "isabella.santos@example.com",
-    senha: "senha123",
+    nomeUsuarioONG: "Saúde para Todos",
+    email: "contato@saudeparatodos.org",
+    senha: "saude123",
     textoBio:
-      "Sou apaixonada por educação e acredito no poder da transformação através do conhecimento. Trabalho como professora voluntária em comunidades carentes, proporcionando oportunidades educacionais para crianças e adolescentes. Meu objetivo é contribuir para um futuro mais igualitário e empoderar as próximas gerações.",
-    fotoPerfil: "https://source.unsplash.com/180x180/?face-woman",
-    interesses: ["Educação", "Empoderamento Feminino"],
-    qualificacao: [
+      "Nossa ONG tem como objetivo promover o acesso universal à saúde e garantir a qualidade de vida para todos. Trabalhamos para combater as desigualdades na área da saúde, oferecendo suporte, conscientização e serviços médicos às comunidades carentes. Junte-se a nós e faça parte dessa luta!",
+    fotoPerfil: "https://source.unsplash.com/180x180/?hospital",
+    interesses: ["Saúde", "Igualdade"],
+    instagram: ["https://instagram.com/saudeparatodos"],
+    facebook: ["https://facebook.com/saudeparatodos"],
+    whatsapp: ["5511976543210"],
+    acoes: [
       {
-        nomeQuali: "Licenciatura em Pedagogia",
-        tipoQuali: "Curso de Graduação",
-        instituicaoQuali: "Universidade Federal",
-        areaQuali: "Educação",
-        periodoQuali: "01/01/2012 - 01/01/2016",
+        nomeAcao: "Campanha de Vacinação",
+        periodoAcao: "01/07/23 - 31/07/23",
+        descricaoAcao:
+          "Realizamos uma campanha de vacinação gratuita contra doenças virais para crianças e adultos. Proteja-se e cuide da sua saúde!",
+        localAcao: "Posto de Saúde, Cidade",
       },
       {
-        nomeQuali: "Especialização em Educação Infantil",
-        tipoQuali: "Curso de Pós-Graduação",
-        instituicaoQuali: "Instituto de Educação",
-        areaQuali: "Educação",
-        periodoQuali: "01/01/2017 - 01/01/2018",
-      },
-      {
-        nomeQuali: "Curso de Mediação de Conflitos",
-        tipoQuali: "Curso",
-        instituicaoQuali: "Centro de Mediação",
-        areaQuali: "Conflitos",
-        periodoQuali: "01/01/2019 - 01/01/2020",
+        nomeAcao: "Atendimento Médico Móvel",
+        periodoAcao: "01/08/23 - 31/08/23",
+        descricaoAcao:
+          "Levamos  atendimento médico, exames básicos e orientações de saúde para comunidades que não têm acesso fácil a serviços de saúde. A sua saúde é nossa prioridade!",
+        localAcao: "Comunidade X, Cidade",
       },
     ],
-    experiencias: [
+    vagasAbertas: [
       {
-        nomeExp: "Voluntariado em Escola",
-        localExp: "Escola Esperança",
-        cargoExp: "Professora",
-        descricaoExp:
-          "Lecionar diversas disciplinas para alunos do ensino fundamental, buscando incentivar o aprendizado e promover o desenvolvimento integral.",
-        periodoExp: "01/01/2016 - Atual",
+        nomeVaga: "Enfermeiro(a)",
+        localVaga: "Cidade",
+        periodoVaga: "01/07/23 - 01/07/24",
+        descricaoVaga:
+          "Estamos em busca de um(a) enfermeiro(a) para atuar em nossa equipe. Se você é apaixonado(a) pela área da saúde, tem habilidades em cuidados médicos e deseja fazer a diferença, venha fazer parte do nosso time!",
       },
       {
-        nomeExp: "Voluntariado em ONG de Empoderamento Feminino",
-        localExp: "ONG Mulheres Fortes",
-        cargoExp: "Mentora",
-        descricaoExp:
-          "Atuar como mentora de jovens mulheres, auxiliando-as no desenvolvimento de habilidades pessoais e profissionais, e promovendo a conscientização sobre seus direitos.",
-        periodoExp: "01/01/2020 - Atual",
+        nomeVaga: "Voluntário(a) de Apoio",
+        localVaga: "Cidade",
+        periodoVaga: "01/07/23 - 01/07/24",
+        descricaoVaga:
+          "Precisamos de voluntários(as) para auxiliar nas atividades de apoio aos pacientes, organização de materiais e suporte administrativo. Se você tem interesse pela área da saúde e deseja ajudar, junte-se a nós!",
       },
     ],
   },
   {
-    nomeUsuario: "Laura Mendes",
-    email: "laura.mendes@example.com",
-    senha: "abc123",
+    nomeUsuarioONG: "Natureza Viva",
+    email: "contato@naturezaviva.org",
+    senha: "natureza123",
     textoBio:
-      "Acredito que a cultura é uma ferramenta poderosa para transformar vidas. Sou voluntária em projetos culturais, promovendo acesso à arte e à educação cultural para crianças e jovens. Meu propósito é estimular a criatividade, a imaginação e a inclusão por meio da cultura.",
-    fotoPerfil: "https://source.unsplash.com/180x180/?face-woman3",
-    interesses: ["Cultura", "Educação Cultural"],
-    qualificacao: [
+      "Somos uma ONG comprometida em preservar e proteger a natureza. Nosso objetivo é conscientizar a sociedade sobre a importância da conservação ambiental e promover ações sustentáveis. Junte-se a nós e seja parte da mudança!",
+    fotoPerfil: "https://source.unsplash.com/180x180/?nature",
+    interesses: ["Meio Ambiente", "Sustentabilidade"],
+    instagram: ["https://instagram.com/naturezaviva"],
+    facebook: ["https://facebook.com/naturezaviva"],
+    whatsapp: ["5511965432109"],
+    acoes: [
       {
-        nomeQuali: "Bacharelado em Artes Cênicas",
-        tipoQuali: "Curso de Graduação",
-        instituicaoQuali: "Universidade das Artes",
-        areaQuali: "Artes",
-        periodoQuali: "01/01/2013 - 01/01/2017",
+        nomeAcao: "Plantio de Árvores",
+        periodoAcao: "20/03/23",
+        descricaoAcao:
+          "Realizamos uma ação de plantio de árvores em parceria com a comunidade local, visando o reflorestamento de áreas degradadas e a conscientização sobre a importância da preservação ambiental.",
+        localAcao: "Parque Municipal, Cidade",
       },
       {
-        nomeQuali: "Curso de Produção Cultural",
-        tipoQuali: "Curso",
-        instituicaoQuali: "Centro de Cultura",
-        areaQuali: "Produção Cultural",
-        periodoQuali: "01/01/2018 - 01/01/2019",
+        nomeAcao: "Limpeza de Praias",
+        periodoAcao: "15/06/23",
+        descricaoAcao:
+          "Organizamos uma grande ação de limpeza de praias, mobilizando voluntários para remover resíduos e conscientizar sobre os impactos do lixo marinho. Juntos, fizemos a diferença!",
+        localAcao: "Praia X, Cidade",
       },
     ],
-    experiencias: [
+    vagasAbertas: [
       {
-        nomeExp: "Voluntariado em Projeto Teatral",
-        localExp: "Grupo Arte em Cena",
-        cargoExp: "Instrutora de Teatro",
-        descricaoExp:
-          "Ministrar aulas de teatro para crianças e adolescentes, explorando a expressão artística e o trabalho em equipe.",
-        periodoExp: "01/01/2017 - Atual",
+        nomeVaga: "Voluntário(a) de Educação Ambiental",
+        localVaga: "Cidade",
+        periodoVaga: "01/07/23 - 01/07/24",
+        descricaoVaga:
+          "Estamos em busca de voluntários(as) para atuar na educação ambiental, ministrando palestras, organizando eventos e desenvolvendo materiais educativos. Se você é apaixonado(a) pela natureza e deseja transmitir conhecimentos, junte-se a nós!",
       },
       {
-        nomeExp: "Voluntariado em Museu",
-        localExp: "Museu da Cidade",
-        cargoExp: "Guia Cultural",
-        descricaoExp:
-          "Realizar visitas guiadas, apresentando a história e a arte do museu para o público em geral, estimulando o interesse pela cultura.",
-        periodoExp: "01/01/2019 - Atual",
+        nomeVaga: "Coordenador(a) de Projetos",
+        localVaga: "Cidade",
+        periodoVaga: "01/07/23 - 01/07/24",
+        descricaoVaga:
+          "Estamos procurando um(a) coordenador(a) de projetos para liderar nossas iniciativas ambientais. Se você tem experiência em gestão de projetos e paixão pelo meio ambiente, venha fazer parte da nossa equipe!",
       },
     ],
   },
   {
-    nomeUsuario: "Felipe Silva",
-    email: "felipe.silva@example.com",
-    senha: "senha123",
+    nomeUsuarioONG: "Direitos em Ação",
+    email: "contato@direitosemacao.org",
+    senha: "direitos123",
     textoBio:
-      "Sou engenheiro civil com ampla experiência na área de construção civil. Tenho paixão por projetar e construir edifícios sustentáveis que atendam às necessidades dos clientes. Busco constantemente aprimorar meus conhecimentos e aplicar as melhores práticas da engenharia civil.",
-    fotoPerfil: "https://source.unsplash.com/180x180/?face-man",
-    interesses: [
-      "Engenharia Civil",
-      "Construção Sustentável",
-      "Gerenciamento de Projetos",
+      "Somos uma ONG dedicada à promoção e defesa dos direitos humanos. Lutamos pela igualdade, justiça e respeito a todas as pessoas, combatendo a discriminação e o preconceito. Junte-se a nós nessa causa!",
+    fotoPerfil: "https://source.unsplash.com/180x180/?people",
+    interesses: ["Direitos Humanos", "Igualdade"],
+    instagram: ["https://instagram.com/direitosemacao"],
+    facebook: ["https://facebook.com/direitosemacao"],
+    whatsapp: ["5511987654321"],
+    acoes: [
+      {
+        nomeAcao: "Campanha contra a Violência de Gênero",
+        periodoAcao: "08/03/23",
+        descricaoAcao:
+          "Realizamos uma campanha de conscientização contra a violência de gênero, promovendo palestras, debates e divulgando informações sobre os direitos das mulheres. Juntos, podemos construir uma sociedade mais igualitária!",
+        localAcao: "Auditório Municipal, Cidade",
+      },
+      {
+        nomeAcao: "Assistência Jurídica Gratuita",
+        periodoAcao: "01/06/23 - 30/06/23",
+        descricaoAcao:
+          "Oferecemos assistência jurídica gratuita a pessoas em situação de vulnerabilidade, garantindo o acesso à justiça e a defesa de seus direitos fundamentais. Nossos advogados estão prontos para ajudar!",
+        localAcao: "Sede da ONG, Cidade",
+      },
     ],
-    qualificacao: [
+    vagasAbertas: [
       {
-        nomeQuali: "Bacharelado em Engenharia Civil",
-        tipoQuali: "Curso de Graduação",
-        instituicaoQuali: "Universidade de Engenharia",
-        areaQuali: "Engenharia Civil",
-        periodoQuali: "01/01/2012 - 01/01/2016",
+        nomeVaga: "Assistente Social",
+        localVaga: "Cidade",
+        periodoVaga: "01/07/23 - 01/07/24",
+        descricaoVaga:
+          "Estamos em busca de um(a) assistente social para atuar no atendimento e suporte às pessoas atendidas pela ONG. Se você é formado(a) em Serviço Social e tem paixão pelos direitos humanos, venha fazer parte da nossa equipe!",
       },
       {
-        nomeQuali: "Pós-graduação em Gestão de Projetos",
-        tipoQuali: "Curso de Pós-Graduação",
-        instituicaoQuali: "Instituto de Gestão",
-        areaQuali: "Gerenciamento de Projetos",
-        periodoQuali: "01/01/2017 - 01/01/2018",
+        nomeVaga: "Voluntário(a) de Comunicação",
+        localVaga: "Cidade",
+        periodoVaga: "01/07/23 - 01/07/24",
+        descricaoVaga:
+          "Precisamos de voluntários(as) para auxiliar nas atividades de comunicação da ONG, como produção de conteúdo, gestão de redes sociais e elaboração de materiais informativos. Se você tem habilidades em comunicação e quer contribuir com os direitos humanos, junte-se a nós!",
       },
     ],
-    experiencias: [
+  },
+  {
+    nomeUsuarioONG: "Mãos Solidárias",
+    email: "contato@maossolidarias.org",
+    senha: "solidariedade123",
+    textoBio:
+      "Somos uma ONG comprometida em ajudar pessoas em situação de rua, oferecendo abrigo, alimentação e suporte para que possam reconstruir suas vidas. Nossa missão é resgatar a dignidade e promover a inclusão social. Junte-se a nós e faça a diferença!",
+    fotoPerfil: "https://source.unsplash.com/180x180/?hands",
+    interesses: ["Pessoas em Situação de Rua", "Inclusão Social"],
+    instagram: ["https://instagram.com/maossolidarias"],
+    facebook: ["https://facebook.com/maossolidarias"],
+    whatsapp: ["5511888777666"],
+    acoes: [
       {
-        nomeExp: "Engenheiro Civil",
-        localExp: "Empresa Construindo Futuro",
-        cargoExp: "Engenheiro de Projetos",
-        descricaoExp:
-          "Responsável pelo planejamento, execução e acompanhamento de projetos de construção civil, assegurando a qualidade e o cumprimento dos prazos estabelecidos.",
-        periodoExp: "01/01/2018 - Atual",
+        nomeAcao: "Distribuição de Alimentos",
+        periodoAcao: "10/02/23",
+        descricaoAcao:
+          "Realizamos uma ação de distribuição de alimentos para pessoas em situação de rua, fornecendo refeições nutritivas e água potável. Nosso objetivo é garantir que tenham acesso a alimentos adequados e combater a fome.",
+        localAcao: "Praça Central, Cidade",
       },
       {
-        nomeExp: "Coordenador de Obras",
-        localExp: "Construtora ABC",
-        cargoExp: "Coordenador",
-        descricaoExp:
-          "Coordenação de equipes de trabalho, controle de cronogramas, análise de projetos e supervisão das etapas construtivas em obras residenciais e comerciais.",
-        periodoExp: "01/01/2016 - 01/01/2018",
+        nomeAcao: "Doação de Roupas e Cobertores",
+        periodoAcao: "25/06/23",
+        descricaoAcao:
+          "Promovemos uma campanha de arrecadação de roupas e cobertores para doar às pessoas em situação de rua durante o inverno. Além de fornecer itens essenciais, buscamos transmitir calor humano e solidariedade.",
+        localAcao: "Sede da ONG, Cidade",
+      },
+      {
+        nomeAcao: "Assistência Médica",
+        periodoAcao: "07/09/23",
+        descricaoAcao:
+          "Realizamos uma ação de assistência médica, oferecendo atendimento básico de saúde e encaminhando as pessoas em situação de rua para tratamentos específicos quando necessário. Cuidar da saúde é essencial para proporcionar bem-estar e qualidade de vida.",
+        localAcao: "Centro Comunitário, Cidade",
+      },
+    ],
+    vagasAbertas: [
+      {
+        nomeVaga: "Assistente Social",
+        localVaga: "Cidade",
+        periodoVaga: "01/07/23 - 01/07/24",
+        descricaoVaga:
+          "Estamos em busca de um(a) assistente social para realizar atendimentos e acompanhamentos individuais junto às pessoas em situação de rua, auxiliando na busca por soluções e na reintegração social. Se você tem formação em Serviço Social e deseja fazer parte dessa transformação, junte-se a nós!",
+      },
+    ],
+  },
+  {
+    nomeUsuarioONG: "Esporte para Todos",
+    email: "contato@esporteparatodos.org",
+    senha: "esporte123",
+    textoBio:
+      "Somos uma ONG dedicada a promover o acesso ao esporte para todas as pessoas, independentemente de sua idade, gênero ou condição socioeconômica. Acreditamos no poder transformador do esporte e trabalhamos para desenvolver programas e projetos que estimulem a prática esportiva, a inclusão e o bem-estar da comunidade. Venha fazer parte desse time!",
+    fotoPerfil: "https://source.unsplash.com/180x180/?sport",
+    interesses: ["Esporte", "Inclusão Social"],
+    instagram: ["https://instagram.com/esporteparatodos"],
+    facebook: ["https://facebook.com/esporteparatodos"],
+    whatsapp: ["5511999988888"],
+    acoes: [
+      {
+        nomeAcao: "Festival de Esportes",
+        periodoAcao: "15/07/23 - 17/07/23",
+        descricaoAcao:
+          "Realizamos um festival de esportes para crianças e jovens da comunidade, oferecendo aulas gratuitas de diversas modalidades esportivas, como futebol, basquete, vôlei e atletismo. Nosso objetivo é promover a integração, o espírito esportivo e incentivar a prática esportiva desde cedo.",
+        localAcao: "Campo de Futebol Municipal, Cidade",
+      },
+      {
+        nomeAcao: "Caminhada Solidária",
+        periodoAcao: "05/09/23",
+        descricaoAcao:
+          "Organizamos uma caminhada solidária aberta à comunidade, com o objetivo de estimular a prática de exercícios físicos e promover a solidariedade. Durante o percurso, arrecadamos alimentos não perecíveis para doação a instituições de caridade.",
+        localAcao: "Parque Municipal, Cidade",
+      },
+      {
+        nomeAcao: "Aula de Iniciação Esportiva",
+        periodoAcao: "20/11/23",
+        descricaoAcao:
+          "Realizamos uma aula de iniciação esportiva para crianças de baixa renda, proporcionando a oportunidade de experimentarem diferentes modalidades esportivas e descobrirem seus talentos. Acreditamos no esporte como ferramenta de inclusão social e desenvolvimento pessoal.",
+        localAcao: "Quadra Poliesportiva, Cidade",
+      },
+    ],
+    vagasAbertas: [
+      {
+        nomeVaga: "Instrutor(a) de Esportes",
+        localVaga: "Cidade",
+        periodoVaga: "01/08/23 - 01/08/24",
+        descricaoVaga:
+          "Estamos em busca de um(a) instrutor(a) de esportes para ministrar aulas e coordenar atividades esportivas em nossa ONG. Se você é apaixonado(a) por esportes, possui conhecimento em diversas modalidades e deseja fazer a diferença na vida de crianças e jovens, essa vaga é para você!",
+        requisitosVaga: [
+          "Formação em Educação Física",
+          "Experiência em ministrar aulas e atividades esportivas",
+          "Habilidades de comunicação e trabalho em equipe",
+        ],
+      },
+    ],
+  },
+  {
+    nomeUsuarioONG: "Crianças Felizes",
+    email: "contato@criancasfelizes.org",
+    senha: "felizes123",
+    textoBio:
+      "Somos uma ONG dedicada a oferecer apoio e cuidados a crianças em situação de vulnerabilidade social. Nosso objetivo é proporcionar um ambiente seguro, acolhedor e estimulante para o desenvolvimento integral dessas crianças. Trabalhamos com projetos educacionais, atividades lúdicas e programas de assistência social. Junte-se a nós e faça a diferença na vida dessas crianças!",
+    fotoPerfil: "https://source.unsplash.com/180x180/?kids",
+    interesses: ["Crianças", "Educação", "Assistência Social"],
+    instagram: ["https://instagram.com/criancasfelizes"],
+    facebook: ["https://facebook.com/criancasfelizes"],
+    whatsapp: ["5511988877777"],
+    acoes: [
+      {
+        nomeAcao: "Projeto Educar",
+        periodoAcao: "01/02/23 - 01/12/23",
+        descricaoAcao:
+          "Desenvolvemos um projeto educacional que oferece aulas de reforço escolar, atividades pedagógicas e apoio psicossocial para crianças em idade escolar. Nosso objetivo é contribuir para o seu aprendizado, fortalecer sua autoestima e promover o gosto pelo conhecimento.",
+        localAcao: "Centro Comunitário, Cidade",
+      },
+      {
+        nomeAcao: "Festa da Alegria",
+        periodoAcao: "12/10/23",
+        descricaoAcao:
+          "Realizamos uma festa especial para as crianças atendidas pela ONG, com muita diversão, brincadeiras, lanches e distribuição de presentes. Queremos proporcionar momentos de alegria, afeto e celebração em suas vidas.",
+        localAcao: "Parque Municipal, Cidade",
+      },
+      {
+        nomeAcao: "Campanha de Arrecadação",
+        periodoAcao: "01/06/23 - 30/06/23",
+        descricaoAcao:
+          "Promovemos uma campanha de arrecadação de alimentos não perecíveis, roupas, brinquedos e materiais escolares para suprir as necessidades das crianças e suas famílias. Contamos com a solidariedade da comunidade para fazer a diferença.",
+        localAcao: "Diversos pontos de arrecadação na cidade",
+      },
+    ],
+    vagasAbertas: [
+      {
+        nomeVaga: "Educador(a) Social",
+        localVaga: "Cidade",
+        periodoVaga: "01/08/23 - 01/08/24",
+        descricaoVaga:
+          "Estamos em busca de um(a) educador(a) social para atuar diretamente com as crianças, desenvolvendo atividades educativas, recreativas e de apoio emocional. Se você é apaixonado(a) por trabalhar com crianças, tem habilidades de comunicação e empatia, essa vaga é para você!",
+      },
+    ],
+  },
+  {
+    nomeUsuarioONG: "Cuidado e Carinho",
+    email: "contato@cuidadoecarinho.org",
+    senha: "cuidar123",
+    textoBio:
+      "Somos uma ONG dedicada a proporcionar cuidado e carinho aos idosos que vivem em asilos. Nosso objetivo é oferecer apoio emocional, atividades recreativas e assistência para promover o bem-estar e a qualidade de vida dessas pessoas. Trabalhamos em parceria com asilos locais, levando amor e atenção aos idosos. Junte-se a nós nessa causa nobre!",
+    fotoPerfil: "https://source.unsplash.com/180x180/?senior",
+    interesses: ["Idosos", "Assistência Social", "Saúde"],
+    instagram: ["https://instagram.com/cuidadoecarinho"],
+    facebook: ["https://facebook.com/cuidadoecarinho"],
+    whatsapp: ["5511999988888"],
+    acoes: [
+      {
+        nomeAcao: "Dia da Alegria",
+        periodoAcao: "01/07/23",
+        descricaoAcao:
+          "Realizamos um dia especial de atividades recreativas, música, dança e distribuição de presentes para os idosos dos asilos parceiros. Nosso objetivo é proporcionar momentos de alegria e descontração, estimulando sua autoestima e promovendo a interação social.",
+        localAcao: "Asilo Recanto dos Sonhos, Cidade",
+      },
+    ],
+    vagasAbertas: [
+      {
+        nomeVaga: "Voluntário de Recreação",
+        localVaga: "Cidade",
+        periodoVaga: "01/08/23 - 01/08/24",
+        descricaoVaga:
+          "Estamos em busca de voluntários para ajudar nas atividades recreativas com os idosos, como jogos, música, dança e leitura. Se você tem afinidade com idosos, é criativo, paciente e gosta de proporcionar momentos de alegria, essa vaga é para você!",
+        requisitosVaga: [
+          "Disponibilidade de horário",
+          "Boa comunicação",
+          "Empatia e paciência",
+        ],
       },
     ],
   },
 ];
-
-// //localStorage.clear();
-localStorage.setItem("perfilVol", JSON.stringify(perfilVol));
+localStorage.setItem("perfilONG", JSON.stringify(perfilONG)); */
