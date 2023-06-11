@@ -30,6 +30,32 @@ Caso de teste 01 - Pesquisar novas ONGs
 6 - Pesquisa realizada com sucesso.
 
 
+Caso de teste 02 - Apresentar perfil de ONGs
+
+1 - Acessar a aplicação como usuário:
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/19398297/9424fc46-9b77-4369-a824-2d4108f320a4)
+
+
+Caso de teste 03 - Possiblitar a criação de perfil de voluntário
+
+Caso de teste 04 - Permitir contato direto entre ONGs e voluntários
+
+Caso de teste 05 - Filtro para perfil de voluntário
+
+caso de teste 06 - Filtro para perfil de ONGs e tabalhos voluntários
+
+caso de teste 07 - Permitir o compartilhamento em redes sociais
+
+1 - Acessar a aplicação
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/19398297/365f8b67-4dd6-4509-aeda-39c14026a3a6)
+
+2 - Icones para compartilhamento em redes sociais
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/19398297/bc675f79-0d83-4879-894a-c4fec6622d00)
+
+
+
 ## Avaliação
 
 Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
