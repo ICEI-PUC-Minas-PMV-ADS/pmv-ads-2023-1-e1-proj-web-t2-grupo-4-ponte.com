@@ -1,6 +1,3 @@
-let lista = [
-  {
-  ]
 function gerarVagas() {
   var vagasAbertas = [
     {
