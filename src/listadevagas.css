@@ -110,8 +110,8 @@
   border: 1px solid #4a4a4a59;
   box-shadow: 2px 2px 80px -40px #4a4a4a;
   border-radius: 7px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 #menuDropdown li {
@@ -121,7 +121,7 @@
 
 #menuDropdown li:hover {
   cursor: pointer;
-  color: var(--titleColorLight);
+  color: #fdc886;
 }
 
 #menuDropdown #dropdownlist-logout:hover {

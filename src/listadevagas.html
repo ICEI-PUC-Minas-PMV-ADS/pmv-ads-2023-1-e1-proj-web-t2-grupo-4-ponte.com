@@ -272,12 +272,12 @@
     </footer>
     <script>
       window.addEventListener("DOMContentLoaded", function () {
-        const listaSection = document.getElementById("listaSection");
+        const listaSection = document.getElementById("profileSection");
 
-        const lista = JSON.parse(localStorage.getItem("listadevagas"));
+        constprofilea = JSON.parse(localStorage.getItem("listadevagas"));
 
-        if (perfilONG && perfilONG.length > 0) {
-          const profile = perfilONG[0];
+        if (listadevagas && listadevagas.length > 0) {
+          const profile = listadevagas[0];
 
           document.title = profile.nomeUsuarioONG;
 

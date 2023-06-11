@@ -1,4 +1,4 @@
-function gerarVagas() {
+/* function gerarVagas() {
   var vagasAbertas = [
     {
       nomeVaga: "Social Media",
@@ -10,7 +10,7 @@ function gerarVagas() {
     // Adicione mais objetos de vaga aqui, se necessário
   ];
 
-  var listaVagas = document.querySelector(".lista-vagas");
+  var listaVagas = document.querySelector(".listadevagas");
 
   vagasAbertas.forEach(function (vaga) {
     var vagaHTML = `
@@ -26,18 +26,18 @@ function gerarVagas() {
 
     listaVagas.innerHTML += vagaHTML;
   });
-}
+} */
 
 
 
-/* let perfilONG = [
+let listadevagas = [
   {
     nomeUsuarioONG: "Quatro Patas",
     email: "email1@exemplo.com",
     senha: "senha123",
     textoBio:
       "Somos uma ONG dedicada a ajudar animais de rua e promover a conscientização sobre a importância da proteção animal. Nossa missão é resgatar, reabilitar e encontrar lares amorosos para os animais abandonados, além de desenvolver ações para melhorar a qualidade de vida desses seres tão especiais. Junte-se a nós nessa causa e faça a diferença!",
-    fotoPerfil: "img/foto-perfilONG.png",
+    fotoPerfil: "img/foto-listadevagas.png",
     interesses: ["Animais", "Meio Ambiente"],
     instagram: ["https://instagram.com/usuarioONG1"],
     facebook: ["https://facebook.com/usuarioONG1"],
@@ -477,4 +477,4 @@ function gerarVagas() {
     ],
   },
 ];
-localStorage.setItem("perfilONG", JSON.stringify(perfilONG)); */
+localStorage.setItem("listadevagas", JSON.stringify(listadevagas));
