@@ -160,7 +160,7 @@ body footer{
   height: fit-content;
   border-radius: 5px;
   padding: 55px;
-  margin: 10px auto 10px auto;
+  margin: 10px auto 100px auto;
 }
 
 #principal #formsContainer #contatos input, label{
@@ -192,7 +192,7 @@ body footer{
   align-items: center;
   /* margin-top: 100px; */
   height: fit-content;
-  /* margin: 160px 0px 100px 0px; */
+  margin: 10px 0px 100px 0px;
 
   /* background-color: coral; */
 }
