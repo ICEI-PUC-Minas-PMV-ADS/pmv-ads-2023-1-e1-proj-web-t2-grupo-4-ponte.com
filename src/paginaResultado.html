@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="./componentes/navbar-style.css" />
+    <link rel="stylesheet" href="./cssStyle/paginaResultado-style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
       src="https://kit.fontawesome.com/331a34d5ed.js"
@@ -54,58 +55,123 @@
         <li><a href="./index.html">Logout</a></li>
       </ul>
     </header>
+    <main>
+      <div class="cabecalho">
+        <h1>Resultados</h1>
+      </div>
+      <div class="searchResultContainer" id="searchResults"></div>
+    </main>
+    <!-- decoração do footer -->
+    <div id="decFooter">
+      <img src="img/decTintaFooter.png" alt="" id="decFooter" />
+    </div>
 
-    <div class="searchResultContainer" id="searchResults"></div>
+    <!-- Footer -->
+    <footer>
+      <div id="footerContainer">
+        <div id="logoFooter">
+          <a href="#">
+            <img src="img/logoCor2.png" alt="logo em cor clara" />
+          </a>
+        </div>
+
+        <div id="formFooter">
+          <div id="sugestionsFooter">
+            <h3>Sugestões?</h3>
+            <p>Mande uma mensagem ;)</p>
+          </div>
+
+          <form action="mensagem.php">
+            <label for="email" title="Informe seu email mais usado">
+              E-mail:
+            </label>
+            <input
+              type="email"
+              name="email"
+              id=""
+              placeholder="informe seu e-mail..."
+            />
+
+            <label for="message">Mensagem:</label>
+            <textarea
+              type="textarea"
+              name="message"
+              title="Mensagem"
+              cols="30"
+              rows="5"
+              placeholder="escreva aqui sua mensagem..."
+            ></textarea>
+
+            <input
+              type="submit"
+              value="Enviar"
+              name="enviar"
+              class="btnLight"
+            />
+          </form>
+        </div>
+      </div>
+    </footer>
+
     <script src="./jsScripts/perfilONG.js"></script>
     <script src="./jsScripts/perfilVol.js"></script>
 
     <script>
       const searchResultContainer = document.getElementById("searchResults");
 
-// Recupera os resultados do localStorage
-const storedResults = localStorage.getItem('searchResults');
+      // Recupera os resultados do localStorage
+      const storedResults = localStorage.getItem("searchResults");
 
-if (storedResults) {
-  const results = JSON.parse(storedResults);
-  displayResults(results);
-} else {
-  // Nenhum resultado encontrado
-  searchResultContainer.textContent = "Nenhum resultado encontrado";
-}
+      if (storedResults) {
+        const results = JSON.parse(storedResults);
+        displayResults(results);
+      } else {
+        // Chama a função displayResults com um array vazio
+        displayResults([]);
+        // Nenhum resultado encontrado
+        //searchResultContainer.textContent = "Nenhum resultado encontrado";
+      }
 
-function displayResults(results) {
-  searchResultContainer.innerHTML = "";
+      function displayResults(results) {
+        searchResultContainer.innerHTML = "";
 
-  results.forEach((ong) => {
-    const resultItem = document.createElement("div");
-    resultItem.classList.add("searchResultItem");
+        // Mostra a mensagem de nenhum resultado encontrado
+        if (results.length === 0) {
+          searchResultContainer.textContent = "Nenhum resultado encontrado. Tente pesquisar por outros termos";
+          return;
+        }
 
-    const img = document.createElement("img");
-    img.src = ong.fotoPerfil;
-    img.alt = "Foto de perfil da ONG";
+        results.forEach((ong) => {
+          const resultItem = document.createElement("div");
+          resultItem.classList.add("searchResultItem");
 
-    const name = document.createElement("h3");
-    name.textContent = ong.nomeUsuarioONG !== undefined ? ong.nomeUsuarioONG : ong.nomeUsuario;
+          const img = document.createElement("img");
+          img.src = ong.fotoPerfil;
+          img.alt = "Foto de perfil da ONG";
 
-    const biografia = document.createElement("p");
-    biografia.textContent = ong.biografia;
+          const name = document.createElement("h3");
+          name.textContent =
+            ong.nomeUsuarioONG !== undefined
+              ? ong.nomeUsuarioONG
+              : ong.nomeUsuario;
 
-    const interesses = document.createElement("p");
-    interesses.textContent = ong.interesses;
+          const interesses = document.createElement("p");
+          interesses.textContent = ong.interesses.join(", ");
 
-    const verMaisButton = document.createElement("button");
-    verMaisButton.textContent = "Ver mais";
-    verMaisButton.addEventListener("click", () => {
-      window.location.href = ong.nomeUsuarioONG !== undefined
-        ? `paginaPerfilONG.html?id=${ong.id}`
-        : `paginaPerfilVol.html?id=${ong.id}`;
-    });
+          const verMaisButton = document.createElement("button");
+          verMaisButton.textContent = "Ver perfil";
+          verMaisButton.addEventListener("click", () => {
+            window.location.href =
+              ong.nomeUsuarioONG !== undefined
+                ? `paginaPerfilONG.html?id=${ong.id}`
+                : `paginaPerfilVol.html?id=${ong.id}`;
+          });
 
-    resultItem.append(img, name, biografia, interesses, verMaisButton);
+          resultItem.append(img, name, interesses, verMaisButton);
 
-    searchResultContainer.appendChild(resultItem);
-  });
-}
+          searchResultContainer.appendChild(resultItem);
+        });
+      }
     </script>
   </body>
 </html>

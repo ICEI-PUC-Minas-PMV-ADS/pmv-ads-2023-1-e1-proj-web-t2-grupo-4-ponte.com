@@ -196,36 +196,3 @@ a:visited {
     margin-left: 0;
   }
 }
-
-.searchResultContainer {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.searchResultContainer .searchResultItem {
-  margin-bottom: 20px;
-  margin-top: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 300px;
-}
-.searchResultContainer .searchResultItem img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 50%;
-}
-.searchResultContainer .searchResultItem h3 {
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-.searchResultContainer .searchResultItem p {
-  margin-bottom: 5px;
-}
-.searchResultContainer .searchResultItem .socialMediaIcons a {
-  margin-right: 10px;
-}

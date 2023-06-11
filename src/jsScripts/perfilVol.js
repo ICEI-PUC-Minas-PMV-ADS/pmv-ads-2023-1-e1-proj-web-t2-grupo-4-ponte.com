@@ -172,10 +172,9 @@ let perfilVol = [
       "Sou apaixonado por tecnologia desde criança e hoje trabalho como desenvolvedor de software em uma empresa de TI. Busco constantemente me atualizar e aprender novas tecnologias. Nas horas livres, gosto de tocar violão e participar de projetos de desenvolvimento social com foco em educação.",
     fotoPerfil: "https://source.unsplash.com/180x180/?face-man",
     interesses: [
-      "Desenvolvimento de Software",
-      "Tecnologia",
-      "Música",
       "Educação",
+      "Crianças",
+      "Inclusão Social",
     ],
     qualificacao: [
       {
@@ -220,7 +219,7 @@ let perfilVol = [
     textoBio:
       "Formado em Engenharia Civil, descobri minha paixão pela construção de pontes e viadutos. Atualmente, trabalho como engenheiro de projetos em uma empresa de infraestrutura. Nas horas vagas, gosto de praticar esportes ao ar livre e ajudar em iniciativas comunitárias.",
     fotoPerfil: "https://source.unsplash.com/180x180/?face-man",
-    interesses: ["Engenharia Civil", "Esportes", "Ações comunitárias"],
+    interesses: ["Esportes", "Inclusão Social"],
     qualificacao: [
       {
         nomeQuali: "Bacharel em Engenharia Civil",
@@ -433,7 +432,7 @@ let perfilVol = [
     textoBio:
       "Acredito que a cultura é uma ferramenta poderosa para transformar vidas. Sou voluntária em projetos culturais, promovendo acesso à arte e à educação cultural para crianças e jovens. Meu propósito é estimular a criatividade, a imaginação e a inclusão por meio da cultura.",
     fotoPerfil: "https://source.unsplash.com/180x180/?face-woman3",
-    interesses: ["Cultura", "Educação Cultural"],
+    interesses: ["Cultura", "Educação", "Inclusão Social"],
     qualificacao: [
       {
         nomeQuali: "Bacharelado em Artes Cênicas",
@@ -478,9 +477,8 @@ let perfilVol = [
       "Sou engenheiro civil com ampla experiência na área de construção civil. Tenho paixão por projetar e construir edifícios sustentáveis que atendam às necessidades dos clientes. Busco constantemente aprimorar meus conhecimentos e aplicar as melhores práticas da engenharia civil.",
     fotoPerfil: "https://source.unsplash.com/180x180/?face-man",
     interesses: [
-      "Engenharia Civil",
-      "Construção Sustentável",
-      "Gerenciamento de Projetos",
+      "Sustentabilidade",
+      "Meio ambiente",
     ],
     qualificacao: [
       {

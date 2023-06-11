@@ -7,7 +7,7 @@ let perfilONG = [
     textoBio:
       "Somos uma ONG dedicada a ajudar animais de rua e promover a conscientização sobre a importância da proteção animal. Nossa missão é resgatar, reabilitar e encontrar lares amorosos para os animais abandonados, além de desenvolver ações para melhorar a qualidade de vida desses seres tão especiais. Junte-se a nós nessa causa e faça a diferença!",
     fotoPerfil: "img/foto-perfilONG.png",
-    interesses: ["Animais", "Meio Ambiente"],
+    interesses: ["Animais", "Proteção animal", "Meio Ambiente"],
     instagram: ["https://instagram.com/usuarioONG1"],
     facebook: ["https://facebook.com/usuarioONG1"],
     whatsapp: ["5531332323232"],
@@ -100,13 +100,13 @@ let perfilONG = [
   },
   {
     id: "2",
-    nomeUsuarioONG: "Educa+,",
+    nomeUsuarioONG: "Educa+",
     email: "contato@educa.org",
     senha: "educa123",
     textoBio:
       "Somos uma ONG dedicada a promover a educação de qualidade para todos. Acreditamos que a educação é um direito fundamental e trabalhamos para garantir o acesso igualitário à educação, oferecendo suporte educacional, recursos e oportunidades de aprendizado. Junte-se a nós e seja parte da transformação!",
     fotoPerfil: "https://source.unsplash.com/180x180/?school",
-    interesses: ["Educação", "Igualdade"],
+    interesses: ["Educação", "Assistência Social", "Crianças"],
     instagram: ["https://instagram.com/educaong"],
     facebook: ["https://facebook.com/educaong"],
     whatsapp: ["5511987654321"],
@@ -151,7 +151,7 @@ let perfilONG = [
     textoBio:
       "Nossa ONG tem como objetivo promover o acesso universal à saúde e garantir a qualidade de vida para todos. Trabalhamos para combater as desigualdades na área da saúde, oferecendo suporte, conscientização e serviços médicos às comunidades carentes. Junte-se a nós e faça parte dessa luta!",
     fotoPerfil: "https://source.unsplash.com/180x180/?hospital",
-    interesses: ["Saúde", "Igualdade"],
+    interesses: ["Saúde", "Pessoas com deficiência", "Idosos", "Crianças"],
     instagram: ["https://instagram.com/saudeparatodos"],
     facebook: ["https://facebook.com/saudeparatodos"],
     whatsapp: ["5511976543210"],
@@ -241,7 +241,7 @@ let perfilONG = [
     textoBio:
       "Somos uma ONG dedicada à promoção e defesa dos direitos humanos. Lutamos pela igualdade, justiça e respeito a todas as pessoas, combatendo a discriminação e o preconceito. Junte-se a nós nessa causa!",
     fotoPerfil: "https://source.unsplash.com/180x180/?people",
-    interesses: ["Direitos Humanos", "Igualdade"],
+    interesses: ["Direitos Humanos"],
     instagram: ["https://instagram.com/direitosemacao"],
     facebook: ["https://facebook.com/direitosemacao"],
     whatsapp: ["5511987654321"],
