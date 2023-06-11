@@ -3,55 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="./componentes/navbar-style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="navbar-style.css" />
     <script
       src="https://kit.fontawesome.com/331a34d5ed.js"
       crossorigin="anonymous"
     ></script>
-    <script defer src="./navbar-script.js"></script>
+    <script defer src="./componentes/navbar-script.js"></script>
+    <script defer src="./jsScripts/perfilONG.js"></script>
+    <script defer src="./jsScripts/perfilVol.js"></script>
     <title>Perfil</title>
   </head>
   <body>
     <!-- Navbar -->
     <header class="wrapper">
-      <a href="navbar.html"><img
-        id="logo"
-        src="imagens/logoPontecom.png"
-        alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
-      /></a>
-      <!-- No código, substituir caminho da imagem -->
+      <a href="./index.html">
+        <img
+          id="logo"
+          src="img/logoPontecom.png"
+          alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
+        />
+      </a>
 
       <div class="wrapperSearch">
         <input
           type="text"
           class="wrapperSearch-txt"
-          placeholder="Busque por vagas, ONGs ou voluntários..."
+          placeholder="Busque por ONGs ou voluntários..."
         />
-        <button #id="searchButton">
+        <button id="searchButton">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </div>
 
       <!-- Menu -->
       <ul class="wrapperNavbar">
-        <!-- No código, substituir caminho das páginas-->
-        <a href="./sobre.html"><li class=wrapper-li id="sobre">Sobre</li></a>
-        <a href="./vagas.html"><li class="wrapper-li" id="vagas">Vagas de voluntariado</li></a>
+        <li class="wrapper-li"><a href="./sobre.html">Sobre</a></li>
+        <li class="wrapper-li">
+          <a href="./listadevagas.html">Vagas de voluntariado</a>
+        </li>
       </ul>
 
       <img
-        src="imagens/foto-perfil.png"
+        src="img/foto-perfilONG.png"
         id="foto"
         alt="Foto de perfil do usuário."
       />
-      <!-- No código, substituir caminho da imagem -->
 
-    <ul id="menuDropdown" class="">
-      <a href="./pagina-perfil.html"><li id="dropdownlist-perfil">Meu perfil</li></a>
-      <a href="./cadastro-voluntario.html"><li id="dropdownlist-editar">Editar dados</li></a>
-      <a href="./index.html"></a><li id="dropdownlist-logout">Logout</li></a>
-    </ul>
-  </header>
+      <ul id="menuDropdown" class="">
+        <li><a href="./paginaPerfilLog.html">Meu perfil</a></li>
+        <li><a href="./cadastroVoluntario.html">Editar dados</a></li>
+        <li><a href="./index.html">Logout</a></li>
+      </ul>
+    </header>
+
+    <!--<div class="searchResultContainer" id="searchResults"></div>
+    <script src="./jsScripts/perfilONG.js"></script>
+    <script src="./jsScripts/perfilVol.js"></script>-->
   </body>
 </html>
