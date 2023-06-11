@@ -7,11 +7,12 @@ document.querySelector("#foto").onclick = function () {
 
 const searchInput = document.querySelector(".wrapperSearch-txt");
 const searchButton = document.getElementById("searchButton");
-const searchResultContainer = document.getElementById("searchResults");
+//const searchResultContainer = document.getElementById("searchResults");
 
 searchButton.addEventListener("click", () => {
   const query = searchInput.value.toLowerCase();
   const results = perfilONG
+
     .filter((ong) => {
       return (
         ong.nomeUsuarioONG.toLowerCase().includes(query) ||
@@ -31,10 +32,16 @@ searchButton.addEventListener("click", () => {
       })
     );
 
-  displayResults(results);
+  //displayResults(results);
+
+    // Armazena os resultados no localStorage
+    localStorage.setItem('searchResults', JSON.stringify(results));
+
+    // Redireciona para a página de resultados
+    window.location.href = 'paginaResultado.html';
 });
 
-function displayResults(results) {
+/*function displayResults(results) {
   searchResultContainer.innerHTML = "";
 
   if (results.length === 0) {
@@ -74,4 +81,4 @@ function displayResults(results) {
 
     searchResultContainer.appendChild(resultItem);
   });
-};
+};*/
