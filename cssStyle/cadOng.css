@@ -18,14 +18,14 @@
   --titleColorLight: #fdc886;
   --fontPrimary: "Poppins", sans-serif;
   --fontSecondary: "Roboto", sans-serif;
-  --smallFontSize: 12px;
-  --mediumFontSize: 14px;
-  --largeFontSize: 16px;
-  --titleFontSize: 20px;
+  --smallFontSize: 16px;
+  --mediumFontSize: 18px;
+  --largeFontSize: 20px;
+  --titleFontSize: 24px;
   --titleFontSizeBiger: 32px;
   --textCallsWeight: 600;
   --mediuCallsWeight: 450;
-  --bgColor: FFFEFC;
+  --bgColor: #FFFEFC;
 }
 
 body #principal {

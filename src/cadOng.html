@@ -3,46 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../cssStyle/pagina-perfil-style.css" />
   <link rel="stylesheet" href="../cssStyle/style.css" />
+  <link rel="stylesheet" href="./componentes/navbar-style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="../cssStyle/cadOng.css">
   <script src="../jsScript/cadOng.js" defer></script>
-  <title>Cadastro de Ongs</title>
+  <title>Cadastro de ONGs</title>
 </head>
 <body>
 
     <!-- início do header do site. contém o menu de navegação, logo e barra de pesquisa -->
-    <header class="wrapper">
-      <img
-        src="img/LogoPontecom.png"
-        alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
-      />
-
-      <div class="wrapper-search">
-        <input
-          type="text"
-          class="wrapper-search-txt"
-          placeholder="Busque por vagas, instituições ou pessoas"
-        />
-        <button class="wrapper-search-button">
-          <img src="img/search-icon.png" alt="Buscar..." />
-        </button>
-      </div>
-
-      <ul class="wrapper-navbar">
-        <li class="wrapper-li">Feed</li>
-        <li class="wrapper-li">Vagas de voluntariado</li>
-        <li class="wrapper-li">Dashboard</li>
+    <!-- Navbar sem Login -->
+    <header class="wrapperSL">
+      <a href="navbar.html"
+        ><img
+          id="logo"
+          src="img/logoPontecom.png"
+          alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
+      /></a>
+      <ul class="wrapperNavbarSL">
+        <a href="./pagina-login.html"
+          ><li class="wrapperButton-active">Login</li></a
+        >
+        <a href="./sobre.html"><li class="wrapper-li">Sobre</li></a>
+        <a href="./listadevagas.html"
+          ><li class="wrapper-li">Vagas de voluntariado</li></a
+        >
       </ul>
-
-      <img
-        src="img/foto-perfil.png"
-        class="wrapper-foto"
-        alt="Foto de perfil do usuário."
-      />
     </header>
     <!-- fim do header -->
 

@@ -31,6 +31,7 @@
   align-items: center;
   margin-top: 15px;
   font-family: var(--fontSecondary);
+  font-size: var(--mediumFontSize);
 }
 
 .wrapper #logo {
@@ -97,7 +98,7 @@
   cursor: pointer;
 }
 
-.wrapper a,
+.wrapper a, .wrapper
 a:visited {
   color: inherit;
 }
@@ -195,4 +196,58 @@ a:visited {
     margin-top: 0.5rem;
     margin-left: 0;
   }
+}
+
+/* NAVBAR USUÁRIO SEM LOGIN */
+.wrapperSL {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 33px;
+  font-family: var(--fontSecondary);
+}
+
+.wrapperSL #logo {
+  width: 180px;
+  margin-top: 5px;
+  margin-left: 40px;
+}
+
+.wrapperSL img:hover {
+  cursor: pointer;
+}
+
+.wrapperSL .wrapperNavbarSL {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  align-items: center;
+  color: var(--titleColorDark);
+  font-size: var(--mediumFontSize);
+  margin-right: 60px;
+}
+
+.wrapperSL .wrapperNavbarSL .wrapper-li {
+  margin-left: 4rem;
+}
+
+.wrapperSL .wrapperNavbarSL .wrapper-li:hover {
+  color: var(--titleColorLight);
+  cursor: pointer;
+}
+
+.wrapperSL a,
+.wrapper a:visited {
+  color: inherit;
+}
+
+.wrapperSL .wrapperNavbarSL .wrapperButton-active {
+  background-color: var(--titleColorLight);
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+.wrapperSL .wrapperNavbarSL .wrapperButton-active:hover {
+  color: black;
 }

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="UTF-8" />
 
@@ -11,66 +10,73 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="../cssStyle/pagina-perfil-style.css" />
-    <link rel="stylesheet" href="../cssStyle/style.css"/>
+    <link rel="stylesheet" href="./cssStyle/style.css" />
+    <link rel="stylesheet" href="./componentes/navbar-style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto&display=swap"
       rel="stylesheet"
     />
-      <script src="../jsScript/cadVolunt.js" defer  ></script>
+    <script src="../jsScript/cadVolunt.js" defer></script>
+    <script defer src="./componentes/navbar-script.js"></script>
+    <script defer src="./jsScripts/perfilONG.js"></script>
+    <script defer src="./jsScripts/perfilVol.js"></script>
 
-      <link rel="stylesheet" href="../cssStyle/cadVolunt.css">
-    <title>cadastro de Voluntario</title>
+    <link rel="stylesheet" href="../cssStyle/cadVolunt.css" />
+    <title>Cadastro de Voluntário</title>
   </head>
 
   <body>
-
-
-
     <!-- início do header do site. contém o menu de navegação, logo e barra de pesquisa -->
+    <!-- Navbar -->
     <header class="wrapper">
-      <img
-        src="img/LogoPontecom.png"
-        alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
-      />
+      <a href="./index.html">
+        <img
+          id="logo"
+          src="img/logoPontecom.png"
+          alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
+        />
+      </a>
 
-      <div class="wrapper-search">
+      <div class="wrapperSearch">
         <input
           type="text"
-          class="wrapper-search-txt"
-          placeholder="Busque por vagas, instituições ou pessoas"
+          class="wrapperSearch-txt"
+          placeholder="Busque por ONGs ou voluntários..."
         />
-        <button class="wrapper-search-button">
-          <img src="img/search-icon.png" alt="Buscar..." />
+        <button id="searchButton">
+          <i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </div>
 
-      <ul class="wrapper-navbar">
-        <li class="wrapper-li">Feed</li>
-        <li class="wrapper-li">Vagas de voluntariado</li>
-        <li class="wrapper-li">Dashboard</li>
+      <!-- Menu -->
+      <ul class="wrapperNavbar">
+        <li class="wrapper-li"><a href="./sobre.html">Sobre</a></li>
+        <li class="wrapper-li">
+          <a href="./listadevagas.html">Vagas de voluntariado</a>
+        </li>
       </ul>
 
       <img
-        src="img/foto-perfil.png"
-        class="wrapper-foto"
+        src="img/foto-perfilONG.png"
+        id="foto"
         alt="Foto de perfil do usuário."
       />
+
+      <ul id="menuDropdown" class="">
+        <li><a href="./paginaPerfilLog.html">Meu perfil</a></li>
+        <li><a href="./cadastroVoluntario.html">Editar dados</a></li>
+        <li><a href="./index.html">Logout</a></li>
+      </ul>
     </header>
     <!-- fim do header -->
 
-
-
     <!-- inicio da seção principal do site que conterá a apresentação da página e as três seções de cadastro -->
     <main id="principal">
-
       <!-- Apresentação da página -->
       <div id="containerChamada">
-
         <div id="textoChamada">
-
           <img src="img/VetorTinta1.png" alt="" id="decoration1" />
 
           <h2>Nos conte um pouco mais sobre você</h2>
@@ -82,22 +88,17 @@
             abaixo.
 
             <button class="roundBtn" title="clique para iniciar">
-
               <i
                 class="fa-solid fa-arrow-down fa-sm"
                 style="color: #0b0b0b"
               ></i>
-
             </button>
-
           </p>
-
         </div>
 
         <!-- <a href="https://storyset.com/work"></a>  REferenciar-->
 
         <img src="img/cadastrando.svg" alt="" />
-
       </div>
       <!-- fim da apresentação da página -->
 
@@ -106,71 +107,120 @@
       <h2 class="titulosH2">informações de usuário</h2>
 
       <form action="" class="formContainerGrande" id="formInfBasica">
+        <div id="campoNome" class="regiaoInput">
+          <label for="nomeUsuario" class="labels"
+            >Informe seu nome completo:</label
+          >
+          <input
+            type="text"
+            name="nomeUsuario"
+            id="nomeUsuario"
+            class="inputText"
+          />
+        </div>
 
-          <div id="campoNome" class="regiaoInput">
-              <label for="nomeUsuario" class="labels">Informe seu nome completo:</label>
-              <input type="text" name="nomeUsuario" id="nomeUsuario" class="inputText">
-          </div>
+        <div id="campoEmail" class="regiaoInput">
+          <label for="emailUsuario" class="labels">Informe seu e-mail:</label>
+          <input
+            type="text"
+            name="emailUsuario"
+            id="emailUsuario"
+            class="inputText"
+          />
+        </div>
 
-          <div id="campoEmail" class="regiaoInput">
-              <label for="emailUsuario" class="labels">Informe seu e-mail:</label>
-              <input type="text" name="emailUsuario" id="emailUsuario" class="inputText">
-          </div>
+        <div id="campoSenha" class="regiaoInput">
+          <label for="senhaUsuario" class="labels">Informe uma senha:</label>
+          <input
+            type="password"
+            name="senhaUsuario"
+            id="senhaUsuario"
+            class="inputText"
+          />
+        </div>
 
-          <div id="campoSenha" class="regiaoInput">
-              <label for="senhaUsuario" class="labels">Informe uma senha:</label>
-              <input type="password" name="senhaUsuario" id="senhaUsuario" class="inputText">
-          </div>
+        <div id="biografia" class="regiaoInput">
+          <label for="biografia" class="labels"
+            >Fale um pouco sobre você:</label
+          >
+          <textarea
+            name="biografia"
+            id="textoBiografia"
+            cols="30"
+            rows="10"
+            title="escreva um pouco sobre você"
+            class="textArea"
+          ></textarea>
+        </div>
 
-          <div id="biografia" class="regiaoInput">
-              <label for="biografia" class="labels">Fale um pouco sobre você:</label>
-              <textarea name="biografia" id="textoBiografia" cols="30" rows="10" title="escreva um pouco sobre você" class="textArea"></textarea>
-          </div>
+        <div id="fotoPerfil" class="regiaoInput">
+          <label for="foto" class="labels"
+            >Adicione uma foto ao seu perfil:</label
+          >
+          <input
+            type="file"
+            accept="img/*"
+            alt="imagem do perfil"
+            class="textArea"
+            id="imagemPerfil"
+            title="carregue uma imagem"
+          />
+        </div>
 
-          <div id="fotoPerfil" class="regiaoInput">
-              <label for="foto" class="labels">Adicione uma foto ao seu perfil:</label>
-              <input type="file" accept="img/*" alt="imagem do perfil" class="textArea" id="imagemPerfil" title="carregue uma imagem">
-          </div>
-
-          <div id="botoesInfBasica" class="btnArea">
-              <button type="submit" class="formBtn" id="salvarUser">salvar</button>
-              <button type="reset" class="formBtn" id="reserFormUser">limpar</button>
-          </div>
-
+        <div id="botoesInfBasica" class="btnArea">
+          <button type="submit" class="formBtn" id="salvarUser">salvar</button>
+          <button type="reset" class="formBtn" id="reserFormUser">
+            limpar
+          </button>
+        </div>
       </form>
-
 
       <h2 class="titulosH2">pesquise e adicione seus interesses</h2>
 
       <div id="containerInteresses" class="regiaoContainer">
+        <form action="" id="cadastroInteresses" class="formContainerGrande">
+          <div class="regiaoInput">
+            <label for="campoInteresse" class="labels">interesse</label>
+            <input
+              type="text"
+              class="inputText"
+              name="campoInteresse"
+              id="campoInteresse"
+            />
+          </div>
 
-          <form action="" id="cadastroInteresses" class="formContainerGrande">
-            <div class="regiaoInput">
-              <label for="campoInteresse" class="labels">interesse</label>
-              <input type="text" class="inputText" name="campoInteresse" id="campoInteresse"/>
-            </div>
+          <div class="regiaoInput">
+            <label for="campoPrioridade" value="prioridade" class="labels"
+              >prioridade:
+              <output for="campoPrioridade" id="valorPrioridade">1</output>
+            </label>
+            <input
+              type="range"
+              class="inputText"
+              name="campoPrioridade"
+              id="campoPrioridade"
+              min="1"
+              max="5"
+              step="1"
+              value="1"
+            />
+          </div>
 
-            <div class="regiaoInput">
-              <label for="campoPrioridade" value="prioridade" class="labels">prioridade: <output for="campoPrioridade" id="valorPrioridade">1</output> </label>
-              <input  type="range" class="inputText" name="campoPrioridade" id="campoPrioridade" min="1" max="5" step="1" value="1"/>
-            </div>
+          <div id="botoes" class="btnArea">
+            <button id="adicionar" type="submit" class="formBtn">salvar</button>
+            <button id="limpar" type="reset" class="formBtn">limpar</button>
+          </div>
+        </form>
 
-            <div id="botoes" class="btnArea">
-              <button id="adicionar" type="submit" class="formBtn">salvar</button>
-              <button id="limpar" type="reset" class="formBtn">limpar</button>
-            </div>
-
-          </form>
-
-          <div id="listaInteresses">
-              <H3 class="titulosH3">Interesses e prioridades</H3>
-              <table id="tabelaInteresses" class="tabelaInteresses">
-                <!-- <tr class="linha">
+        <div id="listaInteresses">
+          <h3 class="titulosH3">Interesses e prioridades</h3>
+          <table id="tabelaInteresses" class="tabelaInteresses">
+            <!-- <tr class="linha">
                   <td>interesse 1</td>
                   <td>prioridade 1</td>
                   <td><i class="fa-solid fa-trash"></i></td>
                 </tr> -->
-              <!-- <div id="cardInteresse" class="cardInteresse">
+            <!-- <div id="cardInteresse" class="cardInteresse">
                   <ul>
                     <li>interesseeeeeeee</li>
                     <li>prioridade</li>
@@ -205,181 +255,171 @@
                     <li> <button class="formBtn">excluir</button> </li>
                   </ul>
                 </div> -->
-              </table>
-          </div>
-
+          </table>
+        </div>
       </div>
-
 
       <h2 class="titulosH2">experiências</h2>
 
       <div id="containerExperiencias">
-
-        <form action="" id="experiencias" class="formConainer formContainerGrande">
-
+        <form
+          action=""
+          id="experiencias"
+          class="formConainer formContainerGrande"
+        >
           <div id="campoAreaAtuacao">
-                  <label for="areaAtuacao" class="labelForm">área de atuação:</label>
-                  <input
-                    type="text"
-                    name="areaAtuacao"
-                    id="areaAtuacao"
-                    class="inputText"
-                    placeholder="Informe uma experiência"
-                  />
+            <label for="areaAtuacao" class="labelForm">área de atuação:</label>
+            <input
+              type="text"
+              name="areaAtuacao"
+              id="areaAtuacao"
+              class="inputText"
+              placeholder="Informe uma experiência"
+            />
           </div>
 
           <div id="campoLocalAtuacao">
-                  <label for="localAtuacao" class="">local onde atuou:</label>
-                  <input
-                    type="text"
-                    name="localAtuacao"
-                    id="localAtuacao"
-                    class="inputText"
-                    placeholder="Informe o local onde atuou"
-                  />
+            <label for="localAtuacao" class="">local onde atuou:</label>
+            <input
+              type="text"
+              name="localAtuacao"
+              id="localAtuacao"
+              class="inputText"
+              placeholder="Informe o local onde atuou"
+            />
           </div>
 
           <div id="campoCargoAtuacao">
-                  <label for="cargoAtuacao">cargo que ocupou:</label>
-                  <input
-                    type="text"
-                    name="cargoAtuacao"
-                    id="cargoAtuacao"
-                    class="inputText"
-                    placeholder="Informe a instituição onde atuou"
-                  />
+            <label for="cargoAtuacao">cargo que ocupou:</label>
+            <input
+              type="text"
+              name="cargoAtuacao"
+              id="cargoAtuacao"
+              class="inputText"
+              placeholder="Informe a instituição onde atuou"
+            />
           </div>
 
           <div id="campoDescricao">
+            <label for="descricaoAtuacao"> descrição das atividades: </label>
 
-                  <label for="descricaoAtuacao">
-                    descrição das atividades:
-                  </label>
-
-                  <textarea
-                    name="descricaoAtuacao"
-                    id="descricaoAtuacao"
-                    class="textArea"
-                    cols="30"
-                    rows="5"
-                  ></textarea>
+            <textarea
+              name="descricaoAtuacao"
+              id="descricaoAtuacao"
+              class="textArea"
+              cols="30"
+              rows="5"
+            ></textarea>
           </div>
 
           <div id="dateAreaInput" class="dateAreaInput">
+            <label for="inicioPeriodoAtuacao">de:</label>
+            <input
+              type="date"
+              name="inicioPeriodoAtuacao"
+              id="inicioPeriodoAtuacao"
+              class="inputDate"
+            />
 
-              <label for="inicioPeriodoAtuacao">de:</label>
-              <input
-                  type="date"
-                  name="inicioPeriodoAtuacao"
-                  id="inicioPeriodoAtuacao"
-                  class="inputDate"
-              />
-
-              <label for="fimPeriodoAtuacao">até:</label>
-                <input
-                    type="date"
-                    name="fimPeriodoAtuacao"
-                    id="fimPeriodoAtuacao"
-                    class="inputDate"
-                  />
-
-                </div>
-
-
-                <div id="btnArea" class="btnArea">
-                  <button id="btnSalvar" class="formBtn">salvar</button>
-                  <button id="btnLimpar" type="reset" class="formBtn">limpar</button>
-                </div>
-          </form>
-
-          <div class="listaDetalhes" id="listaDetalhes">
-            <h3 class="titulosH3">experiências</h3>
-
+            <label for="fimPeriodoAtuacao">até:</label>
+            <input
+              type="date"
+              name="fimPeriodoAtuacao"
+              id="fimPeriodoAtuacao"
+              class="inputDate"
+            />
           </div>
 
-      </div>
+          <div id="btnArea" class="btnArea">
+            <button id="btnSalvar" class="formBtn">salvar</button>
+            <button id="btnLimpar" type="reset" class="formBtn">limpar</button>
+          </div>
+        </form>
 
+        <div class="listaDetalhes" id="listaDetalhes">
+          <h3 class="titulosH3">experiências</h3>
+        </div>
+      </div>
 
       <h2 class="titulosH2">qualificações</h2>
 
       <div id="containerQualificacoes">
+        <form
+          action=""
+          id="qualificacoes"
+          class="formContainer formContainerGrande"
+        >
+          <div id="campoNomeCurso">
+            <label for="nomeCurso">nome do curso:</label>
+            <input
+              type="text"
+              name="nomeCurso"
+              id="nomeCurso"
+              class="inputText"
+              placeholder="Informe o nome do curso"
+            />
+          </div>
 
-          <form action="" id="qualificacoes" class="formContainer formContainerGrande">
-              <div id="campoNomeCurso">
-                <label for="nomeCurso">nome do curso:</label>
-                <input
-                  type="text"
-                  name="nomeCurso"
-                  id="nomeCurso"
-                  class="inputText"
-                  placeholder="Informe o nome do curso"
-                />
-              </div>
+          <div id="campoTipoCurso">
+            <label for="tipoCurso">tipo de curso:</label>
+            <input
+              type="text"
+              name="tipoCurso"
+              id="tipoCurso"
+              class="inputText"
+              placeholder="Informe o tipo de curso"
+            />
+          </div>
 
-              <div id="campoTipoCurso">
-                <label for="tipoCurso">tipo de curso:</label>
-                <input
-                  type="text"
-                  name="tipoCurso"
-                  id="tipoCurso"
-                  class="inputText"
-                  placeholder="Informe o tipo de curso"
-                />
-              </div>
+          <div id="campoNomeInstituicao">
+            <label for="nomeInstituicao">instituição:</label>
+            <input
+              type="text"
+              name="nomeInstituicao"
+              id="nomeInstituicao"
+              class="inputText"
+              placeholder="Informe o nome da instituição"
+            />
+          </div>
 
-              <div id="campoNomeInstituicao">
-                <label for="nomeInstituicao">instituição:</label>
-                <input
-                  type="text"
-                  name="nomeInstituicao"
-                  id="nomeInstituicao"
-                  class="inputText"
-                  placeholder="Informe o nome da instituição"
-                />
-              </div>
+          <div id="campoAreaCurso">
+            <label for="areaCurso">área do curso:</label>
+            <input
+              type="text"
+              name="areaCurso"
+              id="areaCurso"
+              class="inputText"
+              placeholder="Informe a área do curso"
+            />
+          </div>
 
-              <div id="campoAreaCurso">
-                <label for="areaCurso">área do curso:</label>
-                <input
-                  type="text"
-                  name="areaCurso"
-                  id="areaCurso"
-                  class="inputText"
-                  placeholder="Informe a área do curso"
-                />
-              </div>
+          <div id="dateAreaInput" class="dateAreaInput">
+            <label for="inicioPeriodoAtuacao">de:</label>
+            <input
+              type="date"
+              name="inicioPeriodoAtuacao"
+              id="inicioCurso"
+              class="inputDate"
+            />
 
-            <div id="dateAreaInput" class="dateAreaInput">
+            <label for="fimPeriodoAtuacao">até:</label>
+            <input
+              type="date"
+              name="fimPeriodoAtuacao"
+              id="fimCurso"
+              class="inputDate"
+            />
+          </div>
 
-              <label for="inicioPeriodoAtuacao">de:</label>
-              <input
-                  type="date"
-                  name="inicioPeriodoAtuacao"
-                  id="inicioCurso"
-                  class="inputDate"
-              />
+          <div id="btnArea" class="btnArea">
+            <button id="btnSalvarCurso" class="formBtn">salvar</button>
+            <button id="btnLimpar" type="reset" class="formBtn">limpar</button>
+          </div>
+        </form>
 
-              <label for="fimPeriodoAtuacao">até:</label>
-                <input
-                    type="date"
-                    name="fimPeriodoAtuacao"
-                    id="fimCurso"
-                    class="inputDate"
-                  />
-
-                </div>
-
-                <div id="btnArea" class="btnArea">
-                  <button id="btnSalvarCurso" class="formBtn">
-                    salvar
-                  </button>
-                  <button id="btnLimpar" type="reset" class="formBtn">limpar</button>
-                </div>
-          </form>
-
-          <div id="listaQualificacoes" class="listaDetalhes">
+        <div id="listaQualificacoes" class="listaDetalhes">
           <h3 class="titulosH3">qualificações</h3>
-              <!-- <div class="campoDetalhe" class="cardExp" id="cardCurso">
+          <!-- <div class="campoDetalhe" class="cardExp" id="cardCurso">
 
                 <h2 class="titulosH3">Curso 1</h2>
 
@@ -397,15 +437,12 @@
                 </div>
 
               </div> -->
-          </div>
+        </div>
       </div>
 
       <!-- fim da seção de cadastros. Com 3 seções ao todo: cadastro de interesses, experiências e qualificações -->
-
     </main>
     <!-- fim da seção principal do site -->
-
-
 
     <!-- inicio do footer -->
     <footer>
@@ -455,9 +492,5 @@ Envie-nos sua mensagem...
       </div>
     </footer>
     <!-- fim do footer -->
-
-
-
   </body>
-
 </html>

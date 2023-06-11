@@ -6,12 +6,12 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-<<<<<<<< HEAD:src/cssStyle/style.css
-========
+  /*<<<<<<<< HEAD:src/cssStyle/style.css
+========*/
   font-family: var(--fontSecondary);
   text-decoration: none;
   list-style: none;
->>>>>>>> arjr_pages:cssStyle/style.css
+  /*>>>>>>>> arjr_pages:cssStyle/style.css*/
 }
 
 :root {
@@ -21,22 +21,16 @@
   --titleColorLight: #fdc886;
   --fontPrimary: "Poppins", sans-serif;
   --fontSecondary: "Roboto", sans-serif;
-<<<<<<<< HEAD:src/cssStyle/style.css
+  /*<<<<<<<< HEAD:src/cssStyle/style.css*/
   --smallFontSize: 16px;
   --mediumFontSize: 18px;
   --largeFontSize: 20px;
   --titleFontSize: 24px;
-========
-  --smallFontSize: 12px;
-  --mediumFontSize: 14px;
-  --largeFontSize: 16px;
-  --titleFontSize: 20px;
   --titleFontSizeBiger: 32px;
->>>>>>>> arjr_pages:cssStyle/style.css
+  /*>>>>>>>> arjr_pages:cssStyle/style.css*/
   --textCallsWeight: 600;
   --mediuCallsWeight: 450;
-
-  --bgColor: FFFEFC;
+  --bgColor: #fffefc;
 }
 
 body {
@@ -44,61 +38,6 @@ body {
 }
 
 /* INÍCIO PARTE SUPERIOR /*
-
-/* HEADER CSS 
-  NAVBAR USUÁRIO DESLOGADO */
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 33px;
-  font-family: var(--fontSecondary);
-}
-
-.wrapper #logo {
-  width: 180px;
-  margin-top: 5px;
-  margin-left: 40px;
-}
-
-.wrapper img:hover {
-  cursor: pointer;
-}
-
-.wrapper .wrapperNavbar {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  align-items: center;
-  color: var(--titleColorDark);
-  font-size: var(--mediumFontSize);
-  margin-right: 60px;
-}
-
-.wrapper .wrapperNavbar .wrapper-li {
-  margin-left: 4rem;
-}
-
-.wrapper .wrapperNavbar .wrapper-li:hover {
-  color: var(--titleColorLight);
-  cursor: pointer;
-}
-
-.wrapper a,
-a:visited {
-  color: inherit;
-}
-
-.wrapper .wrapperNavbar .wrapperButton-active {
-  background-color: var(--titleColorLight);
-  padding: 0.5em;
-  border-radius: 5px;
-}
-
-.wrapper .wrapperNavbar .wrapperButton-active:hover {
-  color: black;
-}
 
 /* CONTENT CSS */
 .container {
@@ -186,7 +125,7 @@ a:visited {
 }
 
 .container .containerCard .container-content a,
-a:visited {
+.container .containerCard .container-content a:visited {
   color: inherit;
   text-decoration: underline;
 }
