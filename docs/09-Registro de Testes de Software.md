@@ -21,8 +21,13 @@ Caso de teste 01 - Pesquisar novas ONGs
 4- Resultado da pesquisa para o termo "quatro patas":
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/19398297/ef4975a5-a36f-4535-9a1e-a7e2f5aea12b)
+
 5 - Resulultado da pesquisa por "Joana" voluntária:
-![Uploading image.png…]()
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/19398297/08d63af0-9949-41cd-8e7d-243879c82763)
+
+
+6 - Pesquisa realizada com sucesso.
 
 
 ## Avaliação
