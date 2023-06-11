@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="paginaPerfilVol-style.css" />
+    <link rel="stylesheet" href="./componentes/navbar-style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,60 +16,63 @@
       src="https://kit.fontawesome.com/331a34d5ed.js"
       crossorigin="anonymous"
     ></script>
-    <script defer src="./script-navbar.js"></script>
-    <script defer src="perfilVol.js"></script>
+    <script defer src="./componentes/navbar-script.js"></script>
+    <script defer src="./jsScripts/perfilONG.js"></script>
+    <script defer src="./jsScripts/perfilVol.js"></script>
     <link rel="icon" type="image/png" href="img/iconPonte.png" />
     <title></title>
   </head>
   <body>
     <!-- Navbar -->
     <header class="wrapper">
-      <a href="navbar.html"
-        ><img
+      <a href="navbar.html">
+        <img
           id="logo"
           src="img/logoPontecom.png"
           alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
-      /></a>
+        />
+      </a>
 
       <div class="wrapperSearch">
         <input
           type="text"
           class="wrapperSearch-txt"
-          placeholder="Busque por vagas, ONGs ou voluntários..."
+          placeholder="Busque por ONGs ou voluntários..."
         />
         <button id="searchButton">
-          <i class="fas fa-search"></i>
+          <i class="fa-solid fa-magnifying-glass"></i>
         </button>
       </div>
 
       <!-- Menu -->
       <ul class="wrapperNavbar">
-        <!-- No código, substituir caminho das páginas-->
-        <li><a href="./sobre.html">Sobre</a></li>
-        <li><a href="./vagas.html">Vagas de voluntariado</a></li>
+        <li class="wrapper-li"><a href="./sobre.html">Sobre</a></li>
+        <li class="wrapper-li">
+          <a href="./vagas.html">Vagas de voluntariado</a>
+        </li>
       </ul>
 
       <img
-        src="img/foto-perfil.png"
+        src="img/foto-perfilONG.png"
         id="foto"
         alt="Foto de perfil do usuário."
       />
 
-      <ul id="menuDropdown">
-        <li><a href="./pagina-perfil.html">Meu perfil</a></li>
+      <ul id="menuDropdown" class="">
+        <li><a href="./paginaPerfil.html">Meu perfil</a></li>
         <li><a href="./cadastro-voluntario.html">Editar dados</a></li>
         <li><a href="./index.html">Logout</a></li>
       </ul>
     </header>
 
+    <div class="searchResultContainer" id="searchResults"></div>
+
     <!-- Início do perfil -->
     <main>
       <section id="profileSection"></section>
-
-      
     </main>
 
-    <!-- decoração do footer -->
+    <!-- Decoração do footer -->
     <div id="decFooter">
       <img src="img/decTintaFooter.png" alt="" id="decFooter" />
     </div>
@@ -119,14 +123,19 @@
         </div>
       </div>
     </footer>
+
     <script>
       window.addEventListener("DOMContentLoaded", function () {
         const profileSection = document.getElementById("profileSection");
-
         const perfilVol = JSON.parse(localStorage.getItem("perfilVol"));
 
-        if (perfilVol && perfilVol.length > 0) {
-          const profile = perfilVol[0];
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+
+        const ong = perfilVol.find((ong) => ong.id === id);
+
+        if (ong) {
+          const profile = perfilVol[ong.id];
 
           document.title = profile.nomeUsuario;
 
@@ -134,7 +143,9 @@
               <div class="cabecalho">
                 <div class="cabecalhoUsuario">
                     <div class="cabecalhoEsq">
-                      <img src="${profile.fotoPerfil}" alt="Foto de perfil do usuário." />
+                      <img src="${
+                        profile.fotoPerfil
+                      }" alt="Foto de perfil do usuário." />
                     </div>
                     <div class="cabecalhoDir">
                       <section class="cabecalhoBio">
@@ -143,9 +154,13 @@
                           <div class="cabecalho-interesses">
                             <h3>Interesses:</h3>
                             <ul id="campoInteresse">
-                                ${profile.interesses.map((interesse) => `
+                                ${profile.interesses
+                                  .map(
+                                    (interesse) => `
                                 <li>${interesse}</li>
-                                `).join("")}
+                                `
+                                  )
+                                  .join("")}
                             </ul>
                           </div>
                       </section>
@@ -157,7 +172,9 @@
                 <section class="qualificacao">
                     <h2>Qualificação</h2>
                     <div class="listaQuali">
-                      ${profile.qualificacao.map((qualificacao) => `
+                      ${profile.qualificacao
+                        .map(
+                          (qualificacao) => `
                       <div class="campoQuali">
                         <h3>${qualificacao.nomeQuali}</h3>
                         <ul>
@@ -167,12 +184,16 @@
                             <li>Período: ${qualificacao.periodoQuali}</li>
                         </ul>
                       </div>
-                      `).join("")}
+                      `
+                        )
+                        .join("")}
                     </div>
                 </section>
                 <h2>Experiências</h2>
                 <div class="listaExp">
-                  ${profile.experiencias.map((experiencias) => `
+                  ${profile.experiencias
+                    .map(
+                      (experiencias) => `
                     <div class="campoExp">
                       <h3>${experiencias.nomeExp}</h3>
                       <ul>
@@ -184,14 +205,16 @@
                           </li>
                       </ul>
                     </div> 
-                  `).join("")}
+                  `
+                    )
+                    .join("")}
                 </div>
               </div>
           `;
 
           profileSection.innerHTML = profileHtml;
         }
-      })
+      });
     </script>
   </body>
 </html>

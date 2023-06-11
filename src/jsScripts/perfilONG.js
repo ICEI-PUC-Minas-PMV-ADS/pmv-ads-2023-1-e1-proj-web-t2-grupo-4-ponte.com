@@ -1,5 +1,6 @@
 let perfilONG = [
   {
+    id: "0",
     nomeUsuarioONG: "Quatro Patas",
     email: "email1@exemplo.com",
     senha: "senha123",
@@ -49,6 +50,7 @@ let perfilONG = [
     ],
   },
   {
+    id: "1",
     nomeUsuarioONG: "Amigos dos Animais",
     email: "contato@amigosdosanimais.org",
     senha: "amigos123",
@@ -97,6 +99,7 @@ let perfilONG = [
     ],
   },
   {
+    id: "2",
     nomeUsuarioONG: "Educa+,",
     email: "contato@educa.org",
     senha: "educa123",
@@ -141,6 +144,7 @@ let perfilONG = [
     ],
   },
   {
+    id: "3",
     nomeUsuarioONG: "Saúde para Todos",
     email: "contato@saudeparatodos.org",
     senha: "saude123",
@@ -185,6 +189,7 @@ let perfilONG = [
     ],
   },
   {
+    id: "4",
     nomeUsuarioONG: "Natureza Viva",
     email: "contato@naturezaviva.org",
     senha: "natureza123",
@@ -229,6 +234,7 @@ let perfilONG = [
     ],
   },
   {
+    id: "5",
     nomeUsuarioONG: "Direitos em Ação",
     email: "contato@direitosemacao.org",
     senha: "direitos123",
@@ -273,6 +279,7 @@ let perfilONG = [
     ],
   },
   {
+    id: "6",
     nomeUsuarioONG: "Mãos Solidárias",
     email: "contato@maossolidarias.org",
     senha: "solidariedade123",
@@ -317,6 +324,7 @@ let perfilONG = [
     ],
   },
   {
+    id: "7",
     nomeUsuarioONG: "Esporte para Todos",
     email: "contato@esporteparatodos.org",
     senha: "esporte123",
@@ -366,6 +374,7 @@ let perfilONG = [
     ],
   },
   {
+    id: "8",
     nomeUsuarioONG: "Crianças Felizes",
     email: "contato@criancasfelizes.org",
     senha: "felizes123",
@@ -410,6 +419,7 @@ let perfilONG = [
     ],
   },
   {
+    id: "9",
     nomeUsuarioONG: "Cuidado e Carinho",
     email: "contato@cuidadoecarinho.org",
     senha: "cuidar123",
@@ -445,4 +455,5 @@ let perfilONG = [
     ],
   },
 ];
+
 localStorage.setItem("perfilONG", JSON.stringify(perfilONG));

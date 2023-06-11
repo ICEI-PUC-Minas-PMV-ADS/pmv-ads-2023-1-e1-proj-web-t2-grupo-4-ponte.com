@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="./componentes/navbar-style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/331a34d5ed.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./componentes/navbar-script.js"></script>
+    <title>Perfil</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="wrapper">
+      <a href="navbar.html">
+        <img
+          id="logo"
+          src="img/logoPontecom.png"
+          alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
+        />
+      </a>
+
+      <div class="wrapperSearch">
+        <input
+          type="text"
+          class="wrapperSearch-txt"
+          placeholder="Busque por ONGs ou voluntários..."
+        />
+        <button id="searchButton">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <!-- Menu -->
+      <ul class="wrapperNavbar">
+        <li class="wrapper-li"><a href="./sobre.html">Sobre</a></li>
+        <li class="wrapper-li">
+          <a href="./vagas.html">Vagas de voluntariado</a>
+        </li>
+      </ul>
+
+      <img
+        src="img/foto-perfilONG.png"
+        id="foto"
+        alt="Foto de perfil do usuário."
+      />
+
+      <ul id="menuDropdown" class="">
+        <li><a href="./paginaPerfil.html">Meu perfil</a></li>
+        <li><a href="./cadastro-voluntario.html">Editar dados</a></li>
+        <li><a href="./index.html">Logout</a></li>
+      </ul>
+    </header>
+
+    <div class="searchResultContainer" id="searchResults"></div>
+    <script src="./jsScripts/perfilONG.js"></script>
+    <script src="./jsScripts/perfilVol.js"></script>
+  </body>
+</html>
