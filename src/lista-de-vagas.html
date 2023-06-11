@@ -202,5 +202,56 @@
       <!-- Fim da área de Vagas -->
     </main>
     <script src="lista-de-vagas.js"></script>
+    <div id="decFooter">
+      <img src="img/decTintaFooter.png" alt="" id="decFooter" />
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div id="footerContainer">
+        <div id="logoFooter">
+          <a href="#">
+            <img src="img/logoCor2.png" alt="logo em cor clara" />
+          </a>
+        </div>
+
+        <div id="formFooter">
+          <div id="sugestionsFooter">
+            <h3>Sugestões?</h3>
+            <p>Mande uma mensagem ;)</p>
+          </div>
+
+          <form action="mensagem.php">
+            <label for="email" title="Informe seu email mais usado">
+              E-mail:
+            </label>
+            <input
+              type="email"
+              name="email"
+              id=""
+              placeholder="informe seu e-mail..."
+            />
+
+            <label for="message">Mensagem:</label>
+            <textarea
+              type="textarea"
+              name="message"
+              title="Mensagem"
+              cols="30"
+              rows="5"
+              placeholder="escreva aqui sua mensagem..."
+            >
+            </textarea>
+
+            <input
+              type="submit"
+              value="Enviar"
+              name="enviar"
+              class="btnLight"
+            />
+          </form>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
