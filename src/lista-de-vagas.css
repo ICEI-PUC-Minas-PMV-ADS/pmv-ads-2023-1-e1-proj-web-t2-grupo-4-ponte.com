@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 15px;
-  font-family: var(--fontSecondary);
+  font-family: "Roboto", sans-serif;
 }
 
 .wrapper #logo {
@@ -33,7 +33,7 @@
 
 .wrapper .wrapperSearch .wrapperSearch-txt {
   font-size: 14px;
-  color: var(--titleColorDark);
+  color: #333;
   border: none;
   opacity: 0.6;
   width: 500px;
@@ -57,10 +57,10 @@
 .wrapper .wrapperNavbar {
   display: flex;
   flex-direction: row;
-  margin-left: 20px;
+  margin-left: -50px;
   list-style: none;
-  color: var(--titleColorDark);
-  font-size: var(--mediumFontSize);
+  color: #4a4a4a;
+  font-size: 18px;
 }
 
 .wrapper .wrapperNavbar .wrapper-li {
@@ -68,7 +68,7 @@
 }
 
 .wrapper .wrapperNavbar .wrapper-li:hover {
-  color: var(--titleColorLight);
+  color: #fdc886;
   cursor: pointer;
 }
 
