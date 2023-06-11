@@ -67,19 +67,10 @@
 
           <h2> Setor de Vagas </h2>
 
-          <p>
-            Aqui estão algumas vagas que podem conectá-lo as ONGs
-            que mais combinam com você.
-
-            <button class="roundBtn" title="clique para iniciar">
-
-              <i
-                class="fa-solid fa-arrow-down fa-sm"
-                style="color: #574e42"
-              ></i>
-
-            </button>
-
+          <p> Aqui estão algumas vagas que podem conectá-lo as ONGs que mais combinam com você.
+            <!-- <button class="roundBtn" title="clique para iniciar">
+              <i class="fa-solid fa-arrow-down fa-sm" style="color: #574e42"></i>
+            </button> -->
           </p>
 
         </div>
@@ -272,7 +263,7 @@
     </footer>
     <script>
       window.addEventListener("DOMContentLoaded", function () {
-        const listaSection = document.getElementById("profileSection");
+        const listaSection = document.getElementById("listaSection");
 
         constprofilea = JSON.parse(localStorage.getItem("listadevagas"));
 
@@ -367,7 +358,7 @@
           </div>
           `;
 
-          profileSection.innerHTML = profileHtml;
+          listaSection.innerHTML = profileHtml;
         }
       });
     </script>
