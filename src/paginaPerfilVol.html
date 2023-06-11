@@ -16,16 +16,18 @@
       crossorigin="anonymous"
     ></script>
     <script defer src="./script-navbar.js"></script>
-    <link rel="icon" type="image/png" href="img/iconPonte.png"/>
-    <title>Perfil de Voluntário</title>
+    <script defer src="perfilVol.js"></script>
+    <link rel="icon" type="image/png" href="img/iconPonte.png" />
+    <title></title>
   </head>
   <body>
     <!-- Navbar -->
     <header class="wrapper">
-      <a href="navbar.html"><img
-        id="logo"
-        src="img/logoPontecom.png"
-        alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
+      <a href="navbar.html"
+        ><img
+          id="logo"
+          src="img/logoPontecom.png"
+          alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
       /></a>
 
       <div class="wrapperSearch">
@@ -34,16 +36,16 @@
           class="wrapperSearch-txt"
           placeholder="Busque por vagas, ONGs ou voluntários..."
         />
-        <button #id="searchButton">
-          <i class="fa-solid fa-magnifying-glass"></i>
+        <button id="searchButton">
+          <i class="fas fa-search"></i>
         </button>
       </div>
 
       <!-- Menu -->
       <ul class="wrapperNavbar">
         <!-- No código, substituir caminho das páginas-->
-        <a href="./sobre.html"><li class=wrapper-li id="sobre">Sobre</li></a>
-        <a href="./vagas.html"><li class="wrapper-li" id="vagas">Vagas de voluntariado</li></a>
+        <li><a href="./sobre.html">Sobre</a></li>
+        <li><a href="./vagas.html">Vagas de voluntariado</a></li>
       </ul>
 
       <img
@@ -51,139 +53,19 @@
         id="foto"
         alt="Foto de perfil do usuário."
       />
-      <!-- No código, substituir caminho da imagem -->
 
-    <ul id="menuDropdown" class="">
-      <a href="./pagina-perfil.html"><li id="dropdownlist-perfil">Meu perfil</li></a>
-      <a href="./cadastro-voluntario.html"><li id="dropdownlist-editar">Editar dados</li></a>
-      <a href="./index.html"></a><li id="dropdownlist-logout">Logout</li></a>
-    </ul>
-  </header>
+      <ul id="menuDropdown">
+        <li><a href="./pagina-perfil.html">Meu perfil</a></li>
+        <li><a href="./cadastro-voluntario.html">Editar dados</a></li>
+        <li><a href="./index.html">Logout</a></li>
+      </ul>
+    </header>
 
     <!-- Início do perfil -->
-    <!-- Dados principais do usuário -->
     <main>
-      <div class="cabecalho">
-        <div class="cabecalhoUsuario">
-          <div class="cabecalhoEsq">
-            <img src="img/foto-perfil.png" alt="Foto de pefil do usuário." />
-          </div>
-          <div class="cabecalhoDir">
-            <section class="cabecalhoBio">
-              <h1 id="nomeUsuario">Joana Dupre</h1>
-              <p id="bio">
-                Uma breve biografia do usuário. Lorem ipsum dolor sit amet
-                consectetur, adipisicing elit. Optio, hic maxime. Qui voluptate
-                nam quos enim aspernatur placeat suscipit non, libero ipsum
-                facilis distinctio tenetur adipisci obcaecati, sunt odit
-                laudantium ipsa asperiores nemo quaerat accusamus assumenda quod
-                architecto? Quod modi veritatis sunt voluptate! Possimus, quis.
-              </p>
-              <div class="cabecalho-interesses">
-                <h3>Interesses:</h3>
-                <ul id="campoInteresse">
-                  <li>interesse1</li>
-                  <li>interesse2</li>
-                  <li>interesse3</li>
-                  <li>interesse4</li>
-                  <li>interesse5</li>
-                </ul>
-              </div>
-            </section>
-          </div>
-        </div>
-      </div>
+      <section id="profileSection"></section>
 
-      <!-- Experiências e qualificação do usuário -->
-      <div class="conteudo-perfil">
-        <h2 class="titulo">Qualificação e Experiências</h2>
-        <!-- Qualificação do usuário -->
-        <section class="qualificacao">
-          <h2>Qualificação</h2>
-          <div class="listaQuali">
-            <div class="campoQuali">
-              <h3 id="nomeCurso">Curso 1</h3>
-              <ul>
-                <li id="tipoCurso">Tipo do curso</li>
-                <li id="nomeInstituicao">Instituição: local onde cursou</li>
-                <li id="areaCurso">Área do curso: informática</li>
-                <li id="periodoCurso">Período: de dd/mm/aa até dd/mm/aa</li>
-              </ul>
-            </div>
-
-            <div class="campoQuali">
-              <h3 id="nomeCurso">Curso 1</h3>
-              <ul>
-                <li id="tipoCurso">Tipo do curso</li>
-                <li id="nomeInstituicao">Instituição: local onde cursou</li>
-                <li id="areaCurso">Área do curso: informática</li>
-                <li id="periodoCurso">Período: de dd/mm/aa até dd/mm/aa</li>
-              </ul>
-            </div>
-
-            <div class="campoQuali">
-              <h3 id="nomeCurso">Curso 1</h3>
-              <ul>
-                <li id="tipoCurso">Tipo do curso</li>
-                <li id="nomeInstituicao">Instituição: local onde cursou</li>
-                <li id="areaCurso">Área do curso: informática</li>
-                <li id="periodoCurso">Período: de dd/mm/aa até dd/mm/aa</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <!-- Experiências do usuário -->
-        <h2>Experiências</h2>
-        <div class="listaExp">
-          <div class="campoExp">
-            <h3 id="areaAtuacao">Experiência 1</h3>
-            <ul>
-              <li id="cargoAtuacao">Cargo: cargo ocupado</li>
-              <li id="localAtuacao">Local: local da experiência</li>
-              <li id="periodoAtuacao">Período: de dd/mm/aa até dd/mm/aa</li>
-              <li id="descricaoAtuacao">
-                Descrição: Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Tempore amet blanditiis itaque neque nostrum dolorem,
-                aliquid praesentium labore soluta doloremque in fugit nemo
-                exercitationem expedita? Voluptates reprehenderit delectus
-                facilis fugit?
-              </li>
-            </ul>
-          </div>
-
-          <div class="campoExp">
-            <h3 id="areaAtuacao">Experiência 1</h3>
-            <ul>
-              <li id="cargoAtuacao">Cargo: cargo ocupado</li>
-              <li id="localAtuacao">Local: local da experiência</li>
-              <li id="periodoAtuacao">Período: de dd/mm/aa até dd/mm/aa</li>
-              <li id="descricaoAtuacao">
-                Descrição: Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Tempore amet blanditiis itaque neque nostrum dolorem,
-                aliquid praesentium labore soluta doloremque in fugit nemo
-                exercitationem expedita? Voluptates reprehenderit delectus
-                facilis fugit?
-              </li>
-            </ul>
-          </div>
-
-          <div class="campoExp">
-            <h3 id="areaAtuacao">Experiência 1</h3>
-            <ul>
-              <li id="cargoAtuacao">Cargo: cargo ocupado</li>
-              <li id="localAtuacao">Local: local da experiência</li>
-              <li id="periodoAtuacao">Período: de dd/mm/aa até dd/mm/aa</li>
-              <li id="descricaoAtuacao">
-                Descrição: Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Tempore amet blanditiis itaque neque nostrum dolorem,
-                aliquid praesentium labore soluta doloremque in fugit nemo
-                exercitationem expedita? Voluptates reprehenderit delectus
-                facilis fugit?
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      
     </main>
 
     <!-- decoração do footer -->
@@ -225,8 +107,7 @@
               cols="30"
               rows="5"
               placeholder="escreva aqui sua mensagem..."
-            >
-            </textarea>
+            ></textarea>
 
             <input
               type="submit"
@@ -238,5 +119,79 @@
         </div>
       </div>
     </footer>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        const profileSection = document.getElementById("profileSection");
+
+        const perfilVol = JSON.parse(localStorage.getItem("perfilVol"));
+
+        if (perfilVol && perfilVol.length > 0) {
+          const profile = perfilVol[0];
+
+          document.title = profile.nomeUsuario;
+
+          const profileHtml = `
+              <div class="cabecalho">
+                <div class="cabecalhoUsuario">
+                    <div class="cabecalhoEsq">
+                      <img src="${profile.fotoPerfil}" alt="Foto de perfil do usuário." />
+                    </div>
+                    <div class="cabecalhoDir">
+                      <section class="cabecalhoBio">
+                          <h1 id="nomeUsuario">${profile.nomeUsuario}</h1>
+                          <p id="bio">${profile.textoBio}</p>
+                          <div class="cabecalho-interesses">
+                            <h3>Interesses:</h3>
+                            <ul id="campoInteresse">
+                                ${profile.interesses.map((interesse) => `
+                                <li>${interesse}</li>
+                                `).join("")}
+                            </ul>
+                          </div>
+                      </section>
+                    </div>
+                </div>
+              </div>
+              <div class="conteudo-perfil">
+                <h2 class="titulo">Qualificação e Experiências</h2>
+                <section class="qualificacao">
+                    <h2>Qualificação</h2>
+                    <div class="listaQuali">
+                      ${profile.qualificacao.map((qualificacao) => `
+                      <div class="campoQuali">
+                        <h3>${qualificacao.nomeQuali}</h3>
+                        <ul>
+                            <li>Tipo do curso: ${qualificacao.tipoQuali}</li>
+                            <li>Instituição: ${qualificacao.instituicaoQuali}</li>
+                            <li>Área do curso: ${qualificacao.areaQuali}</li>
+                            <li>Período: ${qualificacao.periodoQuali}</li>
+                        </ul>
+                      </div>
+                      `).join("")}
+                    </div>
+                </section>
+                <h2>Experiências</h2>
+                <div class="listaExp">
+                  ${profile.experiencias.map((experiencias) => `
+                    <div class="campoExp">
+                      <h3>${experiencias.nomeExp}</h3>
+                      <ul>
+                          <li>Cargo: ${experiencias.cargoExp}</li>
+                          <li>Local: ${experiencias.localExp}</li>
+                          <li>Período: ${experiencias.periodoExp}</li>
+                          <li>
+                            Descrição: ${experiencias.descricaoExp}
+                          </li>
+                      </ul>
+                    </div> 
+                  `).join("")}
+                </div>
+              </div>
+          `;
+
+          profileSection.innerHTML = profileHtml;
+        }
+      })
+    </script>
   </body>
 </html>
