@@ -24,61 +24,6 @@
 
 /* INÍCIO PARTE SUPERIOR */
 
-/* HEADER CSS 
-  NAVBAR USUÁRIO DESLOGADO */
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 33px;
-  font-family: var(--fontSecondary);
-}
-
-.wrapper #logo {
-  width: 180px;
-  margin-top: 5px;
-  margin-left: 40px;
-}
-
-.wrapper img:hover {
-  cursor: pointer;
-}
-
-.wrapper .wrapperNavbar {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  align-items: center;
-  color: var(--titleColorDark);
-  font-size: var(--mediumFontSize);
-  margin-right: 60px;
-}
-
-.wrapper .wrapperNavbar li {
-  margin-left: 4rem;
-}
-
-.wrapper .wrapperNavbar li:hover {
-  color: var(--titleColorLight);
-  cursor: pointer;
-}
-
-.wrapper a,
-a:visited {
-  color: inherit;
-}
-
-.wrapper .wrapperNavbar .wrapperButton-active {
-  background-color: var(--titleColorLight);
-  padding: 0.5em;
-  border-radius: 5px;
-}
-
-.wrapper .wrapperNavbar .wrapperButton-active:hover {
-  color: black;
-}
-
 /* CONTENT CSS */
 .container {
   display: flex;

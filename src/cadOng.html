@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../cssStyle/style.css" />
+  <link rel="stylesheet" href="./cssStyle/cadOng.css" />
   <link rel="stylesheet" href="./componentes/navbar-style.css">
+  <link rel="stylesheet" href="./componentes/footer-style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="../cssStyle/cadOng.css">
-  <script src="../jsScript/cadOng.js" defer></script>
+  <script src="./jsScripts/cadOng.js" defer></script>
+  <link rel="icon" type="image/png" href="img/iconPonte.png" />
   <title>Cadastro de ONGs</title>
 </head>
 <body>
@@ -239,53 +240,63 @@
 
     </main>
 
-    <!-- inicio do footer -->
-    <footer>
-      <div id="footerContainer">
-        <div id="logoFooter">
-          <a href="#">
-            <img src="img/logoCor2.png" alt="logo em cor clara" />
-          </a>
-        </div>
+    <!-- decoração do footer -->
+<div id="decFooter">
+  <img src="./img/decTintaFooter.png" alt="" id="decFooter">
+</div>
 
-        <div id="formFooter">
-          <div id="sugestionsFooter">
-            <h3>Sugestões?</h3>
-            <p>Envie-nos uma mensagem</p>
-          </div>
+<!-- Footer -->
+<footer>
+<div id="footerContainer">
+  <div id="logoFooter">
+    <a href="#">
+      <!-- No código, substituir caminho da imagem -->
+      <img
+        src="./img/logoCor2.png"
+        alt="logo em cor clara"
+      />
+    </a>
+  </div>
 
-          <form action="mensagem.php">
-            <label for="email" title="Informe seu email mais usado">
-              E-mail:
-            </label>
-            <input
-              type="email"
-              name="email"
-              id=""
-              placeholder="informe seu e-mail..."
-            />
+  <div id="formFooter">
+    <div id="sugestionsFooter">
+      <h3>Sugestões?</h3>
+      <p>Mande uma mensagem ;)</p>
+    </div>
 
-            <label for="message">Mensagem:</label>
-            <textarea
-              type="textarea"
-              name="message"
-              title="Mensagem"
-              cols="30"
-              rows="5"
-            >
-Envie-nos sua mensagem...
-            </textarea>
+    <form action="mensagem.php">
+      <label for="email" title="Informe seu email mais usado">
+        E-mail:
+      </label>
+      <input
+        type="email"
+        name="email"
+        id=""
+        placeholder="informe seu e-mail..."
+      />
 
-            <input
-              type="submit"
-              value="Enviar"
-              name="enviar"
-              class="btnLight"
-            />
-          </form>
-        </div>
-      </div>
-    </footer>
+      <label for="message">Mensagem:</label>
+      <textarea
+        type="textarea"
+        name="message"
+        title="Mensagem"
+
+        cols="30"
+        rows="5"
+        placeholder="escreva aqui sua mensagem..."
+      >
+      </textarea>
+
+      <input
+        type="submit"
+        value="Enviar"
+        name="enviar"
+        class="btnLight"
+      />
+    </form>
+  </div>
+</div>
+</footer>
     <!-- fim do footer -->
 
 </body>

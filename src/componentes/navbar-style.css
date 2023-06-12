@@ -127,13 +127,13 @@ a:visited {
   flex-direction: column;
   position: absolute;
   right: 40px;
-  margin-top: 210px;
+  margin-top: 250px;
   margin-left: 0;
   padding: 0.5rem;
   text-align: center;
   text-transform: uppercase;
   width: 130px;
-  height: 7.5rem;
+  height: 9.5rem;
   background-color: white;
   border: 1px solid #4a4a4a59;
   box-shadow: 2px 2px 80px -40px #4a4a4a;
