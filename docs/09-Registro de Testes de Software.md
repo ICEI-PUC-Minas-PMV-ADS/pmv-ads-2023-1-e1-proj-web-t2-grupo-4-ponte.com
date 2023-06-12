@@ -4,62 +4,67 @@
 
 Relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado em um plano de testes pré-definido.
 
-Caso de teste 01 - Pesquisar novas ONGs
 
-1-Acessando a aplicação:
+1 - **Acessando a aplicação:**
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/19398297/135578b4-9b95-4d58-8456-9ecc44d42ac4)
 
-2- Navegando para uma tela qualquer da aplicação:
+2 - **Navegando para uma tela qualquer da aplicação:**
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/19398297/f2ecc4b3-2c7d-4abc-a501-737eb41b93e3)
 
-3- Barra de pesquisa visível e acessível:
+3- **Barra de pesquisa visível e acessível:**
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/19398297/750ff9ec-0a31-49ac-93fb-021e8ec513c6)
 
-4- Resultado da pesquisa para o termo "quatro patas":
+4 - **Resultado da pesquisa para o termo "quatro patas":**
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/19398297/ef4975a5-a36f-4535-9a1e-a7e2f5aea12b)
 
-5 - Resulultado da pesquisa por "Joana" voluntária:
+5 - **Resultado da pesquisa por "Joana" voluntária:**
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/19398297/08d63af0-9949-41cd-8e7d-243879c82763)
 
 
-6 - Pesquisa realizada com sucesso.
+6 - **Pesquisa realizada com sucesso.**
 
 
-Caso de teste 02 - Apresentar perfil de ONGs
-
-1 - Acessar a aplicação como usuário:
+1 - **Acessar a aplicação como usuário:**
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/19398297/9424fc46-9b77-4369-a824-2d4108f320a4)
 
-2 - Pesquisa e resultado do perfil de ONG
+2 - **Pesquisa e resultado do perfil de ONG**
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/19398297/54fab8cd-cefb-494d-ae4f-9d9007de3a43)
 
-3- Perfil detalhado
+3- **Perfil detalhado**
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/19398297/d05557ed-600a-4da3-b85d-ff87f9a0b65f)
 
 
+04 - **Permitir contato direto entre ONGs e voluntários**
 
-Caso de teste 03 - Possiblitar a criação de perfil de voluntário
+Se o usuário não preencher corretamente a pagina não irá dar continuidade
 
-Caso de teste 04 - Permitir contato direto entre ONGs e voluntários
+![t1](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/127978114/03e858b6-8863-4e57-aa1b-784e81b6aefc)
 
-Caso de teste 05 - Filtro para perfil de voluntário
 
-caso de teste 06 - Filtro para perfil de ONGs e tabalhos voluntários
 
-caso de teste 07 - Permitir o compartilhamento em redes sociais
+Resultado preenchimento de dados
 
-1 - Acessar a aplicação
+![teste aprovado](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/127978114/b9bbb7fd-8f26-44c4-b235-6ec8f7ecf1f7)
+
+05 - **Filtro para perfil de voluntário**
+
+Caso o usário deixe de preencher algum dado a página irá apontar
+
+![teste de falha 1](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/127978114/b84a1918-c8d4-4a38-a520-6966ef1e8711)
+
+
+1 - **Acessar a aplicação**
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/19398297/365f8b67-4dd6-4509-aeda-39c14026a3a6)
 
-2 - Icones para compartilhamento em redes sociais
+2 - **Icones para compartilhamento em redes sociais**
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e1-proj-web-t2-grupo-4-ongs-e-voluntariado/assets/19398297/bc675f79-0d83-4879-894a-c4fec6622d00)
 
