@@ -131,8 +131,11 @@ function excluirLinha(lista, e){  //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Dev
  var elementoClicado = e.target;
 
   if(elementoClicado.classList.contains("formBtn")){
-    let linha = elementoClicado.parentNode;
-    linha.remove();
+     let linha = elementoClicado.parentNode;
+     let lista =linha.parentNode;
+     let div = lista.parentNode;
+     div.remove();
+    // console.log(div);
   }
 
 }
@@ -547,10 +550,20 @@ function criarDivListaQualif(){
   return(divContainer);
 }
 
+function recuperarRegistros(formularios = []){
+
+
+}
+
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 //Fluxo Principal<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FLUXO PRINCIPAL
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+document.addEventListener('DOMContentLoaded', function(e){
+
+  recuperarRegistros(formulario);
+
+});
 
 mostraPrioridade(campoPrioridade, valorPrioridade); //Mostra e atualiza o número de prioridade do interesse conforme seleção do user.
 
