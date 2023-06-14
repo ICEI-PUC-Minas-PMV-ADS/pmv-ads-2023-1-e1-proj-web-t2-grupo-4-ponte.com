@@ -257,26 +257,26 @@ function salvarDadosDoFormInteresses(formulario){
     let valorInteresse = formulario.querySelector("#campoInteresse").value;
     let prioridadeInteresse = formulario.querySelector("#campoPrioridade").value;
     // let labels = formulario.querySelector("#prioridade").value;
-    let valores =[];
+    let interesses =[];
     let prioridades = [];
 
 
 
-    if(!window.localStorage.valores && !window.localStorage.prioridades){
-         valores = [];
-         prioridades = [];
-        window.localStorage.valores = [];
+    if(!window.localStorage.interesses && !window.localStorage.prioridades){
+        interesses = [];
+        prioridades = [];
+        window.localStorage.interesses = [];
         window.localStorage.prioridades = [];
 
     }else{
 
-      valores = JSON.parse(window.localStorage.valores);
+      interesses = JSON.parse(window.localStorage.interesses);
       prioridades = JSON.parse(window.localStorage.prioridades);
 
     }
 
-      valores.push(valorInteresse);
-      window.localStorage.valores = JSON.stringify(valores);
+      interesses.push(valorInteresse);
+      window.localStorage.interesses = JSON.stringify(interesses);
       prioridades.push(prioridadeInteresse);
       window.localStorage.prioridades = JSON.stringify(prioridades);
 
@@ -559,11 +559,11 @@ function recuperarRegistros(formularios = []){
 //Fluxo Principal<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FLUXO PRINCIPAL
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-document.addEventListener('DOMContentLoaded', function(e){
+// document.addEventListener('DOMContentLoaded', function(e){
 
-  recuperarRegistros(formulario);
+//   recuperarRegistros(formulario);
 
-});
+// });
 
 mostraPrioridade(campoPrioridade, valorPrioridade); //Mostra e atualiza o número de prioridade do interesse conforme seleção do user.
 
