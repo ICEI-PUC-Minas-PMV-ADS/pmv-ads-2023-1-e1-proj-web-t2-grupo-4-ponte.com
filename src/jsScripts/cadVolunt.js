@@ -64,7 +64,6 @@ function criarCardQualificacao(dados) {
 
   divGroupBtn.appendChild(botaoEditar);
   divGroupBtn.appendChild(botaoExcluir);
-
   cardDetalhes.appendChild(tituloCard);
   cardDetalhes.appendChild(listaUl);
   cardDetalhes.appendChild(divGroupBtn);
