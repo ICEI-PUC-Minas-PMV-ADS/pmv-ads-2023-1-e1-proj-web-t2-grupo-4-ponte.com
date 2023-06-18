@@ -190,7 +190,7 @@ body footer{
 #principal #containerQualificacoes #listaQualificacoes #cardCurso{
     background-color: #333;
     color: #fff;
-    width: 100%;
+    width: 90%;
     padding: 20px;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -231,7 +231,7 @@ body footer{
   gap: 90px;
   align-items: center;
   padding: 20px;
-  background-color: #333;
+  background-color: #fe0606;
   color: #fff;
   width: auto;
   margin: 0px auto 10px auto;
