@@ -389,6 +389,41 @@
             <button id="btnLimpar" type="reset" class="formBtn">limpar</button>
           </div>
         </form>
+        <div class="popupEditar">
+              <h2>Editar Qualificação</h2>
+              <form id="formEditarQualificacao">
+                <div>
+                  <label for="inicioCurso">Início do Curso:</label>
+                  <input type="date" id="inicioCurso" name="inicioCurso" required>
+                </div>
+                <div>
+                  <label for="fimCurso">Fim do Curso:</label>
+                  <input type="date" id="fimCurso" name="fimCurso" required>
+                </div>
+                <div>
+                  <label for="nomeInstituicao">Instituição:</label>
+                  <input type="text" id="nomeInstituicao" name="nomeInstituicao" required>
+                </div>
+                <div>
+                  <label for="nomeCurso">Nome do Curso:</label>
+                  <input type="text" id="nomeCurso" name="nomeCurso" required>
+                </div>
+                <div>
+                  <label for="tipoCurso">Tipo de Curso:</label>
+                  <input type="text" id="tipoCurso" name="tipoCurso" required>
+                </div>
+                <div>
+                  <label for="areaCurso">Área do Curso:</label>
+                  <input type="text" id="areaCurso" name="areaCurso" required>
+                </div>
+                <div class="groupBtn">
+                  <button type="submit" id="btnSalvarEditar">Salvar</button>
+                  <button type="button" id="btnCancelarEditar">Cancelar</button>
+                </div>
+              </form>
+      </div>
+
+
 
         <div id="listaQualificacoes" class="listaDetalhes">
           <!-- <h3 class="titulosH3">qualificações</h3> -->
