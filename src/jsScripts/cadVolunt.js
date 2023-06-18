@@ -41,7 +41,6 @@ function criarCardQualificacao(dados) {
   tituloCard.textContent = dados.nomeCurso;
   tituloCard.setAttribute("class", "titulosH3");
 
-
   listaUl.appendChild(dataInicioLi);
   listaUl.appendChild(dataFimLi);
   listaUl.appendChild(instituicaoLi);
@@ -84,6 +83,9 @@ function recuperarDados(formId) {
 document.addEventListener("DOMContentLoaded", function (e) {
   var dados = recuperarDados('form3'); // Recupera os dados do localStorage
 
+  // Inverte a ordem dos dados
+  dados.reverse();
+
   for (var i = 0; i < dados.length; i++) {
     var card = criarCardQualificacao(dados[i]);
     listaQualificacoes.appendChild(card);
@@ -111,7 +113,7 @@ btnSalvarQualif.addEventListener('click', function (e) {
   localStorage.setItem('form3', JSON.stringify(dados));
 
   var card = criarCardQualificacao(qualificacao);
-  listaQualificacoes.appendChild(card);
+  listaQualificacoes.insertBefore(card, listaQualificacoes.firstChild);
 
   formQualificacoes.reset();
 });
