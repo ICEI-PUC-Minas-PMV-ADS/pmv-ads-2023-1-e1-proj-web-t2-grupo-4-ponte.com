@@ -142,92 +142,84 @@
 
           const profileHtml = ` 
           <div class="cabecalho">
-            <div class="cabecalhoUsuario">
-              <div class="cabecalhoEsq">
-                <img src="${
-                  profile.fotoPerfil
-                }" alt="Foto de pefil do usuário." />
-              </div>
-              <div class="cabecalhoDir">
-                <section class="cabecalhoBio">
-                  <h1 id="nomeUsuario">${profile.nomeUsuarioONG}</h1>
-                  <p id="bio">
-                    ${profile.textoBio}
-                  </p>
-                </section>
-                <div class="cabecalho-interesses">
-                  <h3>Causas:</h3>
-                  <ul id="campoInteresse">
-                    ${profile.interesses
-                      .map((interesse) => `<li>${interesse}</li>`)
-                      .join("")}
-                  </ul>
-                </div>
-                <div class="contato">
-                  <h3>Contato:</h3>
-                  <div class="social">
-                    <a href="${profile.facebook}" class="socialButton"
-                      ><i class="fa-brands fa-facebook fa-2xl"></i
-                    ></a>
-                    <a href="${profile.instagram}" class="socialButton"
-                      ><i class="fa-brands fa-instagram fa-2xl"></i
-                    ></a>
-                    <a
-                      href="https://web.whatsapp.com/send?phone=${
-                        profile.whatsapp
-                      }"
-                      class="socialButton"
-                    >
-                      <i class="fa-brands fa-whatsapp fa-2xl"></i
-                    ></a>
+                  <h3 id="tagUsuario">${profile.tagUsuario}</h3>
+                  <section class="cabecalhoBio">
+                    <h1 id="nomeUsuario">${profile.nomeUsuarioONG}</h1>
+                    <p id="bio">
+                      ${profile.textoBio}
+                    </p>
+                  </section>
+                  <div class="cabecalhoInteresses">
+                    <h3>Causas:</h3>
+                    <ul id="campoInteresse">
+                      ${profile.interesses
+                        .map((interesse) => `<li>${interesse}</li>`)
+                        .join("")}
+                    </ul>
                   </div>
-                </div>
-              </div>
+                  <div class="contato">
+                    <h3>Contato:</h3>
+                    <div class="social">
+                      <a href="${profile.facebook}" class="socialButton"
+                        ><i class="fa-brands fa-facebook fa-2xl"></i
+                      ></a>
+                      <a href="${profile.instagram}" class="socialButton"
+                        ><i class="fa-brands fa-instagram fa-2xl"></i
+                      ></a>
+                      <a
+                        href="https://web.whatsapp.com/send?phone=${
+                          profile.whatsapp
+                        }"
+                        class="socialButton"
+                      >
+                        <i class="fa-brands fa-whatsapp fa-2xl"></i
+                      ></a>
+                    </div>
+                  </div>
             </div>
-          </div>
-          <div class="conteudo-perfil">
-            <h2 class="titulo">Ações</h2>
-            <section class="acoes">
-              <div class="listaAcoes">
-                ${profile.acoes
-                  .map(
-                    (acao) => `
-                    <div class="campoAcoes">
-                      <h3 id="nomeAcao">${acao.nomeAcao}</h3>
-                      <ul>
-                        <li id="periodoAcao">${acao.periodoAcao}</li>
-                        <li id="descricaoAcao">
-                          ${acao.descricaoAcao}
-                        </li>
-                      </ul>
-                    </div>
-                  `
-                  )
-                  .join("")}
-              </div>
-            </section>
-            <h2 class="titulo">Vagas abertas</h2>
-            <section class="vagasAbertas">
-              <div class="listaVagas">
-                ${profile.vagasAbertas
-                  .map(
-                    (vaga) => `
-                    <div class="campoVagas">
-                      <h3 id="nomeVaga">${vaga.nomeVaga}</h3>
-                      <ul>
-                        <li id="localVaga">${vaga.localVaga}</li>
-                        <li id="periodoVaga">${vaga.periodoVaga}</li>
-                        <li id="descricaoVaga">
-                          ${vaga.descricaoVaga}
-                        </li>
-                      </ul>
-                    </div>
-                  `
-                  )
-                  .join("")}
-              </div>
-            </section>
-          </div>
+            <div class="conteudo-perfil">
+              <h2 class="titulo">Ações</h2>
+              <section class="acoes">
+                <div class="listaAcoes">
+                  ${profile.acoes
+                    .map(
+                      (acao) => `
+                      <div class="campoAcoes">
+                        <h3 id="nomeAcao">${acao.nomeAcao}</h3>
+                        <ul>
+                          <li id="periodoAcao">${acao.periodoAcao}</li>
+                          <li id="descricaoAcao">
+                            ${acao.descricaoAcao}
+                          </li>
+                        </ul>
+                      </div>
+                    `
+                    )
+                    .join("")}
+                </div>
+              </section>
+              <h2 class="titulo">Vagas abertas</h2>
+              <section class="vagasAbertas">
+                <div class="listaVagas">
+                  ${profile.vagasAbertas
+                    .map(
+                      (vaga) => `
+                      <div class="campoVagas">
+                        <h3 id="nomeVaga">${vaga.nomeVaga}</h3>
+                        <ul>
+                          <li id="localVaga">${vaga.localVaga}</li>
+                          <li id="periodoVaga">${vaga.periodoVaga}</li>
+                          <li id="descricaoVaga">
+                            ${vaga.descricaoVaga}
+                          </li>
+                        </ul>
+                      </div>
+                    `
+                    )
+                    .join("")}
+                </div>
+              </section>
+            </div>
           `;
 
           profileSection.innerHTML = profileHtml;

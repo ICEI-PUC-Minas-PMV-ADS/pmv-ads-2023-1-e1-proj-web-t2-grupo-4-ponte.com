@@ -6,7 +6,7 @@ let perfilVol = [
     senha: "123",
     textoBio:
       "Formada em Direito, ao atuar na área acabei percebendo que não estava realizada e sentia que precisava de algo mais. Me encontrei no trabalho voluntário. Participei de projetos sociais com moradores de rua e crianças em vulnerabilidade social. Meu foco é contribuir para um mundo melhor e ser exemplo para os demais",
-    fotoPerfil: "./img/foto-perfil.png",
+    tagUsuario: "Voluntário",
     interesses: ["Crianças", "Pessoas em situação de rua"],
     qualificacao: [
       {
@@ -69,8 +69,8 @@ let perfilVol = [
     email: "mariadasilva@email.com",
     senha: "123",
     textoBio:
-      "Sou uma pessoa que gosta de ajudar os outros e estou realizando trabalhos voluntários sempre que posso",
-    fotoPerfil: "https://source.unsplash.com/180x180/?face-woman",
+      "Sou uma pessoa que gosta de ajudar os outros e estou realizando trabalhos voluntários sempre que posso. Sou cozinheira e me realizo com o meu trabalho levando comidas a quem precisa.",
+    tagUsuario: "Voluntário",
     interesses: [
       "Crianças",
       "Animais",
@@ -111,7 +111,7 @@ let perfilVol = [
     senha: "987654",
     textoBio:
       "Sou apaixonada por ajudar pessoas em situação de vulnerabilidade. Trabalho como voluntária em diversos projetos sociais, especialmente com crianças e idosos. Acredito que pequenas ações podem transformar o mundo em um lugar melhor.",
-    fotoPerfil: "https://source.unsplash.com/180x180/?face-woman",
+    tagUsuario: "Voluntário",
     interesses: ["Crianças", "Idosos", "Educação", "Saúde"],
     qualificacao: [
       {
@@ -170,7 +170,7 @@ let perfilVol = [
     senha: "senha123",
     textoBio:
       "Sou apaixonado por tecnologia desde criança e hoje trabalho como desenvolvedor de software em uma empresa de TI. Busco constantemente me atualizar e aprender novas tecnologias. Nas horas livres, gosto de tocar violão e participar de projetos de desenvolvimento social com foco em educação.",
-    fotoPerfil: "https://source.unsplash.com/180x180/?face-man",
+    tagUsuario: "Voluntário",
     interesses: [
       "Educação",
       "Crianças",
@@ -218,7 +218,7 @@ let perfilVol = [
     senha: "abc123",
     textoBio:
       "Formado em Engenharia Civil, descobri minha paixão pela construção de pontes e viadutos. Atualmente, trabalho como engenheiro de projetos em uma empresa de infraestrutura. Nas horas vagas, gosto de praticar esportes ao ar livre e ajudar em iniciativas comunitárias.",
-    fotoPerfil: "https://source.unsplash.com/180x180/?face-man",
+    tagUsuario: "Voluntário",
     interesses: ["Esportes", "Inclusão Social"],
     qualificacao: [
       {
@@ -262,7 +262,7 @@ let perfilVol = [
     senha: "senha123",
     textoBio:
       "Sou formado em Engenharia Civil, mas descobri minha verdadeira paixão pelo voluntariado. Atuo em projetos sociais relacionados à educação e meio ambiente. Acredito que podemos construir um futuro melhor através da conscientização e da transformação das comunidades.",
-    fotoPerfil: "https://source.unsplash.com/180x180/?face-man",
+    tagUsuario: "Voluntário",
     interesses: ["Educação", "Meio Ambiente"],
     qualificacao: [
       {
@@ -321,7 +321,7 @@ let perfilVol = [
     senha: "987654",
     textoBio:
       "Sempre tive interesse em ajudar pessoas em situação de vulnerabilidade. Meu foco principal é atuar em projetos que promovam a inclusão social e a melhoria da qualidade de vida de comunidades carentes. Acredito que pequenas ações podem fazer a diferença.",
-    fotoPerfil: "https://source.unsplash.com/180x180/?face-man",
+    tagUsuario: "Voluntário",
     interesses: ["Inclusão Social", "Comunidades Carentes"],
     qualificacao: [
       {
@@ -380,7 +380,7 @@ let perfilVol = [
     senha: "senha123",
     textoBio:
       "Sou apaixonada por educação e acredito no poder da transformação através do conhecimento. Trabalho como professora voluntária em comunidades carentes, proporcionando oportunidades educacionais para crianças e adolescentes. Meu objetivo é contribuir para um futuro mais igualitário e empoderar as próximas gerações.",
-    fotoPerfil: "https://source.unsplash.com/180x180/?face-woman",
+    tagUsuario: "Voluntário",
     interesses: ["Educação", "Empoderamento Feminino"],
     qualificacao: [
       {
@@ -431,7 +431,7 @@ let perfilVol = [
     senha: "abc123",
     textoBio:
       "Acredito que a cultura é uma ferramenta poderosa para transformar vidas. Sou voluntária em projetos culturais, promovendo acesso à arte e à educação cultural para crianças e jovens. Meu propósito é estimular a criatividade, a imaginação e a inclusão por meio da cultura.",
-    fotoPerfil: "https://source.unsplash.com/180x180/?face-woman3",
+    tagUsuario: "Voluntário",
     interesses: ["Cultura", "Educação", "Inclusão Social"],
     qualificacao: [
       {
@@ -475,7 +475,7 @@ let perfilVol = [
     senha: "senha123",
     textoBio:
       "Sou engenheiro civil com ampla experiência na área de construção civil. Tenho paixão por projetar e construir edifícios sustentáveis que atendam às necessidades dos clientes. Busco constantemente aprimorar meus conhecimentos e aplicar as melhores práticas da engenharia civil.",
-    fotoPerfil: "https://source.unsplash.com/180x180/?face-man",
+    tagUsuario: "Voluntário",
     interesses: [
       "Sustentabilidade",
       "Meio ambiente",

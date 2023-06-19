@@ -37,85 +37,64 @@ main {
 .cabecalho {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
-.cabecalhoUsuario {
-  display: flex;
-  flex-direction: row;
-  padding: 1rem;
+.cabecalho #tagUsuario {
+  font-size: var(--mediumFontSize);
+  background: #fdc886;
+  padding: 0.3rem;
+  border-radius: 10px;
+  width: 8rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-.cabecalhoEsq {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.cabecalho img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-}
-
-.cabecalhoDir {
-  display: flex;
-  flex-direction: column;
-  margin-top: 0;
-  margin-left: 50px;
-}
-
-.cabecalhoBio {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-}
-
-.cabecalhoBio #nomeUsuario {
+.cabecalho .cabecalhoBio #nomeUsuario {
   font-size: var(--titleFontSize);
   font-weight: var(--textCallsWeight);
-  margin-top: 0;
+  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   padding: 0;
 }
 
-.cabecalhoBio #bio {
+.cabecalho .cabecalhoBio #bio {
   margin-bottom: 0;
   text-align: justify;
 }
 
-.cabecalho-interesses {
+.cabecalho .cabecalhoInteresses {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.cabecalho-interesses h3 {
+.cabecalho .cabecalhoInteresses h3 {
   font-size: var(--mediumFontSize);
 }
 
-#campoInteresse {
+.cabecalho #campoInteresse {
   list-style: none;
   display: flex;
   flex-direction: row;
   padding-left: 1rem;
 }
 
-#campoInteresse li {
+.cabecalho #campoInteresse li {
   margin-left: 0;
   margin-right: 0.5rem;
 }
 
-.cabecalho-interesses li:not(:last-child)::after {
+.cabecalho .cabecalhoInteresses li:not(:last-child)::after {
   content: ", ";
 }
 
 /* CONTEUDO */
 
 .conteudo-perfil {
-  margin-top: 0px;
+  margin-top: 20px;
 }
 
 .conteudo-perfil .titulo {
@@ -169,7 +148,7 @@ main {
 
 /* EXPERIÊNCIAS */
 .listaExp {
-  height: 30vh;
+  height: 25vh;
   overflow: hidden;
   overflow-y: scroll;
   box-shadow: 10px 50px 50px -80px #4a4a4a;

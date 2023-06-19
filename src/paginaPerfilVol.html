@@ -139,17 +139,11 @@
 
           const profileHtml = `
               <div class="cabecalho">
-                <div class="cabecalhoUsuario">
-                    <div class="cabecalhoEsq">
-                      <img src="${
-                        profile.fotoPerfil
-                      }" alt="Foto de perfil do usuário." />
-                    </div>
-                    <div class="cabecalhoDir">
+                <h3 id="tagUsuario">${profile.tagUsuario}</h3>
                       <section class="cabecalhoBio">
                           <h1 id="nomeUsuario">${profile.nomeUsuario}</h1>
                           <p id="bio">${profile.textoBio}</p>
-                          <div class="cabecalho-interesses">
+                          <div class="cabecalhoInteresses">
                             <h3>Interesses:</h3>
                             <ul id="campoInteresse">
                                 ${profile.interesses
@@ -162,8 +156,6 @@
                             </ul>
                           </div>
                       </section>
-                    </div>
-                </div>
               </div>
               <div class="conteudo-perfil">
                 <h2 class="titulo">Qualificação e Experiências</h2>
