@@ -417,7 +417,7 @@ body footer{
 }
 /* fim das classes utilitarias para uso geral */
 
-.popupEditar {
+.popUpEditar {
   display: none;
   position: fixed;
   top: 50%;
@@ -429,6 +429,6 @@ body footer{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.popupEditar.active {
+/* .popUpEditar.active {
   display: block;
-}
+} */

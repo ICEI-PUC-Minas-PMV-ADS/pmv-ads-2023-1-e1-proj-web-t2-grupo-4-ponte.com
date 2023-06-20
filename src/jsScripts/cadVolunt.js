@@ -1,12 +1,16 @@
 const formCursos = document.querySelector("#qualificacoes");
 const btnSalvarCurso = document.querySelector("#btnSalvarCurso");
+const editarCardBtn = listaQualificacoes.querySelector("#editarCardBtn");
 const divContainerQualific = document.querySelector("#containerQualificacoes");
-// const listaQualificacoes = document.querySelector("#listaQualificacoes");
+const popUpEditar = document.querySelector(".popUpEditar");
 
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>FUNCIONALIDADES CONTAINER QUALIFICAÇÕES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-
-
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function salvarFormularioNoLocalStorage(formulario, id) {
   // Obtém todos os elementos do formulário
   var elementos = formulario.elements;
@@ -47,6 +51,73 @@ function salvarFormularioNoLocalStorage(formulario, id) {
   }
 }
 
+
+function criarPopUpEditar() {
+  // Cria a div popUpEditar
+  var divPopUpEditar = document.createElement("div");
+  divPopUpEditar.setAttribute("class", "popUpEditar");
+  divPopUpEditar.setAttribute("id", "popUpEditar");
+
+  // Cria o título "Editar Qualificação"
+  var tituloEditarQualificacao = document.createElement("h2");
+  tituloEditarQualificacao.innerText = "Editar Qualificação";
+
+  // Cria o formulário formEditarQualificacao
+  var formEditarQualificacao = document.createElement("form");
+  formEditarQualificacao.setAttribute("id", "formEditarQualificacao");
+  formEditarQualificacao.setAttribute("class", "formContainerGrande fo");
+
+  // Cria os elementos do formulário
+  var labels = ["Início do Curso:", "Fim do Curso:", "Instituição:", "Nome do Curso:", "Tipo de Curso:", "Área do Curso:"];
+  var inputIds = ["inicioCurso", "fimCurso", "nomeInstituicao", "nomeCurso", "tipoCurso", "areaCurso"];
+
+  for (var i = 0; i < labels.length; i++) {
+    var divElement = document.createElement("div");
+    var labelElement = document.createElement("label");
+    var inputElement = document.createElement("input");
+
+    labelElement.setAttribute("for", inputIds[i]);
+    labelElement.setAttribute("class", "labels");
+    labelElement.innerText = labels[i];
+
+    inputElement.setAttribute("type", "text");
+    inputElement.setAttribute("id", inputIds[i]);
+    inputElement.setAttribute("name", inputIds[i]);
+    inputElement.setAttribute("class", "inputText inputData");
+    inputElement.setAttribute("required", "required");
+
+    divElement.appendChild(labelElement);
+    divElement.appendChild(inputElement);
+    formEditarQualificacao.appendChild(divElement);
+  }
+
+  // Cria os botões "Salvar" e "Cancelar"
+  var divGroupBtn = document.createElement("div");
+  divGroupBtn.setAttribute("class", "groupBtn");
+
+  var btnSalvarEditar = document.createElement("button");
+  btnSalvarEditar.setAttribute("type", "submit");
+  btnSalvarEditar.setAttribute("id", "btnSalvarEditar");
+  btnSalvarEditar.innerText = "Salvar";
+
+  var btnCancelarEditar = document.createElement("button");
+  btnCancelarEditar.setAttribute("type", "button");
+  btnCancelarEditar.setAttribute("id", "btnCancelarEditar");
+  btnCancelarEditar.innerText = "Cancelar";
+
+  divGroupBtn.appendChild(btnSalvarEditar);
+  divGroupBtn.appendChild(btnCancelarEditar);
+
+  formEditarQualificacao.appendChild(divGroupBtn);
+
+  // Adiciona os elementos à div popUpEditar
+  divPopUpEditar.appendChild(tituloEditarQualificacao);
+  divPopUpEditar.appendChild(formEditarQualificacao);
+
+  return divPopUpEditar;
+}
+
+
 function criaEstruturaCardCursos(){
 
   let divContainerCard = document.createElement('div');
@@ -71,10 +142,11 @@ function criaEstruturaCardCursos(){
   grupoBotao.setAttribute("class","btnArea");
   grupoBotao.setAttribute("class", "groupBtn");
   grupoBotao.setAttribute("id","btnArea");
-  let botaoSalvar = document.createElement("button");
-  botaoSalvar.setAttribute("type", "submit");
-  botaoSalvar.setAttribute("class", "formBtn");
-  botaoSalvar.innerText = "salvar";
+  // let botaoEditar = document.createElement("button");
+  // botaoEditar.setAttribute("type", "submit");
+  // botaoEditar.setAttribute("class", "formBtn");
+  // botaoEditar.setAttribute("id","editarCardBtn");
+  // botaoEditar.innerText = "editar"
   let botaoExcluir = document.createElement("button");
   botaoExcluir.setAttribute("type", "submit");
   botaoExcluir.setAttribute("class", "formBtn");
@@ -87,13 +159,23 @@ function criaEstruturaCardCursos(){
   ulDados.appendChild(liTipoCurso);
   ulDados.appendChild(liArea);
 
-  grupoBotao.appendChild(botaoSalvar);
+  // grupoBotao.appendChild(botaoEditar);
   grupoBotao.appendChild(botaoExcluir);
 
   divContainerCard.appendChild(tituloCurso);
   divContainerCard.appendChild(ulDados);
   divContainerCard.appendChild(grupoBotao);
   // console.log(divContainerCard);
+
+  botaoExcluir.addEventListener("click", function(e){
+      let divGroupBtn = botaoExcluir.parentNode;
+      let divCardCurso = divGroupBtn.parentNode;
+      //  console.log(divCardCurso);
+      removeCardLocalStorage(divCardCurso,"formCursos");
+      divCardCurso.remove();
+
+
+  });
 
   return(divContainerCard);
 }
@@ -144,6 +226,42 @@ function addDadosEstruturaCardCursos(chave) {
 
 }
 
+function removeCardLocalStorage(card, chave) {
+  var id = chave; // Chave do localStorage (ID fornecido)
+  var dadosSalvos = localStorage.getItem(id);
+
+  if (dadosSalvos) {
+    var arrayDadosSalvos = JSON.parse(dadosSalvos);
+
+    // Procura o card a ser removido pelo conteúdo dos elementos
+    var tituloDiv = card.querySelector("h2").innerText;
+    var areaCurso = card.querySelector("#area").innerText;
+    var inicio = card.querySelector("#inicio").innerText;
+    var fim = card.querySelector("#fim").innerText;
+    var instituicao = card.querySelector("#instituicao").innerText;
+    var tipoCurso = card.querySelector("#tipoCurso").innerText;
+
+    // Encontra o índice do card no array de dados
+    var indiceCard = arrayDadosSalvos.findIndex(function(dados) {
+      return (
+        dados.nomeCurso === tituloDiv &&
+        dados.areaCurso === areaCurso &&
+        dados.inicioCurso === inicio &&
+        dados.fimCurso === fim &&
+        dados.nomeInstituicao === instituicao &&
+        dados.tipoCurso === tipoCurso
+      );
+    });
+
+    if (indiceCard !== -1) {
+      // Remove o card do array de dados
+      arrayDadosSalvos.splice(indiceCard, 1);
+
+      // Atualiza os dados salvos no localStorage
+      localStorage.setItem(id, JSON.stringify(arrayDadosSalvos));
+    }
+  }
+}
 
 
 function reloadParaAlvo(divId) {
@@ -156,6 +274,7 @@ function reloadParaAlvo(divId) {
     }, 100); // Tempo de espera para a rolagem antes de recarregar a página (500ms neste exemplo)
   }
 }
+
 
 
 document.addEventListener('DOMContentLoaded', function(e){
