@@ -1,678 +1,213 @@
-// dados e campos do formulário de informações do usuário
-
-
-const formUsuario = document.querySelector("#formInfBasica");
-const campoNomeUsuario = document.querySelector("#nomeUsuario");
-const campoSenhaUsuario = document.querySelector("#senhaUsuario");
-const campoBioUsuario = document.querySelector("#textoBiografia");
-const campoEmailUsuario = document.querySelector("#emailUsuario");
-const imagemPerfil = document.querySelector("#imagemPerfil");
-const btnSalvarUser = document.querySelector("#salvarUser");
-const btnResetFormUser = document.querySelector("#resetFormUser");
-const fr = new FileReader();
-
-
-// dados do formulario de prioridades
-const formInteresses = document.querySelector("#cadastroInteresses");
-const campoInteresse = document.querySelector("#campoInteresse");
-const campoPrioridade = document.querySelector("#campoPrioridade");
-const valorPrioridade = document.querySelector("#valorPrioridade");
-const btnInteressesLimpar = document.querySelector("#limpar");
-const btnInteressesAdicionar = document.querySelector("#adicionar");
-const tabelaInteresses = document.querySelector("#tabelaInteresses");
-const formBtnExcluirLinha = document.querySelector("#tabelaInteresses");
-// fim da entrada de dados do formulario prioridades
-
-
-// dados do formulario de cadastro de experiências
-
-const formExperiencias = document.querySelector("#experiencias");
-const campoAreaAtuacao = document.querySelector("#areaAtuacao");
-const campoLocalAtuacao = document.querySelector("#localAtuacao");
-const campoCargoAtuacao = document.querySelector("#cargoAtuacao");
-const campoDescricaoAtuacao = document.querySelector("#descricaoAtuacao");
-const campoInicioPeriodoAtuacao = document.querySelector("#inicioPeriodoAtuacao");
-const campoFimPeriodoAtuacao = document.querySelector("#fimPeriodoAtuacao");
-const btnFormXpSalvar = document.querySelector("#btnSalvar");
-const btnFormXpLimpar = document.querySelector("#btnLimpar");
-const listaDetalhes = document.querySelector("#listaDetalhes");
-
-
-// fim da entrada de dados do formulario de cadastro de experiencias
-
-
-//Campos do formulario de qualificações
-  const formQualificacoes = document.querySelector("#qualificacoes");
-  const nomeCurso = document.querySelector("#nomeCurso");
-  const tipoCurso = document.querySelector("#tipoCurso");
-  const nomeInstituicao = document.querySelector("#nomeInstituicao");
-  const areaCurso = document.querySelector("#areaCurso");
-  const inicioCurso = document.querySelector("#inicioCurso");
-  const fimCurso = document.querySelector("#fimCurso");
-  const btnSalvarCurso = document.querySelector("#btnSalvarCurso");
-  const listaQualificacoes = document.querySelector("#listaQualificacoes");
-
-//Fim do campo do formulario de qualificações
-
-function mostraPrioridade(campoPrioridade, valorPrioridade){
-
-  valorPrioridade.innerText = campoPrioridade.value;
-
-}
-
-function limpaPrioridade(){
-    let prior = document.querySelector("#valorPrioridade");
-    prior.value = '1';
-}
-
-function limparCampos(form){
-  let inputs = form.querySelectorAll("input");
-    inputs[0].value = "";
-
-      if(form.id == "cadastroInteresses"){
-        inputs[1].value = 1;
-        limpaPrioridade();
-
-      }
-}
-
-function criarLinhaInteresse(){//cria para o formulario de interesses uma linha e captura os valores inseridos
-
-  let divInteresse = document.createElement('div');
-  divInteresse.setAttribute("class","cardInteresse");
-  divInteresse.setAttribute("id","cardInteresse");
-
-  let ulInteresse = document.createElement('ul');
-
-  let liInteresse = document.createElement('li');
-
-  let liPrioridade = document.createElement('li');
-
-  let liBotao = document.createElement('li');
-
-  let btnExcluir = document.createElement('button');
-  btnExcluir.innerText = "excluir";
-  btnExcluir.setAttribute("class","formBtn");
-
-  liBotao.appendChild(btnExcluir);
-  liInteresse.innerText = campoInteresse.value;
-  liPrioridade.innerText = campoPrioridade.value;
-  // btnExcluir.setAttribute("id", "#excluirLinhaBtn");
-
-  ulInteresse.appendChild(liInteresse);
-  ulInteresse.appendChild(liPrioridade);
-  ulInteresse.appendChild(liBotao);
-
-
-  divInteresse.appendChild(ulInteresse);
+const formCursos = document.querySelector("#qualificacoes");
+const btnSalvarCurso = document.querySelector("#btnSalvarCurso");
+const divContainerQualific = document.querySelector("#containerQualificacoes");
+// const listaQualificacoes = document.querySelector("#listaQualificacoes");
 
 
 
 
-    return (divInteresse);
-}
 
+function salvarFormularioNoLocalStorage(formulario, id) {
+  // Obtém todos os elementos do formulário
+  var elementos = formulario.elements;
 
-function adicionarInteresse(){
+  // Cria um objeto para armazenar os dados do formulário
+  var dadosFormulario = {};
 
-  let linha = criarLinhaInteresse();
-  let contInteresses = 0;
-  tabelaInteresses.appendChild(linha);
+  // Itera sobre os elementos do formulário
+  for (var i = 0; i < elementos.length; i++) {
+    var elemento = elementos[i];
 
-  contInteresses += 1;
-
-  return(contInteresses);
-
-}
-
-
-function excluirLinha(lista, e){  //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Deve excluir a linha quando clicar no botao excluir
-
- var elementoClicado = e.target;
-
-  if(elementoClicado.classList.contains("formBtn")){
-     let linha = elementoClicado.parentNode;
-     let lista =linha.parentNode;
-     let div = lista.parentNode;
-     div.remove();
-    // console.log(div);
+    // Verifica se o elemento tem um nome e um valor
+    if (elemento.name && elemento.value) {
+      // Adiciona o valor do elemento ao objeto de dados do formulário
+      dadosFormulario[elemento.name] = elemento.value;
+    }
   }
 
-}
-
-
-function retiraAlertaParaCampoVazio(campoVazio){
-
-  campoVazio.style.border="1px solid black";
-  campoVazio.style.backgroundColor="#ffff";
-
-}
-
-
-function mostrarAlertaParaCampoVazio(campoVazio){
-
-    alert("você precisa preencher todos os campos");
-    campoVazio.style.backgroundColor ="#FFBEBE";
-    campoVazio.style.borderColor ="#FB0A0A";
-
-}
-
-
-function verificarCamposVazios(formulario){ //Verifica se um campo de um form está vazio, se sim o retorna.
-
-  let inputList = formulario.querySelectorAll('INPUT');
-  let areaTexto = formulario.querySelectorAll("TEXTAREA");
-
-
-    for(let i = 0; i<inputList.length; i++){
-      if(inputList[i].value==""){
-
-          return(inputList[i]);
-
-      }else if(areaTexto[i] && areaTexto[i].value==""){
-
-          return(areaTexto[i]);
-
-      }else{
-
-        return null;
-
-      }
-    }
-
-
-}
-
-function criarDivListaXP(){
-  let divDetalhes = document.createElement("div");
-  let campoDetalhe = document.createElement("div");
-  let titulo = document.createElement("h2");
-  let ul = document.createElement("ul");
-  let liPeriodoInicio = document.createElement("li");
-  let liPeriodoFim = document.createElement("li");
-  let liLocal = document.createElement("li");
-  let liCargo = document.createElement("li");
-  let liDescricao = document.createElement("li");
-  let divGroupBtn = document.createElement("div");
-  let btnEditar = document.createElement("button");
-  let btnExcluir = document.createElement("button");
-  let liSpanDe = document.createElement("span");
-  let liSpanAte = document.createElement("span");
-
-  titulo.setAttribute("class", "titulosH3");
-  divGroupBtn.setAttribute("id","btnArea");
-
-  divDetalhes.setAttribute("class","listaDetalhes");
-  divDetalhes.setAttribute("class","listaDetalhes");
-  campoDetalhe.setAttribute("class", ".campoDetalhe");
-  divGroupBtn.setAttribute("class", "groupBtn");
-  btnEditar.setAttribute("class", "formBtn");
-  btnExcluir.setAttribute("class", "formBtn");
-
-
-
-  liSpanDe.innerText ="de:";
-  liSpanAte.innerText ="até:"
-
-  liPeriodoInicio.appendChild(liSpanDe);
-  liPeriodoFim.appendChild(liSpanAte);
-
-  liPeriodoInicio.innerText = "De:  "+ campoInicioPeriodoAtuacao.value;
-  liPeriodoFim.innerText = "Até:  "+campoFimPeriodoAtuacao.value;
-  liLocal.innerText ="Local de atuação:  "+ campoLocalAtuacao.value;
-  liCargo.innerText ="Cargo ocupado:  "+ campoCargoAtuacao.value;
-  liDescricao.innerText ="Descrição das atividades:  " +campoDescricaoAtuacao.value;
-
-  ul.appendChild(liPeriodoInicio);
-  ul.appendChild(liPeriodoFim);
-  ul.appendChild(liLocal);
-  ul.appendChild(liCargo);
-  ul.appendChild(liDescricao);
-
-  btnEditar.innerText = "editar";
-  btnExcluir.innerText = "excluir";
-  divGroupBtn.appendChild(btnEditar);
-  divGroupBtn.appendChild(btnExcluir);
-  titulo.innerText = campoCargoAtuacao.value;
-  campoDetalhe.appendChild(titulo);
-  campoDetalhe.appendChild(ul)
-  campoDetalhe.appendChild(divGroupBtn);
-
-  // divDetalhes.appendChild(campoDetalhe);
-
-
-  campoDetalhe.setAttribute("classe","cardExp");
-  campoDetalhe.setAttribute("id","cardExp")
-  console.log(campoDetalhe);
-  return(campoDetalhe);
-}
-
-function inserirDadosNaDiv(){
-
-}
-
-
-function salvarDadosDoFormInteresses(formulario){
-
-    let valorInteresse = formulario.querySelector("#campoInteresse").value;
-    let prioridadeInteresse = formulario.querySelector("#campoPrioridade").value;
-    // let labels = formulario.querySelector("#prioridade").value;
-    let interesses =[];
-    let prioridades = [];
-
-
-
-    if(!window.localStorage.interesses && !window.localStorage.prioridades){
-        interesses = [];
-        prioridades = [];
-        window.localStorage.interesses = [];
-        window.localStorage.prioridades = [];
-
-    }else{
-
-      interesses = JSON.parse(window.localStorage.interesses);
-      prioridades = JSON.parse(window.localStorage.prioridades);
-
-    }
-
-      interesses.push(valorInteresse);
-      window.localStorage.interesses = JSON.stringify(interesses);
-      prioridades.push(prioridadeInteresse);
-      window.localStorage.prioridades = JSON.stringify(prioridades);
-
-}
-
-
-function salvarDadosDoFormQualificacoes(formulario){
-
-  let nomeCurso = formulario.querySelector("#nomeCurso").value;
-  let tipoCurso = formulario.querySelector("#tipoCurso").value;
-  let nomeInstituicao = formulario.querySelector("#nomeInstituicao").value;
-  let areaCurso = formulario.querySelector("#areaCurso").value;
-  let dataInicio = formulario.querySelector("#inicioCurso").value;
-  let dataFim = formulario.querySelector("#fimCurso").value;
-
-  let nomesCursos = [];
-  let tiposCursos = [];
-  let nomesInstituicoes = [];
-  let areasCursos = [];
-  let datasInicio = [];
-  let datasFim = [];
-
-
-  if(!window.localStorage.nomesCursos
-      && !window.localStorage.tiposCursos
-      && !window.localStorage.nomesInstituicoes
-      && !window.localStorage.areasCursos
-      && !window.localStorage.datasInicio
-      && !window.localStorage.datasFim
-    ){
-          let nomesCursos = [];
-          let tiposCursos = [];
-          let nomesInstituicoes = [];
-          let areasCursos = [];
-          let datasInicio = [];
-          let datasFim = [];
-
-        window.localStorage.nomesCursos = [];
-        window.localStorage.tiposCursos = [];
-        window.localStorage.nomesInstituicoes = [];
-        window.localStorage.areasCursos = [];
-        window.localStorage.datasInicio = [];
-        window.localStorage.datasFim = [];
-    }else{
-      nomesCursos = JSON.parse(window.localStorage.nomesCursos);
-      tiposCursos = JSON.parse(window.localStorage.tiposCursos);
-      nomesInstituicoes = JSON.parse(window.localStorage.nomesInstituicoes);
-      areasCursos = JSON.parse(window.localStorage.areasCursos);
-      datasInicio = JSON.parse(window.localStorage.datasInicio);
-      datasFim = JSON.parse(window.localStorage.datasFim);
-    }
-
-    nomesCursos.push(nomeCurso);
-    window.localStorage.nomesCursos = JSON.stringify(nomesCursos);
-    tiposCursos.push(tipoCurso);
-    window.localStorage.tiposCursos = JSON.stringify(tiposCursos);
-    nomesInstituicoes.push(nomeInstituicao);
-    window.localStorage.nomesInstituicoes = JSON.stringify(nomesInstituicoes);
-    areasCursos.push(areaCurso);
-    window.localStorage.areasCursos = JSON.stringify(areasCursos);
-    datasInicio.push(dataInicio);
-    window.localStorage.datasInicio = JSON.stringify(datasInicio);
-    datasFim.push(dataFim);
-    window.localStorage.datasFim = JSON.stringify(datasFim);
-
-
-}
-
-function salvarDadosDoFormExp(formulario){
-  let areaAtuacao = formulario.querySelector("#areaAtuacao").value;
-  let localAtuacao = formulario.querySelector("#localAtuacao").value;
-  let cargoAtuacao = formulario.querySelector("#cargoAtuacao").value;
-  let descricaoAtuacao = formulario.querySelector("#descricaoAtuacao").value;
-  let inicioPeriodoAtuacao = formulario.querySelector("#inicioPeriodoAtuacao").value;
-  let fimPeriodoAtuacao = formulario.querySelector("#fimPeriodoAtuacao").value;
-
-  let areas = [];
-  let locais = [];
-  let cargos = [];
-  let descricoes = [];
-  let periodosInicio = [];
-  let periodosFim = [];
-
-
-  if(!window.localStorage.areas
-      && !window.localStorage.locais
-      && !window.localStorage.cargos
-      && !window.localStorage.descricoes
-      && !window.localStorage.periodosInicio
-      && !window.localStorage.periodosFim
-
-  ){
-      let areas = [];
-      let locais = [];
-      let cargos = [];
-      let descricoes = [];
-      let periodosInicio = [];
-      let periodosFim = [];
-
-      window.localStorage.areas = [];
-      window.localStorage.locais = [];
-      window.localStorage.cargos = [];
-      window.localStorage.descricoes = [];
-      window.localStorage.periodosInicio = [];
-      window.localStorage.periodosFim = [];
-  }else{
-        areas = JSON.parse(window.localStorage.areas);
-        locais = JSON.parse(window.localStorage.locais);
-        cargos = JSON.parse(window.localStorage.cargos);
-        descricoes = JSON.parse(window.localStorage.descricoes);
-        periodosInicio = JSON.parse(window.localStorage.periodosInicio);
-        periodosFim = JSON.parse(window.localStorage.periodosFim);
-
+  // Obtém os dados existentes no Local Storage para o ID fornecido
+  var dadosSalvos = localStorage.getItem(id);
+
+  // Se houver dados salvos no Local Storage
+  if (dadosSalvos) {
+    // Converte os dados salvos em um array JavaScript
+    var arrayDadosSalvos = JSON.parse(dadosSalvos);
+
+    // Adiciona os novos dados ao array existente
+    arrayDadosSalvos.push(dadosFormulario);
+
+    // Atualiza os dados salvos no Local Storage para o ID fornecido
+    localStorage.setItem(id, JSON.stringify(arrayDadosSalvos));
+  } else {
+    // Se não houver dados salvos no Local Storage para o ID fornecido, cria um novo array com os dados do formulário
+    var novoArrayDados = [dadosFormulario];
+
+    // Salva os dados no Local Storage para o ID fornecido
+    localStorage.setItem(id, JSON.stringify(novoArrayDados));
   }
-
-
-  areas.push(areaAtuacao);
-  window.localStorage.areas = JSON.stringify(areas);
-  locais.push(localAtuacao);
-  window.localStorage.locais = JSON.stringify(locais);
-  cargos.push(cargoAtuacao);
-  window.localStorage.cargos = JSON.stringify(cargos);
-  descricoes.push(descricaoAtuacao);
-  window.localStorage.descricoes = JSON.stringify(descricoes);
-  periodosInicio.push(inicioCurso);
-  window.localStorage.periodosInicio = JSON.stringify(periodosInicio);
-  periodosFim.push(fimCurso);
-  window.localStorage.periodosFim = JSON.stringify(periodosFim);
-
-  // console.log(areaAtuacao);
-  // console.log(localAtuacao);
-  // console.log(cargoAtuacao);
-  // console.log(descricaoAtuacao);
-  // console.log(inicioPeriodoAtuacao);
-  // console.log(fimPeriodoAtuacao);
-
 }
 
+function criaEstruturaCardCursos(){
 
-function lerImagemPerfil(){
-
-  imagemPerfil.addEventListener("change", function(e){
-  const fr = new FileReader();
-  fr.readAsDataURL(imagemPerfil.files[0]);
-  fr.addEventListener("load", function(e){
-    const url = fr.result;
-    return (url);
-  });
-
-
-    e.preventDefault();
-  });
-}
-
-function salvarDadosUser(formulario){
-
-
-    let nomeUsuario = formulario.querySelector("#nomeUsuario").value;
-    let emailUsuario = formulario.querySelector("#emailUsuario").value;
-    let senhaUsuario = formulario.querySelector("#senhaUsuario").value;
-    let bioUsuario = formulario.querySelector("#textoBiografia").value;
-    // let imagemPerfil = lerImagemPerfil();
-
-    let nomes= [];
-    let emails = [];
-    let senhas = [];
-    let bios = [];
-    // let imgsP = [];
-
-    if(
-        !window.localStorage.nomes
-        && !window.localStorage.emails
-        && !window.localStorage.senhas
-        && !window.localStorage.bios
-        && !window.localStorage.imgsP
-      ){
-
-        window.localStorage.nomes = nomes;
-        window.localStorage.emails = emails;
-        window.localStorage.senhas = senhas;
-        window.localStorage.bios = bios;
-        // window.localStorage.imgsP = imgsP;
-
-    }else{
-
-        nomes = JSON.parse(window.localStorage.nomes);
-        emails = JSON.parse(window.localStorage.emails);
-        senhas = JSON.parse(window.localStorage.senhas);
-        bios = JSON.parse(window.localStorage.bios);
-        // imgsP = JSON.parse(window.localStorage.imgsP);
-    }
-
-
-
-
-   nomes.push(nomeUsuario);
-   window.localStorage.nomes = JSON.stringify(nomes);
-   emails.push(emailUsuario);
-   window.localStorage.emails = JSON.stringify(emails);
-   senhas.push(senhaUsuario);
-   window.localStorage.senhas = JSON.stringify(senhas);
-   bios.push(bioUsuario);
-   window.localStorage.bios = JSON.stringify(bios);
-  //  imgsP.push(imagemPerfil);
-  //  window.localStorage.imgsP = JSON.stringify(imgsP);
-
-
-
-    return(true);
-
-}
-
-
-function criarDivListaQualif(){
-
-  let divContainer = document.createElement("div");
-  divContainer.setAttribute("id", "cardCurso");
-  divContainer.setAttribute("class", "campoDetalhe");
-
-  let tituloH2 = document.createElement("h2");
-  tituloH2.setAttribute("class", "titulosH3");
-  tituloH2.innerText = nomeCurso.value;
-
+  let divContainerCard = document.createElement('div');
+  divContainerCard.setAttribute("id","cardCurso");
+  // console.log(divContainerCard);
+  let tituloCurso = document.createElement('h2');
+  tituloCurso.setAttribute("class", "titulosH3");
+  // console.log(tituloCurso);
   let ulDados = document.createElement("ul");
-
-  let liPeriodoInicio = document.createElement("li");
-  let liPeriodoFim = document.createElement("li");
+  let liInicio = document.createElement("li");
+  liInicio.setAttribute("id","inicio");
+  let liFim = document.createElement("li");
+  liFim.setAttribute("id","fim");
   let liInstituicao = document.createElement("li");
-  let liAreaCurso = document.createElement("li");
+  liInstituicao.setAttribute("id","instituicao");
   let liTipoCurso = document.createElement("li");
+  liTipoCurso.setAttribute("id","tipoCurso");
+  let liArea = document.createElement("li");
+  liArea.setAttribute("id","area");
 
+  let grupoBotao = document.createElement("div");
+  grupoBotao.setAttribute("class","btnArea");
+  grupoBotao.setAttribute("class", "groupBtn");
+  grupoBotao.setAttribute("id","btnArea");
+  let botaoSalvar = document.createElement("button");
+  botaoSalvar.setAttribute("type", "submit");
+  botaoSalvar.setAttribute("class", "formBtn");
+  botaoSalvar.innerText = "salvar";
+  let botaoExcluir = document.createElement("button");
+  botaoExcluir.setAttribute("type", "submit");
+  botaoExcluir.setAttribute("class", "formBtn");
+  botaoExcluir.innerText="excluir";
 
-  liPeriodoInicio.innerText ="de: "+ inicioCurso.value;
-  liPeriodoFim.innerText = "até: "+fimCurso.value;
-  liTipoCurso.innerText ="tipo de curso: "+ tipoCurso.value
-  liInstituicao.innerText = "instituição: "+nomeInstituicao.value;
-  liAreaCurso.innerText ="área: "+ areaCurso.value;
-
-
-
-  ulDados.appendChild(liPeriodoInicio);
-  ulDados.appendChild(liPeriodoFim);
+  ulDados.appendChild(liInicio);
+  ulDados.appendChild(liFim);
   ulDados.appendChild(liTipoCurso);
   ulDados.appendChild(liInstituicao);
-  ulDados.appendChild(liAreaCurso);
+  ulDados.appendChild(liTipoCurso);
+  ulDados.appendChild(liArea);
 
+  grupoBotao.appendChild(botaoSalvar);
+  grupoBotao.appendChild(botaoExcluir);
 
+  divContainerCard.appendChild(tituloCurso);
+  divContainerCard.appendChild(ulDados);
+  divContainerCard.appendChild(grupoBotao);
+  // console.log(divContainerCard);
 
-  let divBtn = document.createElement("div");
-  divBtn.setAttribute("class", "groupBtn");
-  divBtn.setAttribute("class", "btnArea");
-  divBtn.setAttribute("id","btnArea");
-
-  let btnEditar = document.createElement("button");
-  btnEditar.innerText ="editar";
-  btnEditar.setAttribute("class", "formBtn");
-  let btnExcluir = document.createElement("button");
-  btnExcluir.setAttribute("class", "formBtn");
-  btnExcluir.innerText = "excluir";
-
-  btnEditar.setAttribute("type", "submit");
-  btnExcluir.setAttribute("type", "submit");
-
-  divBtn.appendChild(btnEditar);
-  divBtn.appendChild(btnExcluir);
-
-  divContainer.appendChild(tituloH2);
-  divContainer.appendChild(ulDados);
-  divContainer.appendChild(divBtn);
-
-  return(divContainer);
+  return(divContainerCard);
 }
 
-function recuperarRegistros(formularios = []){
 
+function addDadosEstruturaCardCursos(chave) {
+
+      let dados = JSON.parse(localStorage.getItem(chave));
+      let cardsPreenchidos = [];
+      // console.log(dados);
+
+      for(i=0;i<dados.length;i++){
+          let divContainerCard = criaEstruturaCardCursos();
+          let tituloDiv = divContainerCard.querySelector("h2");
+          let areaCurso = divContainerCard.querySelector("#area");
+          let inicio = divContainerCard.querySelector("#inicio");
+          let fim = divContainerCard.querySelector("#fim");
+          let instituicao = divContainerCard.querySelector("#instituicao");
+          let tipoCurso = divContainerCard.querySelector("#tipoCurso");
+
+          tituloDiv.innerText = dados[i].nomeCurso;
+          areaCurso.innerText = dados[i].areaCurso;
+          tipoCurso.innerText = dados[i].tipoCurso;
+          inicio.innerText = dados[i].inicioCurso;
+          fim.innerText = dados[i].fimCurso;
+          instituicao.innerText = dados[i].nomeInstituicao;
+
+
+
+        //  console.log(divContainerCard);
+
+         cardsPreenchidos[i] = divContainerCard;
+        //  console.log(cardsPreenchidos[i]);
+
+      }
+
+      return cardsPreenchidos;
+}
+
+
+ function insereCardsNaLista(conjuntoCards) {
+
+   let listaQualificacoes = document.querySelector("#listaQualificacoes");
+
+   for (let i = conjuntoCards.length - 1; i>=0; i--) {
+      listaQualificacoes.appendChild(conjuntoCards[i]);
+   }
 
 }
 
-//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-//Fluxo Principal<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FLUXO PRINCIPAL
-//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-// document.addEventListener('DOMContentLoaded', function(e){
 
-//   recuperarRegistros(formulario);
+function reloadParaAlvo(divId) {
+  var elementoAlvo = document.getElementById(divId);
 
-// });
+  if (elementoAlvo) {
+    elementoAlvo.scrollIntoView({ behavior: "smooth", block: "start" });
+    setTimeout(function() {
+      location.reload();
+    }, 100); // Tempo de espera para a rolagem antes de recarregar a página (500ms neste exemplo)
+  }
+}
 
-mostraPrioridade(campoPrioridade, valorPrioridade); //Mostra e atualiza o número de prioridade do interesse conforme seleção do user.
 
-campoPrioridade.addEventListener('input', ()=>{mostraPrioridade(campoPrioridade, valorPrioridade)}); // adiciona o evento input para o seletor range
+document.addEventListener('DOMContentLoaded', function(e){
+  let cardsPreenchidos = addDadosEstruturaCardCursos("formCursos");
+  insereCardsNaLista(cardsPreenchidos);
 
-btnInteressesLimpar.addEventListener("click",function(e){ //adiciona o evento click ao botão limpar
-  limparCampos(formInteresses);
-
-  e.preventDefault();
-});
-
-btnInteressesAdicionar.addEventListener('click', function(e){
-
-  let campoVazio = verificarCamposVazios(formInteresses);
-
-  if(campoVazio){
-
-    mostrarAlertaParaCampoVazio(campoVazio);
-    campoVazio.addEventListener("click", (e)=>{
-    retiraAlertaParaCampoVazio(campoVazio);
     e.preventDefault();
-
-  });
-
-  }else{
-
-     adicionarInteresse();
-     salvarDadosDoFormInteresses(formInteresses);
-
-  }
-
-  e.preventDefault();
-});
-
-formBtnExcluirLinha.addEventListener("click", function(e){
-
-    excluirLinha(tabelaInteresses, e);
-    e.preventDefault();
-
-});
-
-//está criando os campos e inserindo na tabela, falta local Storage
-btnFormXpSalvar.addEventListener("click", function(e){
-
-  let campoVazio = verificarCamposVazios(formExperiencias);
-
-  if(campoVazio){
-      mostrarAlertaParaCampoVazio(campoVazio);
-      campoVazio.addEventListener("click", function(e){
-      retiraAlertaParaCampoVazio(campoVazio);
-      e.preventDefault();
-    });
-  }
-
-  let divCriada = criarDivListaXP();
-  if(!divCriada){
-    console.log("erro na criação da div");
-  }else{
-    listaDetalhes.appendChild(divCriada);
-    salvarDadosDoFormExp(formExperiencias);
-  }
-  e.preventDefault();
-
 });
 
 
-//guardar no localStorage os dados do usuário falta a imagem
-btnSalvarUser.addEventListener("click",function(e){
-  let campoVazio = verificarCamposVazios(formUsuario);
-  let dadosSalvos = salvarDadosUser(formUsuario);
+//cria um card e insere na lista quando clicado o botao salvar do form
+btnSalvarCurso.addEventListener("click", function(e){
+    salvarFormularioNoLocalStorage(formCursos, "formCursos");
+    let listaQualificacoes = document.querySelector("#listaQualificacoes");
+    let divContainerCard = criaEstruturaCardCursos();
 
-  if(campoVazio){
+    let tituloDiv = divContainerCard.querySelector("h2");
+    let areaCurso = divContainerCard.querySelector("#area");
+    let inicio = divContainerCard.querySelector("#inicio");
+    let fim = divContainerCard.querySelector("#fim");
+    let instituicao = divContainerCard.querySelector("#instituicao");
+    let tipoCurso = divContainerCard.querySelector("#tipoCurso");
 
-    mostrarAlertaParaCampoVazio(campoVazio);
-    campoVazio.addEventListener("click", function(e){
-    retiraAlertaParaCampoVazio(campoVazio);
-    e.preventDefault()});
+    let inputNomeCurso = formCursos.querySelector("#nomeCurso");
+    let inputAreaCurso = formCursos.querySelector("#areaCurso");
+    let inputTipoCurso = formCursos.querySelector("#tipoCurso");
+    let inputNomeInstituicao = formCursos.querySelector("#nomeInstituicao");
+    let inputInicio = formCursos.querySelector("#inicioCurso");
+    let inputFim = formCursos.querySelector("#fimCurso");
+    // console.log(inputNomeCurso);
 
-  }else{
+    tituloDiv.innerText = inputNomeCurso.value;
+    areaCurso.innerText = inputAreaCurso.value;
+    tipoCurso.innerText = inputTipoCurso.value;
+    instituicao.innerText = inputNomeInstituicao.value;
+    inicio.innerText = inputInicio.value;
+    fim.innerText = inputFim.value;
 
-    salvarDadosUser(formUsuario);
-    alert("Dados Salvos");
+    listaQualificacoes.appendChild(divContainerCard);
 
-  }
-  e.preventDefault();
-})
+    // console.log(tituloDiv);
+    // console.log(areaCurso);
+    // console.log(tipoCurso);
+    // console.log(instituicao);
+    // console.log(inicio);
+    // console.log(fim);
+    // alert("Clicou!");
+    //  e.preventDefault();
+});
 
 
-btnSalvarCurso.addEventListener("click",function(e){
-
-  let campoVazio = verificarCamposVazios(formQualificacoes);
-
-  if(campoVazio){
-     mostrarAlertaParaCampoVazio(campoVazio);
-     campoVazio.addEventListener("click", function(e){
-     retiraAlertaParaCampoVazio(campoVazio);
-     e.preventDefault();
-  });
-
-  }else{
-
-    let divCriada = criarDivListaQualif();
-    if(!divCriada){
-     console.log("erro na criação da div");
-    }else{
-      listaQualificacoes.appendChild(divCriada);
-      salvarDadosDoFormQualificacoes(formQualificacoes);
-    }
-  }
-
-  e.preventDefault();
+btnSalvarCurso.addEventListener("click", function(event) {
+  event.preventDefault(); // Evita o comportamento padrão de recarregar a página
+  reloadParaAlvo("containerQualificacoes");
 });

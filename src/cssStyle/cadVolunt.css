@@ -190,7 +190,7 @@ body footer{
 #principal #containerQualificacoes #listaQualificacoes #cardCurso{
     background-color: #333;
     color: #fff;
-    width: 100%;
+    width: 90%;
     padding: 20px;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -231,7 +231,7 @@ body footer{
   gap: 90px;
   align-items: center;
   padding: 20px;
-  background-color: #333;
+  background-color: #fe0606;
   color: #fff;
   width: auto;
   margin: 0px auto 10px auto;
@@ -416,3 +416,19 @@ body footer{
   margin: 20px auto 20px auto;
 }
 /* fim das classes utilitarias para uso geral */
+
+.popupEditar {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.popupEditar.active {
+  display: block;
+}

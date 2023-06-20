@@ -24,52 +24,29 @@
     <script defer src="./jsScripts/perfilONG.js"></script>
     <script defer src="./jsScripts/perfilVol.js"></script>
 
-    <link rel="stylesheet" href="../cssStyle/cadVolunt.css" />
+    <link rel="stylesheet" href="cssStyle/cadVolunt.css" />
     <link rel="icon" type="image/png" href="img/iconPonte.png" />
     <title>Cadastro de Voluntário</title>
   </head>
 
   <body>
     <!-- início do header do site. contém o menu de navegação, logo e barra de pesquisa -->
-    <!-- Navbar -->
-    <header class="wrapper">
-      <a href="./index.html">
-        <img
+    <!-- NAVBAR USUÁRIO SEM LOGIN -->
+    <header class="wrapperSL">
+      <a href="./index.html"
+        ><img
           id="logo"
           src="img/logoPontecom.png"
           alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
-        />
-      </a>
-
-      <div class="wrapperSearch">
-        <input
-          type="text"
-          class="wrapperSearch-txt"
-          placeholder="Busque por ONGs ou voluntários..."
-        />
-        <button id="searchButton">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-      </div>
-
-      <!-- Menu -->
-      <ul class="wrapperNavbar">
-        <li class="wrapper-li"><a href="./sobre.html">Sobre</a></li>
-        <li class="wrapper-li">
-          <a href="./listadevagas.html">Vagas de voluntariado</a>
-        </li>
-      </ul>
-
-      <img
-        src="img/foto-perfilONG.png"
-        id="foto"
-        alt="Foto de perfil do usuário."
-      />
-
-      <ul id="menuDropdown" class="">
-        <li><a href="./paginaPerfilLog.html">Meu perfil</a></li>
-        <li><a href="./cadastroVoluntario.html">Editar dados</a></li>
-        <li><a href="./index.html">Logout</a></li>
+      /></a>
+      <ul class="wrapperNavbarSL">
+        <a href="./pagina-login.html"
+          ><li class="wrapperButton-active">Login</li></a
+        >
+        <a href="./sobre.html"><li class="wrapper-li">Sobre</li></a>
+        <a href="./listadevagas.html"
+          ><li class="wrapper-li">Vagas de voluntariado</li></a
+        >
       </ul>
     </header>
     <!-- fim do header -->
@@ -110,40 +87,40 @@
 
       <form action="" class="formContainerGrande" id="formInfBasica">
         <div id="campoNome" class="regiaoInput">
-          <label for="nomeUsuario" class="labels"
-            >Informe seu nome completo:</label
+          <label for="nomeUsuario" class="labels labelData"
+            >nome completo</label
           >
           <input
             type="text"
             name="nomeUsuario"
             id="nomeUsuario"
-            class="inputText"
+            class="inputText inputData"
           />
         </div>
 
         <div id="campoEmail" class="regiaoInput">
-          <label for="emailUsuario" class="labels">Informe seu e-mail:</label>
+          <label for="emailUsuario" class="labels labelData">e-mail</label>
           <input
             type="text"
             name="emailUsuario"
             id="emailUsuario"
-            class="inputText"
+            class="inputText inputData"
           />
         </div>
 
         <div id="campoSenha" class="regiaoInput">
-          <label for="senhaUsuario" class="labels">Informe uma senha:</label>
+          <label for="senhaUsuario" class="labels labelData">senha</label>
           <input
             type="password"
             name="senhaUsuario"
             id="senhaUsuario"
-            class="inputText"
+            class="inputText inputData"
           />
         </div>
 
         <div id="biografia" class="regiaoInput">
-          <label for="biografia" class="labels"
-            >Fale um pouco sobre você:</label
+          <label for="biografia" class="labels labelData"
+            >sobre você</label
           >
           <textarea
             name="biografia"
@@ -151,12 +128,12 @@
             cols="30"
             rows="10"
             title="escreva um pouco sobre você"
-            class="textArea"
+            class="textArea inputData"
           ></textarea>
         </div>
 
-        <div id="fotoPerfil" class="regiaoInput">
-          <label for="foto" class="labels"
+        <!-- <div id="fotoPerfil" class="regiaoInput">
+          <label for="foto" class="labels labelData"
             >Adicione uma foto ao seu perfil:</label
           >
           <input
@@ -167,7 +144,7 @@
             id="imagemPerfil"
             title="carregue uma imagem"
           />
-        </div>
+        </div> -->
 
         <div id="botoesInfBasica" class="btnArea">
           <button type="submit" class="formBtn" id="salvarUser">salvar</button>
@@ -177,28 +154,29 @@
         </div>
       </form>
 
-      <h2 class="titulosH2">pesquise e adicione seus interesses</h2>
+      <!-- <h2 class="titulosH2">pesquise e adicione seus interesses</h2>
 
       <div id="containerInteresses" class="regiaoContainer">
-        <form action="" id="cadastroInteresses" class="formContainerGrande">
+
+        <form action="" id="formInteresses" class="formContainerGrande">
           <div class="regiaoInput">
-            <label for="campoInteresse" class="labels">interesse</label>
+            <label for="campoInteresse" class="labels labelData">interesse</label>
             <input
               type="text"
-              class="inputText"
+              class="inputText inputData"
               name="campoInteresse"
               id="campoInteresse"
             />
           </div>
 
           <div class="regiaoInput">
-            <label for="campoPrioridade" value="prioridade" class="labels"
+            <label for="campoPrioridade" value="prioridade" class="labels labelData"
               >prioridade:
-              <output for="campoPrioridade" id="valorPrioridade">1</output>
+
             </label>
             <input
               type="range"
-              class="inputText"
+              class="inputText inputData"
               name="campoPrioridade"
               id="campoPrioridade"
               min="1"
@@ -206,60 +184,34 @@
               step="1"
               value="1"
             />
+             <!-- <output for="campoPrioridade" id="valorPrioridade">1</output>
           </div>
 
           <div id="botoes" class="btnArea">
-            <button id="adicionar" type="submit" class="formBtn">salvar</button>
+            <button id="btnSalvar" type="submit" class="formBtn">salvar</button>
             <button id="limpar" type="reset" class="formBtn">limpar</button>
           </div>
-        </form>
+        </form> -->
 
-        <div id="listaInteresses">
+        <!-- <div id="listaInteresses">
           <h3 class="titulosH3">Interesses e prioridades</h3>
-          <table id="tabelaInteresses" class="tabelaInteresses">
+          <table id="tabelaInteresses" class="tabelaInteresses"> -->
             <!-- <tr class="linha">
                   <td>interesse 1</td>
                   <td>prioridade 1</td>
                   <td><i class="fa-solid fa-trash"></i></td>
                 </tr> -->
-            <!-- <div id="cardInteresse" class="cardInteresse">
+              <!-- <div id="cardInteresse" class="cardInteresse">
                   <ul>
                     <li>interesseeeeeeee</li>
                     <li>prioridade</li>
-                    <li> <button class="formBtn">excluir</button> </li>
+                    <li> <button class="formBtn" id="btnExcluir">excluir</button> </li>
                   </ul>
-              </div>
-                <div id="cardInteresse" class="cardInteresse">
-                  <ul>
-                    <li>interesseeeeeeeeeeeeeeeeee</li>
-                    <li>prioridadeeeeeeeeeeeeeeeeeee</li>
-                    <li> <button class="formBtn">excluir</button> </li>
-                  </ul>
-                </div>
-                <div id="cardInteresse" class="cardInteresse">
-                  <ul>
-                    <li>interesseeeeeeeeeeeeeeeeee</li>
-                    <li>prioridadeeeeeeeeeeeeeeeeeee</li>
-                    <li> <button class="formBtn">excluir</button> </li>
-                  </ul>
-                </div>
-                <div id="cardInteresse" class="cardInteresse">
-                  <ul>
-                    <li>interesseeeeeeeeeeeeeeeeee</li>
-                    <li>prioridadeeeeeeeeeeeeeeeeeee</li>
-                    <li> <button class="formBtn">excluir</button> </li>
-                  </ul>
-                </div>
-                <div id="cardInteresse" class="cardInteresse">
-                  <ul>
-                    <li>interesseeeeeeeeeeeeeeeeee</li>
-                    <li>prioridadeeeeeeeeeeeeeeeeeee</li>
-                    <li> <button class="formBtn">excluir</button> </li>
-                  </ul>
-                </div> -->
-          </table>
+              </div> -->
+
+          <!-- </table>
         </div>
-      </div>
+      </div> -->
 
       <h2 class="titulosH2">experiências</h2>
 
@@ -275,7 +227,7 @@
               type="text"
               name="areaAtuacao"
               id="areaAtuacao"
-              class="inputText"
+              class="inputText inputData"
               placeholder="Informe uma experiência"
             />
           </div>
@@ -286,7 +238,7 @@
               type="text"
               name="localAtuacao"
               id="localAtuacao"
-              class="inputText"
+              class="inputText inputData"
               placeholder="Informe o local onde atuou"
             />
           </div>
@@ -297,7 +249,7 @@
               type="text"
               name="cargoAtuacao"
               id="cargoAtuacao"
-              class="inputText"
+              class="inputText inputData"
               placeholder="Informe a instituição onde atuou"
             />
           </div>
@@ -308,7 +260,7 @@
             <textarea
               name="descricaoAtuacao"
               id="descricaoAtuacao"
-              class="textArea"
+              class="textArea inputData"
               cols="30"
               rows="5"
             ></textarea>
@@ -320,7 +272,7 @@
               type="date"
               name="inicioPeriodoAtuacao"
               id="inicioPeriodoAtuacao"
-              class="inputDate"
+              class="inputDate inputData"
             />
 
             <label for="fimPeriodoAtuacao">até:</label>
@@ -328,7 +280,7 @@
               type="date"
               name="fimPeriodoAtuacao"
               id="fimPeriodoAtuacao"
-              class="inputDate"
+              class="inputDate inputData"
             />
           </div>
 
@@ -346,70 +298,66 @@
       <h2 class="titulosH2">qualificações</h2>
 
       <div id="containerQualificacoes">
-        <form
-          action=""
-          id="qualificacoes"
-          class="formContainer formContainerGrande"
-        >
+        <form  action="" id="qualificacoes" class="formContainer formContainerGrande">
           <div id="campoNomeCurso">
-            <label for="nomeCurso">nome do curso:</label>
+            <label for="nomeCurso" class="labelData">nome do curso</label>
             <input
               type="text"
               name="nomeCurso"
               id="nomeCurso"
-              class="inputText"
+              class="inputText inputData"
               placeholder="Informe o nome do curso"
             />
           </div>
 
           <div id="campoTipoCurso">
-            <label for="tipoCurso">tipo de curso:</label>
+            <label for="tipoCurso" class="labelData">tipo de curso</label>
             <input
               type="text"
               name="tipoCurso"
               id="tipoCurso"
-              class="inputText"
+              class="inputText inputData"
               placeholder="Informe o tipo de curso"
             />
           </div>
 
           <div id="campoNomeInstituicao">
-            <label for="nomeInstituicao">instituição:</label>
+            <label for="nomeInstituicao" class="labelData">instituição</label>
             <input
               type="text"
               name="nomeInstituicao"
               id="nomeInstituicao"
-              class="inputText"
+              class="inputText inputData"
               placeholder="Informe o nome da instituição"
             />
           </div>
 
           <div id="campoAreaCurso">
-            <label for="areaCurso">área do curso:</label>
+            <label for="areaCurso" class="labelData">área do curso</label>
             <input
               type="text"
               name="areaCurso"
               id="areaCurso"
-              class="inputText"
+              class="inputText inputData"
               placeholder="Informe a área do curso"
             />
           </div>
 
           <div id="dateAreaInput" class="dateAreaInput">
-            <label for="inicioPeriodoAtuacao">de:</label>
+            <label for="inicio" class="labelData">inicio</label>
             <input
               type="date"
-              name="inicioPeriodoAtuacao"
+              name="inicioCurso"
               id="inicioCurso"
-              class="inputDate"
+              class="inputData"
             />
 
-            <label for="fimPeriodoAtuacao">até:</label>
+            <label for="fim" class="labelData">fim</label>
             <input
               type="date"
-              name="fimPeriodoAtuacao"
+              name="fimCurso"
               id="fimCurso"
-              class="inputDate"
+              class="inputDate inputData"
             />
           </div>
 
@@ -419,18 +367,55 @@
           </div>
         </form>
 
+        <div class="popupEditar">
+              <h2>Editar Qualificação</h2>
+              <form id="formEditarQualificacao" class="formContainerGrande fo">
+                <div>
+                  <label for="inicioCurso" class="labels">Início do Curso:</label>
+                  <input type="date" id="inicioCurso" name="inicioCurso" class="inputText inputData" required>
+                </div>
+                <div>
+                  <label for="fimCurso" class="labels">Fim do Curso:</label>
+                  <input type="date" id="fimCurso" name="fimCurso" class="inputText inputData" required>
+                </div>
+                <div>
+                  <label for="nomeInstituicao" class="labels">Instituição:</label>
+                  <input type="text" id="nomeInstituicao" name="nomeInstituicao" class="inputText inputData"  required>
+                </div>
+                <div>
+                  <label for="nomeCurso" class="labels">Nome do Curso:</label>
+                  <input type="text" id="nomeCurso" name="nomeCurso"class="inputText inputData" required>
+                </div>
+                <div>
+                  <label for="tipoCurso" class="labels">Tipo de Curso:</label>
+                  <input type="text" id="tipoCurso" name="tipoCurso" class="inputText inputData" required>
+                </div>
+                <div>
+                  <label for="areaCurso" class="labels">Área do Curso:</label>
+                  <input type="text" id="areaCurso" name="areaCurso" class="inputText inputData" required>
+                </div>
+                <div class="groupBtn">
+                  <button type="submit" id="btnSalvarEditar">Salvar</button>
+                  <button type="button" id="btnCancelarEditar">Cancelar</button>
+                </div>
+              </form>
+      </div>
+
+
+
         <div id="listaQualificacoes" class="listaDetalhes">
-          <h3 class="titulosH3">qualificações</h3>
+          <!-- <h3 class="titulosH3">qualificações</h3> -->
           <!-- <div class="campoDetalhe" class="cardExp" id="cardCurso">
 
                 <h2 class="titulosH3">Curso 1</h2>
 
                 <ul>
-                  <li>de: dd/mm/aa </li>
-                  <li>até: dd/mm/aa</li>
-                  <li>instituição: local onde cursou</li>
-                  <li>área do curso: informática</li>
-                  <li>descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore amet blanditiis itaque neque nostrum dolorem, aliquid praesentium labore soluta doloremque in fugit nemo exercitationem expedita? Voluptates reprehenderit delectus facilis fugit?</li>
+                  <li id="inicio">de: dd/mm/aa </li>
+                  <li id="fim">até: dd/mm/aa</li>
+                  <li id="instituicao">instituição: local onde cursou</li>
+                  <li id="area">área do curso: informática</li>
+                  <li id="tipoCurso"> presencial </li>
+                  <li id="descricao">descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore amet blanditiis itaque neque nostrum dolorem, aliquid praesentium labore soluta doloremque in fugit nemo exercitationem expedita? Voluptates reprehenderit delectus facilis fugit?</li>
                 </ul>
 
                 <div class="groupBtn" class="btnArea" id="btnArea">

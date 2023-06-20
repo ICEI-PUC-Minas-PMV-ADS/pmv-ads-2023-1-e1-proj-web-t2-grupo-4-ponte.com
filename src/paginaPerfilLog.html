@@ -52,11 +52,9 @@
         </li>
       </ul>
 
-      <img
-        src="img/foto-perfilONG.png"
-        id="foto"
-        alt="Foto de perfil do usuário."
-      />
+      <button id="menuButton">
+        <i class="fa-solid fa-bars" style="color: #4a4a4a"></i>
+      </button>
 
       <ul id="menuDropdown" class="">
         <li><a href="./paginaPerfilLog.html">Meu perfil</a></li>
@@ -68,64 +66,59 @@
     <div class="searchResultContainer" id="searchResults"></div>
   </body>
 
-    <!-- Início do perfil -->
-    <!-- Dados principais do usuário -->
-    <main>
-      <section id="profileSection"></section>
-    </main>
+  <!-- Início do perfil -->
+  <!-- Dados principais do usuário -->
+  <main>
+    <section id="profileSection"></section>
+  </main>
 
-    <!-- decoração do footer -->
-    <div id="decFooter">
-      <img src="img/decTintaFooter.png" alt="" id="decFooter" />
-    </div>
+  <!-- decoração do footer -->
+  <div id="decFooter">
+    <img src="img/decTintaFooter.png" alt="" id="decFooter" />
+  </div>
 
-    <!-- Footer -->
-    <footer>
-      <div id="footerContainer">
-        <div id="logoFooter">
-          <a href="#">
-            <img src="img/logoCor2.png" alt="logo em cor clara" />
-          </a>
-        </div>
-
-        <div id="formFooter">
-          <div id="sugestionsFooter">
-            <h3>Sugestões?</h3>
-            <p>Mande uma mensagem ;)</p>
-          </div>
-
-          <form action="mensagem.php">
-            <label for="email" title="Informe seu email mais usado">
-              E-mail:
-            </label>
-            <input
-              type="email"
-              name="email"
-              id=""
-              placeholder="informe seu e-mail..."
-            />
-
-            <label for="message">Mensagem:</label>
-            <textarea
-              type="textarea"
-              name="message"
-              title="Mensagem"
-              cols="30"
-              rows="5"
-              placeholder="escreva aqui sua mensagem..."
-            ></textarea>
-
-            <input
-              type="submit"
-              value="Enviar"
-              name="enviar"
-              class="btnLight"
-            />
-          </form>
-        </div>
+  <!-- Footer -->
+  <footer>
+    <div id="footerContainer">
+      <div id="logoFooter">
+        <a href="#">
+          <img src="img/logoCor2.png" alt="logo em cor clara" />
+        </a>
       </div>
-      <script>
-        window.addEventListener("DOMContentLoaded", function () {
+
+      <div id="formFooter">
+        <div id="sugestionsFooter">
+          <h3>Sugestões?</h3>
+          <p>Mande uma mensagem ;)</p>
+        </div>
+
+        <form action="mensagem.php">
+          <label for="email" title="Informe seu email mais usado">
+            E-mail:
+          </label>
+          <input
+            type="email"
+            name="email"
+            id=""
+            placeholder="informe seu e-mail..."
+          />
+
+          <label for="message">Mensagem:</label>
+          <textarea
+            type="textarea"
+            name="message"
+            title="Mensagem"
+            cols="30"
+            rows="5"
+            placeholder="escreva aqui sua mensagem..."
+          ></textarea>
+
+          <input type="submit" value="Enviar" name="enviar" class="btnLight" />
+        </form>
+      </div>
+    </div>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
         const profileSection = document.getElementById("profileSection");
 
         const perfilONG = JSON.parse(localStorage.getItem("perfilONG"));
@@ -134,23 +127,17 @@
           const profile = perfilONG[0];
 
           document.title = profile.nomeUsuarioONG;
-  
-            const profileHtml = ` 
+
+          const profileHtml = ` 
             <div class="cabecalho">
-              <div class="cabecalhoUsuario">
-                <div class="cabecalhoEsq">
-                  <img src="${
-                    profile.fotoPerfil
-                  }" alt="Foto de pefil do usuário." />
-                </div>
-                <div class="cabecalhoDir">
+                  <h3 id="tagUsuario">${profile.tagUsuario}</h3>
                   <section class="cabecalhoBio">
                     <h1 id="nomeUsuario">${profile.nomeUsuarioONG}</h1>
                     <p id="bio">
                       ${profile.textoBio}
                     </p>
                   </section>
-                  <div class="cabecalho-interesses">
+                  <div class="cabecalhoInteresses">
                     <h3>Causas:</h3>
                     <ul id="campoInteresse">
                       ${profile.interesses
@@ -177,8 +164,6 @@
                       ></a>
                     </div>
                   </div>
-                </div>
-              </div>
             </div>
             <div class="conteudo-perfil">
               <h2 class="titulo">Ações</h2>
@@ -224,9 +209,10 @@
               </section>
             </div>
             `;
-  
-            profileSection.innerHTML = profileHtml;
-          }
-        });
-      </script>
-    </footer>
+
+          profileSection.innerHTML = profileHtml;
+        }
+      });
+    </script>
+  </footer>
+</html>
