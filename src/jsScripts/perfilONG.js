@@ -6,7 +6,7 @@ let perfilONG = [
     senha: "senha123",
     textoBio:
       "Somos uma ONG dedicada a ajudar animais de rua e promover a conscientização sobre a importância da proteção animal. Nossa missão é resgatar, reabilitar e encontrar lares amorosos para os animais abandonados, além de desenvolver ações para melhorar a qualidade de vida desses seres tão especiais. Junte-se a nós nessa causa e faça a diferença!",
-    fotoPerfil: "img/foto-perfilONG.png",
+    tagUsuario: "ONG",
     interesses: ["Animais", "Proteção animal", "Meio Ambiente"],
     instagram: ["https://instagram.com/usuarioONG1"],
     facebook: ["https://facebook.com/usuarioONG1"],
@@ -56,7 +56,7 @@ let perfilONG = [
     senha: "amigos123",
     textoBio:
       "Nós somos uma ONG dedicada a resgatar, tratar e encontrar lares amorosos para animais abandonados. Trabalhamos incansavelmente para promover o bem-estar animal e conscientizar a sociedade sobre a importância da adoção responsável. Junte-se a nós nessa missão e faça parte dessa história!",
-    fotoPerfil: "https://source.unsplash.com/180x180/?pets",
+    tagUsuario: "ONG",
     interesses: ["Animais", "Proteção Animal"],
     instagram: ["https://instagram.com/amigosdosanimais"],
     facebook: ["https://facebook.com/amigosdosanimais"],
@@ -105,7 +105,7 @@ let perfilONG = [
     senha: "educa123",
     textoBio:
       "Somos uma ONG dedicada a promover a educação de qualidade para todos. Acreditamos que a educação é um direito fundamental e trabalhamos para garantir o acesso igualitário à educação, oferecendo suporte educacional, recursos e oportunidades de aprendizado. Junte-se a nós e seja parte da transformação!",
-    fotoPerfil: "https://source.unsplash.com/180x180/?school",
+    tagUsuario: "ONG",
     interesses: ["Educação", "Assistência Social", "Crianças"],
     instagram: ["https://instagram.com/educaong"],
     facebook: ["https://facebook.com/educaong"],
@@ -150,7 +150,7 @@ let perfilONG = [
     senha: "saude123",
     textoBio:
       "Nossa ONG tem como objetivo promover o acesso universal à saúde e garantir a qualidade de vida para todos. Trabalhamos para combater as desigualdades na área da saúde, oferecendo suporte, conscientização e serviços médicos às comunidades carentes. Junte-se a nós e faça parte dessa luta!",
-    fotoPerfil: "https://source.unsplash.com/180x180/?hospital",
+    tagUsuario: "ONG",
     interesses: ["Saúde", "Pessoas com deficiência", "Idosos", "Crianças"],
     instagram: ["https://instagram.com/saudeparatodos"],
     facebook: ["https://facebook.com/saudeparatodos"],
@@ -195,7 +195,7 @@ let perfilONG = [
     senha: "natureza123",
     textoBio:
       "Somos uma ONG comprometida em preservar e proteger a natureza. Nosso objetivo é conscientizar a sociedade sobre a importância da conservação ambiental e promover ações sustentáveis. Junte-se a nós e seja parte da mudança!",
-    fotoPerfil: "https://source.unsplash.com/180x180/?nature",
+    tagUsuario: "ONG",
     interesses: ["Meio Ambiente", "Sustentabilidade"],
     instagram: ["https://instagram.com/naturezaviva"],
     facebook: ["https://facebook.com/naturezaviva"],
@@ -240,7 +240,7 @@ let perfilONG = [
     senha: "direitos123",
     textoBio:
       "Somos uma ONG dedicada à promoção e defesa dos direitos humanos. Lutamos pela igualdade, justiça e respeito a todas as pessoas, combatendo a discriminação e o preconceito. Junte-se a nós nessa causa!",
-    fotoPerfil: "https://source.unsplash.com/180x180/?people",
+    tagUsuario: "ONG",
     interesses: ["Direitos Humanos"],
     instagram: ["https://instagram.com/direitosemacao"],
     facebook: ["https://facebook.com/direitosemacao"],
@@ -285,7 +285,7 @@ let perfilONG = [
     senha: "solidariedade123",
     textoBio:
       "Somos uma ONG comprometida em ajudar pessoas em situação de rua, oferecendo abrigo, alimentação e suporte para que possam reconstruir suas vidas. Nossa missão é resgatar a dignidade e promover a inclusão social. Junte-se a nós e faça a diferença!",
-    fotoPerfil: "https://source.unsplash.com/180x180/?hands",
+    tagUsuario: "ONG",
     interesses: ["Pessoas em Situação de Rua", "Inclusão Social"],
     instagram: ["https://instagram.com/maossolidarias"],
     facebook: ["https://facebook.com/maossolidarias"],
@@ -330,7 +330,7 @@ let perfilONG = [
     senha: "esporte123",
     textoBio:
       "Somos uma ONG dedicada a promover o acesso ao esporte para todas as pessoas, independentemente de sua idade, gênero ou condição socioeconômica. Acreditamos no poder transformador do esporte e trabalhamos para desenvolver programas e projetos que estimulem a prática esportiva, a inclusão e o bem-estar da comunidade. Venha fazer parte desse time!",
-    fotoPerfil: "https://source.unsplash.com/180x180/?sport",
+    tagUsuario: "ONG",
     interesses: ["Esporte", "Inclusão Social"],
     instagram: ["https://instagram.com/esporteparatodos"],
     facebook: ["https://facebook.com/esporteparatodos"],
@@ -380,7 +380,7 @@ let perfilONG = [
     senha: "felizes123",
     textoBio:
       "Somos uma ONG dedicada a oferecer apoio e cuidados a crianças em situação de vulnerabilidade social. Nosso objetivo é proporcionar um ambiente seguro, acolhedor e estimulante para o desenvolvimento integral dessas crianças. Trabalhamos com projetos educacionais, atividades lúdicas e programas de assistência social. Junte-se a nós e faça a diferença na vida dessas crianças!",
-    fotoPerfil: "https://source.unsplash.com/180x180/?kids",
+    tagUsuario: "ONG",
     interesses: ["Crianças", "Educação", "Assistência Social"],
     instagram: ["https://instagram.com/criancasfelizes"],
     facebook: ["https://facebook.com/criancasfelizes"],
@@ -425,7 +425,7 @@ let perfilONG = [
     senha: "cuidar123",
     textoBio:
       "Somos uma ONG dedicada a proporcionar cuidado e carinho aos idosos que vivem em asilos. Nosso objetivo é oferecer apoio emocional, atividades recreativas e assistência para promover o bem-estar e a qualidade de vida dessas pessoas. Trabalhamos em parceria com asilos locais, levando amor e atenção aos idosos. Junte-se a nós nessa causa nobre!",
-    fotoPerfil: "https://source.unsplash.com/180x180/?senior",
+    tagUsuario: "ONG",
     interesses: ["Idosos", "Assistência Social", "Saúde"],
     instagram: ["https://instagram.com/cuidadoecarinho"],
     facebook: ["https://facebook.com/cuidadoecarinho"],

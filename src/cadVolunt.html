@@ -31,45 +31,22 @@
 
   <body>
     <!-- início do header do site. contém o menu de navegação, logo e barra de pesquisa -->
-    <!-- Navbar -->
-    <header class="wrapper">
-      <a href="./index.html">
-        <img
+    <!-- NAVBAR USUÁRIO SEM LOGIN -->
+    <header class="wrapperSL">
+      <a href="./index.html"
+        ><img
           id="logo"
           src="img/logoPontecom.png"
           alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
-        />
-      </a>
-
-      <div class="wrapperSearch">
-        <input
-          type="text"
-          class="wrapperSearch-txt"
-          placeholder="Busque por ONGs ou voluntários..."
-        />
-        <button id="searchButton">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-      </div>
-
-      <!-- Menu -->
-      <ul class="wrapperNavbar">
-        <li class="wrapper-li"><a href="./sobre.html">Sobre</a></li>
-        <li class="wrapper-li">
-          <a href="./listadevagas.html">Vagas de voluntariado</a>
-        </li>
-      </ul>
-
-      <img
-        src="img/foto-perfilONG.png"
-        id="foto"
-        alt="Foto de perfil do usuário."
-      />
-
-      <ul id="menuDropdown" class="">
-        <li><a href="./paginaPerfilLog.html">Meu perfil</a></li>
-        <li><a href="./cadastroVoluntario.html">Editar dados</a></li>
-        <li><a href="./index.html">Logout</a></li>
+      /></a>
+      <ul class="wrapperNavbarSL">
+        <a href="./pagina-login.html"
+          ><li class="wrapperButton-active">Login</li></a
+        >
+        <a href="./sobre.html"><li class="wrapper-li">Sobre</li></a>
+        <a href="./listadevagas.html"
+          ><li class="wrapper-li">Vagas de voluntariado</li></a
+        >
       </ul>
     </header>
     <!-- fim do header -->

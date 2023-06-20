@@ -44,11 +44,9 @@
         </li>
       </ul>
 
-      <img
-        src="img/foto-perfilONG.png"
-        id="foto"
-        alt="Foto de perfil do usuário."
-      />
+      <button id="menuButton">
+        <i class="fa-solid fa-bars" style="color: #4a4a4a;"></i>
+      </button>
 
       <ul id="menuDropdown" class="">
         <li><a href="./paginaPerfilLog.html">Meu perfil</a></li>
@@ -146,10 +144,6 @@
           const resultItem = document.createElement("div");
           resultItem.classList.add("searchResultItem");
 
-          const img = document.createElement("img");
-          img.src = ong.fotoPerfil;
-          img.alt = "Foto de perfil da ONG";
-
           const name = document.createElement("h3");
           name.textContent =
             ong.nomeUsuarioONG !== undefined
@@ -168,7 +162,7 @@
                 : `paginaPerfilVol.html?id=${ong.id}`;
           });
 
-          resultItem.append(img, name, interesses, verMaisButton);
+          resultItem.append(name, interesses, verMaisButton);
 
           searchResultContainer.appendChild(resultItem);
         });
