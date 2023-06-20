@@ -3,11 +3,14 @@ const btnSalvarCurso = document.querySelector("#btnSalvarCurso");
 const editarCardBtn = listaQualificacoes.querySelector("#editarCardBtn");
 const divContainerQualific = document.querySelector("#containerQualificacoes");
 const popUpEditar = document.querySelector(".popUpEditar");
-// const listaQualificacoes = document.querySelector("#listaQualificacoes");
 
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>FUNCIONALIDADES CONTAINER QUALIFICAÇÕES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function salvarFormularioNoLocalStorage(formulario, id) {
   // Obtém todos os elementos do formulário
   var elementos = formulario.elements;
@@ -115,7 +118,6 @@ function criarPopUpEditar() {
 }
 
 
-
 function criaEstruturaCardCursos(){
 
   let divContainerCard = document.createElement('div');
@@ -166,6 +168,11 @@ function criaEstruturaCardCursos(){
   // console.log(divContainerCard);
 
   botaoExcluir.addEventListener("click", function(e){
+      let divGroupBtn = botaoExcluir.parentNode;
+      let divCardCurso = divGroupBtn.parentNode;
+      //  console.log(divCardCurso);
+      removeCardLocalStorage(divCardCurso,"formCursos");
+      divCardCurso.remove();
 
 
   });
@@ -219,6 +226,42 @@ function addDadosEstruturaCardCursos(chave) {
 
 }
 
+function removeCardLocalStorage(card, chave) {
+  var id = chave; // Chave do localStorage (ID fornecido)
+  var dadosSalvos = localStorage.getItem(id);
+
+  if (dadosSalvos) {
+    var arrayDadosSalvos = JSON.parse(dadosSalvos);
+
+    // Procura o card a ser removido pelo conteúdo dos elementos
+    var tituloDiv = card.querySelector("h2").innerText;
+    var areaCurso = card.querySelector("#area").innerText;
+    var inicio = card.querySelector("#inicio").innerText;
+    var fim = card.querySelector("#fim").innerText;
+    var instituicao = card.querySelector("#instituicao").innerText;
+    var tipoCurso = card.querySelector("#tipoCurso").innerText;
+
+    // Encontra o índice do card no array de dados
+    var indiceCard = arrayDadosSalvos.findIndex(function(dados) {
+      return (
+        dados.nomeCurso === tituloDiv &&
+        dados.areaCurso === areaCurso &&
+        dados.inicioCurso === inicio &&
+        dados.fimCurso === fim &&
+        dados.nomeInstituicao === instituicao &&
+        dados.tipoCurso === tipoCurso
+      );
+    });
+
+    if (indiceCard !== -1) {
+      // Remove o card do array de dados
+      arrayDadosSalvos.splice(indiceCard, 1);
+
+      // Atualiza os dados salvos no localStorage
+      localStorage.setItem(id, JSON.stringify(arrayDadosSalvos));
+    }
+  }
+}
 
 
 function reloadParaAlvo(divId) {
@@ -231,6 +274,7 @@ function reloadParaAlvo(divId) {
     }, 100); // Tempo de espera para a rolagem antes de recarregar a página (500ms neste exemplo)
   }
 }
+
 
 
 document.addEventListener('DOMContentLoaded', function(e){
