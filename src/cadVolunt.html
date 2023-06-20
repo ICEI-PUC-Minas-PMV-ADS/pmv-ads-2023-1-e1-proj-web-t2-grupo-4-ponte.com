@@ -389,32 +389,33 @@
             <button id="btnLimpar" type="reset" class="formBtn">limpar</button>
           </div>
         </form>
+
         <div class="popupEditar">
               <h2>Editar Qualificação</h2>
-              <form id="formEditarQualificacao">
+              <form id="formEditarQualificacao" class="formContainerGrande fo">
                 <div>
-                  <label for="inicioCurso">Início do Curso:</label>
-                  <input type="date" id="inicioCurso" name="inicioCurso" required>
+                  <label for="inicioCurso" class="labels">Início do Curso:</label>
+                  <input type="date" id="inicioCurso" name="inicioCurso" class="inputText inputData" required>
                 </div>
                 <div>
-                  <label for="fimCurso">Fim do Curso:</label>
-                  <input type="date" id="fimCurso" name="fimCurso" required>
+                  <label for="fimCurso" class="labels">Fim do Curso:</label>
+                  <input type="date" id="fimCurso" name="fimCurso" class="inputText inputData" required>
                 </div>
                 <div>
-                  <label for="nomeInstituicao">Instituição:</label>
-                  <input type="text" id="nomeInstituicao" name="nomeInstituicao" required>
+                  <label for="nomeInstituicao" class="labels">Instituição:</label>
+                  <input type="text" id="nomeInstituicao" name="nomeInstituicao" class="inputText inputData"  required>
                 </div>
                 <div>
-                  <label for="nomeCurso">Nome do Curso:</label>
-                  <input type="text" id="nomeCurso" name="nomeCurso" required>
+                  <label for="nomeCurso" class="labels">Nome do Curso:</label>
+                  <input type="text" id="nomeCurso" name="nomeCurso"class="inputText inputData" required>
                 </div>
                 <div>
-                  <label for="tipoCurso">Tipo de Curso:</label>
-                  <input type="text" id="tipoCurso" name="tipoCurso" required>
+                  <label for="tipoCurso" class="labels">Tipo de Curso:</label>
+                  <input type="text" id="tipoCurso" name="tipoCurso" class="inputText inputData" required>
                 </div>
                 <div>
-                  <label for="areaCurso">Área do Curso:</label>
-                  <input type="text" id="areaCurso" name="areaCurso" required>
+                  <label for="areaCurso" class="labels">Área do Curso:</label>
+                  <input type="text" id="areaCurso" name="areaCurso" class="inputText inputData" required>
                 </div>
                 <div class="groupBtn">
                   <button type="submit" id="btnSalvarEditar">Salvar</button>
@@ -432,11 +433,12 @@
                 <h2 class="titulosH3">Curso 1</h2>
 
                 <ul>
-                  <li>de: dd/mm/aa </li>
-                  <li>até: dd/mm/aa</li>
-                  <li>instituição: local onde cursou</li>
-                  <li>área do curso: informática</li>
-                  <li>descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore amet blanditiis itaque neque nostrum dolorem, aliquid praesentium labore soluta doloremque in fugit nemo exercitationem expedita? Voluptates reprehenderit delectus facilis fugit?</li>
+                  <li id="inicio">de: dd/mm/aa </li>
+                  <li id="fim">até: dd/mm/aa</li>
+                  <li id="instituicao">instituição: local onde cursou</li>
+                  <li id="area">área do curso: informática</li>
+                  <li id="tipoCurso"> presencial </li>
+                  <li id="descricao">descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore amet blanditiis itaque neque nostrum dolorem, aliquid praesentium labore soluta doloremque in fugit nemo exercitationem expedita? Voluptates reprehenderit delectus facilis fugit?</li>
                 </ul>
 
                 <div class="groupBtn" class="btnArea" id="btnArea">

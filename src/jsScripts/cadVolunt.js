@@ -1,214 +1,213 @@
-// Obtém referências dos elementos HTML
-const formInformacoes = document.querySelector("#formInfBasica");
-const formExperiencias = document.querySelector("#experiencias");
-const formQualificacoes = document.querySelector("#qualificacoes");
-const btnSalvarUser = document.querySelector("#salvarUser");
-const btnSalvarXp = document.querySelector("#btnSalvar");
-const btnSalvarQualif = document.querySelector("#btnSalvarCurso");
-const listaQualificacoes = document.querySelector("#listaQualificacoes");
+const formCursos = document.querySelector("#qualificacoes");
+const btnSalvarCurso = document.querySelector("#btnSalvarCurso");
+const divContainerQualific = document.querySelector("#containerQualificacoes");
+// const listaQualificacoes = document.querySelector("#listaQualificacoes");
 
-const inicioCurso = document.querySelector("#inicioCurso");
-const fimCurso = document.querySelector("#fimCurso");
-const nomeInstituicao = document.querySelector("#nomeInstituicao");
-const areaCurso = document.querySelector("#areaCurso");
-const nomeCurso = document.querySelector("#nomeCurso");
-const tipoDeCurso = document.querySelector("#tipoCurso");
 
-// Função para converter data para o formato brasileiro
-function converteDataParaPadraoBrasileiro(data) {
-  let dataBrasileira;
-  dataBrasileira = data.split("-").reverse().join("/");
-  return dataBrasileira;
-}
 
-// Função para criar um card de qualificação
-function criarCardQualificacao(dados) {
-  var cardDetalhes = document.createElement("div");
-  cardDetalhes.className = "campoDetalhe cardExp";
-  cardDetalhes.id = "cardCurso";
 
-  var listaUl = document.createElement("ul");
-  var dataInicioLi = document.createElement("li");
-  dataInicioLi.textContent = "de: " + converteDataParaPadraoBrasileiro(dados.inicioCurso);
-  var dataFimLi = document.createElement("li");
-  dataFimLi.textContent = "até: " + converteDataParaPadraoBrasileiro(dados.fimCurso);
-  var instituicaoLi = document.createElement("li");
-  instituicaoLi.textContent = "instituição: " + dados.nomeInstituicao;
-  var nomeCursoLi = document.createElement("li");
-  nomeCursoLi.textContent = dados.nomeCurso;
-  var tipoDeCursoLi = document.createElement("li");
-  tipoDeCursoLi.textContent = "tipo de curso: " + dados.tipoCurso;
-  var areaCursoLi = document.createElement("li");
-  areaCursoLi.textContent = "área do curso: " + dados.areaCurso;
-  var tituloCard = document.createElement("h2");
-  tituloCard.textContent = dados.nomeCurso;
-  tituloCard.setAttribute("class", "titulosH3");
 
-  listaUl.appendChild(dataInicioLi);
-  listaUl.appendChild(dataFimLi);
-  listaUl.appendChild(instituicaoLi);
-  listaUl.appendChild(tipoDeCursoLi);
-  listaUl.appendChild(areaCursoLi);
+function salvarFormularioNoLocalStorage(formulario, id) {
+  // Obtém todos os elementos do formulário
+  var elementos = formulario.elements;
 
-  var divGroupBtn = document.createElement("div");
-  divGroupBtn.className = "groupBtn btnArea";
-  divGroupBtn.id = "btnArea";
+  // Cria um objeto para armazenar os dados do formulário
+  var dadosFormulario = {};
 
-  var botaoEditar = document.createElement("button");
-  botaoEditar.type = "submit";
-  botaoEditar.className = "formBtn";
-  botaoEditar.textContent = "editar";
-  botaoEditar.addEventListener("click", function () {
-    editarQualificacao(dados);
-  });
+  // Itera sobre os elementos do formulário
+  for (var i = 0; i < elementos.length; i++) {
+    var elemento = elementos[i];
 
-  var botaoExcluir = document.createElement("button");
-  botaoExcluir.type = "submit";
-  botaoExcluir.className = "formBtn";
-  botaoExcluir.textContent = "excluir";
-  botaoExcluir.addEventListener("click", function () {
-    excluirQualificacao(dados);
-  });
+    // Verifica se o elemento tem um nome e um valor
+    if (elemento.name && elemento.value) {
+      // Adiciona o valor do elemento ao objeto de dados do formulário
+      dadosFormulario[elemento.name] = elemento.value;
+    }
+  }
 
-  divGroupBtn.appendChild(botaoEditar);
-  divGroupBtn.appendChild(botaoExcluir);
-  cardDetalhes.appendChild(tituloCard);
-  cardDetalhes.appendChild(listaUl);
-  cardDetalhes.appendChild(divGroupBtn);
+  // Obtém os dados existentes no Local Storage para o ID fornecido
+  var dadosSalvos = localStorage.getItem(id);
 
-  return cardDetalhes;
-}
+  // Se houver dados salvos no Local Storage
+  if (dadosSalvos) {
+    // Converte os dados salvos em um array JavaScript
+    var arrayDadosSalvos = JSON.parse(dadosSalvos);
 
-// Função para recuperar os dados do formulário
-function recuperarDados(formId) {
-  var dados = localStorage.getItem(formId);
+    // Adiciona os novos dados ao array existente
+    arrayDadosSalvos.push(dadosFormulario);
 
-  if (dados) {
-    return JSON.parse(dados);
+    // Atualiza os dados salvos no Local Storage para o ID fornecido
+    localStorage.setItem(id, JSON.stringify(arrayDadosSalvos));
   } else {
-    return [];
+    // Se não houver dados salvos no Local Storage para o ID fornecido, cria um novo array com os dados do formulário
+    var novoArrayDados = [dadosFormulario];
+
+    // Salva os dados no Local Storage para o ID fornecido
+    localStorage.setItem(id, JSON.stringify(novoArrayDados));
   }
 }
 
-// Função para exibir as qualificações na página
-function exibirQualificacoes() {
-  listaQualificacoes.innerHTML = "";
+function criaEstruturaCardCursos(){
 
-  var dados = recuperarDados("form3");
+  let divContainerCard = document.createElement('div');
+  divContainerCard.setAttribute("id","cardCurso");
+  // console.log(divContainerCard);
+  let tituloCurso = document.createElement('h2');
+  tituloCurso.setAttribute("class", "titulosH3");
+  // console.log(tituloCurso);
+  let ulDados = document.createElement("ul");
+  let liInicio = document.createElement("li");
+  liInicio.setAttribute("id","inicio");
+  let liFim = document.createElement("li");
+  liFim.setAttribute("id","fim");
+  let liInstituicao = document.createElement("li");
+  liInstituicao.setAttribute("id","instituicao");
+  let liTipoCurso = document.createElement("li");
+  liTipoCurso.setAttribute("id","tipoCurso");
+  let liArea = document.createElement("li");
+  liArea.setAttribute("id","area");
 
-  for (var i = dados.length - 1; i >= 0; i--) {
-    var card = criarCardQualificacao(dados[i]);
-    listaQualificacoes.appendChild(card);
-  }
+  let grupoBotao = document.createElement("div");
+  grupoBotao.setAttribute("class","btnArea");
+  grupoBotao.setAttribute("class", "groupBtn");
+  grupoBotao.setAttribute("id","btnArea");
+  let botaoSalvar = document.createElement("button");
+  botaoSalvar.setAttribute("type", "submit");
+  botaoSalvar.setAttribute("class", "formBtn");
+  botaoSalvar.innerText = "salvar";
+  let botaoExcluir = document.createElement("button");
+  botaoExcluir.setAttribute("type", "submit");
+  botaoExcluir.setAttribute("class", "formBtn");
+  botaoExcluir.innerText="excluir";
+
+  ulDados.appendChild(liInicio);
+  ulDados.appendChild(liFim);
+  ulDados.appendChild(liTipoCurso);
+  ulDados.appendChild(liInstituicao);
+  ulDados.appendChild(liTipoCurso);
+  ulDados.appendChild(liArea);
+
+  grupoBotao.appendChild(botaoSalvar);
+  grupoBotao.appendChild(botaoExcluir);
+
+  divContainerCard.appendChild(tituloCurso);
+  divContainerCard.appendChild(ulDados);
+  divContainerCard.appendChild(grupoBotao);
+  // console.log(divContainerCard);
+
+  return(divContainerCard);
 }
 
-// Função para editar uma qualificação
-function editarQualificacao(dados) {
-  inicioCurso.value = dados.inicioCurso;
-  fimCurso.value = dados.fimCurso;
-  nomeInstituicao.value = dados.nomeInstituicao;
-  nomeCurso.value = dados.nomeCurso;
-  tipoDeCurso.value = dados.tipoCurso;
-  areaCurso.value = dados.areaCurso;
 
-  var popupEditar = document.querySelector(".popupEditar");
-  popupEditar.style.display = "block";
+function addDadosEstruturaCardCursos(chave) {
 
-  btnSalvarQualif.addEventListener("click", function (e) {
-    e.preventDefault();
+      let dados = JSON.parse(localStorage.getItem(chave));
+      let cardsPreenchidos = [];
+      // console.log(dados);
 
-    var qualificacoes = recuperarDados("form3");
+      for(i=0;i<dados.length;i++){
+          let divContainerCard = criaEstruturaCardCursos();
+          let tituloDiv = divContainerCard.querySelector("h2");
+          let areaCurso = divContainerCard.querySelector("#area");
+          let inicio = divContainerCard.querySelector("#inicio");
+          let fim = divContainerCard.querySelector("#fim");
+          let instituicao = divContainerCard.querySelector("#instituicao");
+          let tipoCurso = divContainerCard.querySelector("#tipoCurso");
 
-    for (var i = 0; i < qualificacoes.length; i++) {
-      var qualificacao = qualificacoes[i];
+          tituloDiv.innerText = dados[i].nomeCurso;
+          areaCurso.innerText = dados[i].areaCurso;
+          tipoCurso.innerText = dados[i].tipoCurso;
+          inicio.innerText = dados[i].inicioCurso;
+          fim.innerText = dados[i].fimCurso;
+          instituicao.innerText = dados[i].nomeInstituicao;
 
-      if (
-        qualificacao.inicioCurso === dados.inicioCurso &&
-        qualificacao.fimCurso === dados.fimCurso &&
-        qualificacao.nomeInstituicao === dados.nomeInstituicao &&
-        qualificacao.nomeCurso === dados.nomeCurso &&
-        qualificacao.tipoCurso === dados.tipoCurso &&
-        qualificacao.areaCurso === dados.areaCurso
-      ) {
-        qualificacao.inicioCurso = inicioCurso.value;
-        qualificacao.fimCurso = fimCurso.value;
-        qualificacao.nomeInstituicao = nomeInstituicao.value;
-        qualificacao.nomeCurso = nomeCurso.value;
-        qualificacao.tipoCurso = tipoDeCurso.value;
-        qualificacao.areaCurso = areaCurso.value;
-        break;
+
+
+        //  console.log(divContainerCard);
+
+         cardsPreenchidos[i] = divContainerCard;
+        //  console.log(cardsPreenchidos[i]);
+
       }
-    }
 
-    localStorage.setItem("form3", JSON.stringify(qualificacoes));
-
-    exibirQualificacoes();
-    formQualificacoes.reset();
-    btnSalvarQualif.removeEventListener("click", editarQualificacao);
-    btnSalvarQualif.addEventListener("click", function (e) {
-      e.preventDefault();
-      adicionarQualificacao();
-    });
-
-    popupEditar.style.display = "none";
-  });
-
-  var btnCancelarEditar = document.querySelector("#btnCancelarEditar");
-  btnCancelarEditar.addEventListener("click", function () {
-    formQualificacoes.reset();
-    popupEditar.style.display = "none";
-  });
+      return cardsPreenchidos;
 }
 
-// Função para excluir uma qualificação
-function excluirQualificacao(dados) {
-  var qualificacoes = recuperarDados("form3");
 
-  for (var i = 0; i < qualificacoes.length; i++) {
-    var qualificacao = qualificacoes[i];
+ function insereCardsNaLista(conjuntoCards) {
 
-    if (
-      qualificacao.inicioCurso === dados.inicioCurso &&
-      qualificacao.fimCurso === dados.fimCurso &&
-      qualificacao.nomeInstituicao === dados.nomeInstituicao &&
-      qualificacao.nomeCurso === dados.nomeCurso &&
-      qualificacao.tipoCurso === dados.tipoCurso &&
-      qualificacao.areaCurso === dados.areaCurso
-    ) {
-      qualificacoes.splice(i, 1);
-      break;
-    }
+   let listaQualificacoes = document.querySelector("#listaQualificacoes");
+
+   for (let i = conjuntoCards.length - 1; i>=0; i--) {
+      listaQualificacoes.appendChild(conjuntoCards[i]);
+   }
+
+}
+
+
+
+function reloadParaAlvo(divId) {
+  var elementoAlvo = document.getElementById(divId);
+
+  if (elementoAlvo) {
+    elementoAlvo.scrollIntoView({ behavior: "smooth", block: "start" });
+    setTimeout(function() {
+      location.reload();
+    }, 100); // Tempo de espera para a rolagem antes de recarregar a página (500ms neste exemplo)
   }
-
-  localStorage.setItem("form3", JSON.stringify(qualificacoes));
-
-  exibirQualificacoes();
 }
 
-// Função para adicionar uma qualificação
-function adicionarQualificacao() {
-  var qualificacao = {
-    inicioCurso: inicioCurso.value,
-    fimCurso: fimCurso.value,
-    nomeInstituicao: nomeInstituicao.value,
-    nomeCurso: nomeCurso.value,
-    tipoCurso: tipoDeCurso.value,
-    areaCurso: areaCurso.value,
-  };
 
-  var qualificacoes = recuperarDados("form3");
-  qualificacoes.push(qualificacao);
-  localStorage.setItem("form3", JSON.stringify(qualificacoes));
+document.addEventListener('DOMContentLoaded', function(e){
+  let cardsPreenchidos = addDadosEstruturaCardCursos("formCursos");
+  insereCardsNaLista(cardsPreenchidos);
 
-  exibirQualificacoes();
-  formQualificacoes.reset();
-}
+    e.preventDefault();
+});
 
-// Exibe as qualificações ao carregar a página
-exibirQualificacoes();
 
-// Evento de submit do formulário de qualificações
-formQualificacoes.addEventListener("submit", function (e) {
-  e.preventDefault();
-  adicionarQualificacao();
+//cria um card e insere na lista quando clicado o botao salvar do form
+btnSalvarCurso.addEventListener("click", function(e){
+    salvarFormularioNoLocalStorage(formCursos, "formCursos");
+    let listaQualificacoes = document.querySelector("#listaQualificacoes");
+    let divContainerCard = criaEstruturaCardCursos();
+
+    let tituloDiv = divContainerCard.querySelector("h2");
+    let areaCurso = divContainerCard.querySelector("#area");
+    let inicio = divContainerCard.querySelector("#inicio");
+    let fim = divContainerCard.querySelector("#fim");
+    let instituicao = divContainerCard.querySelector("#instituicao");
+    let tipoCurso = divContainerCard.querySelector("#tipoCurso");
+
+    let inputNomeCurso = formCursos.querySelector("#nomeCurso");
+    let inputAreaCurso = formCursos.querySelector("#areaCurso");
+    let inputTipoCurso = formCursos.querySelector("#tipoCurso");
+    let inputNomeInstituicao = formCursos.querySelector("#nomeInstituicao");
+    let inputInicio = formCursos.querySelector("#inicioCurso");
+    let inputFim = formCursos.querySelector("#fimCurso");
+    // console.log(inputNomeCurso);
+
+    tituloDiv.innerText = inputNomeCurso.value;
+    areaCurso.innerText = inputAreaCurso.value;
+    tipoCurso.innerText = inputTipoCurso.value;
+    instituicao.innerText = inputNomeInstituicao.value;
+    inicio.innerText = inputInicio.value;
+    fim.innerText = inputFim.value;
+
+    listaQualificacoes.appendChild(divContainerCard);
+
+    // console.log(tituloDiv);
+    // console.log(areaCurso);
+    // console.log(tipoCurso);
+    // console.log(instituicao);
+    // console.log(inicio);
+    // console.log(fim);
+    // alert("Clicou!");
+    //  e.preventDefault();
+});
+
+
+btnSalvarCurso.addEventListener("click", function(event) {
+  event.preventDefault(); // Evita o comportamento padrão de recarregar a página
+  reloadParaAlvo("containerQualificacoes");
 });
