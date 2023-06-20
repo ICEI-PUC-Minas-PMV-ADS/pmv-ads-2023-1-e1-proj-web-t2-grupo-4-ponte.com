@@ -34,7 +34,6 @@
     <script defer src="./jsScripts/perfilONG.js"></script>
     <script defer src="./jsScripts/perfilVol.js"></script>
     <script defer src="./jsScripts/listadevagas.js"></script>
-    <script defer src="./jsScripts/listadevagasBusca.js"></script>
     <link rel="icon" type="image/png" href="img/iconPonte.png" />
     <title>Lista de Vagas</title>
   </head>
@@ -211,7 +210,6 @@
       </div>
       <!-- Fim da área de Vagas -->
     </main>
-    <script src="listadevagas.js"></script>
 
     <!-- decoração do footer -->
     <div id="decFooter">
@@ -266,34 +264,65 @@
       </div>
     </footer>
     <script>
-      window.addEventListener("DOMContentLoaded", function () {
-        const listaSection = document.getElementById("listaSection");
+    window.addEventListener("DOMContentLoaded", function () {
+      const listaSection = document.getElementById("listaSection");
+      const searchInput = document.querySelector(".vagasSearch-txt");
 
-        const listadevagas = JSON.parse(localStorage.getItem("listadevagas"));
+      const listadevagas = JSON.parse(localStorage.getItem("listadevagas"));
 
-        if (listadevagas && listadevagas.length > 0) {
-          let listaHtml = "";
-          //const lista = listadevagas[0];
-          //});
-          //const listaHtml = `
-          listadevagas.forEach(function (lista) {
-            listaHtml += `
-          <div class="campo-vagas">
-            <h3 class="nomeVaga">${lista.nomeVaga}</h3>
-            <ul>
-              <li>ONG: ${lista.ONG}</li>
-              <li>Local: ${lista.localVaga}</li>
-              <li>${lista.periodoVaga}</li>
-              <li>${lista.descricaoVaga}</li>
-            </ul>
-          </div>
+      //Cria o HTML das vagas na página
+      function mostrarVagas(vagas) {
+        let listaHtml = "";
+        vagas.forEach(function (vaga) {
+          listaHtml += `
+            <div class="campo-vagas">
+              <h3 class="nomeVaga">${vaga.nomeVaga}</h3>
+              <ul>
+                <li>ONG: ${vaga.ONG}</li>
+                <li>Local: ${vaga.localVaga}</li>
+                <li>${vaga.periodoVaga}</li>
+                <li>${vaga.descricaoVaga}</li>
+              </ul>
+            </div>
           `;
-          });
+        });
+        listaSection.innerHTML = listaHtml;
+      }
 
-          listaSection.innerHTML = listaHtml;
+      //Pesquisa de vagas
+      if (listadevagas && listadevagas.length > 0) {
+        let searchQuery = "";
+
+        function filtrarVagas(query) {
+          const filtroVagas = listadevagas.filter(function (vaga) {
+            const nomeVaga = vaga.nomeVaga.toLowerCase();
+            const ong = vaga.ONG.toLowerCase();
+            const localVaga = vaga.localVaga.toLowerCase();
+            const periodoVaga = vaga.periodoVaga.toLowerCase();
+            const bioVaga = vaga.descricaoVaga.toLowerCase();
+            return (
+              nomeVaga.includes(query) ||
+              ong.includes(query) ||
+              localVaga.includes(query) ||
+              periodoVaga.includes(query) ||
+              bioVaga.includes(query)
+            );
+          });
+          if (filtroVagas.length > 0) {
+           mostrarVagas(filtroVagas);
+          } else {
+            listaSection.innerHTML = `<p class="erro">Nenhum resultado encontrado. Tente pesquisar por outros termos</p>`;
+          }
         }
-      });
-    </script>
-    <script defer src="listadevagas.js"></script>
+
+        searchInput.addEventListener("input", function (event) {
+          searchQuery = event.target.value.toLowerCase();
+          filtrarVagas(searchQuery);
+        });
+
+        filtrarVagas(searchQuery);
+      }
+    });
+  </script>
   </body>
 </html>

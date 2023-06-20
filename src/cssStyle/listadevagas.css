@@ -212,7 +212,7 @@ body #principal {
   overflow: hidden;
   overflow-y: scroll;
   width: 800px;
-  height: 710px;
+  max-height: 550px;
   box-shadow: 50px 70px 60px -80px #4a4a4a;
 }
 
@@ -229,6 +229,11 @@ body #principal {
   /* background-color: #333; */
   margin: 0.5rem 0 0 0.4rem;
   list-style: none;
+}
+
+#listaSection .erro {
+  padding: 1.5rem;
+  text-align: center;
 }
 /* Fim da área de vagas */
 
