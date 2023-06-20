@@ -6,12 +6,9 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  /*<<<<<<<< HEAD:src/cssStyle/style.css
-========*/
   font-family: var(--fontSecondary);
   text-decoration: none;
   list-style: none;
-  /*>>>>>>>> arjr_pages:cssStyle/style.css*/
 }
 
 :root {
@@ -21,13 +18,11 @@
   --titleColorLight: #fdc886;
   --fontPrimary: "Poppins", sans-serif;
   --fontSecondary: "Roboto", sans-serif;
-  /*<<<<<<<< HEAD:src/cssStyle/style.css*/
   --smallFontSize: 16px;
   --mediumFontSize: 18px;
   --largeFontSize: 20px;
   --titleFontSize: 24px;
   --titleFontSizeBiger: 32px;
-  /*>>>>>>>> arjr_pages:cssStyle/style.css*/
   --textCallsWeight: 600;
   --mediuCallsWeight: 450;
   --bgColor: #fffefc;
