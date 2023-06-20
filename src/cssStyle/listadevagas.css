@@ -134,7 +134,7 @@
 #listaSection h2 {
     text-align: center;
     background-color: #fdc886;
-    border-radius: 10px;
+    border-radius: 5px;
     font-family: sans-serif;
     color: #424040;
     font-size: 20px;
@@ -157,11 +157,15 @@
    background-color: white;
    border-radius: 10px;
    width: 90%;
+   border-style: outset;
 }
 
  #listaSection .campo-vagas ul li{
   /* background-color: #333; */
   margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  list-style-type: none;
 }
 /* Fim da área de vagas */
 
