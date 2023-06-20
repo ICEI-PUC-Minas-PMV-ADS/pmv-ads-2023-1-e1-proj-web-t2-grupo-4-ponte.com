@@ -115,6 +115,7 @@ function criarPopUpEditar() {
 }
 
 
+
 function criaEstruturaCardCursos(){
 
   let divContainerCard = document.createElement('div');
@@ -139,11 +140,11 @@ function criaEstruturaCardCursos(){
   grupoBotao.setAttribute("class","btnArea");
   grupoBotao.setAttribute("class", "groupBtn");
   grupoBotao.setAttribute("id","btnArea");
-  let botaoEditar = document.createElement("button");
-  botaoEditar.setAttribute("type", "submit");
-  botaoEditar.setAttribute("class", "formBtn");
-  botaoEditar.setAttribute("id","editarCardBtn");
-  botaoEditar.innerText = "editar"
+  // let botaoEditar = document.createElement("button");
+  // botaoEditar.setAttribute("type", "submit");
+  // botaoEditar.setAttribute("class", "formBtn");
+  // botaoEditar.setAttribute("id","editarCardBtn");
+  // botaoEditar.innerText = "editar"
   let botaoExcluir = document.createElement("button");
   botaoExcluir.setAttribute("type", "submit");
   botaoExcluir.setAttribute("class", "formBtn");
@@ -156,7 +157,7 @@ function criaEstruturaCardCursos(){
   ulDados.appendChild(liTipoCurso);
   ulDados.appendChild(liArea);
 
-  grupoBotao.appendChild(botaoEditar);
+  // grupoBotao.appendChild(botaoEditar);
   grupoBotao.appendChild(botaoExcluir);
 
   divContainerCard.appendChild(tituloCurso);
@@ -164,22 +165,10 @@ function criaEstruturaCardCursos(){
   divContainerCard.appendChild(grupoBotao);
   // console.log(divContainerCard);
 
+  botaoExcluir.addEventListener("click", function(e){
 
-  botaoEditar.addEventListener("click", function (e) {
-    let popUp = document.querySelector("#popUpEditar");
-    popUp.style.display = "block";
 
-    let btnCancelarEdicao = popUp.querySelector("#btnCancelarEditar");
-    btnCancelarEdicao.addEventListener("click", function (e) {
-      e.preventDefault(); // Remova esta linha
-      popUp.style.display = "none";
   });
-
-  e.preventDefault();
-});
-
-
-
 
   return(divContainerCard);
 }
