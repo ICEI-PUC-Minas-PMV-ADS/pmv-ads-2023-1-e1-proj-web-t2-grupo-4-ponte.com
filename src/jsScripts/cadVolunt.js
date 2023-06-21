@@ -2,7 +2,20 @@ const formCursos = document.querySelector("#qualificacoes");
 const btnSalvarCurso = document.querySelector("#btnSalvarCurso");
 const editarCardBtn = listaQualificacoes.querySelector("#editarCardBtn");
 const divContainerQualific = document.querySelector("#containerQualificacoes");
-const popUpEditar = document.querySelector(".popUpEditar");
+
+
+const formExp = document.querySelector("#experiencias");
+const btnSalvarXp = formExp.querySelector("#btnSalvarXp");
+// const listaExp = document.querySelector("#listaDetalhes");
+// console.log(btnSalvarXp);
+
+const formInfUser = document.querySelector("#formInfBasica");
+const btnSalvarUser = formInfUser.querySelector("#salvarUser");
+
+
+
+
+
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -188,6 +201,7 @@ function addDadosEstruturaCardCursos(chave) {
       // console.log(dados);
 
       for(i=0;i<dados.length;i++){
+
           let divContainerCard = criaEstruturaCardCursos();
           let tituloDiv = divContainerCard.querySelector("h2");
           let areaCurso = divContainerCard.querySelector("#area");
@@ -227,13 +241,13 @@ function addDadosEstruturaCardCursos(chave) {
 }
 
 function removeCardLocalStorage(card, chave) {
-  var id = chave; // Chave do localStorage (ID fornecido)
+  var id = chave;
   var dadosSalvos = localStorage.getItem(id);
 
   if (dadosSalvos) {
     var arrayDadosSalvos = JSON.parse(dadosSalvos);
 
-    // Procura o card a ser removido pelo conteúdo dos elementos
+
     var tituloDiv = card.querySelector("h2").innerText;
     var areaCurso = card.querySelector("#area").innerText;
     var inicio = card.querySelector("#inicio").innerText;
@@ -241,7 +255,7 @@ function removeCardLocalStorage(card, chave) {
     var instituicao = card.querySelector("#instituicao").innerText;
     var tipoCurso = card.querySelector("#tipoCurso").innerText;
 
-    // Encontra o índice do card no array de dados
+
     var indiceCard = arrayDadosSalvos.findIndex(function(dados) {
       return (
         dados.nomeCurso === tituloDiv &&
@@ -254,10 +268,10 @@ function removeCardLocalStorage(card, chave) {
     });
 
     if (indiceCard !== -1) {
-      // Remove o card do array de dados
+
       arrayDadosSalvos.splice(indiceCard, 1);
 
-      // Atualiza os dados salvos no localStorage
+
       localStorage.setItem(id, JSON.stringify(arrayDadosSalvos));
     }
   }
@@ -326,7 +340,262 @@ btnSalvarCurso.addEventListener("click", function(e){
 });
 
 
-btnSalvarCurso.addEventListener("click", function(event) {
-  event.preventDefault(); // Evita o comportamento padrão de recarregar a página
+btnSalvarCurso.addEventListener("click", function(e) {
+  e.preventDefault(); // Evita o comportamento padrão de recarregar a página
   reloadParaAlvo("containerQualificacoes");
+});
+
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>FUNCIONALIDADES CONTAINER QUALIFICAÇÕES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>FUNCIONALIDADES CONTAINER EXPERIÊNCIAS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ function insereCardsNaListaExp(conjuntoCards) {
+
+   let listaExp = document.querySelector("#listaDetalhes");
+
+   for (let i = conjuntoCards.length - 1; i>=0; i--) {
+      listaExp.appendChild(conjuntoCards[i]);
+   }
+
+}
+function addDadosEstruturaCardExp(chave) {
+
+      let dados = JSON.parse(localStorage.getItem(chave));
+      let cardsPreenchidos = [];
+       console.log(dados);
+
+      for(i=0;i<dados.length;i++){
+          let divContainerCard = criarEstruturaCardExp();
+
+
+           let tituloExp = divContainerCard.querySelector("h2");
+           let area = divContainerCard.querySelector("#areaAtuacao");
+           let instituicao = divContainerCard.querySelector("#instituicaoAtuacao");
+           let endereco = divContainerCard.querySelector("#enderecoAtuacao");
+           let cargo = divContainerCard.querySelector("#cargoAtuacao");
+           let descricao = divContainerCard.querySelector("#cargoAtuacao");
+           let inicio = divContainerCard.querySelector("#inicioAtuacao");
+           let fim = divContainerCard.querySelector("#fimAtuacao");
+
+
+
+
+
+           tituloExp.innerText = dados[i].cargoAtuacao;
+           area.innerText = dados[i].areaAtuacao;
+           instituicao.innerText = dados[i].instituicaoAtuacao;
+           endereco.innerText = dados[i].enderecoAtuacao;
+           cargo.innerText = dados[i].cargoAtuacao;
+           descricao.innerText = dados[i].descricaoAtuacao;
+           inicio.innerText = dados[i].inicioPeriodoAtuacao;
+           fim.innerText = dados[i].fimPeriodoAtuacao;
+
+
+
+
+            console.log(divContainerCard);
+
+          cardsPreenchidos[i] = divContainerCard;
+      //   //  console.log(cardsPreenchidos[i]);
+
+       }
+
+       return cardsPreenchidos;
+}
+
+document.addEventListener('DOMContentLoaded', function(e){
+  let cardsPreenchidos = addDadosEstruturaCardExp("formExp");
+  insereCardsNaListaExp(cardsPreenchidos);
+
+    e.preventDefault();
+});
+
+
+ function criarEstruturaCardExp(){
+
+   let divContainerCard = document.createElement('div');
+   divContainerCard.setAttribute("id","cardExp");
+  divContainerCard.setAttribute("class", "campoDetalhe");
+   divContainerCard.setAttribute("class", "cardExp");
+
+   // console.log(divContainerCard);
+   let tituloExp = document.createElement('h2');
+   tituloExp.setAttribute("class", "titulosH3");
+   // console.log(tituloCurso);
+   let ulDados = document.createElement("ul");
+
+  let liArea = document.createElement("li");
+   liArea.setAttribute("id","areaAtuacao");
+   // console.log(liArea);
+
+   let liInstituicao = document.createElement("li");
+   liInstituicao.setAttribute("id","instituicaoAtuacao");
+   // console.log(liInstituicao);
+
+  let liEndereco = document.createElement("li");
+  liEndereco.setAttribute("id","enderecoAtuacao");
+  // console.log(liEndereco);
+
+   let liCargo = document.createElement("li");
+   liCargo.setAttribute("id", "cargoAtuacao");
+   // console.log(liCargo);
+
+   let liDescricaoAtuacao = document.createElement("li");
+   liDescricaoAtuacao.setAttribute("id","descricaoAtuacao");
+   // console.log(liDescricaoAtuacao);
+   let liInicio = document.createElement("li");
+   liInicio.setAttribute("id","inicioAtuacao");
+   // console.log(liInicio);
+
+   let liFim = document.createElement("li");
+   liFim.setAttribute("id","fimAtuacao");
+   // console.log(liFim);
+
+
+   let grupoBotao = document.createElement("div");
+   grupoBotao.setAttribute("class","btnArea");
+   grupoBotao.setAttribute("class", "groupBtn");
+   grupoBotao.setAttribute("id","btnArea");
+   // let botaoEditar = document.createElement("button");
+   // botaoEditar.setAttribute("type", "submit");
+   // botaoEditar.setAttribute("class", "formBtn");
+   // botaoEditar.setAttribute("id","editarCardBtn");
+   // botaoEditar.innerText = "editar"
+    let botaoExcluir = document.createElement("button");
+    botaoExcluir.setAttribute("type", "submit");
+    botaoExcluir.setAttribute("class", "formBtn");
+    botaoExcluir.innerText="excluir";
+
+    ulDados.appendChild(liArea);
+    ulDados.appendChild(liInstituicao);
+    ulDados.appendChild(liEndereco);
+    ulDados.appendChild(liCargo);
+    ulDados.appendChild(liDescricaoAtuacao);
+    ulDados.appendChild(liInicio);
+    ulDados.appendChild(liFim);
+
+   //  console.log(ulDados); OK
+
+   // grupoBotao.appendChild(botaoEditar);
+    grupoBotao.appendChild(botaoExcluir);
+
+    divContainerCard.appendChild(tituloExp);
+    divContainerCard.appendChild(ulDados);
+    divContainerCard.appendChild(grupoBotao);
+
+   //  console.log(divContainerCard); OK
+
+     botaoExcluir.addEventListener("click", function(e){
+        let divGroupBtn = botaoExcluir.parentNode;
+        let divCardXp = divGroupBtn.parentNode;
+        //  console.log(divCardCurso);
+         // removeCardLocalStorage(divCardXp,"formExp");
+        divCardXp.remove();
+     });
+
+
+
+     //  console.log(divContainerCard);
+      return(divContainerCard);
+  }
+
+
+  btnSalvarXp.addEventListener("click", function(e){
+
+      let listaExp = document.querySelector("#listaDetalhes");
+      let formExp = document.querySelector("#experiencias");
+     salvarFormularioNoLocalStorage(formExp, "formExp");
+
+
+
+      let divContainerCard = criarEstruturaCardExp();
+       let tituloDiv = divContainerCard.querySelector("h2");
+       let areaExp = divContainerCard.querySelector("#areaAtuacao");
+       let instituicao = divContainerCard.querySelector("#instituicaoAtuacao");
+       let endereco = divContainerCard.querySelector("#enderecoAtuacao");
+       let cargo = divContainerCard.querySelector("#cargoAtuacao");
+       let descricao = divContainerCard.querySelector("#descricaoAtuacao");
+       let inicioExp = divContainerCard.querySelector("#inicioAtuacao");
+       let fimExp = divContainerCard.querySelector("#fimAtuacao");
+
+
+      let inputCargo = formExp.querySelector("#cargoAtuacao");
+      let inputAreaAtuacao = formExp.querySelector("#areaAtuacao");
+      let inputInstituicao = formExp.querySelector("#instituicaoAtuacao");
+      let inputEndereco = formExp.querySelector("#enderecoAtuacao");
+      let inputDescricao = formExp.querySelector("#descricaoAtuacao");
+      let inputInicio = formExp.querySelector("#inicioPeriodoAtuacao");
+      let inputFim = formExp.querySelector("#fimPeriodoAtuacao");
+
+        tituloDiv.innerText = inputCargo.value;
+        areaExp.innerText = inputAreaAtuacao.value;
+        instituicao.innerText = inputInstituicao.value;
+        endereco.innerText = inputEndereco.value;
+        cargo.innerText = inputCargo.value;
+        descricao.innerText = inputDescricao.value;
+        inicioExp.innerText = inputInicio.value;
+        fimExp.innerText = inputFim.value;
+
+
+       listaExp.appendChild(divContainerCard);
+       e.preventDefault();
+  });
+
+
+  btnSalvarXp.addEventListener("click", function(e) {
+  e.preventDefault(); // Evita o comportamento padrão de recarregar a página
+  reloadParaAlvo("containerExperiencias");
+});
+
+
+
+
+
+
+
+
+
+
+btnSalvarUser.addEventListener("click", function(e){
+  if(salvarFormularioNoLocalStorage(formInfUser, "formUser")){
+    alert("Dados Salvos");
+  }
+
 });
