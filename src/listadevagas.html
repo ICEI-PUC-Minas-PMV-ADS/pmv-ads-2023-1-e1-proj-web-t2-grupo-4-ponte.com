@@ -154,65 +154,65 @@
       </div>
     </footer>
     <script>
-    window.addEventListener("DOMContentLoaded", function () {
-      const listaSection = document.getElementById("listaSection");
-      const searchInput = document.querySelector(".vagasSearch-txt");
+      window.addEventListener("DOMContentLoaded", function () {
+        const listaSection = document.getElementById("listaSection");
+        const searchInput = document.querySelector(".vagasSearch-txt");
 
-      const listadevagas = JSON.parse(localStorage.getItem("listadevagas"));
+        const listadevagas = JSON.parse(localStorage.getItem("listadevagas"));
 
-      //Cria o HTML das vagas na página
-      function mostrarVagas(vagas) {
-        let listaHtml = "";
-        vagas.forEach(function (vaga) {
-          listaHtml += `
-            <div class="campo-vagas">
-              <h3 class="nomeVaga">${vaga.nomeVaga}</h3>
-              <ul>
-                <li>ONG: ${vaga.ONG}</li>
-                <li>Local: ${vaga.localVaga}</li>
-                <li>${vaga.periodoVaga}</li>
-                <li>${vaga.descricaoVaga}</li>
-              </ul>
-            </div>
-          `;
-        });
-        listaSection.innerHTML = listaHtml;
-      }
+        //Cria o HTML das vagas na página
+        function mostrarVagas(vagas) {
+          let listaHtml = "";
+          vagas.forEach(function (vaga) {
+            listaHtml += `
+             <div class="campo-vagas">
+                <h3 class="nomeVaga">${vaga.nomeVaga}</h3>
+                <ul>
+                  <li>ONG: ${vaga.ONG}</li>
+                  <li>Local: ${vaga.localVaga}</li>
+                  <li>${vaga.periodoVaga}</li>
+                  <li>${vaga.descricaoVaga}</li>
+                </ul>
+              </div>
+            `;
+          });
+          listaSection.innerHTML = listaHtml;
+        }
 
-      //Pesquisa de vagas
-      if (listadevagas && listadevagas.length > 0) {
-        let searchQuery = "";
+        //Pesquisa de vagas
+        if (listadevagas && listadevagas.length > 0) {
+          let searchQuery = "";
 
-        function filtrarVagas(query) {
-          const filtroVagas = listadevagas.filter(function (vaga) {
+          function filtrarVagas(query) {
+            const filtroVagas = listadevagas.filter(function (vaga) {
             const nomeVaga = vaga.nomeVaga.toLowerCase();
             const ong = vaga.ONG.toLowerCase();
             const localVaga = vaga.localVaga.toLowerCase();
             const periodoVaga = vaga.periodoVaga.toLowerCase();
             const bioVaga = vaga.descricaoVaga.toLowerCase();
-            return (
-              nomeVaga.includes(query) ||
-              ong.includes(query) ||
-              localVaga.includes(query) ||
-              periodoVaga.includes(query) ||
-              bioVaga.includes(query)
-            );
-          });
-          if (filtroVagas.length > 0) {
-           mostrarVagas(filtroVagas);
-          } else {
-            listaSection.innerHTML = `<p class="erro">Nenhum resultado encontrado. Tente pesquisar por outros termos</p>`;
+              return (
+                nomeVaga.includes(query) ||
+                ong.includes(query) ||
+                localVaga.includes(query) ||
+                periodoVaga.includes(query) ||
+                bioVaga.includes(query)
+              );
+            });
+            if (filtroVagas.length > 0) {
+            mostrarVagas(filtroVagas);
+            } else {
+              listaSection.innerHTML = `<p class="erro">Nenhum resultado encontrado. Tente pesquisar por outros termos</p>`;
+            }
           }
-        }
 
-        searchInput.addEventListener("input", function (event) {
-          searchQuery = event.target.value.toLowerCase();
+          searchInput.addEventListener("input", function (event) {
+            searchQuery = event.target.value.toLowerCase();
+            filtrarVagas(searchQuery);
+         });
+
           filtrarVagas(searchQuery);
-        });
-
-        filtrarVagas(searchQuery);
-      }
-    });
+       }
+      });
     </script>
   </body>
 </html>
