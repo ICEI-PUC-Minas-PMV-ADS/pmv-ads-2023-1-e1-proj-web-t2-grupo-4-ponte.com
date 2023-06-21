@@ -136,17 +136,12 @@ body #principal {
   cursor: pointer;
 }
 
+/* FIM DA PESQUISA */
+
 /* ================================================================= */
 /* ================================================================ */
 
-/* Inicio área do filtro */
-
-/* TODA PARTE QUE ESTA COMENTADA DESSA PARTE DO FILTRO AINDA SERÁ USADA PARA COLOCAR O FILTRO */
-
-/* .estados {
-  font-family: sans-serif;
-  font-size: 15px;
-} */
+/* área de vagas */
 
 #pesquise h2 {
   color: var(--titleColorDark);
@@ -158,53 +153,6 @@ body #principal {
   text-align: center;
   text-transform: uppercase;
 }
-
-/* #xpListaContainer {
-  background-color: rgb(240, 252, 250, 1);
-  border-radius: 10px;
-  margin-bottom: 30px;
-  margin-left: 25%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 50%;
-  gap: 10px;
-}
-
-#campoAreaAtuacao label {
-  font-family: sans-serif;
-  font-size: 15px;
-  margin-left: 10px;  
-}
-
-.formContainer .inputText {
-  border-radius: 5px;
-  height: 4.5vh;
-  margin-left: 10px;
-  margin-bottom: 20px;
-  margin-top: 10px;
-  margin-right: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: space-between;
-} */
-
-/* .filtro {   
-  Botão filtrar
-} */
-
-/* .formBtn {
-  padding: 4px 4px;
-  border-radius: 5px;
-  margin: 14px 0px 0px;
-  width: 100%;
-  cursor: pointer;
-} */
-/* Fim da área de filtro */
-
-/* área de vagas */
 
 #listaSection {
   display: flex;
