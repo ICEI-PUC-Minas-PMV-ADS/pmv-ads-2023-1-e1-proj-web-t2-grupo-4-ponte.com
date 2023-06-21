@@ -32,7 +32,7 @@ let listadevagas = [
   {
     ONG: "Quatro Patas",
     nomeVaga: "Social Media",
-    localVaga: "CE",
+    localVaga: "Boa Viagem",
     periodoVaga: "10/06/23 - 10/06/24",
     descricaoVaga:
       "Estamos em busca de uma pessoa criativa e engajada para gerenciar nossas redes sociais, criar conteúdos relevantes e impactantes, e promover nossa causa animal. Se você é apaixonado(a) por animais e tem habilidades em marketing digital, essa vaga é para você!",
@@ -40,7 +40,7 @@ let listadevagas = [
   {
     ONG: "Quatro Patas",
     nomeVaga: "Financeiro",
-    localVaga: "CE",
+    localVaga: "Boa Viagem",
     periodoVaga: "10/06/23 - 10/06/24",
     descricaoVaga:
       "Estamos montando uma equipe financeira para cuidar das finanças da ONG. Se você possui experiência na área financeira, tem habilidades em gestão financeira e quer contribuir com a causa animal, venha fazer parte do nosso time!",
@@ -48,7 +48,7 @@ let listadevagas = [
   {
     ONG: "Quatro Patas",
     nomeVaga: "Voluntário de Eventos",
-    localVaga: "CE",
+    localVaga: "Boa Viagem",
     periodoVaga: "10/06/23 - 10/06/24",
     descricaoVaga:
       "Precisamos de pessoas voluntárias para auxiliar na produção dos eventos solidários realizados pela ONG. Se você gosta de trabalhar em equipe, tem habilidades em organização e quer contribuir para o sucesso dos nossos eventos, venha fazer parte do nosso time!",
@@ -180,8 +180,9 @@ console.log(estadosFiltrados); */
 
 /*  */
 
-var vagasCE = listadevagas.filter(function(vaga) {
+/* var vagasCE = listadevagas.filter(function(vaga) {
   return vaga.localVaga === "CE";
 });
 
 console.log(vagasCE);
+ */

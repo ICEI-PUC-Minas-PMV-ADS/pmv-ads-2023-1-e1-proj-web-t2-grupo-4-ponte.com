@@ -221,6 +221,10 @@ body #principal {
   padding: 0.5rem;
 }
 
+.link-vaga {
+  color: inherit;
+}
+
 #listaSection .campo-vagas {
   margin-bottom: 1.5rem;
 }

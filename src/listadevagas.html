@@ -277,13 +277,15 @@
         vagas.forEach(function (vaga) {
           listaHtml += `
             <div class="campo-vagas">
-              <h3 class="nomeVaga">${vaga.nomeVaga}</h3>
-              <ul>
-                <li>ONG: ${vaga.ONG}</li>
-                <li>Local: ${vaga.localVaga}</li>
-                <li>${vaga.periodoVaga}</li>
-                <li>${vaga.descricaoVaga}</li>
-              </ul>
+              <a href="${vaga.link}" target="_blank" class="link-vaga">
+                <h3 class="nomeVaga">${vaga.nomeVaga}</h3>
+              </a> 
+                <ul>
+                  <li>ONG: ${vaga.ONG}</li>
+                  <li>Local: ${vaga.localVaga}</li>
+                  <li>${vaga.periodoVaga}</li>
+                  <li>${vaga.descricaoVaga}</li>
+                </ul>
             </div>
           `;
         });
