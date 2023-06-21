@@ -2,36 +2,34 @@ function login() {
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
 
+  //console.log("Email:", email);
+  //console.log("Senha:", password);
+
   // Verificar se os campos estão preenchidos
   if (email.trim() === "" || password.trim() === "") {
     alert("Preencha os campos com seu e-mail e senha");
     return;
   }
 
-  // Requisição para obter os dados dos usuários
-  var usersPromises = [
-    fetch("perfilVol.js").then((response) => response.json()),
-    fetch("perfilONG.js").then((response) => response.json()),
-  ];
+  // Carregar os dados dos usuários diretamente das variáveis perfilONG e perfilVol
+  var usuariosONG = perfilONG;
+  var usuariosVol = perfilVol;
 
-  Promise.all(usersPromises)
-    .then((usersArrays) => {
-      var usuarios = usersArrays.flat(); // Combina em um único array
-      var usuario = usuarios.find((usuario) => usuario.email === email);
+  var usuarioONG = usuariosONG.find((usuario) => usuario.email === email);
+  var usuarioVol = usuariosVol.find((usuario) => usuario.email === email);
 
-      if (usuario && usuario.senha === password) {
-        // Login bem-sucedido
-        alert("Login realizado");
-        // Redireciona o usuário para outra página
-        window.location.href = "./paginaPerfilLog.html";
-      } else {
-        // Credenciais inválidas
-        alert("E-mail ou senha inválidos");
-      }
-    })
-
-    .catch((error) => {
-      // Lidar com erros de requisição
-      console.error("Erro ao obter dados de usuários:", error);
-    });
+  if (usuarioONG && usuarioONG.senha === password) {
+    // Login de ONG bem-sucedido
+    alert("Login de ONG realizado");
+    // Redireciona o usuário para outra página
+    //window.location.href = "./paginaPerfilLog.html";
+  } else if (usuarioVol && usuarioVol.senha === password) {
+    // Login de voluntário bem-sucedido
+    alert("Login de voluntário realizado");
+    // Redireciona o usuário para outra página
+    //window.location.href = "./paginaPerfilLog.html";
+  } else {
+    // Login inválido
+    alert("E-mail ou senha inválidos. Tente novamente");
+  }
 }
