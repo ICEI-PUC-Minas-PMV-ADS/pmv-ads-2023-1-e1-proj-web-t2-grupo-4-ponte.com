@@ -132,19 +132,15 @@
           ></textarea>
         </div>
 
-        <!-- <div id="fotoPerfil" class="regiaoInput">
-          <label for="foto" class="labels labelData"
-            >Adicione uma foto ao seu perfil:</label
-          >
+        <div id="interesses">
+          <label for="inputInteresse">interesse para trabalho voluntário:</label>
           <input
-            type="file"
-            accept="img/*"
-            alt="imagem do perfil"
-            class="textArea"
-            id="imagemPerfil"
-            title="carregue uma imagem"
+            type="password"
+            name="senhaUsuario"
+            id="interesseUsuario"
+            class="inputText inputData"
           />
-        </div> -->
+        </div>
 
         <div id="botoesInfBasica" class="btnArea">
           <button type="submit" class="formBtn" id="salvarUser">salvar</button>
@@ -184,7 +180,7 @@
               step="1"
               value="1"
             />
-             <!-- <output for="campoPrioridade" id="valorPrioridade">1</output>
+              <output for="campoPrioridade" id="valorPrioridade">1</output>
           </div>
 
           <div id="botoes" class="btnArea">
@@ -221,6 +217,7 @@
           id="experiencias"
           class="formConainer formContainerGrande"
         >
+
           <div id="campoAreaAtuacao">
             <label for="areaAtuacao" class="labelForm">área de atuação:</label>
             <input
@@ -233,11 +230,22 @@
           </div>
 
           <div id="campoLocalAtuacao">
-            <label for="localAtuacao" class="">local onde atuou:</label>
+            <label for="localAtuacao" class="">instituição onde atuou:</label>
+            <input
+              type="text"
+              name="instituicaoAtuacao"
+              id="instituicaoAtuacao"
+              class="inputText inputData"
+              placeholder="Informe a instituição"
+            />
+          </div>
+
+          <div id="campoLocalAtuacao">
+            <label for="localAtuacao" class="">endereço do local onde atuou:</label>
             <input
               type="text"
               name="localAtuacao"
-              id="localAtuacao"
+              id="enderecoAtuacao"
               class="inputText inputData"
               placeholder="Informe o local onde atuou"
             />
@@ -285,13 +293,38 @@
           </div>
 
           <div id="btnArea" class="btnArea">
-            <button id="btnSalvar" class="formBtn">salvar</button>
+            <button id="btnSalvarXp" class="formBtn">salvar</button>
             <button id="btnLimpar" type="reset" class="formBtn">limpar</button>
           </div>
         </form>
 
-        <div class="listaDetalhes" id="listaDetalhes">
-          <h3 class="titulosH3">experiências</h3>
+        <div class="listaExp listaDetalhes" id="listaDetalhes">
+          <!-- <h3 class="titulosH3">experiências</h3> -->
+
+           <!-- <div class="campoDetalhe" class="cardExp" id="cardExp">
+
+                <h2 class="titulosH3">Experiencia 1</h2>
+
+                <ul>
+                  <li id="areaAtuacao">área de atuação: informática</li>
+                  <li id="cidadeAtuacao">cidade onde atuou: </li>
+                  <li id="instituicaoAtuacao">instituição:</li>
+                  <li id="cargoAtuacao">cargo que ocupou:</li>
+
+                  <li id="inicioAtuacao">de: dd/mm/aa </li>
+                  <li id="fimAtuacao">até: dd/mm/aa</li>
+
+
+                  <li id="descricao">descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore amet blanditiis itaque neque nostrum dolorem, aliquid praesentium labore soluta doloremque in fugit nemo exercitationem expedita? Voluptates reprehenderit delectus facilis fugit?</li>
+                </ul>
+
+                <div class="groupBtn" class="btnArea" id="btnArea">
+                    <button type="submit" class="formBtn">editar</button>
+                    <button type="submit" class="formBtn" title="excluir">excluir</button>
+                </div>
+
+              </div> -->
+
         </div>
       </div>
 
