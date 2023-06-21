@@ -34,13 +34,13 @@ main {
   margin-bottom: 2rem;
 }
 
-.cabecalho {
+.cabecalhoONG {
   display: flex;
   flex-direction: column;
   margin-top: 40px;
 }
 
-.cabecalho #tagUsuario {
+.cabecalhoONG #tagUsuario {
   font-size: var(--mediumFontSize);
   background: #fdc886;
   padding: 0.3rem;
@@ -50,7 +50,7 @@ main {
   text-transform: uppercase;
 }
 
-.cabecalho .cabecalhoBio #nomeUsuario {
+.cabecalhoONG .cabecalhoBio #nomeUsuario {
   font-size: var(--titleFontSize);
   font-weight: var(--textCallsWeight);
   margin-top: 0.5rem;
@@ -58,41 +58,41 @@ main {
   padding: 0;
 }
 
-.cabecalho .cabecalhoBio #bio {
+.cabecalhoONG .cabecalhoBio #bio {
   margin-bottom: 0;
   text-align: justify;
 }
 
-.cabecalho .cabecalhoInteresses {
+.cabecalhoONG .cabecalhoInteresses {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 1rem;
 }
 
-.cabecalho .cabecalhoInteresses h3 {
+.cabecalhoONG .cabecalhoInteresses h3 {
   font-size: var(--mediumFontSize);
 }
 
-.cabecalho #campoInteresse {
+.cabecalhoONG #campoInteresse {
   list-style: none;
   display: flex;
   flex-direction: row;
   padding-left: 1rem;
 }
 
-.cabecalho #campoInteresse li {
+.cabecalhoONG #campoInteresse li {
   margin-left: 0;
   margin-right: 0.5rem;
 }
 
-.cabecalho .cabecalhoInteresses li:not(:last-child)::after {
+.cabecalhoONG .cabecalhoInteresses li:not(:last-child)::after {
   content: ", ";
 }
 
 /* BOTÕES DE CONTATO */
 
-.cabecalho .contato {
+.cabecalhoONG .contato {
     display: flex;
     flex-direction: row;
     margin-top: 1rem;
@@ -101,29 +101,29 @@ main {
     align-items: center;
 }
 
-.cabecalho .contato .social {
+.cabecalhoONG .contato .social {
     margin-left: 5px;
 }
 
-.cabecalho .contato .social .socialButton {
+.cabecalhoONG .contato .social .socialButton {
     padding: 5px;
 }
 
-.cabecalho .contato .social a:hover{
+.cabecalhoONG .contato .social a:hover{
     opacity: 70%;
   }
 
-.cabecalho .contato .social a, a:visited{
+.cabecalhoONG .contato .social a, a:visited{
     color: inherit;
   }
 
 /* CONTEUDO */
 
-.conteudo-perfil {
+.conteudo-perfilONG {
   margin-top: 20px;
 }
 
-.conteudo-perfil .titulo {
+.conteudo-perfilONG .titulo {
   font-size: var(--largeFontSize);
   background: #fdc886;
   padding: 0.3rem;
@@ -132,20 +132,20 @@ main {
   margin-bottom: 0.5rem;
 }
 
-.conteudo-perfil h2 {
+.conteudo-perfilONG h2 {
   font-size: var(--largeFontSize);
   padding: 0.3rem;
   margin-bottom: 0.3rem;
   text-transform: uppercase;
 }
 
-.conteudo-perfil h3 {
+.conteudo-perfilONG h3 {
   font-size: var(--mediumFontSize);
   margin-bottom: 0.5rem;
 }
 
 /* AÇÕES */
-.listaAcoes {
+.conteudo-perfilONG .listaAcoes {
   height: 40vh;
   overflow: hidden;
   overflow-y: scroll;
@@ -158,22 +158,22 @@ main {
   padding-left: 0.3rem;
 }
 
-.listaAcoes .campoAcoes ul {
+.conteudo-perfilONG .listaAcoes .campoAcoes ul {
   padding-left: 0;
 }
 
-.listaAcoes .campoAcoes ul li {
+.conteudo-perfilONG .listaAcoes .campoAcoes ul li {
   margin-bottom: 0.5rem;
   list-style: none;
 }
 
-.listaAcoes .campoAcoes ul li:last-child {
+.conteudo-perfilONG .listaAcoes .campoAcoes ul li:last-child {
   /* background-color: #333; */
   padding-bottom: 0.5rem;
 }
 
 /* VAGAS ABERTAS */
-.listaVagas {
+.conteudo-perfilONG .listaVagas {
     height: 40vh;
     overflow: hidden;
     overflow-y: scroll;
@@ -186,16 +186,16 @@ main {
     padding-left: 0.3rem;
   }
   
-  .listaVagas .campoVagas ul {
+.conteudo-perfilONG .listaVagas .campoVagas ul {
     padding-left: 0;
   }
   
-  .listaVagas .campoVagas ul li {
+.conteudo-perfilONG .listaVagas .campoVagas ul li {
     margin-bottom: 0.5rem;
     list-style: none;
   }
   
-  .listaVagas .campoVagas ul li:last-child {
+.conteudo-perfilONG .listaVagas .campoVagas ul li:last-child {
     /* background-color: #333; */
     padding-bottom: 0.5rem;
   }

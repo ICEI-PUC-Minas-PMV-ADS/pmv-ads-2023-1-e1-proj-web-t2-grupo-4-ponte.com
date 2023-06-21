@@ -20,14 +20,16 @@ function login() {
 
   if (usuarioONG && usuarioONG.senha === password) {
     // Login de ONG bem-sucedido
+    localStorage.setItem("usuarioLog", JSON.stringify(usuarioONG));
     alert("Login de ONG realizado");
     // Redireciona o usuário para outra página
-    //window.location.href = "./paginaPerfilLog.html";
+    window.location.href = "./paginaPerfilLog.html";
   } else if (usuarioVol && usuarioVol.senha === password) {
     // Login de voluntário bem-sucedido
+    localStorage.setItem("usuarioLog", JSON.stringify(usuarioVol));
     alert("Login de voluntário realizado");
     // Redireciona o usuário para outra página
-    //window.location.href = "./paginaPerfilLog.html";
+    window.location.href = "./paginaPerfilLog.html";
   } else {
     // Login inválido
     alert("E-mail ou senha inválidos. Tente novamente");

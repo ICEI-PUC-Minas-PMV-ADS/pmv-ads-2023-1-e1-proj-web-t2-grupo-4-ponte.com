@@ -34,13 +34,13 @@ main {
   margin-bottom: 2rem;
 }
 
-.cabecalho {
+.cabecalhoVol {
   display: flex;
   flex-direction: column;
   margin-top: 40px;
 }
 
-.cabecalho #tagUsuario {
+.cabecalhoVol #tagUsuario {
   font-size: var(--mediumFontSize);
   background: #fdc886;
   padding: 0.3rem;
@@ -50,7 +50,7 @@ main {
   text-transform: uppercase;
 }
 
-.cabecalho .cabecalhoBio #nomeUsuario {
+.cabecalhoVol .cabecalhoBio #nomeUsuario {
   font-size: var(--titleFontSize);
   font-weight: var(--textCallsWeight);
   margin-top: 0.5rem;
@@ -58,12 +58,12 @@ main {
   padding: 0;
 }
 
-.cabecalho .cabecalhoBio #bio {
+.cabecalhoVol .cabecalhoBio #bio {
   margin-bottom: 0;
   text-align: justify;
 }
 
-.cabecalho .cabecalhoInteresses {
+.cabecalhoVol .cabecalhoInteresses {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -71,33 +71,33 @@ main {
   margin-bottom: 1.5rem;
 }
 
-.cabecalho .cabecalhoInteresses h3 {
+.cabecalhoVol .cabecalhoInteresses h3 {
   font-size: var(--mediumFontSize);
 }
 
-.cabecalho #campoInteresse {
+.cabecalhoVol #campoInteresse {
   list-style: none;
   display: flex;
   flex-direction: row;
   padding-left: 1rem;
 }
 
-.cabecalho #campoInteresse li {
+.cabecalhoVol #campoInteresse li {
   margin-left: 0;
   margin-right: 0.5rem;
 }
 
-.cabecalho .cabecalhoInteresses li:not(:last-child)::after {
+.cabecalhoVol .cabecalhoInteresses li:not(:last-child)::after {
   content: ", ";
 }
 
 /* CONTEUDO */
 
-.conteudo-perfil {
+.conteudo-perfilVol {
   margin-top: 20px;
 }
 
-.conteudo-perfil .titulo {
+.conteudo-perfilVol .titulo {
   font-size: var(--largeFontSize);
   background: #fdc886;
   padding: 0.3rem;
@@ -106,20 +106,20 @@ main {
   margin-bottom: 0.5rem;
 }
 
-.conteudo-perfil h2 {
+.conteudo-perfilVol h2 {
   font-size: var(--largeFontSize);
   padding: 0.3rem;
   margin-bottom: 0.3rem;
   text-transform: uppercase;
 }
 
-.conteudo-perfil h3 {
+.conteudo-perfilVol h3 {
   font-size: var(--mediumFontSize);
   margin-bottom: 0.5rem;
 }
 
 /* QUALIFICAÇÃO */
-.listaQuali {
+.conteudo-perfilVol .listaQuali {
   height: 25vh;
   overflow: hidden;
   overflow-y: scroll;
@@ -132,22 +132,22 @@ main {
   padding-left: 0.3rem;
 }
 
-.listaQuali .campoQuali ul {
+.conteudo-perfilVol .listaQuali .campoQuali ul {
   padding-left: 0;
 }
 
-.listaQuali .campoQuali ul li {
+.conteudo-perfilVol .listaQuali .campoQuali ul li {
   margin-bottom: 0.5rem;
   list-style: none;
 }
 
-.listaQuali .campoQuali ul li:last-child {
+.conteudo-perfilVol .listaQuali .campoQuali ul li:last-child {
   /* background-color: #333; */
   padding-bottom: 0.5rem;
 }
 
 /* EXPERIÊNCIAS */
-.listaExp {
+.conteudo-perfilVol .listaExp {
   height: 25vh;
   overflow: hidden;
   overflow-y: scroll;
@@ -160,17 +160,17 @@ main {
   padding-left: 0.3rem;
 }
 
-.listaExp .campoExp ul {
+.conteudo-perfilVol .listaExp .campoExp ul {
   padding-left: 0;
 }
 
-.listaExp .campoExp ul li {
+.conteudo-perfilVol .listaExp .campoExp ul li {
   /* background-color: #333; */
   margin-bottom: 0.5rem;
   list-style: none;
 }
 
-.listaExp .campoExp ul li:last-child {
+.conteudo-perfilVol .listaExp .campoExp ul li:last-child {
   /* background-color: #333; */
   padding-bottom: 0.5rem;
 }

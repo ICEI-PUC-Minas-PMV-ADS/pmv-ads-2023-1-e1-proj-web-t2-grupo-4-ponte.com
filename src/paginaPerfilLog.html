@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./cssStyle/paginaPerfilONG-style.css" />
+    <link rel="stylesheet" href="./cssStyle/paginaPerfilVol-style.css" />
     <link rel="stylesheet" href="./componentes/navbar-style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,6 +18,7 @@
       crossorigin="anonymous"
     ></script>
     <script defer src="./componentes/navbar-script.js"></script>
+    <script defer src="./jsScripts/login.js"></script>
     <script defer src="./jsScripts/perfilONG.js"></script>
     <script defer src="./jsScripts/perfilVol.js"></script>
     <link rel="icon" type="image/png" href="img/iconPonte.png" />
@@ -122,95 +124,182 @@
         const profileSection = document.getElementById("profileSection");
 
         const perfilONG = JSON.parse(localStorage.getItem("perfilONG"));
+        const perfilVol = JSON.parse(localStorage.getItem("perfilVol"));
 
-        if (perfilONG && perfilONG.length > 0) {
-          const profile = perfilONG[0];
+        // Usuário logado
+        const usuarioLog = JSON.parse(localStorage.getItem("usuarioLog"));
 
-          document.title = profile.nomeUsuarioONG;
+        if (usuarioLog) {
+          const usuarioONG = perfilONG.find(
+            (usuario) => usuario.email == usuarioLog.email
+          );
+          const usuarioVol = perfilVol.find(
+            (usuario) => usuario.email == usuarioLog.email
+          );
 
-          const profileHtml = ` 
-            <div class="cabecalho">
-                  <h3 id="tagUsuario">${profile.tagUsuario}</h3>
-                  <section class="cabecalhoBio">
-                    <h1 id="nomeUsuario">${profile.nomeUsuarioONG}</h1>
-                    <p id="bio">
-                      ${profile.textoBio}
-                    </p>
-                  </section>
-                  <div class="cabecalhoInteresses">
-                    <h3>Causas:</h3>
-                    <ul id="campoInteresse">
-                      ${profile.interesses
-                        .map((interesse) => `<li>${interesse}</li>`)
-                        .join("")}
-                    </ul>
-                  </div>
-                  <div class="contato">
-                    <h3>Contato:</h3>
-                    <div class="social">
-                      <a href="${profile.facebook}" class="socialButton"
-                        ><i class="fa-brands fa-facebook fa-2xl"></i
-                      ></a>
-                      <a href="${profile.instagram}" class="socialButton"
-                        ><i class="fa-brands fa-instagram fa-2xl"></i
-                      ></a>
-                      <a
-                        href="https://web.whatsapp.com/send?phone=${
-                          profile.whatsapp
-                        }"
-                        class="socialButton"
-                      >
-                        <i class="fa-brands fa-whatsapp fa-2xl"></i
-                      ></a>
+          if (usuarioONG) {
+            document.title = usuarioONG.nomeUsuarioONG;
+
+            const profileHtml = ` 
+              <div class="cabecalhoONG">
+                    <h3 id="tagUsuario">${usuarioONG.tagUsuario}</h3>
+                    <section class="cabecalhoBio">
+                      <h1 id="nomeUsuario">${usuarioONG.nomeUsuarioONG}</h1>
+                      <p id="bio">
+                        ${usuarioONG.textoBio}
+                      </p>
+                    </section>
+                    <div class="cabecalhoInteresses">
+                      <h3>Causas:</h3>
+                      <ul id="campoInteresse">
+                        ${usuarioONG.interesses
+                          .map((interesse) => `<li>${interesse}</li>`)
+                          .join("")}
+                      </ul>
                     </div>
+                    <div class="contato">
+                      <h3>Contato:</h3>
+                      <div class="social">
+                        <a href="${usuarioONG.facebook}" class="socialButton"
+                          ><i class="fa-brands fa-facebook fa-2xl"></i
+                        ></a>
+                        <a href="${usuarioONG.instagram}" class="socialButton"
+                          ><i class="fa-brands fa-instagram fa-2xl"></i
+                        ></a>
+                        <a
+                          href="https://web.whatsapp.com/send?phone=${
+                            usuarioONG.whatsapp
+                          }"
+                          class="socialButton"
+                        >
+                          <i class="fa-brands fa-whatsapp fa-2xl"></i
+                        ></a>
+                      </div>
+                    </div>
+              </div>
+              <div class="conteudo-perfilONG">
+                <h2 class="titulo">Ações</h2>
+                <section class="acoes">
+                  <div class="listaAcoes">
+                    ${usuarioONG.acoes
+                      .map(
+                        (acao) => `
+                        <div class="campoAcoes">
+                          <h3 id="nomeAcao">${acao.nomeAcao}</h3>
+                          <ul>
+                            <li id="periodoAcao">${acao.periodoAcao}</li>
+                            <li id="descricaoAcao">
+                              ${acao.descricaoAcao}
+                            </li>
+                          </ul>
+                        </div>
+                      `
+                      )
+                      .join("")}
                   </div>
-            </div>
-            <div class="conteudo-perfil">
-              <h2 class="titulo">Ações</h2>
-              <section class="acoes">
-                <div class="listaAcoes">
-                  ${profile.acoes
-                    .map(
-                      (acao) => `
-                      <div class="campoAcoes">
-                        <h3 id="nomeAcao">${acao.nomeAcao}</h3>
-                        <ul>
-                          <li id="periodoAcao">${acao.periodoAcao}</li>
-                          <li id="descricaoAcao">
-                            ${acao.descricaoAcao}
-                          </li>
-                        </ul>
-                      </div>
-                    `
-                    )
-                    .join("")}
-                </div>
-              </section>
-              <h2 class="titulo">Vagas abertas</h2>
-              <section class="vagasAbertas">
-                <div class="listaVagas">
-                  ${profile.vagasAbertas
-                    .map(
-                      (vaga) => `
-                      <div class="campoVagas">
-                        <h3 id="nomeVaga">${vaga.nomeVaga}</h3>
-                        <ul>
-                          <li id="localVaga">${vaga.localVaga}</li>
-                          <li id="periodoVaga">${vaga.periodoVaga}</li>
-                          <li id="descricaoVaga">
-                            ${vaga.descricaoVaga}
-                          </li>
-                        </ul>
-                      </div>
-                    `
-                    )
-                    .join("")}
-                </div>
-              </section>
-            </div>
-            `;
+                </section>
+                <h2 class="titulo">Vagas abertas</h2>
+                <section class="vagasAbertas">
+                  <div class="listaVagas">
+                    ${usuarioONG.vagasAbertas
+                      .map(
+                        (vaga) => `
+                        <div class="campoVagas">
+                          <h3 id="nomeVaga">${vaga.nomeVaga}</h3>
+                          <ul>
+                            <li id="localVaga">${vaga.localVaga}</li>
+                            <li id="periodoVaga">${vaga.periodoVaga}</li>
+                            <li id="descricaoVaga">
+                              ${vaga.descricaoVaga}
+                            </li>
+                          </ul>
+                        </div>
+                      `
+                      )
+                      .join("")}
+                  </div>
+                </section>
+              </div>
+              `;
 
-          profileSection.innerHTML = profileHtml;
+            profileSection.innerHTML = profileHtml;
+          } else if (usuarioVol) {
+            document.title = usuarioVol.nomeUsuarioVol;
+
+            const profileHtml = `
+                    <div class="cabecalhoVol">
+                      <h3 id="tagUsuario">${usuarioVol.tagUsuario}</h3>
+                            <section class="cabecalhoBio">
+                                <h1 id="nomeUsuario">${
+                                  usuarioVol.nomeUsuario
+                                }</h1>
+                                <p id="bio">${usuarioVol.textoBio}</p>
+                                <div class="cabecalhoInteresses">
+                                  <h3>Interesses:</h3>
+                                  <ul id="campoInteresse">
+                                      ${usuarioVol.interesses
+                                        .map(
+                                          (interesse) => `
+                                      <li>${interesse}</li>
+                                      `
+                                        )
+                                        .join("")}
+                                  </ul>
+                                </div>
+                            </section>
+                    </div>
+                    <div class="conteudo-perfilVol">
+                      <h2 class="titulo">Qualificação e Experiências</h2>
+                      <section class="qualificacao">
+                          <h2>Qualificação</h2>
+                          <div class="listaQuali">
+                            ${usuarioVol.qualificacao
+                              .map(
+                                (qualificacao) => `
+                            <div class="campoQuali">
+                              <h3>${qualificacao.nomeQuali}</h3>
+                              <ul>
+                                  <li>Tipo do curso: ${qualificacao.tipoQuali}</li>
+                                  <li>Instituição: ${qualificacao.instituicaoQuali}</li>
+                                  <li>Área do curso: ${qualificacao.areaQuali}</li>
+                                  <li>Período: ${qualificacao.periodoQuali}</li>
+                              </ul>
+                            </div>
+                            `
+                              )
+                              .join("")}
+                          </div>
+                      </section>
+                      <h2>Experiências</h2>
+                      <div class="listaExp">
+                        ${usuarioVol.experiencias
+                          .map(
+                            (experiencias) => `
+                          <div class="campoExp">
+                            <h3>${experiencias.nomeExp}</h3>
+                            <ul>
+                                <li>Cargo: ${experiencias.cargoExp}</li>
+                                <li>Local: ${experiencias.localExp}</li>
+                                <li>Período: ${experiencias.periodoExp}</li>
+                                <li>
+                                  Descrição: ${experiencias.descricaoExp}
+                                </li>
+                            </ul>
+                          </div> 
+                        `
+                          )
+                          .join("")}
+                      </div>
+                    </div>
+                `;
+
+            profileSection.innerHTML = profileHtml;
+          }
+        } else {
+          // Nenhum usuário logado
+          alert("Nenhum usuário logado");
+          // Redirecionar o usuário para a página de login
+          // window.location.href = "./pagina-login.html";
         }
       });
     </script>
