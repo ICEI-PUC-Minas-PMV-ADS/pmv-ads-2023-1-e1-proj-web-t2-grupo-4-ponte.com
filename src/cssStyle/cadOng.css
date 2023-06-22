@@ -32,12 +32,13 @@ body #principal {
   background-color: var(--bgColor);
   height:fit-content;
   margin-top: 3rem;
-  height: fit-content;
+
 }
 
 body footer{
   background-color: #333;
   color: #fff;
+
 }
 
 
@@ -187,15 +188,15 @@ body footer{
 
 
 #principal #containerAcoes{
-  display: flex;
+   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   /* margin-top: 100px; */
-  height: fit-content;
-  margin: 10px 0px 100px 0px;
+  /* height: 40VH; */
+   margin: 50px auto 50px auto;
 
-  /* background-color: coral; */
+   background-color: coral;
 }
 
 #principal #containerAcoes #formAcoes{
@@ -214,12 +215,12 @@ body footer{
 
 #principal #containerAcoes #formAcoes #inputArea input {
   width: 100%;
-  height: 40px;
+  height: 30px;
 }
 
 #principal #containerAcoes #formAcoes #inputArea label{
   display: block;
-  margin-left: 0px;
+  margin-top: 20px;
 
 
 }
@@ -240,7 +241,11 @@ body footer{
   border-radius: 5px;
 }
 
-
+#principal #containerAcoes #formAcoes label{
+  display: block;
+  margin: 10px 0px 10px 0px;
+  color:#4a4a4a
+}
 
 #principal #containerAcoes #listaAcoes{
   padding: 20px;
@@ -281,6 +286,7 @@ body footer{
   padding: 10px;
   justify-content: flex-end;
   gap: 20px;
+
 }
 
 
@@ -299,8 +305,30 @@ body footer{
   justify-content: space-around;
 }
 
-#principal #formsContainer #containerVagas #formVagas{
+#principal #formsContainer #containerVagas #formVagas input, label{
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  /* margin: 10px; */
+  height: 30px;
+}
 
+#principal #formsContainer #containerVagas #formVagas label{
+  display: block;
+  margin: 10px 0px 10px 0px;
+  color:#4a4a4a
+}
+
+
+#principal #formsContainer #containerVagas #formVagas #btnArea{
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+  justify-content: flex-end;
+  margin-top: 30px;
 }
 
 

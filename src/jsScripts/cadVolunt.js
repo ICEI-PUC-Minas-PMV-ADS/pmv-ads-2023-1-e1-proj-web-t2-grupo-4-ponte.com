@@ -65,70 +65,70 @@ function salvarFormularioNoLocalStorage(formulario, id) {
 }
 
 
-function criarPopUpEditar() {
-  // Cria a div popUpEditar
-  var divPopUpEditar = document.createElement("div");
-  divPopUpEditar.setAttribute("class", "popUpEditar");
-  divPopUpEditar.setAttribute("id", "popUpEditar");
+// function criarPopUpEditar() {
+//   // Cria a div popUpEditar
+//   var divPopUpEditar = document.createElement("div");
+//   divPopUpEditar.setAttribute("class", "popUpEditar");
+//   divPopUpEditar.setAttribute("id", "popUpEditar");
 
-  // Cria o título "Editar Qualificação"
-  var tituloEditarQualificacao = document.createElement("h2");
-  tituloEditarQualificacao.innerText = "Editar Qualificação";
+//   // Cria o título "Editar Qualificação"
+//   var tituloEditarQualificacao = document.createElement("h2");
+//   tituloEditarQualificacao.innerText = "Editar Qualificação";
 
-  // Cria o formulário formEditarQualificacao
-  var formEditarQualificacao = document.createElement("form");
-  formEditarQualificacao.setAttribute("id", "formEditarQualificacao");
-  formEditarQualificacao.setAttribute("class", "formContainerGrande fo");
+//   // Cria o formulário formEditarQualificacao
+//   var formEditarQualificacao = document.createElement("form");
+//   formEditarQualificacao.setAttribute("id", "formEditarQualificacao");
+//   formEditarQualificacao.setAttribute("class", "formContainerGrande fo");
 
-  // Cria os elementos do formulário
-  var labels = ["Início do Curso:", "Fim do Curso:", "Instituição:", "Nome do Curso:", "Tipo de Curso:", "Área do Curso:"];
-  var inputIds = ["inicioCurso", "fimCurso", "nomeInstituicao", "nomeCurso", "tipoCurso", "areaCurso"];
+//   // Cria os elementos do formulário
+//   var labels = ["Início do Curso:", "Fim do Curso:", "Instituição:", "Nome do Curso:", "Tipo de Curso:", "Área do Curso:"];
+//   var inputIds = ["inicioCurso", "fimCurso", "nomeInstituicao", "nomeCurso", "tipoCurso", "areaCurso"];
 
-  for (var i = 0; i < labels.length; i++) {
-    var divElement = document.createElement("div");
-    var labelElement = document.createElement("label");
-    var inputElement = document.createElement("input");
+//   for (var i = 0; i < labels.length; i++) {
+//     var divElement = document.createElement("div");
+//     var labelElement = document.createElement("label");
+//     var inputElement = document.createElement("input");
 
-    labelElement.setAttribute("for", inputIds[i]);
-    labelElement.setAttribute("class", "labels");
-    labelElement.innerText = labels[i];
+//     labelElement.setAttribute("for", inputIds[i]);
+//     labelElement.setAttribute("class", "labels");
+//     labelElement.innerText = labels[i];
 
-    inputElement.setAttribute("type", "text");
-    inputElement.setAttribute("id", inputIds[i]);
-    inputElement.setAttribute("name", inputIds[i]);
-    inputElement.setAttribute("class", "inputText inputData");
-    inputElement.setAttribute("required", "required");
+//     inputElement.setAttribute("type", "text");
+//     inputElement.setAttribute("id", inputIds[i]);
+//     inputElement.setAttribute("name", inputIds[i]);
+//     inputElement.setAttribute("class", "inputText inputData");
+//     inputElement.setAttribute("required", "required");
 
-    divElement.appendChild(labelElement);
-    divElement.appendChild(inputElement);
-    formEditarQualificacao.appendChild(divElement);
-  }
+//     divElement.appendChild(labelElement);
+//     divElement.appendChild(inputElement);
+//     formEditarQualificacao.appendChild(divElement);
+//   }
 
-  // Cria os botões "Salvar" e "Cancelar"
-  var divGroupBtn = document.createElement("div");
-  divGroupBtn.setAttribute("class", "groupBtn");
+//   // Cria os botões "Salvar" e "Cancelar"
+//   var divGroupBtn = document.createElement("div");
+//   divGroupBtn.setAttribute("class", "groupBtn");
 
-  var btnSalvarEditar = document.createElement("button");
-  btnSalvarEditar.setAttribute("type", "submit");
-  btnSalvarEditar.setAttribute("id", "btnSalvarEditar");
-  btnSalvarEditar.innerText = "Salvar";
+//   var btnSalvarEditar = document.createElement("button");
+//   btnSalvarEditar.setAttribute("type", "submit");
+//   btnSalvarEditar.setAttribute("id", "btnSalvarEditar");
+//   btnSalvarEditar.innerText = "Salvar";
 
-  var btnCancelarEditar = document.createElement("button");
-  btnCancelarEditar.setAttribute("type", "button");
-  btnCancelarEditar.setAttribute("id", "btnCancelarEditar");
-  btnCancelarEditar.innerText = "Cancelar";
+//   var btnCancelarEditar = document.createElement("button");
+//   btnCancelarEditar.setAttribute("type", "button");
+//   btnCancelarEditar.setAttribute("id", "btnCancelarEditar");
+//   btnCancelarEditar.innerText = "Cancelar";
 
-  divGroupBtn.appendChild(btnSalvarEditar);
-  divGroupBtn.appendChild(btnCancelarEditar);
+//   divGroupBtn.appendChild(btnSalvarEditar);
+//   divGroupBtn.appendChild(btnCancelarEditar);
 
-  formEditarQualificacao.appendChild(divGroupBtn);
+//   formEditarQualificacao.appendChild(divGroupBtn);
 
-  // Adiciona os elementos à div popUpEditar
-  divPopUpEditar.appendChild(tituloEditarQualificacao);
-  divPopUpEditar.appendChild(formEditarQualificacao);
+//   // Adiciona os elementos à div popUpEditar
+//   divPopUpEditar.appendChild(tituloEditarQualificacao);
+//   divPopUpEditar.appendChild(formEditarQualificacao);
 
-  return divPopUpEditar;
-}
+//   return divPopUpEditar;
+// }
 
 
 function criaEstruturaCardCursos(){
@@ -573,7 +573,7 @@ document.addEventListener('DOMContentLoaded', function(e){
         inicioExp.innerText = inputInicio.value;
         fimExp.innerText = inputFim.value;
 
-
+0
        listaExp.appendChild(divContainerCard);
        e.preventDefault();
   });
@@ -585,17 +585,7 @@ document.addEventListener('DOMContentLoaded', function(e){
 });
 
 
-
-
-
-
-
-
-
-
 btnSalvarUser.addEventListener("click", function(e){
-  if(salvarFormularioNoLocalStorage(formInfUser, "formUser")){
-    alert("Dados Salvos");
-  }
-
+    salvarFormularioNoLocalStorage(formInfUser, "formUser");
+    e.preventDefault();
 });
