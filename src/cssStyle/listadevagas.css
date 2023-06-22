@@ -101,6 +101,23 @@ body #principal {
   margin-top: 40px;
 }
 
+.vagasSearch-txt {
+  width: 100%;
+  padding: 1em;
+  border: solid 1px #4a4a4a;
+  border-radius: 5px;
+  color: var(--titleColorDark);
+  opacity: 0.6;
+  font-size: 1em;
+  font-family: var(--fontSecondary);
+}
+
+#vagasSearchButton {
+  position: relative;
+  right: 1.4em;
+  top: 0.68em;
+}
+
 .containerVagas .vagasSearch {
   display: flex;
   flex-direction: row;
@@ -112,7 +129,7 @@ body #principal {
   margin-bottom: 40px;
 }
 
-.containerVagas .vagasSearch .vagasSearch-txt {
+.containerVagas .vagasSearch {
   font-size: var(--smallFontSize);
   color: var(--titleColorDark);
   border: none;
@@ -154,39 +171,41 @@ body #principal {
   text-transform: uppercase;
 }
 
+
+
 #listaSection {
   display: flex;
   flex-direction: column;
   overflow: hidden;
   overflow-y: scroll;
-  width: 800px;
+  max-width: 800px;
   max-height: 550px;
   box-shadow: 50px 70px 60px -80px #4a4a4a;
 }
 
-#listaSection .nomeVaga {
+#sessaoLista, .nomeVaga {
   background-color: #d9f8f2;
   padding: 0.5rem;
 }
 
-#listaSection .campo-vagas {
+#sessaoLista, .campo-vagas {
   margin-bottom: 1.5rem;
 }
 
-#listaSection .campo-vagas ul li {
+#sessaoLista, .campo-vagas ul li {
   /* background-color: #333; */
   margin: 0.5rem 0 0 0.4rem;
   list-style: none;
 }
 
-#listaSection .erro {
+#sessaoLista, .erro {
   padding: 1.5rem;
   text-align: center;
 }
 /* Fim da área de vagas */
 
 /* FOOTER */
-#decFooter img {
+#decFooter {
   opacity: 45%;
   width: 100%;
   margin-bottom: 0;
@@ -255,3 +274,26 @@ footer #footerContainer #formFooter input[type="submit"] {
 }
 
 /* FIM FOOTER */
+
+@media (max-width: 770px) 
+{
+  .vagasSearch-txt {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  #vagasSearchButton {
+    right: 16em;
+  }
+}
+
+@media (max-width: 330px) 
+{
+  * {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+  }
+}
