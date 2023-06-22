@@ -8,34 +8,15 @@
     <link rel="stylesheet" href="./componentes/navbar-style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!--<link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css"
-      rel="stylesheet"
-    /> -->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.min.js"
-      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/331a34d5ed.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/331a34d5ed.js" crossorigin="anonymous"></script>
     <script defer src="./componentes/navbar-script.js"></script>
     <script defer src="./jsScripts/perfilONG.js"></script>
     <script defer src="./jsScripts/perfilVol.js"></script>
     <script defer src="./jsScripts/listadevagas.js"></script>
     <link rel="icon" type="image/png" href="img/iconPonte.png" />
-    <title>Lista de Vagas</title>
+    <title>Lista de Vagas</title>    
   </head>
   <body>
     <!-- Navbar -->
@@ -77,8 +58,9 @@
         <li><a href="./index.html">Logout</a></li>
       </ul>
     </header>
-
+      
     <main id="principal">
+      
       <!-- Apresentação da página -->
       <div id="containerChamada">
         <div id="textoChamada">
@@ -89,10 +71,6 @@
           <p>
             Confira as vagas de voluntariado abertas e pesquise para encontrar
             as que mais combinam com você.
-            <!--Aqui estão algumas vagas que podem conectá-lo as ONGs que mais combinam com você. -->
-            <!-- <button class="roundBtn" title="clique para iniciar">
-              <i class="fa-solid fa-arrow-down fa-sm" style="color: #574e42"></i>
-            </button> -->
           </p>
         </div>
         <img src="img/Vagas.webp" alt="" />
@@ -117,99 +95,11 @@
         </div>
 
         <div id="xpListaContainer">
-          <!-- <div id="expForm" class="formContainer">
-            <div id="campoAreaAtuacao">
-              <label for="areaAtuacao" class="labelForm">Área de Atuação:</label>
-              <input type="text" name="areaAtuacao" id="areaAtuacao" class="inputText"/>
-            </div>
-        </div> -->
-          <!--         <div id="expForm" class="formContainer">
-          <div class="estados">
-            <label>Área de Atuação:</label>
-        </div>
-        <select id="estado">
-          <option value="AC">Acre</option>
-          <option value="AL">Alagoas</option>
-          <option value="AP">Amapá</option>
-          <option value="AM">Amazonas</option>
-          <option value="BA">Bahia</option>
-          <option value="CE">Ceará</option>
-          <option value="DF">Distrito Federal</option>
-          <option value="ES">Espírito Santo</option>
-          <option value="GO">Goiás</option>
-          <option value="MA">Maranhão</option>
-          <option value="MT">Mato Grosso</option>
-          <option value="MS">Mato Grosso do Sul</option>
-          <option value="MG">Minas Gerais</option>
-          <option value="PA">Pará</option>
-          <option value="PB">Paraíba</option>
-          <option value="PR">Paraná</option>
-          <option value="PE">Pernambuco</option>
-          <option value="PI">Piauí</option>
-          <option value="RJ">Rio de Janeiro</option>
-          <option value="RN">Rio Grande do Norte</option>
-          <option value="RS">Rio Grande do Sul</option>
-          <option value="RO">Rondônia</option>
-          <option value="RR">Roraima</option>
-          <option value="SC">Santa Catarina</option>
-          <option value="SP">São Paulo</option>
-          <option value="SE">Sergipe</option>
-          <option value="TO">Tocantins</option>
-        </select>
-        <script>
-          $(document).ready(function() {
-            $('#estado').select2();
-          });
-        </script>
-      </div>
-        
-        <div id="expForm" class="formContainer">
-          <div id="campoAreaAtuacao">
-            <label for="areaAtuacao" class="labelForm">Turno de Trabalho:</label>
-            <input type="text" name="areaAtuacao" id="areaAtuacao" class="inputText"/>
-          </div>
-        </div>
-        
-        <div id="expForm" class="formContainer">
-          <div id="campoAreaAtuacao">
-            <label for="areaAtuacao" class="labelForm">Carga Horária:</label>
-          <input type="text" name="areaAtuacao" id="areaAtuacao" class="inputText"/>
+          <section id="listaSection" class="sessaoLista"></section>
         </div>
       </div>
-      
-      <div id="expForm" class="formContainer">
-        <div id="campoAreaAtuacao">
-          <label for="areaAtuacao" class="labelForm">Instituição:</label>
-          <input type="text" name="areaAtuacao" id="areaAtuacao" class="inputText"/>
-        </div>
-      </div>
-      
-      <div id="expForm" class="formContainer">
-        <div id="campoAreaAtuacao">
-          <label for="areaAtuacao" class="labelForm">Nível de Experiência:</label>
-          <input type="text" name="areaAtuacao" id="areaAtuacao" class="inputText"/>
-        </div>
-      </div>
-
-      <div id="expForm" class="formContainer">
-        <div id="campoAreaAtuacao">
-          <label for="areaAtuacao" class="labelForm">Período:</label>
-          <input type="date" name="date" id="date" class="inputText"/>
-        </div>
-    </div>
-      
-      <div class="filtro">
-        <button type="filter" class="formBtn">Filtrar</button> -->
-          <!-- Fim área do filtro -->
-
-          <!-- Inicio da área de Vagas -->
-          <!--</div>
-      </div>-->
-          <section id="listaSection"></section>
-        </div>
-      </div>
-      <!-- Fim da área de Vagas -->
     </main>
+    <!-- Fim da área de Vagas -->
 
     <!-- decoração do footer -->
     <div id="decFooter">
@@ -264,65 +154,65 @@
       </div>
     </footer>
     <script>
-    window.addEventListener("DOMContentLoaded", function () {
-      const listaSection = document.getElementById("listaSection");
-      const searchInput = document.querySelector(".vagasSearch-txt");
+      window.addEventListener("DOMContentLoaded", function () {
+        const listaSection = document.getElementById("listaSection");
+        const searchInput = document.querySelector(".vagasSearch-txt");
 
-      const listadevagas = JSON.parse(localStorage.getItem("listadevagas"));
+        const listadevagas = JSON.parse(localStorage.getItem("listadevagas"));
 
-      //Cria o HTML das vagas na página
-      function mostrarVagas(vagas) {
-        let listaHtml = "";
-        vagas.forEach(function (vaga) {
-          listaHtml += `
-            <div class="campo-vagas">
-              <h3 class="nomeVaga">${vaga.nomeVaga}</h3>
-              <ul>
-                <li>ONG: ${vaga.ONG}</li>
-                <li>Local: ${vaga.localVaga}</li>
-                <li>${vaga.periodoVaga}</li>
-                <li>${vaga.descricaoVaga}</li>
-              </ul>
-            </div>
-          `;
-        });
-        listaSection.innerHTML = listaHtml;
-      }
+        //Cria o HTML das vagas na página
+        function mostrarVagas(vagas) {
+          let listaHtml = "";
+          vagas.forEach(function (vaga) {
+            listaHtml += `
+             <div class="campo-vagas">
+                <h3 class="nomeVaga">${vaga.nomeVaga}</h3>
+                <ul>
+                  <li>ONG: ${vaga.ONG}</li>
+                  <li>Local: ${vaga.localVaga}</li>
+                  <li>${vaga.periodoVaga}</li>
+                  <li>${vaga.descricaoVaga}</li>
+                </ul>
+              </div>
+            `;
+          });
+          listaSection.innerHTML = listaHtml;
+        }
 
-      //Pesquisa de vagas
-      if (listadevagas && listadevagas.length > 0) {
-        let searchQuery = "";
+        //Pesquisa de vagas
+        if (listadevagas && listadevagas.length > 0) {
+          let searchQuery = "";
 
-        function filtrarVagas(query) {
-          const filtroVagas = listadevagas.filter(function (vaga) {
+          function filtrarVagas(query) {
+            const filtroVagas = listadevagas.filter(function (vaga) {
             const nomeVaga = vaga.nomeVaga.toLowerCase();
             const ong = vaga.ONG.toLowerCase();
             const localVaga = vaga.localVaga.toLowerCase();
             const periodoVaga = vaga.periodoVaga.toLowerCase();
             const bioVaga = vaga.descricaoVaga.toLowerCase();
-            return (
-              nomeVaga.includes(query) ||
-              ong.includes(query) ||
-              localVaga.includes(query) ||
-              periodoVaga.includes(query) ||
-              bioVaga.includes(query)
-            );
-          });
-          if (filtroVagas.length > 0) {
-           mostrarVagas(filtroVagas);
-          } else {
-            listaSection.innerHTML = `<p class="erro">Nenhum resultado encontrado. Tente pesquisar por outros termos</p>`;
+              return (
+                nomeVaga.includes(query) ||
+                ong.includes(query) ||
+                localVaga.includes(query) ||
+                periodoVaga.includes(query) ||
+                bioVaga.includes(query)
+              );
+            });
+            if (filtroVagas.length > 0) {
+            mostrarVagas(filtroVagas);
+            } else {
+              listaSection.innerHTML = `<p class="erro">Nenhum resultado encontrado. Tente pesquisar por outros termos</p>`;
+            }
           }
-        }
 
-        searchInput.addEventListener("input", function (event) {
-          searchQuery = event.target.value.toLowerCase();
+          searchInput.addEventListener("input", function (event) {
+            searchQuery = event.target.value.toLowerCase();
+            filtrarVagas(searchQuery);
+         });
+
           filtrarVagas(searchQuery);
-        });
-
-        filtrarVagas(searchQuery);
-      }
-    });
-  </script>
+       }
+      });
+    </script>
   </body>
 </html>

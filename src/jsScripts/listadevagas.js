@@ -1,33 +1,3 @@
-/* function gerarVagas() {
-  var vagasAbertas = [
-    {
-      nomeVaga: "Social Media",
-      localVaga: "Boa Viagem",
-      periodoVaga: "10/06/23 - 10/06/24",
-      descricaoVaga:
-        "Estamos em busca de uma pessoa criativa e engajada para gerenciar nossas redes sociais, criar conteúdos relevantes e impactantes, e promover nossa causa animal. Se você é apaixonado(a) por animais e tem habilidades em marketing digital, essa vaga é para você!",
-    },
-    // Adicione mais objetos de vaga aqui, se necessário
-  ];
-
-  var listaVagas = document.querySelector(".listadevagas");
-
-  vagasAbertas.forEach(function (vaga) {
-    var vagaHTML = `
-      <hr>
-      <div class="campo-vagas">
-        <h2>${vaga.nomeVaga}</h2>
-        <ul>
-          <li>período: ${vaga.periodoVaga}</li>
-          <li>local: ${vaga.localVaga}</li>
-          <li>descrição: ${vaga.descricaoVaga}</li>
-        </ul>            
-      </div>`;
-
-    listaVagas.innerHTML += vagaHTML;
-  });
-} */
-
 let listadevagas = [
   {
     ONG: "Quatro Patas",
