@@ -3,6 +3,28 @@ document.querySelector("#menuButton").onclick = function () {
   document.querySelector("#menuDropdown").classList.toggle("visivel");
 };
 
+// Muda o link do menu de acordo com o usuário logado
+const editarDadosPag = document.querySelector("#editarDadosPag");
+
+const usuarioLog = JSON.parse(localStorage.getItem("usuarioLog"));
+const perfilONG = JSON.parse(localStorage.getItem("perfilONG"));
+const perfilVol = JSON.parse(localStorage.getItem("perfilVol"));
+
+if (usuarioLog && usuarioLog.email) {
+  const usuarioONG = perfilONG.find(
+    (usuario) => usuario.email === usuarioLog.email
+  );
+  const usuarioVol = perfilVol.find(
+    (usuario) => usuario.email === usuarioLog.email
+  );
+
+  if (usuarioONG !== undefined) {
+    editarDadosPag.href = "cadOng.html";
+  } else if (usuarioVol !== undefined) {
+    editarDadosPag.href = "cadVolunt.html";
+  }
+}
+
 //Pesquisa
 
 const searchInput = document.querySelector(".wrapperSearch-txt");
