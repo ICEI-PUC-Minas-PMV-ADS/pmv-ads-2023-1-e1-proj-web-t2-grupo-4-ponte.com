@@ -425,8 +425,6 @@ function addDadosEstruturaCardVagas(chave) {
 }
 
 
-
-
 function insereCardsNaListaVagas(conjuntoCards) {
 
    let listaVagas = document.querySelector("#listaVagas");
@@ -436,6 +434,8 @@ function insereCardsNaListaVagas(conjuntoCards) {
    }
 
 }
+
+
 
 document.addEventListener('DOMContentLoaded', function(e){
   let cardsPreenchidos = addDadosEstruturaCardVagas("vagas");
@@ -479,4 +479,10 @@ btnSalvarVaga.addEventListener("click", function(e){
 
         listaVagas.appendChild(divContainerCard);
         e.preventDefault();
+});
+
+
+btnSalvarVaga.addEventListener("click", function(e) {
+     e.preventDefault(); // Evita o comportamento padrão de recarregar a página
+    reloadParaAlvo("containerVagas");
 });
