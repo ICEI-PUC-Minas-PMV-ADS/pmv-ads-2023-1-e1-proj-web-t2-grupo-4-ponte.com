@@ -14,6 +14,8 @@ const formVagas = document.querySelector("#formVagas");
 const btnSalvarVaga = formVagas.querySelector("#btnSalvar");
 
 
+
+
 function insereCardsNaLista(conjuntoCards) {
 
    let listaAcoes = document.querySelector("#listaAcoes");
@@ -208,6 +210,79 @@ function addDadosEstruturaCardAcoes(chave) {
 }
 
 
+function criarEstruturaCardVagas(){
+
+// Cria a div principal com o ID "cardAcao"
+const divCardVaga = document.createElement('div');
+divCardVaga.id = 'cardVaga';
+
+// Cria o elemento h3 com o texto "Ação 1"
+const heading = document.createElement('h3');
+
+divCardVaga.appendChild(heading);
+
+// Cria a lista não ordenada (ul)
+const ul = document.createElement('ul');
+
+// Cria os itens da lista (li)
+const liDataInicio = document.createElement('li');
+liDataInicio.textContent = 'de:';
+liDataInicio.setAttribute("id","inicio");
+
+ul.appendChild(liDataInicio);
+
+const liDataFim = document.createElement('li');
+liDataFim.textContent = 'até:';
+liDataFim.setAttribute("id", "fim");
+ul.appendChild(liDataFim);
+
+const liLocal = document.createElement('li');
+liLocal.textContent = 'local:';
+liLocal.setAttribute("id","local");
+ul.appendChild(liLocal);
+
+const liTurno = document.createElement('li');
+liTurno.textContent = 'turno:';
+liTurno.setAttribute("id","turno");
+ul.appendChild(liTurno);
+
+divCardVaga.appendChild(ul);
+
+// Cria a div com o ID "btnArea"
+const divBtnArea = document.createElement('div');
+divBtnArea.id = 'btnArea';
+divBtnArea.setAttribute("class","btnArea");
+
+// Cria o botão "excluir"
+const btnExcluir = document.createElement('button');
+btnExcluir.textContent = 'excluir';
+btnExcluir.setAttribute("class","formBtn");
+
+divBtnArea.appendChild(btnExcluir);
+
+divCardVaga.appendChild(divBtnArea);
+
+
+    //  console.log(divCardAcao); OKK
+
+    btnExcluir.addEventListener("click", function(e){
+
+         let divGroupBtn = btnExcluir.parentNode;
+         let divCardVaga  = divGroupBtn.parentNode;
+
+          removeCardVagaLocalStorage(divCardVaga,"vagas");
+          divCardVaga.remove();
+      });
+
+
+
+     //  console.log(divContainerCard);
+       return(divCardVaga);
+}
+
+
+
+
 btnSalvarInfBasica.addEventListener("click", function(e){
   salvarFormularioNoLocalStorage(formInfBasica,"formInf");
 
@@ -220,14 +295,6 @@ btnSalvarContatos.addEventListener("click", function(e){
   e.preventDefault();
 });
 
-btnSalvarVaga.addEventListener("click", function(e){
-
-  salvarFormularioNoLocalStorage(formVagas, "vagas");
-  e.preventDefault();
-});
-
-
-
 
 document.addEventListener('DOMContentLoaded', function(e){
   let cardsPreenchidos = addDadosEstruturaCardAcoes("acoes");
@@ -235,6 +302,7 @@ document.addEventListener('DOMContentLoaded', function(e){
 
     e.preventDefault();
 });
+
 
 btnSalvarAcao.addEventListener("click", function(e){
 
@@ -267,9 +335,148 @@ btnSalvarAcao.addEventListener("click", function(e){
 
       listaAcoes.appendChild(divContainerCard);
       e.preventDefault();
-})
+});
+
 
 btnSalvarAcao.addEventListener("click", function(e) {
      e.preventDefault(); // Evita o comportamento padrão de recarregar a página
     reloadParaAlvo("containerAcoes");
+});
+
+
+
+
+
+
+
+
+function removeCardVagaLocalStorage(card, chave) {
+  var id = chave;
+  var dadosSalvos = localStorage.getItem(id);
+
+  if (dadosSalvos) {
+    var arrayDadosSalvos = JSON.parse(dadosSalvos);
+
+
+    var tituloDiv = card.querySelector("h3").innerText;
+    var inicio = card.querySelector("#inicio").innerText;
+    var fim = card.querySelector("#fim").innerText;
+    var turno = card.querySelector("#turno").innerText;
+
+
+
+    var indiceCard = arrayDadosSalvos.findIndex(function(dados) {
+      return (
+        dados.nomeVaga === tituloDiv &&
+        dados.inicioPeriodoAtuacao === inicio &&
+        dados.fimPeriodoAtuacao === fim &&
+        dados.turnoVaga === turno
+      );
+    });
+
+    if (indiceCard !== -1) {
+
+      arrayDadosSalvos.splice(indiceCard, 1);
+
+
+      localStorage.setItem(id, JSON.stringify(arrayDadosSalvos));
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+function addDadosEstruturaCardVagas(chave) {
+
+      let dados = JSON.parse(localStorage.getItem(chave));
+      let cardsPreenchidos = [];
+      // console.log(dados);
+
+      for(i=0;i<dados.length;i++){
+
+        let divContainerCard = criarEstruturaCardVagas();
+        let tituloDiv = divContainerCard.querySelector("h3");
+        let inicio = divContainerCard.querySelector("#inicio");
+        let fim = divContainerCard.querySelector("#fim");
+        let local = divContainerCard.querySelector("#local");
+        let turno = divContainerCard.querySelector("#turno");
+
+           tituloDiv.innerText = dados[i].nomeVaga;
+           inicio.innerText = dados[i].inicioPeriodoAtuacao;
+           fim.innerText = dados[i].fimPeriodoAtuacao;
+           local.innerText = dados[i].localVaga;
+           turno.innerText = dados[i].turno;
+
+          //  console.log(dados);
+
+          cardsPreenchidos[i] = divContainerCard;
+
+
+
+      }
+
+      return cardsPreenchidos;
+}
+
+
+
+
+function insereCardsNaListaVagas(conjuntoCards) {
+
+   let listaVagas = document.querySelector("#listaVagas");
+
+   for (let i = conjuntoCards.length - 1; i>=0; i--) {
+      listaVagas.appendChild(conjuntoCards[i]);
+   }
+
+}
+
+document.addEventListener('DOMContentLoaded', function(e){
+  let cardsPreenchidos = addDadosEstruturaCardVagas("vagas");
+   insereCardsNaListaVagas(cardsPreenchidos);
+
+    e.preventDefault();
+});
+
+
+
+
+btnSalvarVaga.addEventListener("click", function(e){
+
+  let listaVagas = document.querySelector("#listaVagas");
+
+      salvarFormularioNoLocalStorage(formVagas, "vagas");
+
+      let divContainerCard = criarEstruturaCardVagas();
+       //  console.log(divContainerCard); ok
+        let tituloDiv = divContainerCard.querySelector("h3");
+        let localVaga = divContainerCard.querySelector("#local");
+        let turnoVaga = divContainerCard.querySelector("#turno");
+        let inicio = divContainerCard.querySelector("#inicio");
+        let fim = divContainerCard.querySelector("#fim");
+
+        let inputNome = formVagas.querySelector("#nomeVaga");
+        let inputLocal = formVagas.querySelector("#localVaga");
+        let inputTurno = formVagas.querySelector("#turnoVaga");
+        let inputInicio = formVagas.querySelector("#inicio");
+        let inputFim = formVagas.querySelector("#fim");
+
+
+         tituloDiv.innerText = inputNome.value;
+         localVaga.innerText = inputLocal.value;
+         turnoVaga.innerText = inputTurno.value;
+         inicio.innerText = inputInicio.value;
+         fim.innerText = inputFim.value;
+
+
+        // console.log(divContainerCard);
+
+        listaVagas.appendChild(divContainerCard);
+        e.preventDefault();
 });

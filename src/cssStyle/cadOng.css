@@ -195,8 +195,8 @@ body footer{
   /* margin-top: 100px; */
   /* height: 40VH; */
    margin: 50px auto 50px auto;
-
-   background-color: coral;
+/*
+   background-color: coral; */
 }
 
 #principal #containerAcoes #formAcoes{
@@ -250,7 +250,7 @@ body footer{
 #principal #containerAcoes #listaAcoes{
   padding: 20px;
   width: 50%;
-  height: 75vh;
+  height: 95vh;
   overflow: hidden;
   overflow-y: scroll;
   background-color:#9d9d9e;
@@ -335,7 +335,7 @@ body footer{
 #principal #formsContainer #containerVagas #listaVagas{
   padding: 20px;
   width: 50%;
-  height: 75vh;
+  height: 95vh;
   overflow: hidden;
   overflow-y: scroll;
   background-color:#9d9d9e;
