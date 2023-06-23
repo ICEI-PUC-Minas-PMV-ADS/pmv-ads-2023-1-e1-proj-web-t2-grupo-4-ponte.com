@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="./componentes/navbar-style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://kit.fontawesome.com/331a34d5ed.js"
+      crossorigin="anonymous"
+    ></script>
     <script defer src="./jsScripts/login.js"></script>
+    <script defer src="./componentes/navbar-script.js"></script>
     <script defer src="./jsScripts/perfilONG.js"></script>
     <script defer src="./jsScripts/perfilVol.js"></script>
     <link rel="icon" type="image/png" href="img/iconPonte.png" />
@@ -16,23 +21,8 @@
   </head>
 
   <body>
-    <!-- NAVBAR USUÁRIO SEM LOGIN -->
-    <header class="wrapperSL">
-      <a href="./index.html"
-        ><img
-          id="logo"
-          src="img/logoPontecom.png"
-          alt="Logo do site ponte.com. A letra N da palavra possui formato de ponte."
-      /></a>
-      <ul class="wrapperNavbarSL">
-        <a href="./pagina-login.html"
-          ><li class="wrapperButton-active">Login</li></a
-        >
-        <a href="./sobre.html"><li class="wrapper-li">Sobre</li></a>
-        <a href="./listadevagas.html"
-          ><li class="wrapper-li">Vagas de voluntariado</li></a
-        >
-      </ul>
+    <header>
+      <!-- NAVBAR GERADA PELO SCRIPT -->
     </header>
 
     <main>
@@ -45,29 +35,7 @@
           />
         </div>
 
-        <div class="containerCard">
-          <div class="margin-flexbox">
-            <h1>Login</h1>
-            <form class="container-content">
-              <label for="email">E-mail:</label>
-              <input
-                type="text"
-                id="email"
-                placeholder="Informe seu e-mail"
-                required
-              />
-              <label for="password">Senha:</label>
-              <input
-                type="password"
-                id="password"
-                placeholder="Informe sua senha"
-                required
-              />
-              <button onclick="login(); return false;">Entrar</button>
-              <a href="./cadOng.html"><p>Não tem uma conta? Cadastre-se</p></a>
-            </form>
-          </div>
-        </div>
+        <div class="containerCard" id="containerCard"></div>
       </div>
 
       <!-- Parte Central Código Jefferson-->
@@ -215,5 +183,56 @@
         </div>
       </div>
     </footer>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        const containerLog = document.getElementById("containerCard");
+
+        // Verifica se o usuário está logado
+        const usuarioLog = JSON.parse(localStorage.getItem("usuarioLog"));
+
+        //Cria o HTML das vagas na página
+        function containerCardLog() {
+          const containerCard = document.querySelector(".containerCard");
+
+          // Usuário logado
+          if (usuarioLog && usuarioLog.email) {
+            containerCard.innerHTML = `
+      <div class="margin-flexboxLog">
+        <h1>Olá,</h1>
+        <p>Seja bem-vindo a Ponte.com!</p>
+        <button onclick="logout(); return false;">Logout</button>
+      </div>
+    `;
+          } else {
+            // Sem usuário logado
+            containerCard.innerHTML = `
+      <div class="margin-flexbox">
+        <h1>Login</h1>
+        <form class="container-content">
+          <label for="email">E-mail:</label>
+          <input
+            type="text"
+            id="email"
+            placeholder="Informe seu e-mail"
+            required
+          />
+          <label for="password">Senha:</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Informe sua senha"
+            required
+          />
+          <button onclick="login(); return false;">Entrar</button>
+          <a href="./cadOng.html"><p>Não tem uma conta? Cadastre-se</p></a>
+        </form>
+      </div>
+    `;
+          }
+        }
+
+        containerCardLog();
+      });
+    </script>
   </body>
 </html>
