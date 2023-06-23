@@ -32,13 +32,7 @@ function verificarCamposVazios(formulario) {
 }
 
 
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>FUNCIONALIDADES CONTAINER QUALIFICAÇÕES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 function salvarFormularioNoLocalStorage(formulario, id) {
   // Obtém todos os elementos do formulário
   var elementos = formulario.elements;
@@ -292,7 +286,12 @@ function reloadParaAlvo(divId) {
   }
 }
 
+function validarEmail(email) {
+  // Expressão regular para verificar o formato do e-mail
+  const formatoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  return formatoEmail.test(email);
+}
 
 document.addEventListener('DOMContentLoaded', function(e){
   let cardsPreenchidos = addDadosEstruturaCardCursos("formCursos");
@@ -354,13 +353,6 @@ btnSalvarCurso.addEventListener("click", function(e) {
 });
 
 
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>FUNCIONALIDADES CONTAINER QUALIFICAÇÕES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 
@@ -373,28 +365,7 @@ btnSalvarCurso.addEventListener("click", function(e) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>FUNCIONALIDADES CONTAINER EXPERIÊNCIAS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
- function insereCardsNaListaExp(conjuntoCards) {
+function insereCardsNaListaExp(conjuntoCards) {
 
    let listaExp = document.querySelector("#listaDetalhes");
 
@@ -407,15 +378,17 @@ btnSalvarCurso.addEventListener("click", function(e) {
 function addDadosEstruturaCardExp(chave) {
 
       let dados = JSON.parse(localStorage.getItem(chave));
+      console.log(dados);
       let cardsPreenchidos = [];
 
       for(i=0;i<dados.length;i++){
+
           let divContainerCard = criarEstruturaCardExp();
 
           let tituloExp = divContainerCard.querySelector("h2");
           let area = divContainerCard.querySelector("#areaAtuacao");
           let instituicao = divContainerCard.querySelector("#instituicaoAtuacao");
-          let endereco = divContainerCard.querySelector("#enderecoAtuacao");
+          let endereco = divContainerCard.querySelector("#endereco");
           let cargo = divContainerCard.querySelector("#cargoAtuacao");
           let descricao = divContainerCard.querySelector("#cargoAtuacao");
           let inicio = divContainerCard.querySelector("#inicioAtuacao");
@@ -424,7 +397,7 @@ function addDadosEstruturaCardExp(chave) {
            tituloExp.innerText = dados[i].cargoAtuacao;
            area.innerText = dados[i].areaAtuacao;
            instituicao.innerText = dados[i].instituicaoAtuacao;
-           endereco.innerText = dados[i].enderecoAtuacao;
+           endereco.innerText = dados[i].localAtuacao;
            cargo.innerText = dados[i].cargoAtuacao;
            descricao.innerText = dados[i].descricaoAtuacao;
            inicio.innerText = dados[i].inicioPeriodoAtuacao;
@@ -439,7 +412,7 @@ function addDadosEstruturaCardExp(chave) {
 }
 
 document.addEventListener('DOMContentLoaded', function(e){
-  let cardsPreenchidos = addDadosEstruturaCardExp("formExp");
+  let cardsPreenchidos = addDadosEstruturaCardExp("experiencias");
   insereCardsNaListaExp(cardsPreenchidos);
 
     e.preventDefault();
@@ -467,8 +440,8 @@ function criarEstruturaCardExp(){
    liInstituicao.setAttribute("id","instituicaoAtuacao");
 
 
-  let liEndereco = document.createElement("li");
-  liEndereco.setAttribute("id","enderecoAtuacao");
+   let liEndereco = document.createElement("li");
+   liEndereco.setAttribute("id","endereco");
 
 
    let liCargo = document.createElement("li");
@@ -534,13 +507,13 @@ btnSalvarXp.addEventListener("click", function(e){
 
     let listaExp = document.querySelector("#listaDetalhes");
     let formExp = document.querySelector("#experiencias");
-    salvarFormularioNoLocalStorage(formExp, "formExp");
+    salvarFormularioNoLocalStorage(formExp, "experiencias");
 
     let divContainerCard = criarEstruturaCardExp();
     let tituloDiv = divContainerCard.querySelector("h2");
     let areaExp = divContainerCard.querySelector("#areaAtuacao");
     let instituicao = divContainerCard.querySelector("#instituicaoAtuacao");
-    let endereco = divContainerCard.querySelector("#enderecoAtuacao");
+    let endereco = divContainerCard.querySelector("#endereco");
     let cargo = divContainerCard.querySelector("#cargoAtuacao");
     let descricao = divContainerCard.querySelector("#descricaoAtuacao");
     let inicioExp = divContainerCard.querySelector("#inicioAtuacao");
@@ -549,7 +522,7 @@ btnSalvarXp.addEventListener("click", function(e){
     let inputCargo = formExp.querySelector("#cargoAtuacao");
     let inputAreaAtuacao = formExp.querySelector("#areaAtuacao");
     let inputInstituicao = formExp.querySelector("#instituicaoAtuacao");
-    let inputEndereco = formExp.querySelector("#enderecoAtuacao");
+    let inputEndereco = formExp.querySelector("#endereco");
     let inputDescricao = formExp.querySelector("#descricaoAtuacao");
     let inputInicio = formExp.querySelector("#inicioPeriodoAtuacao");
     let inputFim = formExp.querySelector("#fimPeriodoAtuacao");
@@ -582,17 +555,22 @@ btnSalvarXp.addEventListener("click", function(e) {
 
 
 btnSalvarUser.addEventListener("click", function(e){
-
+  let email = formInfUser.querySelector("#emailUsuario");
 
   if(verificarCamposVazios(formInfUser)){
     alert("você precisa preencher todos os campos!");
     reloadParaAlvo("formInfBasica");
+  }else if(validarEmail(email.value)){
+     salvarFormularioNoLocalStorage(formInfUser,"formUser");
+     alert("Dados Salvos Com Sucesso!");
+     reloadParaAlvo("formInfBasica");
   }else{
-    salvarFormularioNoLocalStorage(formInfUser,"formUser");
-    alert("Dados Salvos Com Sucesso!");
+    alert("formato de email inválido!");
     reloadParaAlvo("formInfBasica");
   }
 
+
+  console.log(email.value);
 
   e.preventDefault();
 });
