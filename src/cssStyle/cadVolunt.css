@@ -95,35 +95,10 @@ body footer{
   width: 42%;
 }
 
-
-
 #principal #formInfBasica{
   margin: 5px auto 5px auto;
 }
 
-#principal #containerInteresses{
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-
-}
-/*
-#principal #containerInteresses #listaInteresses #tabelaInteresses {
-  height: fit-content;
-  background-color: rgb(195, 195, 199);
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-} */
-
-/* #principal #containerInteresses #listaInteresses #tabelaInteresses tr {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-bottom: 15px;
-  border: 1px solid darkgrey;
-} */
 
 
 #principal #containerExperiencias{
@@ -133,6 +108,7 @@ body footer{
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  /* background-color: red; */
 }
 
 #principal #containerExperiencias #dateAreaInput{
@@ -147,9 +123,9 @@ body footer{
 #principal #containerExperiencias #listaDetalhes #cardExp{
     background-color: #333;
     color: #fff;
-    width: 100%;
+    width: 90%;
     padding: 20px;
-    margin-bottom: 10px;
+    margin: 10px auto 10px auto;
     border-radius: 5px;
     word-wrap: break-word;
 }
@@ -174,7 +150,7 @@ body footer{
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-
+  /* background-color: paleturquoise; */
 }
 
 #principal #containerQualificacoes #dateAreaInput{
@@ -192,7 +168,7 @@ body footer{
     color: #fff;
     width: 90%;
     padding: 20px;
-    margin-bottom: 10px;
+    margin: 10px auto 10px auto;
     border-radius: 5px;
     word-wrap: break-word;
 }
@@ -210,40 +186,6 @@ body footer{
   justify-content: flex-end;
 }
 
-
-#principal #containerInteresses #listaInteresses{
-  background-color: #9d9d9e;
-  border-radius: 5px;
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-  height: 45vh;
-  overflow: hidden;
-  overflow-y: scroll;
-}
-
-#principal #containerInteresses #listaInteresses ul{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  gap: 90px;
-  align-items: center;
-  padding: 20px;
-  background-color: #fe0606;
-  color: #fff;
-  width: auto;
-  margin: 0px auto 10px auto;
-  align-self: center;
-  border-radius: 5px;
-}
-
-#principal #containerInteresses #listaInteresses ul li{
-  word-wrap: break-word;
-  /* background-color: aquamarine; */
-  width: 100px;
-}
 
 /* Classes para títulos */
 
@@ -355,7 +297,7 @@ body footer{
 
 
 .formContainerGrande {
-  background-color: #d9d9d9;
+  background-color:rgb(210, 210, 210);
   width: 30vw;
   height: fit-content;
   border-radius: 5px;
