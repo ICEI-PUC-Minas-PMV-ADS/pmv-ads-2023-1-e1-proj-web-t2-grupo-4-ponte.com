@@ -139,29 +139,12 @@ body {
   font-family: var(--fontPrimary);
   color: var(--titleColorDark);
   font-size: var(--mediumFontSize);
-}
-
-.container .margin-flexboxLog button {
-  font-family: var(--fontSecondary);
-  font-size: var(--mediumFontSize);
-  background: var(--titleColorLight);
-  color: var(--titleColorDark);
-  border: none;
-  border-radius: 4px;
-  height: 2rem;
-  width: 4rem;
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.container .margin-flexboxLog button:hover {
-  font-weight: var(--textCallsWeight);
-  cursor: pointer;
+  margin-top: 20px;
 }
 
 .margin-flexboxLog {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 120px;
 }
 
 /* Inicio parte central homepage Jefferson. */
