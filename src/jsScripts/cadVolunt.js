@@ -3,11 +3,8 @@ const btnSalvarCurso = document.querySelector("#btnSalvarCurso");
 const editarCardBtn = listaQualificacoes.querySelector("#editarCardBtn");
 const divContainerQualific = document.querySelector("#containerQualificacoes");
 
-
 const formExp = document.querySelector("#experiencias");
 const btnSalvarXp = formExp.querySelector("#btnSalvarXp");
-// const listaExp = document.querySelector("#listaDetalhes");
-// console.log(btnSalvarXp);
 
 const formInfUser = document.querySelector("#formInfBasica");
 const btnSalvarUser = formInfUser.querySelector("#salvarUser");
@@ -15,6 +12,24 @@ const btnSalvarUser = formInfUser.querySelector("#salvarUser");
 
 
 
+function verificarCamposVazios(formulario) {
+  // Obtém todos os campos do formulário
+  const campos = formulario.querySelectorAll('input, select, textarea');
+
+  // Percorre todos os campos e verifica se estão vazios
+  for (let i = 0; i < campos.length; i++) {
+    const campo = campos[i];
+
+    // Verifica se o campo está vazio
+    if (campo.value.trim() === '') {
+      // Campo vazio encontrado, retorna true
+      return true;
+    }
+  }
+
+  // Todos os campos estão preenchidos, retorna false
+  return false;
+}
 
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -130,15 +145,14 @@ function salvarFormularioNoLocalStorage(formulario, id) {
 //   return divPopUpEditar;
 // }
 
-
 function criaEstruturaCardCursos(){
 
   let divContainerCard = document.createElement('div');
   divContainerCard.setAttribute("id","cardCurso");
-  // console.log(divContainerCard);
+
   let tituloCurso = document.createElement('h2');
   tituloCurso.setAttribute("class", "titulosH3");
-  // console.log(tituloCurso);
+
   let ulDados = document.createElement("ul");
   let liInicio = document.createElement("li");
   liInicio.setAttribute("id","inicio");
@@ -155,11 +169,7 @@ function criaEstruturaCardCursos(){
   grupoBotao.setAttribute("class","btnArea");
   grupoBotao.setAttribute("class", "groupBtn");
   grupoBotao.setAttribute("id","btnArea");
-  // let botaoEditar = document.createElement("button");
-  // botaoEditar.setAttribute("type", "submit");
-  // botaoEditar.setAttribute("class", "formBtn");
-  // botaoEditar.setAttribute("id","editarCardBtn");
-  // botaoEditar.innerText = "editar"
+
   let botaoExcluir = document.createElement("button");
   botaoExcluir.setAttribute("type", "submit");
   botaoExcluir.setAttribute("class", "formBtn");
@@ -172,18 +182,17 @@ function criaEstruturaCardCursos(){
   ulDados.appendChild(liTipoCurso);
   ulDados.appendChild(liArea);
 
-  // grupoBotao.appendChild(botaoEditar);
+
   grupoBotao.appendChild(botaoExcluir);
 
   divContainerCard.appendChild(tituloCurso);
   divContainerCard.appendChild(ulDados);
   divContainerCard.appendChild(grupoBotao);
-  // console.log(divContainerCard);
+
 
   botaoExcluir.addEventListener("click", function(e){
       let divGroupBtn = botaoExcluir.parentNode;
       let divCardCurso = divGroupBtn.parentNode;
-      //  console.log(divCardCurso);
       removeCardLocalStorage(divCardCurso,"formCursos");
       divCardCurso.remove();
 
@@ -198,7 +207,6 @@ function addDadosEstruturaCardCursos(chave) {
 
       let dados = JSON.parse(localStorage.getItem(chave));
       let cardsPreenchidos = [];
-      // console.log(dados);
 
       for(i=0;i<dados.length;i++){
 
@@ -217,12 +225,7 @@ function addDadosEstruturaCardCursos(chave) {
           fim.innerText = dados[i].fimCurso;
           instituicao.innerText = dados[i].nomeInstituicao;
 
-
-
-        //  console.log(divContainerCard);
-
          cardsPreenchidos[i] = divContainerCard;
-        //  console.log(cardsPreenchidos[i]);
 
       }
 
@@ -301,7 +304,12 @@ document.addEventListener('DOMContentLoaded', function(e){
 
 //cria um card e insere na lista quando clicado o botao salvar do form
 btnSalvarCurso.addEventListener("click", function(e){
-    salvarFormularioNoLocalStorage(formCursos, "formCursos");
+
+
+  if(verificarCamposVazios(formCursos)){
+    alert("você precisa preencher todos os campos!");
+    reloadParaAlvo("containerQualificacoes");
+  }else{
     let listaQualificacoes = document.querySelector("#listaQualificacoes");
     let divContainerCard = criaEstruturaCardCursos();
 
@@ -318,7 +326,6 @@ btnSalvarCurso.addEventListener("click", function(e){
     let inputNomeInstituicao = formCursos.querySelector("#nomeInstituicao");
     let inputInicio = formCursos.querySelector("#inicioCurso");
     let inputFim = formCursos.querySelector("#fimCurso");
-    // console.log(inputNomeCurso);
 
     tituloDiv.innerText = inputNomeCurso.value;
     areaCurso.innerText = inputAreaCurso.value;
@@ -327,15 +334,16 @@ btnSalvarCurso.addEventListener("click", function(e){
     inicio.innerText = inputInicio.value;
     fim.innerText = inputFim.value;
 
+    salvarFormularioNoLocalStorage(formCursos, "formCursos");
     listaQualificacoes.appendChild(divContainerCard);
 
-    // console.log(tituloDiv);
-    // console.log(areaCurso);
-    // console.log(tipoCurso);
-    // console.log(instituicao);
-    // console.log(inicio);
-    // console.log(fim);
-    // alert("Clicou!");
+    alert("Dados Salvos Com Sucesso!");
+    reloadParaAlvo("containerQualificacoes");
+  }
+
+
+
+
     //  e.preventDefault();
 });
 
@@ -395,28 +403,23 @@ btnSalvarCurso.addEventListener("click", function(e) {
    }
 
 }
+
 function addDadosEstruturaCardExp(chave) {
 
       let dados = JSON.parse(localStorage.getItem(chave));
       let cardsPreenchidos = [];
-       console.log(dados);
 
       for(i=0;i<dados.length;i++){
           let divContainerCard = criarEstruturaCardExp();
 
-
-           let tituloExp = divContainerCard.querySelector("h2");
-           let area = divContainerCard.querySelector("#areaAtuacao");
-           let instituicao = divContainerCard.querySelector("#instituicaoAtuacao");
-           let endereco = divContainerCard.querySelector("#enderecoAtuacao");
-           let cargo = divContainerCard.querySelector("#cargoAtuacao");
-           let descricao = divContainerCard.querySelector("#cargoAtuacao");
-           let inicio = divContainerCard.querySelector("#inicioAtuacao");
-           let fim = divContainerCard.querySelector("#fimAtuacao");
-
-
-
-
+          let tituloExp = divContainerCard.querySelector("h2");
+          let area = divContainerCard.querySelector("#areaAtuacao");
+          let instituicao = divContainerCard.querySelector("#instituicaoAtuacao");
+          let endereco = divContainerCard.querySelector("#enderecoAtuacao");
+          let cargo = divContainerCard.querySelector("#cargoAtuacao");
+          let descricao = divContainerCard.querySelector("#cargoAtuacao");
+          let inicio = divContainerCard.querySelector("#inicioAtuacao");
+          let fim = divContainerCard.querySelector("#fimAtuacao");
 
            tituloExp.innerText = dados[i].cargoAtuacao;
            area.innerText = dados[i].areaAtuacao;
@@ -428,12 +431,7 @@ function addDadosEstruturaCardExp(chave) {
            fim.innerText = dados[i].fimPeriodoAtuacao;
 
 
-
-
-            console.log(divContainerCard);
-
           cardsPreenchidos[i] = divContainerCard;
-      //   //  console.log(cardsPreenchidos[i]);
 
        }
 
@@ -448,56 +446,52 @@ document.addEventListener('DOMContentLoaded', function(e){
 });
 
 
- function criarEstruturaCardExp(){
+function criarEstruturaCardExp(){
 
-   let divContainerCard = document.createElement('div');
-   divContainerCard.setAttribute("id","cardExp");
+  let divContainerCard = document.createElement('div');
+  divContainerCard.setAttribute("id","cardExp");
   divContainerCard.setAttribute("class", "campoDetalhe");
-   divContainerCard.setAttribute("class", "cardExp");
+  divContainerCard.setAttribute("class", "cardExp");
 
-   // console.log(divContainerCard);
-   let tituloExp = document.createElement('h2');
-   tituloExp.setAttribute("class", "titulosH3");
-   // console.log(tituloCurso);
-   let ulDados = document.createElement("ul");
+
+  let tituloExp = document.createElement('h2');
+  tituloExp.setAttribute("class", "titulosH3");
+
+  let ulDados = document.createElement("ul");
 
   let liArea = document.createElement("li");
-   liArea.setAttribute("id","areaAtuacao");
-   // console.log(liArea);
+  liArea.setAttribute("id","areaAtuacao");
+
 
    let liInstituicao = document.createElement("li");
    liInstituicao.setAttribute("id","instituicaoAtuacao");
-   // console.log(liInstituicao);
+
 
   let liEndereco = document.createElement("li");
   liEndereco.setAttribute("id","enderecoAtuacao");
-  // console.log(liEndereco);
+
 
    let liCargo = document.createElement("li");
    liCargo.setAttribute("id", "cargoAtuacao");
-   // console.log(liCargo);
+
 
    let liDescricaoAtuacao = document.createElement("li");
    liDescricaoAtuacao.setAttribute("id","descricaoAtuacao");
-   // console.log(liDescricaoAtuacao);
+
    let liInicio = document.createElement("li");
    liInicio.setAttribute("id","inicioAtuacao");
-   // console.log(liInicio);
+
 
    let liFim = document.createElement("li");
    liFim.setAttribute("id","fimAtuacao");
-   // console.log(liFim);
+
 
 
    let grupoBotao = document.createElement("div");
    grupoBotao.setAttribute("class","btnArea");
    grupoBotao.setAttribute("class", "groupBtn");
    grupoBotao.setAttribute("id","btnArea");
-   // let botaoEditar = document.createElement("button");
-   // botaoEditar.setAttribute("type", "submit");
-   // botaoEditar.setAttribute("class", "formBtn");
-   // botaoEditar.setAttribute("id","editarCardBtn");
-   // botaoEditar.innerText = "editar"
+
     let botaoExcluir = document.createElement("button");
     botaoExcluir.setAttribute("type", "submit");
     botaoExcluir.setAttribute("class", "formBtn");
@@ -511,81 +505,94 @@ document.addEventListener('DOMContentLoaded', function(e){
     ulDados.appendChild(liInicio);
     ulDados.appendChild(liFim);
 
-   //  console.log(ulDados); OK
 
-   // grupoBotao.appendChild(botaoEditar);
     grupoBotao.appendChild(botaoExcluir);
-
     divContainerCard.appendChild(tituloExp);
     divContainerCard.appendChild(ulDados);
     divContainerCard.appendChild(grupoBotao);
 
-   //  console.log(divContainerCard); OK
+    botaoExcluir.addEventListener("click", function(e){
+    let divGroupBtn = botaoExcluir.parentNode;
+    let divCardXp = divGroupBtn.parentNode;
+    divCardXp.remove();
 
-     botaoExcluir.addEventListener("click", function(e){
-        let divGroupBtn = botaoExcluir.parentNode;
-        let divCardXp = divGroupBtn.parentNode;
-        //  console.log(divCardCurso);
-         // removeCardLocalStorage(divCardXp,"formExp");
-        divCardXp.remove();
-     });
+  });
 
-
-
-     //  console.log(divContainerCard);
       return(divContainerCard);
+}
+
+
+btnSalvarXp.addEventListener("click", function(e){
+
+
+  if(verificarCamposVazios(formExp)){
+
+    alert("você precisa preencher todos os campos!");
+    reloadParaAlvo("containerExperiencias");
+
+  }else{
+
+    let listaExp = document.querySelector("#listaDetalhes");
+    let formExp = document.querySelector("#experiencias");
+    salvarFormularioNoLocalStorage(formExp, "formExp");
+
+    let divContainerCard = criarEstruturaCardExp();
+    let tituloDiv = divContainerCard.querySelector("h2");
+    let areaExp = divContainerCard.querySelector("#areaAtuacao");
+    let instituicao = divContainerCard.querySelector("#instituicaoAtuacao");
+    let endereco = divContainerCard.querySelector("#enderecoAtuacao");
+    let cargo = divContainerCard.querySelector("#cargoAtuacao");
+    let descricao = divContainerCard.querySelector("#descricaoAtuacao");
+    let inicioExp = divContainerCard.querySelector("#inicioAtuacao");
+    let fimExp = divContainerCard.querySelector("#fimAtuacao");
+
+    let inputCargo = formExp.querySelector("#cargoAtuacao");
+    let inputAreaAtuacao = formExp.querySelector("#areaAtuacao");
+    let inputInstituicao = formExp.querySelector("#instituicaoAtuacao");
+    let inputEndereco = formExp.querySelector("#enderecoAtuacao");
+    let inputDescricao = formExp.querySelector("#descricaoAtuacao");
+    let inputInicio = formExp.querySelector("#inicioPeriodoAtuacao");
+    let inputFim = formExp.querySelector("#fimPeriodoAtuacao");
+
+    tituloDiv.innerText = inputCargo.value;
+    areaExp.innerText = inputAreaAtuacao.value;
+    instituicao.innerText = inputInstituicao.value;
+    endereco.innerText = inputEndereco.value;
+    cargo.innerText = inputCargo.value;
+    descricao.innerText = inputDescricao.value;
+    inicioExp.innerText = inputInicio.value;
+    fimExp.innerText = inputFim.value;
+
+
+    listaExp.appendChild(divContainerCard);
+    reloadParaAlvo("containerExperiencias");
+    alert("dados salvos com sucesso");
   }
 
 
-  btnSalvarXp.addEventListener("click", function(e){
+    e.preventDefault();
 
-      let listaExp = document.querySelector("#listaDetalhes");
-      let formExp = document.querySelector("#experiencias");
-     salvarFormularioNoLocalStorage(formExp, "formExp");
+});
 
 
-
-      let divContainerCard = criarEstruturaCardExp();
-       let tituloDiv = divContainerCard.querySelector("h2");
-       let areaExp = divContainerCard.querySelector("#areaAtuacao");
-       let instituicao = divContainerCard.querySelector("#instituicaoAtuacao");
-       let endereco = divContainerCard.querySelector("#enderecoAtuacao");
-       let cargo = divContainerCard.querySelector("#cargoAtuacao");
-       let descricao = divContainerCard.querySelector("#descricaoAtuacao");
-       let inicioExp = divContainerCard.querySelector("#inicioAtuacao");
-       let fimExp = divContainerCard.querySelector("#fimAtuacao");
-
-
-      let inputCargo = formExp.querySelector("#cargoAtuacao");
-      let inputAreaAtuacao = formExp.querySelector("#areaAtuacao");
-      let inputInstituicao = formExp.querySelector("#instituicaoAtuacao");
-      let inputEndereco = formExp.querySelector("#enderecoAtuacao");
-      let inputDescricao = formExp.querySelector("#descricaoAtuacao");
-      let inputInicio = formExp.querySelector("#inicioPeriodoAtuacao");
-      let inputFim = formExp.querySelector("#fimPeriodoAtuacao");
-
-        tituloDiv.innerText = inputCargo.value;
-        areaExp.innerText = inputAreaAtuacao.value;
-        instituicao.innerText = inputInstituicao.value;
-        endereco.innerText = inputEndereco.value;
-        cargo.innerText = inputCargo.value;
-        descricao.innerText = inputDescricao.value;
-        inicioExp.innerText = inputInicio.value;
-        fimExp.innerText = inputFim.value;
-
-0
-       listaExp.appendChild(divContainerCard);
-       e.preventDefault();
-  });
-
-
-  btnSalvarXp.addEventListener("click", function(e) {
+btnSalvarXp.addEventListener("click", function(e) {
   e.preventDefault(); // Evita o comportamento padrão de recarregar a página
   reloadParaAlvo("containerExperiencias");
 });
 
 
 btnSalvarUser.addEventListener("click", function(e){
-    salvarFormularioNoLocalStorage(formInfUser, "formUser");
-    e.preventDefault();
+
+
+  if(verificarCamposVazios(formInfUser)){
+    alert("você precisa preencher todos os campos!");
+    reloadParaAlvo("formInfBasica");
+  }else{
+    salvarFormularioNoLocalStorage(formInfUser,"formUser");
+    alert("Dados Salvos Com Sucesso!");
+    reloadParaAlvo("formInfBasica");
+  }
+
+
+  e.preventDefault();
 });
