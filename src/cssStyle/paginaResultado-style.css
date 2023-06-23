@@ -85,6 +85,7 @@ main {
   background: var(--titleColorLight);
   border: none;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .searchResultContainer .searchResultItem button:hover {
