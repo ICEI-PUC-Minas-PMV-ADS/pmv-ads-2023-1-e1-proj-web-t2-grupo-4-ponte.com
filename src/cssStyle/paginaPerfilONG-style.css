@@ -200,6 +200,24 @@ main {
     padding-bottom: 0.5rem;
   }
 
+/* RESPONSIVIDADE */
+
+@media (max-width: 420px) {
+  main {
+    margin-right: 30px;
+    margin-left: 20px;
+  }
+  
+  .cabecalhoONG #campoInteresse {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .cabecalhoONG #campoInteresse li {
+    margin-right: 0.3rem;
+  }
+}
+
 /* FOOTER */
 
 #decFooter img {
