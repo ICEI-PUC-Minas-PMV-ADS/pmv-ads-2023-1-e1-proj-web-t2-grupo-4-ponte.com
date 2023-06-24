@@ -92,6 +92,25 @@ main {
   font-weight: var(--textCallsWeight);
 }
 
+/* RESPONSIVIDADE */
+
+@media (max-width: 420px) {
+  main {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 2rem;
+  }
+
+  .cabecalho h1 {
+    font-size: var(--titleFontSize);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+  }
+}
+
 /* FOOTER */
 
 #decFooter img {
