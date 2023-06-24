@@ -115,14 +115,14 @@
                     <div class="listaQuali">
                       ${perfilCompleto.qualif
                         .map(
-                          (qualificacoes) => `
+                          (qualif) => `
                           <div class="campoQuali">
-                            <h3>Qualificação 1</h3>
+                            <h3>${qualif.nomeCurso}</h3>
                             <ul>
-                              <li>Tipo do curso: ${qualificacoes.tipoCurso}</li>
-                              <li>Instituição: ${qualificacoes.instituicao}</li>
-                              <li>Área do curso: ${qualificacoes.area}</li>
-                              <li>Período: ${qualificacoes.inicio}</li>
+                              <li>Tipo do curso: ${qualif.tipoCurso}</li>
+                              <li>Instituição: ${qualif.nomeInstituicao}</li>
+                              <li>Área do curso: ${qualif.areaCurso}</li>
+                              <li>Período: ${qualif.inicioCurso} / ${qualif.fimCurso}</li>
                             </ul>
                           </div>
                         `

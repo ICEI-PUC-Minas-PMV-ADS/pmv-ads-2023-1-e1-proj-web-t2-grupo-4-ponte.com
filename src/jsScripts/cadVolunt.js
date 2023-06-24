@@ -340,7 +340,6 @@ function addDadosEstruturaCardExp(chave) {
     let tituloExp = divContainerCard.querySelector("h2");
     let area = divContainerCard.querySelector("#areaAtuacao");
     let instituicao = divContainerCard.querySelector("#instituicaoAtuacao");
-    let endereco = divContainerCard.querySelector("#endereco");
     let cargo = divContainerCard.querySelector("#cargoAtuacao");
     let descricao = divContainerCard.querySelector("#cargoAtuacao");
     let inicio = divContainerCard.querySelector("#inicioAtuacao");
@@ -349,7 +348,6 @@ function addDadosEstruturaCardExp(chave) {
     tituloExp.innerText = dados[i].cargoAtuacao;
     area.innerText = dados[i].areaAtuacao;
     instituicao.innerText = dados[i].instituicaoAtuacao;
-    endereco.innerText = dados[i].localAtuacao;
     cargo.innerText = dados[i].cargoAtuacao;
     descricao.innerText = dados[i].descricaoAtuacao;
     inicio.innerText = dados[i].inicioPeriodoAtuacao;
@@ -385,9 +383,6 @@ function criarEstruturaCardExp() {
   let liInstituicao = document.createElement("li");
   liInstituicao.setAttribute("id", "instituicaoAtuacao");
 
-  let liEndereco = document.createElement("li");
-  liEndereco.setAttribute("id", "endereco");
-
   let liCargo = document.createElement("li");
   liCargo.setAttribute("id", "cargoAtuacao");
 
@@ -412,7 +407,6 @@ function criarEstruturaCardExp() {
 
   ulDados.appendChild(liArea);
   ulDados.appendChild(liInstituicao);
-  ulDados.appendChild(liEndereco);
   ulDados.appendChild(liCargo);
   ulDados.appendChild(liDescricaoAtuacao);
   ulDados.appendChild(liInicio);
@@ -445,7 +439,6 @@ btnSalvarXp.addEventListener("click", function (e) {
     let tituloDiv = divContainerCard.querySelector("h2");
     let areaExp = divContainerCard.querySelector("#areaAtuacao");
     let instituicao = divContainerCard.querySelector("#instituicaoAtuacao");
-    let endereco = divContainerCard.querySelector("#endereco");
     let cargo = divContainerCard.querySelector("#cargoAtuacao");
     let descricao = divContainerCard.querySelector("#descricaoAtuacao");
     let inicioExp = divContainerCard.querySelector("#inicioAtuacao");
@@ -454,7 +447,6 @@ btnSalvarXp.addEventListener("click", function (e) {
     let inputCargo = formExp.querySelector("#cargoAtuacao");
     let inputAreaAtuacao = formExp.querySelector("#areaAtuacao");
     let inputInstituicao = formExp.querySelector("#instituicaoAtuacao");
-    let inputEndereco = formExp.querySelector("#endereco");
     let inputDescricao = formExp.querySelector("#descricaoAtuacao");
     let inputInicio = formExp.querySelector("#inicioPeriodoAtuacao");
     let inputFim = formExp.querySelector("#fimPeriodoAtuacao");
@@ -462,7 +454,6 @@ btnSalvarXp.addEventListener("click", function (e) {
     tituloDiv.innerText = inputCargo.value;
     areaExp.innerText = inputAreaAtuacao.value;
     instituicao.innerText = inputInstituicao.value;
-    endereco.innerText = inputEndereco.value;
     cargo.innerText = inputCargo.value;
     descricao.innerText = inputDescricao.value;
     inicioExp.innerText = inputInicio.value;
@@ -503,23 +494,17 @@ btnSalvarUser.addEventListener("click", function (e) {
 });
 
 function geraPerfilCompleto() {
-  let nomeUsuario = formInfUser.querySelector("#nomeUsuario");
-  let email = formInfUser.querySelector("#emailUsuario");
-  let senha = formInfUser.querySelector("#senhaUsuario");
-  let bio = formInfUser.querySelector("#textoBiografia");
-  let interesses = formInfUser.querySelector("#interesseUsuario");
-  let experiencias = [];
   experiencias = JSON.parse(localStorage.getItem("experiencias"));
   let qualificacoes = [];
   qualificacoes = JSON.parse(localStorage.getItem("qualificacoes"));
 
   let perfilCompleto = {
-    nome: nomeUsuario.value,
-    email: email.value,
-    senha: senha.value,
+    nome: formInfUser.querySelector("#nomeUsuario").value,
+    email: formInfUser.querySelector("#emailUsuario").value,
+    senha: formInfUser.querySelector("#senhaUsuario").value,
     tagUsuario: "Voluntário",
-    biografia: bio.value,
-    interesses: interesses.value,
+    biografia: formInfUser.querySelector("#textoBiografia").value,
+    interesses: formInfUser.querySelector("#interesseUsuario").value,
     exp: experiencias,
     qualif: qualificacoes,
   };
