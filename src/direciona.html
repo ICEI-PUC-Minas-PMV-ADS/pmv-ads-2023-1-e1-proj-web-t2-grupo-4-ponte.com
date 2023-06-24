@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./cssStyle/cadVolunt.css" />
+    <link rel="stylesheet" href="./componentes/navbar-style.css" />
+    <link rel="stylesheet" href="./componentes/footer-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./jsScripts/cadVolunt.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/331a34d5ed.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./jsScripts/login.js"></script>
+    <script defer src="./componentes/navbar-script.js"></script>
+    <script defer src="./jsScripts/perfilONG.js"></script>
+    <script defer src="./jsScripts/perfilVol.js"></script>
+    <link rel="stylesheet" href="cssStyle/cadVolunt.css" />
+    <link rel="stylesheet" href="cssStyle/direciona.css">
+    <link rel="icon" type="image/png" href="img/iconPonte.png" />
+    <title>como deseja se cadastrar?</title>
+  </head>
+
+  <body>
+    <!-- início do header do site. contém o menu de navegação, logo e barra de pesquisa -->
+    <header>
+      <!-- NAVBAR GERADA PELO SCRIPT -->
+    </header>
+    <!-- fim do header -->
+
+    <H2>Como deseja se cadastrar?</H2>
+
+    <main id="principal">
+
+        <div id="organizacao">
+          <div id="oContent">
+            <p>como instituição</p>
+          </div>
+        </div>
+
+        <div id="voluntario">
+          <div id="vContent">
+            <p>como voluntário</p>
+          </div>
+
+        </div>
+    </main>
+    <!-- fim da seção principal do site -->
+
+    <!-- inicio do footer -->
+    <footer>
+      <div id="footerContainer">
+        <div id="logoFooter">
+          <a href="#">
+            <img src="img/logoCor2.png" alt="logo em cor clara" />
+          </a>
+        </div>
+
+        <div id="formFooter">
+          <div id="sugestionsFooter">
+            <h3>Sugestões?</h3>
+            <p>Envie-nos uma mensagem</p>
+          </div>
+
+          <form action="mensagem.php">
+            <label for="email" title="Informe seu email mais usado">
+              E-mail:
+            </label>
+            <input
+              type="email"
+              name="email"
+              id=""
+              placeholder="informe seu e-mail..."
+            />
+
+            <label for="message">Mensagem:</label>
+            <textarea
+              type="textarea"
+              name="message"
+              title="Mensagem"
+              cols="30"
+              rows="5"
+            >
+Envie-nos sua mensagem...
+            </textarea>
+
+            <input
+              type="submit"
+              value="Enviar"
+              name="enviar"
+              class="btnLight"
+            />
+          </form>
+        </div>
+      </div>
+    </footer>
+    <!-- fim do footer -->
+  </body>
+</html>
