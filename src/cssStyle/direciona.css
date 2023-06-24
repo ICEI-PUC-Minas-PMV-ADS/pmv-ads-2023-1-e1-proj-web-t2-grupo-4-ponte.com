@@ -8,8 +8,6 @@
   font-family: var(--fontSecondary);
   text-decoration: none;
   list-style: none;
-
-
 }
 
 :root {
@@ -27,11 +25,10 @@
   --titleFontSizeBiger: 32px;
   --textCallsWeight: 600;
   --mediuCallsWeight: 450;
-  --bgColor: #FFFEFC;
+  --bgColor: #fffefc;
 }
 
-
-body h2{
+body h2 {
   text-align: center;
   margin-top: 100px;
   font-family: var(--fontSecondary);
@@ -39,17 +36,15 @@ body h2{
 }
 
 body #principal {
-
   width: 100%;
   height: fit-content;
   margin: 50px auto 50px auto;
   /* background-color: rebeccapurple; */
-  display:flex;
+  display: flex;
   color: var(--titleColorDark);
-
 }
 
-body #principal #organizacao{
+body #principal #organizacao {
   background-color: rgba(253, 200, 134, 1);
   width: 40%;
   height: 40vh;
@@ -57,10 +52,10 @@ body #principal #organizacao{
   border-radius: 5px;
   margin: 50px auto 50px auto;
   transition: scale 1.5s;
-    font-weight: 600;
+  font-weight: 600;
 }
 
-body #principal #organizacao #oContent{
+body #principal #organizacao #oContent {
   height: 40vh;
   display: flex;
   justify-content: center;
@@ -69,11 +64,10 @@ body #principal #organizacao #oContent{
   /* background-color: red; */
 }
 
-
-body #principal #voluntario{
-  background-color:rgba(253, 200, 134, 1);
+body #principal #voluntario {
+  background-color: rgba(253, 200, 134, 1);
   color: var(--titleColorDark);
-  width: 40% ;
+  width: 40%;
   height: 40vh;
   border-radius: 5px;
   margin: 50px auto 50px auto;
@@ -81,20 +75,23 @@ body #principal #voluntario{
   font-weight: 600;
 }
 
-body #principal #organizacao:hover{
-    scale: 1.2;
+body #principal #organizacao:hover {
+  scale: 1.2;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
+body #principal a,
+body #principal a:visited {
+  color: inherit;
+}
 
-body #principal #voluntario:hover{
+body #principal #voluntario:hover {
   scale: 1.2;
   cursor: pointer;
 }
 
-body #principal #voluntario #vContent{
-
+body #principal #voluntario #vContent {
   height: 40vh;
   display: flex;
   justify-content: center;
