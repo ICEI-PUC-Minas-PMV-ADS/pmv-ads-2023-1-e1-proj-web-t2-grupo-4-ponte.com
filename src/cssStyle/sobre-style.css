@@ -64,7 +64,6 @@ main {
   flex-direction: column;
   flex: 1;
   text-align: center;
-  /*margin-left: 100px;*/
   margin-right: 15px;
 }
 
@@ -92,17 +91,57 @@ main {
 }
 
 .container .sobre .creditos .expediente {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .container .sobre .creditos ul {
-    list-style: none;
-  }
+  list-style: none;
+}
 
 .container .sobre .creditos .orientacao-licencas {
-    margin-left: 3rem;
+  margin-left: 3rem;
+  text-align: center;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 420px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    margin-left: 25px;
+  }
+
+  .container .sobre {
+    margin: 0;
+  }
+
+  .container .sobre p {
+    margin-bottom: 1rem;
+  }
+
+  .container .sobre .creditos {
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    margin: 0;
+    font-size: var(--smallFontSize);
+  }
+
+  .container .sobre .creditos p {
+    text-align: center;
+  }
+
+  .container .sobre .creditos .orientacao-licencas {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .containerImg img {
+    margin-top: 20px;
+  }
 }
 
 /* FOOTER */
