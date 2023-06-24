@@ -238,6 +238,8 @@ function addDadosEstruturaCardAcoes(chave) {
 }
 
 
+
+
 function criarEstruturaCardVagas(){
 
 // Cria a div principal com o ID "cardAcao"
@@ -334,7 +336,13 @@ document.addEventListener('DOMContentLoaded', function(e){
 
 btnSalvarAcao.addEventListener("click", function(e){
 
-    let listaAcoes = document.querySelector("#listaAcoes");
+
+    if(verificarCamposVazios(formAcoes)){
+      alert("Você precisa preencher todos os campos!");
+      reloadParaAlvo("containerAcoes");
+    }else{
+      alert("dados salvos");
+      let listaAcoes = document.querySelector("#listaAcoes");
 
       salvarFormularioNoLocalStorage(formAcoes, "acoes");
 
@@ -362,6 +370,8 @@ btnSalvarAcao.addEventListener("click", function(e){
       //  console.log(divContainerCard);
 
       listaAcoes.appendChild(divContainerCard);
+    }
+
       e.preventDefault();
 });
 

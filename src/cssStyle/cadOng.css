@@ -234,11 +234,13 @@ body footer{
   gap: 20px;
   justify-content: flex-end;
   margin-top: 30px;
+  cursor: pointer;
 }
 
 #principal #containerAcoes #formAcoes #btnArea button{
   padding: 10px 20px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 #principal #containerAcoes #formAcoes label{
@@ -293,6 +295,7 @@ body footer{
 #principal #containerAcoes #listaAcoes #cardAcao #btnArea button{
   padding: 10px 20px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 
