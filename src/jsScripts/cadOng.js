@@ -22,6 +22,15 @@ function validarEmail(email) {
   return formatoEmail.test(email);
 }
 
+function validarTelefone(telefone) {
+  // Remove todos os caracteres não numéricos do número de telefone
+  var numeroTelefone = telefone.replace(/\D/g, "");
+
+  // Verifica se o número de telefone possui o formato correto
+  var formatoTelefone = /^\d{10,11}$/; // Exemplo: 1234567890 ou 12345678901
+
+  return formatoTelefone.test(numeroTelefone);
+}
 
 
 function verificarCamposVazios(formulario) {
@@ -320,7 +329,12 @@ btnSalvarInfBasica.addEventListener("click", function(e){
 });
 
 btnSalvarContatos.addEventListener("click", function(e){
-  salvarFormularioNoLocalStorage(formContatos, "contatos");
+
+  let email = formContatos.querySelector("#emailUsuario");
+  let telefone = formContatos.querySelector("#contatos");
+
+  console.log(validarEmail(email.value));
+  // salvarFormularioNoLocalStorage(formContatos, "contatos");
 
   e.preventDefault();
 });
@@ -449,7 +463,7 @@ function addDadosEstruturaCardVagas(chave) {
            inicio.innerText = dados[i].inicioPeriodoAtuacao;
            fim.innerText = dados[i].fimPeriodoAtuacao;
            local.innerText = dados[i].localVaga;
-           turno.innerText = dados[i].turno;
+           turno.innerText = dados[i].turnoVaga;
 
           //  console.log(dados);
 
@@ -476,7 +490,7 @@ function insereCardsNaListaVagas(conjuntoCards) {
 
 
 document.addEventListener('DOMContentLoaded', function(e){
-  let cardsPreenchidos = addDadosEstruturaCardVagas("vagas");
+   let cardsPreenchidos = addDadosEstruturaCardVagas("vagas");
    insereCardsNaListaVagas(cardsPreenchidos);
 
     e.preventDefault();

@@ -580,6 +580,7 @@ btnSalvarUser.addEventListener("click", function(e){
 function geraPerfilCompleto(){
 
 
+
   let nomeUsuario = formInfUser.querySelector("#nomeUsuario");
   let email = formInfUser.querySelector("#emailUsuario");
   let senha = formInfUser.querySelector("#senhaUsuario");
