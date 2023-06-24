@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./cssStyle/paginaPerfilONG-style.css" />
+    <link rel="stylesheet" href="./cssStyle/paginaPerfilVol-style.css" />
+    <link rel="stylesheet" href="./componentes/navbar-style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/331a34d5ed.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./jsScripts/login.js"></script>
+    <script defer src="./componentes/navbar-script.js"></script>
+    <script defer src="./jsScripts/cadVolunt.js"></script>
+    <link rel="icon" type="image/png" href="img/iconPonte.png" />
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <!-- NAVBAR GERADA PELO SCRIPT -->
+    </header>
+
+    <div class="searchResultContainer" id="searchResults"></div>
+  </body>
+
+  <!-- Início do perfil -->
+  <!-- Dados principais do usuário -->
+  <main>
+    <section id="profileSection"></section>
+  </main>
+
+  <!-- decoração do footer -->
+  <div id="decFooter">
+    <img src="img/decTintaFooter.png" alt="" id="decFooter" />
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div id="footerContainer">
+      <div id="logoFooter">
+        <a href="#">
+          <img src="img/logoCor2.png" alt="logo em cor clara" />
+        </a>
+      </div>
+
+      <div id="formFooter">
+        <div id="sugestionsFooter">
+          <h3>Sugestões?</h3>
+          <p>Mande uma mensagem ;)</p>
+        </div>
+
+        <form action="mensagem.php">
+          <label for="email" title="Informe seu email mais usado">
+            E-mail:
+          </label>
+          <input
+            type="email"
+            name="email"
+            id=""
+            placeholder="informe seu e-mail..."
+          />
+
+          <label for="message">Mensagem:</label>
+          <textarea
+            type="textarea"
+            name="message"
+            title="Mensagem"
+            cols="30"
+            rows="5"
+            placeholder="escreva aqui sua mensagem..."
+          ></textarea>
+
+          <input type="submit" value="Enviar" name="enviar" class="btnLight" />
+        </form>
+      </div>
+    </div>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        const profileSection = document.getElementById("profileSection");
+
+        // Recuperar dados da localStorage
+        const perfilCompleto = JSON.parse(
+          localStorage.getItem("perfilCompleto")
+        );
+
+        if (perfilCompleto) {
+          document.title = perfilCompleto.nome;
+
+          const profileHtml = ` 
+              <div class="cabecalhoVol">
+                  <h3 id="tagUsuario">${perfilCompleto.tagUsuario}</h3>
+                  <section class="cabecalhoBio">
+                    <h1 id="nomeUsuario">${perfilCompleto.nome}</h1>
+                    <p id="bio">${perfilCompleto.biografia}</p>
+                    <div class="cabecalhoInteresses">
+                      <h3>Interesses:</h3>
+                      <ul id="campoInteresse">
+                        ${perfilCompleto.interesses}
+                      </ul>
+                    </div>
+                  </section>
+                </div>
+                <div class="conteudo-perfilVol">
+                  <h2 class="titulo">Qualificação e Experiências</h2>
+                  <section class="qualificacao">
+                    <h2>Qualificação</h2>
+                    <div class="listaQuali">
+                      ${perfilCompleto.qualif
+                        .map(
+                          (qualif) => `
+                          <div class="campoQuali">
+                            <h3>${qualif.nomeCurso}</h3>
+                            <ul>
+                              <li>Tipo do curso: ${qualif.tipoCurso}</li>
+                              <li>Instituição: ${qualif.nomeInstituicao}</li>
+                              <li>Área do curso: ${qualif.areaCurso}</li>
+                              <li>Período: ${qualif.inicioCurso} / ${qualif.fimCurso}</li>
+                            </ul>
+                          </div>
+                        `
+                        )
+                        .join("")}
+                    </div>
+                  </section>
+                  <h2>Experiências</h2>
+                  <div class="listaExp">
+                    ${perfilCompleto.exp
+                      .map(
+                        (experiencias) => `
+                        <div class="campoExp">
+                          <h3>Experiência 1</h3>
+                          <ul>
+                            <li>Cargo: ${experiencias.cargoAtuacao}</li>
+                            <li>Local: ${experiencias.endereco}</li>
+                            <li>Período: ${experiencias.inicioAtuacao}</li>
+                            <li>Descrição: </li>
+                          </ul>
+                        </div>
+                      `
+                      )
+                      .join("")}
+                  </div>
+                </div>
+              `;
+
+          profileSection.innerHTML = profileHtml;
+        } else {
+          // Nenhum perfil encontrado na localStorage
+          alert("Nenhum perfil encontrado.");
+        }
+      });
+
+      // A função atualiza a página após 10 milisegundos para que dê tempo de ocorrer os eventos da navbar
+      //setTimeout(paginaPerfilUsuario, 10);
+    </script>
+  </footer>
+</html>
