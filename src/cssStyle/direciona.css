@@ -8,6 +8,8 @@
   font-family: var(--fontSecondary);
   text-decoration: none;
   list-style: none;
+
+
 }
 
 :root {
@@ -36,24 +38,26 @@ body h2{
   color: #4a4a4a;
 }
 
-body #principal{
+body #principal {
 
   width: 100%;
   height: 100vh;
   margin: 50px auto 50px auto;
   /* background-color: rebeccapurple; */
   display:flex;
+  color: var(--titleColorDark);
 
 }
 
 body #principal #organizacao{
-  background-color: #333;
+  background-color: rgba(253, 200, 134, 1);
   width: 40%;
   height: 40vh;
-  color: #fff;
+  color: var(--titleColorDark);
   border-radius: 5px;
-    margin: 50px auto 50px auto;
-    transition: scale 2s;
+  margin: 50px auto 50px auto;
+  transition: scale 1.5s;
+    font-weight: 600;
 }
 
 body #principal #organizacao #oContent{
@@ -67,24 +71,26 @@ body #principal #organizacao #oContent{
 
 
 body #principal #voluntario{
-  background-color: #333;
-  color: #fff;
+  background-color:rgba(253, 200, 134, 1);
+  color: var(--titleColorDark);
   width: 40% ;
   height: 40vh;
   border-radius: 5px;
   margin: 50px auto 50px auto;
-  transition: scale 2s;
+  transition: scale 1.5s;
+  font-weight: 600;
 }
 
 body #principal #organizacao:hover{
     scale: 1.2;
-    transition: 1000;
+
+    cursor: pointer;
 }
 
 
 body #principal #voluntario:hover{
   scale: 1.2;
-
+  cursor: pointer;
 }
 
 body #principal #voluntario #vContent{
