@@ -15,6 +15,34 @@ const btnSalvarVaga = formVagas.querySelector("#btnSalvar");
 
 
 
+function validarEmail(email) {
+  // Expressão regular para verificar o formato do e-mail
+  const formatoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  return formatoEmail.test(email);
+}
+
+
+
+function verificarCamposVazios(formulario) {
+  // Obtém todos os campos do formulário
+  const campos = formulario.querySelectorAll('input, select, textarea');
+
+  // Percorre todos os campos e verifica se estão vazios
+  for (let i = 0; i < campos.length; i++) {
+    const campo = campos[i];
+
+    // Verifica se o campo está vazio
+    if (campo.value.trim() === '') {
+      // Campo vazio encontrado, retorna true
+      return true;
+    }
+  }
+
+  // Todos os campos estão preenchidos, retorna false
+  return false;
+}
+
 
 function insereCardsNaLista(conjuntoCards) {
 
@@ -449,7 +477,12 @@ document.addEventListener('DOMContentLoaded', function(e){
 
 btnSalvarVaga.addEventListener("click", function(e){
 
-  let listaVagas = document.querySelector("#listaVagas");
+  if(verificarCamposVazios(formVagas)){
+    alert("Você precisa preencher todos os campos!");
+    reloadParaAlvo("containerVagas");
+  }else{
+    alert("Dados salvos");
+    let listaVagas = document.querySelector("#listaVagas");
 
       salvarFormularioNoLocalStorage(formVagas, "vagas");
 
@@ -478,6 +511,8 @@ btnSalvarVaga.addEventListener("click", function(e){
         // console.log(divContainerCard);
 
         listaVagas.appendChild(divContainerCard);
+  }
+
         e.preventDefault();
 });
 
