@@ -232,10 +232,9 @@ body {
 }
 
 /* @media (max-width: 720px) {
-  body,
-  html {
+  .card .card-item {
     width: 100%;
-    align-items: center;
+    text-align: center;
   }
 
   .img-right {
@@ -245,31 +244,8 @@ body {
   .card {
     height: 70%;
   }
-}
-
-@media (max-width: 414px) {
-  body,
-  html {
-    width: 100%;
-    align-items: center;
-  }
-
-  .card {
-    height: 70%;
-  }
-}
-
-@media (max-width: 320px) {
-  body,
-  html {
-    width: 100%;
-    align-items: center;
-  }
-
-  .card {
-    height: 70%;
-  }
 } */
+
 /* Fim parte central homepage */
 
 /* <!-- ================================================================================= -->
