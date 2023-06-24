@@ -236,7 +236,7 @@ body {
     display: flex;
     flex-direction: column;
   }
-
+}
 /* Fim parte central homepage */
 
 /* <!-- ================================================================================= -->
@@ -363,6 +363,7 @@ footer #footerContainer #formFooter input[type="email"] {
 footer #footerContainer #formFooter textarea {
   text-align: start;
 }
+
 footer #footerContainer #formFooter input[type="submit"] {
   margin: 10px auto 10px auto;
   width: 100%;
