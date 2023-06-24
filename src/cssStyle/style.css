@@ -231,20 +231,11 @@ body {
   background-color: #8b73eb;
 }
 
-/* @media (max-width: 720px) {
-  .card .card-item {
-    width: 100%;
-    text-align: center;
-  }
-
-  .img-right {
-    display:  none;
-  }
-
+@media (max-width: 720px) {
   .card {
-    height: 70%;
+    display: flex;
+    flex-direction: column;
   }
-} */
 
 /* Fim parte central homepage */
 
