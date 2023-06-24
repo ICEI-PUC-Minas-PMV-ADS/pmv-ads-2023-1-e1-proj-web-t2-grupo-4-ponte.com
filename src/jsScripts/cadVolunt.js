@@ -187,7 +187,7 @@ function criaEstruturaCardCursos(){
   botaoExcluir.addEventListener("click", function(e){
       let divGroupBtn = botaoExcluir.parentNode;
       let divCardCurso = divGroupBtn.parentNode;
-      removeCardLocalStorage(divCardCurso,"formCursos");
+      removeCardLocalStorage(divCardCurso,"qualificacoes");
       divCardCurso.remove();
 
 
@@ -294,7 +294,7 @@ function validarEmail(email) {
 }
 
 document.addEventListener('DOMContentLoaded', function(e){
-  let cardsPreenchidos = addDadosEstruturaCardCursos("formCursos");
+  let cardsPreenchidos = addDadosEstruturaCardCursos("qualificacoes");
   insereCardsNaLista(cardsPreenchidos);
 
     e.preventDefault();
@@ -333,7 +333,7 @@ btnSalvarCurso.addEventListener("click", function(e){
     inicio.innerText = inputInicio.value;
     fim.innerText = inputFim.value;
 
-    salvarFormularioNoLocalStorage(formCursos, "formCursos");
+    salvarFormularioNoLocalStorage(formCursos, "qualificacoes");
     listaQualificacoes.appendChild(divContainerCard);
 
     alert("Dados Salvos Com Sucesso!");
@@ -378,7 +378,7 @@ function insereCardsNaListaExp(conjuntoCards) {
 function addDadosEstruturaCardExp(chave) {
 
       let dados = JSON.parse(localStorage.getItem(chave));
-      console.log(dados);
+      // console.log(dados);
       let cardsPreenchidos = [];
 
       for(i=0;i<dados.length;i++){
@@ -562,6 +562,7 @@ btnSalvarUser.addEventListener("click", function(e){
     reloadParaAlvo("formInfBasica");
   }else if(validarEmail(email.value)){
      salvarFormularioNoLocalStorage(formInfUser,"formUser");
+     geraPerfilCompleto();
      alert("Dados Salvos Com Sucesso!");
      reloadParaAlvo("formInfBasica");
   }else{
@@ -574,3 +575,32 @@ btnSalvarUser.addEventListener("click", function(e){
 
   e.preventDefault();
 });
+
+
+function geraPerfilCompleto(){
+
+
+  let nomeUsuario = formInfUser.querySelector("#nomeUsuario");
+  let email = formInfUser.querySelector("#emailUsuario");
+  let senha = formInfUser.querySelector("#senhaUsuario");
+  let bio = formInfUser.querySelector("#textoBiografia");
+  let interesses = formInfUser.querySelector("#interesseUsuario");
+  let experiencias  = [];
+  experiencias = JSON.parse( localStorage.getItem( "experiencias"));
+  let qualificacoes = [];
+  qualificacoes = JSON.parse(localStorage.getItem("qualificacoes"));
+
+
+  let perfilCompleto = {
+
+    nome:nomeUsuario.value,
+    email: email.value,
+    senha: senha.value,
+    biografia: bio.value,
+    interesses: interesses.value,
+    exp: experiencias,
+    qualif: qualificacoes
+  }
+
+  console.log(perfilCompleto);
+}
