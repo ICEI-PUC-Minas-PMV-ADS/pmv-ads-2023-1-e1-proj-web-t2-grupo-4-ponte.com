@@ -93,29 +93,30 @@ main {
 /* BOTÕES DE CONTATO */
 
 .cabecalhoONG .contato {
-    display: flex;
-    flex-direction: row;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-    justify-items: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  justify-items: center;
+  align-items: center;
 }
 
 .cabecalhoONG .contato .social {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .cabecalhoONG .contato .social .socialButton {
-    padding: 5px;
+  padding: 5px;
 }
 
-.cabecalhoONG .contato .social a:hover{
-    opacity: 70%;
-  }
+.cabecalhoONG .contato .social a:hover {
+  opacity: 70%;
+}
 
-.cabecalhoONG .contato .social a, a:visited{
-    color: inherit;
-  }
+.cabecalhoONG .contato .social a,
+a:visited {
+  color: inherit;
+}
 
 /* CONTEUDO */
 
@@ -174,97 +175,46 @@ main {
 
 /* VAGAS ABERTAS */
 .conteudo-perfilONG .listaVagas {
-    height: 40vh;
-    overflow: hidden;
-    overflow-y: scroll;
-    box-shadow: 15px 55px 55px -75px #4a4a4a;
-    border-radius: 7px;
-    padding: 1rem;
-    padding-top: 0;
-    margin-bottom: 2rem;
-    margin-left: 0;
-    padding-left: 0.3rem;
-  }
-  
+  height: 40vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  box-shadow: 15px 55px 55px -75px #4a4a4a;
+  border-radius: 7px;
+  padding: 1rem;
+  padding-top: 0;
+  margin-bottom: 2rem;
+  margin-left: 0;
+  padding-left: 0.3rem;
+}
+
 .conteudo-perfilONG .listaVagas .campoVagas ul {
-    padding-left: 0;
-  }
-  
+  padding-left: 0;
+}
+
 .conteudo-perfilONG .listaVagas .campoVagas ul li {
-    margin-bottom: 0.5rem;
-    list-style: none;
-  }
-  
+  margin-bottom: 0.5rem;
+  list-style: none;
+}
+
 .conteudo-perfilONG .listaVagas .campoVagas ul li:last-child {
-    /* background-color: #333; */
-    padding-bottom: 0.5rem;
+  /* background-color: #333; */
+  padding-bottom: 0.5rem;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 420px) {
+  main {
+    margin-right: 30px;
+    margin-left: 20px;
   }
 
-/* FOOTER */
+  .cabecalhoONG #campoInteresse {
+    align-items: center;
+    text-align: center;
+  }
 
-#decFooter img {
-  opacity: 45%;
-  width: 100%;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-footer {
-  height: 20rem;
-  background: var(--darkColor);
-  color: var(--lightColor);
-}
-
-footer #footerContainer {
-  height: 20rem;
-  font-family: var(--fontSecondary);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-footer #footerContainer #logoFooter img {
-  width: 180px;
-}
-
-footer #footerContainer #formFooter {
-  font-size: var(--smallFontSize);
-}
-
-footer #footerContainer #formFooter form {
-  display: flex;
-  flex-direction: column;
-}
-
-footer #footerContainer #formFooter #sugestionsFooter {
-  margin-bottom: 1rem;
-}
-
-footer #footerContainer #formFooter #sugestionsFooter h3 {
-  font-size: var(--mediumFontSize);
-  margin-bottom: 5px;
-  color: var(--titleColorLight);
-}
-
-footer #footerContainer #formFooter #sugestionsFooter p {
-  font-size: var(--smallFontSize);
-}
-
-footer #footerContainer #formFooter input[type="email"] {
-  width: 100%;
-  margin: 3px auto 10px auto;
-}
-
-/* footer #footerContainer #formFooter input[type="textarea"] {
-  height: 100px;
-  text-align: initial;
-} */
-
-footer #footerContainer #formFooter textarea {
-  text-align: start;
-}
-
-footer #footerContainer #formFooter input[type="submit"] {
-  margin: 10px auto 10px auto;
-  width: 100%;
+  .cabecalhoONG #campoInteresse li {
+    margin-right: 0.3rem;
+  }
 }

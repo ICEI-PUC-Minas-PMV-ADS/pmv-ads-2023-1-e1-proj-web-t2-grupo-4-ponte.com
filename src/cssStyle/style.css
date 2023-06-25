@@ -6,7 +6,6 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: var(--fontSecondary);
   text-decoration: none;
   list-style: none;
 }
@@ -150,7 +149,7 @@ body {
 /* Inicio parte central homepage Jefferson. */
 
 .container-superior {
-  position: relative;
+  /*position: relative; */
   /* bottom: 0em; */
   text-align: center;
 }
@@ -165,11 +164,12 @@ body {
   background-position: left 0px;
 }
 
-.texto-superior {
-  font-size: 20px;
+.texto-superior h3 {
+  font-size: var(--largeFontSize);
   position: relative;
   z-index: 1;
   color: var(--titleColorDark);
+  font-weight: var(--textCallsWeight);
   bottom: -5em;
   font-family: var(--fontPrimary);
   margin-top: 0px;
@@ -184,7 +184,6 @@ body {
 
 .card p {
   text-align: center;
-  font-family: sans-serif;
   font-size: 14px;
   word-spacing: 1px;
   width: 300px;
@@ -194,10 +193,10 @@ body {
   /* alinhamento dos card */
   margin-bottom: 150px;
   display: flex;
-  position: relative;
+  /*position: relative;*/
   bottom: 2em;
   justify-content: space-around;
-  height: 350px;
+  max-height: 350px;
   padding: 0em;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -223,6 +222,10 @@ body {
   height: 80%;
 }
 
+.card-item p {
+  font-family: var(--fontPrimary);
+}
+
 .card-item:nth-child(2) {
   background-color: #b6a4ff;
 }
@@ -231,22 +234,16 @@ body {
   background-color: #8b73eb;
 }
 
-/* @media (max-width: 720px) {
+@media (max-width: 720px) {
   .card {
     display: flex;
     flex-direction: column;
-  } */
-
+  }
+}
+*/
 /* Fim parte central homepage */
 
-/* <!-- ================================================================================= -->
-    <!-- ================================================================================= -->
-    <!-- ================================================================================= --> */
-
 /* estilos da parte de baixo da homepage Ademir e Thiago */
-
-/* ================================================================= */
-/* ================================================================ */
 
 .btnLight {
   padding: 10px 20px;
@@ -258,22 +255,24 @@ body {
 }
 
 /* imagens de decoração do background */
-#bottomPlace {
+.bottomPlace {
   background-image: url(../img/VetorLateral1ParteInferior.png),
     url(../img/decoration2.png);
   background-repeat: no-repeat, no-repeat;
   background-size: 150px, 150px;
   background-position: right -100px, left 250px;
 }
-#bottomPlace img {
+
+.bottomPlace img {
   margin-bottom: -10px;
   width: 100%;
 }
 
-#instructions {
+.instructions {
   font-family: var(--fontPrimary);
 }
-#instructions p {
+.instructions #principalCall p {
+  font-family: var(--fontPrimary);
   color: var(--titleColorDark);
   width: 48%;
   margin: 20px auto 50px auto;
@@ -281,13 +280,13 @@ body {
   font-size: var(--titleFontSize);
   font-weight: 600;
 }
-#instructions #generalContainerOfGreenCards {
+.instructions #generalContainerOfGreenCards {
   display: grid;
   grid-template-columns: 0.28fr 0.28fr;
   gap: 20px;
   justify-content: center;
 }
-#instructions .greenCard {
+.instructions .greenCard {
   background-color: #d9f8f2;
   color: #017071;
   padding: 3rem 3rem;
@@ -296,74 +295,108 @@ body {
   /* margin-bottom: 1rem; */
   margin-top: 1rem;
   box-shadow: 0.8px 0.8px 4px var(--lightColor);
+  font-family: var(--fontPrimary);
 }
-#instructions .greenCard h2 {
+
+.instructions .greenCard h2 {
   font-size: 20px;
   font-weight: var(--textCallsWeight);
   color: #017071;
   margin-bottom: 2rem;
   text-align: center;
 }
-#instructions .greenCard ul li {
+.instructions .greenCard ul li {
   font-size: 14px;
   margin-bottom: 0.5rem;
   list-style: square;
   line-height: 1.1rem;
 }
 
-/* FOOTER */
-#decFooter img {
-  opacity: 45%;
-  width: 100%;
-}
-footer {
-  height: 20rem;
-  background: var(--darkColor);
-  color: var(--lightColor);
-}
-footer #footerContainer {
-  height: 20rem;
-  font-family: var(--fontSecondary);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: var(--darkColor);
-}
-footer #footerContainer #logoFooter img {
-  width: 180px;
-}
-footer #footerContainer #formFooter {
-  font-size: var(--smallFontSize);
-}
-footer #footerContainer #formFooter form {
-  display: flex;
-  flex-direction: column;
-}
-footer #footerContainer #formFooter #sugestionsFooter {
-  margin-bottom: 1rem;
-}
-footer #footerContainer #formFooter #sugestionsFooter h3 {
-  font-size: var(--mediumFontSize);
-  margin-bottom: 5px;
-  color: var(--titleColorLight);
-}
-footer #footerContainer #formFooter #sugestionsFooter p {
-  font-size: var(--smallFontSize);
-  display: none;
-}
-footer #footerContainer #formFooter input[type="email"] {
-  width: 100%;
-  margin: 3px auto 10px auto;
-}
-/* footer #footerContainer #formFooter input[type="textarea"] {
-    height: 100px;
-    text-align: initial;
-  } */
+/* RESPONSIVIDADE */
 
-footer #footerContainer #formFooter textarea {
-  text-align: start;
-}
-footer #footerContainer #formFooter input[type="submit"] {
-  margin: 10px auto 10px auto;
-  width: 100%;
+@media (max-width: 420px) {
+  main {
+    margin: 40px 25px 25px 20px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    margin-bottom: 30px;
+  }
+
+  .container .containerImage {
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .container .containerImage h1 {
+    text-align: center;
+    font-size: var(--mediumFontSize);
+    margin-bottom: 0.5rem;
+  }
+
+  .container .containerImage img {
+    width: 80%;
+  }
+
+  .container .containerCard {
+    margin: 0;
+  }
+  
+  /* UTILS CLASSNAMES */
+  .margin-flexbox {
+    margin: 0;
+  }
+
+  .section .container-superior .texto-superior h3 {
+    font-size: var(--mediumFontSize);
+    
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 0px;
+    margin: 0;
+  }
+
+  .card .card-item {
+    width: 300px;
+    height: 250px;
+    padding: 15px;
+  }
+
+  .card .card-item img {
+    margin-bottom: 10px;
+    width: 30%;
+  }
+
+  .bottomPlace {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bottomPlace .instructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 300px;
+  }
+
+  .bottomPlace .instructions #principalCall p {
+    font-size: var(--mediumFontSize);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  #generalContainerOfGreenCards {
+    display: flex;
+    flex-direction: column;
+  }
+
 }

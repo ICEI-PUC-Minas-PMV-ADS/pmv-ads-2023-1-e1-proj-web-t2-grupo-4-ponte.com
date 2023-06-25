@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: var(--fontSecondary);
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --bgColor: #fff;
+  --lightColor: #d8d8d8;
+  --darkColor: #333;
+  --titleColorDark: #4a4a4a;
+  --titleColorLight: #fdc886;
+  --fontPrimary: "Poppins", sans-serif;
+  --fontSecondary: "Roboto", sans-serif;
+  --smallFontSize: 16px;
+  --mediumFontSize: 18px;
+  --largeFontSize: 20px;
+  --titleFontSize: 24px;
+  --titleFontSizeBiger: 32px;
+  --textCallsWeight: 600;
+  --mediuCallsWeight: 450;
+  --bgColor: #fffefc;
+}
+
+body h2 {
+  text-align: center;
+  margin-top: 100px;
+  font-family: var(--fontSecondary);
+  color: #4a4a4a;
+}
+
+body #principal {
+  width: 100%;
+  height: fit-content;
+  margin: 50px auto 50px auto;
+  /* background-color: rebeccapurple; */
+  display: flex;
+  color: var(--titleColorDark);
+}
+
+body #principal #organizacao {
+  background-color: rgba(253, 200, 134, 1);
+  width: 40%;
+  height: 40vh;
+  color: var(--titleColorDark);
+  border-radius: 5px;
+  margin: 50px auto 50px auto;
+  transition: scale 1.5s;
+  font-weight: 600;
+}
+
+body #principal #organizacao #oContent {
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  /* background-color: red; */
+}
+
+body #principal #voluntario {
+  background-color: rgba(253, 200, 134, 1);
+  color: var(--titleColorDark);
+  width: 40%;
+  height: 40vh;
+  border-radius: 5px;
+  margin: 50px auto 50px auto;
+  transition: scale 1.5s;
+  font-weight: 600;
+}
+
+body #principal #organizacao:hover {
+  scale: 1.2;
+
+  cursor: pointer;
+}
+
+body #principal a,
+body #principal a:visited {
+  color: inherit;
+}
+
+body #principal #voluntario:hover {
+  scale: 1.2;
+  cursor: pointer;
+}
+
+body #principal #voluntario #vContent {
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  /* background-color: red; */
+}

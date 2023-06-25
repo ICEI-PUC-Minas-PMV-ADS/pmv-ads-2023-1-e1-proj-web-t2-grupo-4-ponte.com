@@ -27,7 +27,7 @@ function validarTelefone(telefone) {
   var numeroTelefone = telefone.replace(/\D/g, "");
 
   // Verifica se o número de telefone possui o formato correto
-  var formatoTelefone = /^\d{10,11}$/; // Exemplo: 1234567890 ou 12345678901
+  var formatoTelefone = /^(?:(?:\+|00)?(55)\s?)?(?:\(?(\d{2})\)?\s?)?(?:((?:9\d|[2-9])\d{3})-?(\d{4}))$/;
 
   return formatoTelefone.test(numeroTelefone);
 }
@@ -139,19 +139,19 @@ function removeCardLocalStorage(card, chave) {
 
 function criarEstruturaCardAcoes(){
 
-   // Cria a div principal com o ID "cardAcao"
+
 const divCardAcao = document.createElement('div');
 divCardAcao.id = 'cardAcao';
 
-// Cria o elemento h3 com o texto "Ação 1"
+
 const heading = document.createElement('h3');
 
 divCardAcao.appendChild(heading);
 
-// Cria a lista não ordenada (ul)
+
 const ul = document.createElement('ul');
 
-// Cria os itens da lista (li)
+
 const liDataInicio = document.createElement('li');
 liDataInicio.textContent = 'de:';
 liDataInicio.setAttribute("id","inicio");
@@ -174,11 +174,11 @@ ul.appendChild(liStatus);
 
 divCardAcao.appendChild(ul);
 
-// Cria a div com o ID "btnArea"
+
 const divBtnArea = document.createElement('div');
 divBtnArea.id = 'btnArea';
 
-// Cria o botão "excluir"
+
 const btnExcluir = document.createElement('button');
 btnExcluir.textContent = 'excluir';
 divBtnArea.appendChild(btnExcluir);
@@ -186,7 +186,7 @@ divBtnArea.appendChild(btnExcluir);
 divCardAcao.appendChild(divBtnArea);
 
 
-    //  console.log(divCardAcao); OKK
+
 
     btnExcluir.addEventListener("click", function(e){
 
@@ -200,7 +200,7 @@ divCardAcao.appendChild(divBtnArea);
 
 
 
-     //  console.log(divContainerCard);
+
        return(divCardAcao);
 }
 
@@ -245,8 +245,6 @@ function addDadosEstruturaCardAcoes(chave) {
 
       return cardsPreenchidos;
 }
-
-
 
 
 function criarEstruturaCardVagas(){
@@ -320,88 +318,6 @@ divCardVaga.appendChild(divBtnArea);
 }
 
 
-
-
-btnSalvarInfBasica.addEventListener("click", function(e){
-  salvarFormularioNoLocalStorage(formInfBasica,"formInf");
-
-  e.preventDefault();
-});
-
-btnSalvarContatos.addEventListener("click", function(e){
-
-  let email = formContatos.querySelector("#emailUsuario");
-  let telefone = formContatos.querySelector("#contatos");
-
-  console.log(validarEmail(email.value));
-  // salvarFormularioNoLocalStorage(formContatos, "contatos");
-
-  e.preventDefault();
-});
-
-
-document.addEventListener('DOMContentLoaded', function(e){
-  let cardsPreenchidos = addDadosEstruturaCardAcoes("acoes");
-  insereCardsNaLista(cardsPreenchidos);
-
-    e.preventDefault();
-});
-
-
-btnSalvarAcao.addEventListener("click", function(e){
-
-
-    if(verificarCamposVazios(formAcoes)){
-      alert("Você precisa preencher todos os campos!");
-      reloadParaAlvo("containerAcoes");
-    }else{
-      alert("dados salvos");
-      let listaAcoes = document.querySelector("#listaAcoes");
-
-      salvarFormularioNoLocalStorage(formAcoes, "acoes");
-
-      let divContainerCard = criarEstruturaCardAcoes();
-      // console.log(divContainerCard); OK
-      let tituloDiv = divContainerCard.querySelector("h3");
-       let localAcao = divContainerCard.querySelector("#local");
-       let statusAcao = divContainerCard.querySelector("#status");
-       let inicioAcao = divContainerCard.querySelector("#inicio");
-       let fimAcao = divContainerCard.querySelector("#fim");
-
-      let inputNome = formAcoes.querySelector("#nomeAcao");
-      let inputLocal = formAcoes.querySelector("#localAcao");
-      let inputStatus = formAcoes.querySelector("#statusAcao");
-      let inputInicio = formAcoes.querySelector("#inicioAcao");
-      let inputFim = formAcoes.querySelector("#fimAcao");
-
-
-       tituloDiv.innerText = inputNome.value;
-       localAcao.innerText = inputLocal.value;
-       statusAcao.innerText = inputStatus.value;
-       inicioAcao.innerText = inputInicio.value;
-       fimAcao.innerText = inputFim.value;
-
-      //  console.log(divContainerCard);
-
-      listaAcoes.appendChild(divContainerCard);
-    }
-
-      e.preventDefault();
-});
-
-
-btnSalvarAcao.addEventListener("click", function(e) {
-     e.preventDefault(); // Evita o comportamento padrão de recarregar a página
-    reloadParaAlvo("containerAcoes");
-});
-
-
-
-
-
-
-
-
 function removeCardVagaLocalStorage(card, chave) {
   var id = chave;
   var dadosSalvos = localStorage.getItem(id);
@@ -435,13 +351,6 @@ function removeCardVagaLocalStorage(card, chave) {
     }
   }
 }
-
-
-
-
-
-
-
 
 
 function addDadosEstruturaCardVagas(chave) {
@@ -488,6 +397,33 @@ function insereCardsNaListaVagas(conjuntoCards) {
 }
 
 
+function geraPerfilCompletoOng() {
+  let acoes = [];
+  acoes = JSON.parse(localStorage.getItem("acoes"));
+  let vagas = [];
+  vagas = JSON.parse(localStorage.getItem("vagas"));
+
+  let perfilCompletoOng = {
+    nome: formInfBasica.querySelector("#nomeInstituicao").value,
+    email: formContatos.querySelector("#email").value,
+    senha: formInfBasica.querySelector("#senha").value,
+    tagUsuario: "Ong",
+    biografia: formInfBasica.querySelecto("#missao").value
+    + formInfBasica.querySelector("#visao").value
+    + formInfBasica.querySelector("valores").value,
+    interesses: formInfUser.querySelector("#interesseUsuario").value,
+    acoes: experiencias,
+    vagas: qualificacoes,
+  };
+
+  // Salvar perfilCompleto na localStorage
+  localStorage.setItem("perfilCompletoOng", JSON.stringify(perfilCompletoOng));
+
+  console.log(perfilCompletoOng);
+}
+
+
+
 
 document.addEventListener('DOMContentLoaded', function(e){
    let cardsPreenchidos = addDadosEstruturaCardVagas("vagas");
@@ -496,8 +432,33 @@ document.addEventListener('DOMContentLoaded', function(e){
     e.preventDefault();
 });
 
+document.addEventListener('DOMContentLoaded', function(e){
+  let cardsPreenchidos = addDadosEstruturaCardAcoes("acoes");
+  insereCardsNaLista(cardsPreenchidos);
+
+    e.preventDefault();
+});
 
 
+btnSalvarContatos.addEventListener("click", function(e){
+
+  let email = formContatos.querySelector("#email");
+  let telefone = formContatos.querySelector("#telefone");
+
+  if(validarEmail(email.value) && validarTelefone(telefone.value)){
+    alert("contatos salvos com sucesso");
+    salvarFormularioNoLocalStorage(formContatos, "contatos");
+    reloadParaAlvo("contatos");
+
+  }else{
+
+    alert("verifique os campos telefone e e-mail, pois são obrigatórios");
+
+  }
+
+
+  e.preventDefault();
+});
 
 btnSalvarVaga.addEventListener("click", function(e){
 
@@ -544,4 +505,68 @@ btnSalvarVaga.addEventListener("click", function(e){
 btnSalvarVaga.addEventListener("click", function(e) {
      e.preventDefault(); // Evita o comportamento padrão de recarregar a página
     reloadParaAlvo("containerVagas");
+});
+
+btnSalvarInfBasica.addEventListener("click", function(e){
+  if(!verificarCamposVazios(formInfBasica)){
+    salvarFormularioNoLocalStorage(formInfBasica,"formInf");
+    alert("dados salvos com sucesso");
+    reloadParaAlvo("infBasica");
+  }else{
+    alert("você precisa preencher todos os campos");
+  }
+
+
+  e.preventDefault();
+});
+
+btnSalvarInfBasica.addEventListener("click", function(e){
+  geraPerfilCompletoOng();
+});
+
+btnSalvarAcao.addEventListener("click", function(e){
+
+
+    if(verificarCamposVazios(formAcoes)){
+      alert("Você precisa preencher todos os campos!");
+      reloadParaAlvo("containerAcoes");
+    }else{
+      alert("dados salvos");
+      let listaAcoes = document.querySelector("#listaAcoes");
+
+      salvarFormularioNoLocalStorage(formAcoes, "acoes");
+
+      let divContainerCard = criarEstruturaCardAcoes();
+      // console.log(divContainerCard); OK
+      let tituloDiv = divContainerCard.querySelector("h3");
+       let localAcao = divContainerCard.querySelector("#local");
+       let statusAcao = divContainerCard.querySelector("#status");
+       let inicioAcao = divContainerCard.querySelector("#inicio");
+       let fimAcao = divContainerCard.querySelector("#fim");
+
+      let inputNome = formAcoes.querySelector("#nomeAcao");
+      let inputLocal = formAcoes.querySelector("#localAcao");
+      let inputStatus = formAcoes.querySelector("#statusAcao");
+      let inputInicio = formAcoes.querySelector("#inicioAcao");
+      let inputFim = formAcoes.querySelector("#fimAcao");
+
+
+       tituloDiv.innerText = inputNome.value;
+       localAcao.innerText = inputLocal.value;
+       statusAcao.innerText = inputStatus.value;
+       inicioAcao.innerText = inputInicio.value;
+       fimAcao.innerText = inputFim.value;
+
+      //  console.log(divContainerCard);
+
+      listaAcoes.appendChild(divContainerCard);
+    }
+
+      e.preventDefault();
+});
+
+
+btnSalvarAcao.addEventListener("click", function(e) {
+     e.preventDefault(); // Evita o comportamento padrão de recarregar a página
+    reloadParaAlvo("containerAcoes");
 });
