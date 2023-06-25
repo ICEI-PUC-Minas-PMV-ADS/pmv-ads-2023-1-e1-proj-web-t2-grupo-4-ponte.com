@@ -161,13 +161,13 @@
           `;
           } else if (perfilCompletoOng) {
             //Perfil ONG
-            document.title = perfilCompletoOng.nome;
+            document.title = perfilCompletoOng.nomeInstituicao;
 
             profileHtml = ` 
             <div class="cabecalhoONG">
                   <h3 id="tagUsuario">${perfilCompletoOng.tagUsuario}</h3>
                   <section class="cabecalhoBio">
-                    <h1 id="nomeUsuario">${perfilCompletoOng.nome}</h1>
+                    <h1 id="nomeUsuario">${perfilCompletoOng.nomeInstituicao}</h1>
                     <p id="bio">
                       ${perfilCompletoOng.biografia}
                     </p>
@@ -199,13 +199,13 @@
                     <div class="listaAcoes">
                       ${perfilCompletoOng.acoes
                         .map(
-                          (acao) => `
+                          (acoes) => `
                             <div class="campoAcoes">
-                              <h3 id="nomeAcao">${acao.nomeAcao}</h3>
+                              <h3 id="nomeAcao">${acoes.nomeAcao}</h3>
                               <ul>
-                                <li id="periodoAcao">${acao.inicioAcao} - ${acao.fimAcao}</li>
+                                <li id="periodoAcao">${acoes.inicio} / ${acoes.fim}</li>
                                 <li id="descricaoAcao">
-                                  ${acao.statusAcao}
+                                  ${acoes.statusAcao}
                                 </li>
                               </ul>
                             </div>
@@ -223,10 +223,10 @@
                             <div class="campoVagas">
                               <h3 id="nomeVaga">${vaga.nomeVaga}</h3>
                               <ul>
-                                <li id="localVaga">${vaga.local}</li>
-                                <li id="periodoVaga">${vaga.inicio} - ${vaga.fim}</li>
+                                <li id="localVaga">${vaga.localVaga}</li>
+                                <li id="periodoVaga">${vaga.inicio} / ${vaga.fim}</li>
                                 <li id="descricaoVaga">
-                                  ${vaga.turno}
+                                  ${vaga.turnoVaga}
                                 </li>
                               </ul>
                             </div>
