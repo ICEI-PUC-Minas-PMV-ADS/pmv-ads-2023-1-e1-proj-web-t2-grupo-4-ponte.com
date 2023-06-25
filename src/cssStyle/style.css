@@ -321,12 +321,15 @@ body {
   }
 
   .container {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     margin-bottom: 30px;
   }
 
   .container .containerImage {
     align-items: center;
+    margin-bottom: 30px;
   }
   
   .container .containerImage h1 {
@@ -340,7 +343,7 @@ body {
   }
 
   .container .containerCard {
-    display: none;
+    margin: 0;
   }
   
   /* UTILS CLASSNAMES */
