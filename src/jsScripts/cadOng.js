@@ -543,23 +543,38 @@ btnSalvarAcao.addEventListener("click", function(e) {
 });
 
 function geraPerfilCompletoOng() {
-  let acoes = [];
-  acoes = JSON.parse(localStorage.getItem("acoes"));
-  let vagas = [];
-  vagas = JSON.parse(localStorage.getItem("vagas"));
 
-  let perfilCompletoOng = {
-    nome: formInfBasica.querySelector("#nomeInstituicao").value,
-    email: formContatos.querySelector("#email").value,
-    senha: formInfBasica.querySelector("#senha").value,
-    tagUsuario: "Ong",
-    biografia: formInfBasica.querySelector("#missao").value
-    + formInfBasica.querySelector("#visao").value
-    + formInfBasica.querySelector("valores").value,
-    interesses: formInfUser.querySelector("#interesseUsuario").value,
-    acoes: experiencias,
-    vagas: qualificacoes,
-  };
+  let acoesV = [];
+  acoesV = JSON.parse(localStorage.getItem("acoes"));
+  let vagasV = [];
+  vagasV = JSON.parse(localStorage.getItem("vagas"));
+
+  emailInput = formContatos.querySelector("#email").value;
+  senhaInput = formInfBasica.querySelector("#senha").value;
+  telefoneInput = formContatos.querySelector("#telefone").value;
+  instaInput = formContatos.querySelector("#redesSociaisInsta").value;
+  faceInput = formContatos.querySelector("#redesSociaisFace").value;
+  outroInput = formContatos.querySelector("#redesSociaisSite").value;
+
+  nomeInput = formInfBasica.querySelector("#nomeInstituicao").value;
+  missaoInput = formInfBasica.querySelector("#missao").value;
+  visaoInput = formInfBasica.querySelector("#visao").value;
+  valoresInput = formInfBasica.querySelector("#valores").value;
+
+
+   let perfilCompletoOng = {
+     tagUsuario: "ONG",
+     nome: nomeInput,
+     email: emailInput,
+     senha: senhaInput,
+     telefone: telefoneInput,
+     insta: instaInput,
+     face: faceInput,
+     outroSite: outroInput,
+     biografia: missaoInput + visaoInput + valoresInput,
+     acoes: acoesV,
+     vagas: vagasV
+   };
 
   // Salvar perfilCompleto na localStorage
   localStorage.setItem("perfilCompletoOng", JSON.stringify(perfilCompletoOng));
@@ -568,10 +583,10 @@ function geraPerfilCompletoOng() {
 }
 
 // Selecionar o botão de salvar perfil pelo ID
-let botaoSalvarPerfil = document.querySelector("#salvarPerfil");
+let botaoSalvarPerfilONG = document.querySelector("#salvarPerfilONG");
 
 // Adicionar o evento de clique ao botão
-botaoSalvarPerfil.addEventListener("click", function () {
+botaoSalvarPerfilONG.addEventListener("click", function () {
   geraPerfilCompletoOng();
   window.location.href = "paginaFormPerfilLog.html";
 });

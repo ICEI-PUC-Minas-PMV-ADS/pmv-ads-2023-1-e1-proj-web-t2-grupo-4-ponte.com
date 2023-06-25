@@ -20,6 +20,7 @@
     ></script>
     <script defer src="./jsScripts/login.js"></script>
     <script defer src="./componentes/navbar-script.js"></script>
+    <script defer src="./jsScripts/cadOng.js"></script>
     <script defer src="./jsScripts/cadVolunt.js"></script>
     <link rel="icon" type="image/png" href="img/iconPonte.png" />
     <title></title>
@@ -171,24 +172,19 @@
                       ${perfilCompletoOng.biografia}
                     </p>
                   </section>
-                  <div class="cabecalhoInteresses">
-                    <h3>Causas:</h3>
-                    <ul id="campoInteresse">
-                      ${perfilCompletoOng.interesses}
-                    </ul>
                   </div>
                   <div class="contato">
                     <h3>Contato:</h3>
                     <div class="social">
-                      <a href="${perfilCompletoOng.facebook}" class="socialButton"
+                      <a href="${perfilCompletoOng.face}" class="socialButton"
                         ><i class="fa-brands fa-facebook fa-2xl"></i
                       ></a>
-                      <a href="${perfilCompletoOng.instagram}" class="socialButton"
+                      <a href="${perfilCompletoOng.insta}" class="socialButton"
                         ><i class="fa-brands fa-instagram fa-2xl"></i
                       ></a>
                       <a
                         href="https://web.whatsapp.com/send?phone=${
-                          perfilCompletoOng.whatsapp
+                          perfilCompletoOng.telefone
                         }"
                         class="socialButton"
                       >
