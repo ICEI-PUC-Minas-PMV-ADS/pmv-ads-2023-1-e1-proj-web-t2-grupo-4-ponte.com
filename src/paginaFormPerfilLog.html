@@ -207,9 +207,9 @@
                             <div class="campoAcoes">
                               <h3 id="nomeAcao">${acao.nomeAcao}</h3>
                               <ul>
-                                <li id="periodoAcao">${acao.periodoAcao}</li>
+                                <li id="periodoAcao">${acao.inicioAcao} - ${acao.fimAcao}</li>
                                 <li id="descricaoAcao">
-                                  ${acao.descricaoAcao}
+                                  ${acao.statusAcao}
                                 </li>
                               </ul>
                             </div>
@@ -221,16 +221,16 @@
                   <h2 class="titulo">Vagas abertas</h2>
                   <section class="vagasAbertas">
                     <div class="listaVagas">
-                      ${perfilCompletoOng.vagasAbertas
+                      ${perfilCompletoOng.vagas
                         .map(
                           (vaga) => `
                             <div class="campoVagas">
                               <h3 id="nomeVaga">${vaga.nomeVaga}</h3>
                               <ul>
-                                <li id="localVaga">${vaga.localVaga}</li>
-                                <li id="periodoVaga">${vaga.periodoVaga}</li>
+                                <li id="localVaga">${vaga.local}</li>
+                                <li id="periodoVaga">${vaga.inicio} - ${vaga.fim}</li>
                                 <li id="descricaoVaga">
-                                  ${vaga.descricaoVaga}
+                                  ${vaga.turno}
                                 </li>
                               </ul>
                             </div>
