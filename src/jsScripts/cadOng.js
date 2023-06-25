@@ -397,6 +397,32 @@ function insereCardsNaListaVagas(conjuntoCards) {
 }
 
 
+function geraPerfilCompletoOng() {
+  let acoes = [];
+  acoes = JSON.parse(localStorage.getItem("acoes"));
+  let vagas = [];
+  vagas = JSON.parse(localStorage.getItem("vagas"));
+
+  let perfilCompletoOng = {
+    nome: formInfBasica.querySelector("#nomeInstituicao").value,
+    email: formContatos.querySelector("#email").value,
+    senha: formInfBasica.querySelector("#senha").value,
+    tagUsuario: "Ong",
+    biografia: formInfBasica.querySelecto("#missao").value
+    + formInfBasica.querySelector("#visao").value
+    + formInfBasica.querySelector("valores").value,
+    interesses: formInfUser.querySelector("#interesseUsuario").value,
+    acoes: experiencias,
+    vagas: qualificacoes,
+  };
+
+  // Salvar perfilCompleto na localStorage
+  localStorage.setItem("perfilCompletoOng", JSON.stringify(perfilCompletoOng));
+
+  console.log(perfilCompletoOng);
+}
+
+
 
 
 document.addEventListener('DOMContentLoaded', function(e){
@@ -494,6 +520,9 @@ btnSalvarInfBasica.addEventListener("click", function(e){
   e.preventDefault();
 });
 
+btnSalvarInfBasica.addEventListener("click", function(e){
+  geraPerfilCompletoOng();
+});
 
 btnSalvarAcao.addEventListener("click", function(e){
 
