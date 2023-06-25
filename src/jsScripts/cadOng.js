@@ -417,13 +417,13 @@ btnSalvarContatos.addEventListener("click", function(e){
   let telefone = formContatos.querySelector("#telefone");
 
   if(validarEmail(email.value) && validarTelefone(telefone.value)){
-    alert("contatos salvos com sucesso");
+    alert("Contatos salvos com sucesso");
     salvarFormularioNoLocalStorage(formContatos, "contatos");
     reloadParaAlvo("contatos");
 
   }else{
 
-    alert("verifique os campos telefone e e-mail, pois são obrigatórios");
+    alert("Verifique os campos telefone e e-mail, pois são obrigatórios");
 
   }
 
@@ -553,7 +553,7 @@ function geraPerfilCompletoOng() {
     email: formContatos.querySelector("#email").value,
     senha: formInfBasica.querySelector("#senha").value,
     tagUsuario: "Ong",
-    biografia: formInfBasica.querySelecto("#missao").value
+    biografia: formInfBasica.querySelector("#missao").value
     + formInfBasica.querySelector("#visao").value
     + formInfBasica.querySelector("valores").value,
     interesses: formInfUser.querySelector("#interesseUsuario").value,
@@ -572,6 +572,6 @@ let botaoSalvarPerfil = document.querySelector("#salvarPerfil");
 
 // Adicionar o evento de clique ao botão
 botaoSalvarPerfil.addEventListener("click", function () {
-  geraPerfilCompleto();
+  geraPerfilCompletoOng();
   window.location.href = "paginaFormPerfilLog.html";
 });
