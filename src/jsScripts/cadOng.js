@@ -435,9 +435,9 @@ function geraPerfilCompletoOng() {
      senha: senhaInput,
      telefone: telefoneInput,
      insta: instaInput,
-     face : faceInput,
-     outroSite : outroInput,
-     biografia:missaoInput + visaoInput + valoresInput,
+     face: faceInput,
+     outroSite: outroInput,
+     biografia: missaoInput + visaoInput + valoresInput,
      acoes: acoesV,
      vagas: vagasV
    };
