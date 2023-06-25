@@ -160,7 +160,7 @@ body #principal {
 
 /* área de vagas */
 
-#pesquise h2 {
+.nomeVaga h2 {
   color: var(--titleColorDark);
   font-size: var(--titleFontSize);
   background-color: var(--titleColorLight);
@@ -275,19 +275,21 @@ footer #footerContainer #formFooter input[type="submit"] {
 
 /* FIM FOOTER */
 
-@media (max-width: 770px) 
+/* RESPONSIVIDADE DAS VAGAS + BARRA DE PESQUISA */
+
+@media (max-width: 770px)
 {
   .vagasSearch-txt {
     width: 50%;
     margin: 0 auto;
   }
-
+ 
   #vagasSearchButton {
     right: 16em;
   }
 }
 
-@media (max-width: 330px) 
+@media (max-width: 330px)
 {
   * {
     display: flex;
@@ -297,3 +299,5 @@ footer #footerContainer #formFooter input[type="submit"] {
     justify-items: center;
   }
 }
+
+/* RESPONSIVIDADE DAS VAGAS + BARRA DE PESQUISA */

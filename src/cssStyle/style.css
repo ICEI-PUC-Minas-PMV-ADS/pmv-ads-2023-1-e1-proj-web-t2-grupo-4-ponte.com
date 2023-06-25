@@ -231,11 +231,11 @@ body {
   background-color: #8b73eb;
 }
 
-@media (max-width: 720px) {
+/* @media (max-width: 720px) {
   .card {
     display: flex;
     flex-direction: column;
-  }
+  } */
 
 /* Fim parte central homepage */
 
