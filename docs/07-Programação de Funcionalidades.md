@@ -4,44 +4,48 @@
 
 As telas desenvolvidas apresentadas no <a href="04-Projeto de Interface.md"> Projeto de Interface</a> buscam atender aos requisitos funcionais e não funcionais do site. A seguir, especificamos quais requisitos são atendidos em quais telas da aplicação. 
 
->- **RF-001: Pesquisar novas ONGs**
+>- **RF-001: Pesquisar novas ONGs e RF-005: Filtro para perfil de voluntários**
 <div align="justify"> 
+
+<div align="center">
+<img width="900" src="img/RF-001-5.png"></div> 
  
-Após o login de usuário, todas as telas da aplicação atendem ao requisito funcional para pesquisa de novas ONGs, visto que é implementada uma barra de pesquisa que serve, dentre outras coisas, para a pesquisa de novas ONGs por parte dos voluntários. Este requisito é de prioridade alta.
- 
+Após o login de usuário, todas as telas da aplicação atendem ao requisito funcional para pesquisa de novas ONGs, assim como para pesquisa e filtro de voluntários, visto que é implementada uma barra de pesquisa que serve para este fim. Uma vez logado, o usuário consegue pesquisar tanto por nome quanto pelas causas defendidas pelas ONGs e interesses dos voluntários como, por exemplo, meio ambiente, animais, entre outros. Estes requisitos são de prioridade alta.
 </div>
 
->- **RF-002: Apresentar perfil de ONGs**
+>- **RF-002: Apresentar perfil de ONGs e RF-004: Permitir o contato direto entre ONGs e voluntários**
 <div align="justify"> 
 
-A tela de perfil da ONG (TELA 05) atende ao RF-002, ao possibilitar a criação do perfil das ONGs, contendo suas informações mais relevantes, como causas defendidas, ações realizadas, vagas abertas para voluntários e meios de contato. Este requisito é de prioridade alta.
+<div align="center">
+<img width="900" src="img/RF-002.png"></div> 
+
+A tela de perfil da ONG (TELA 05) atende ao RF-002, de prioridade alta, ao possibilitar a criação do perfil das ONGs, contendo suas informações mais relevantes, como causas defendidas, ações realizadas e vagas abertas para voluntários. Além disso, contém meios de contato com botões que redirecionam para outras redes sociais e conversa via WhatsApp com a ONG, atendendo também ao RF-004, de prioridade baixa, ao permitir o contato direto entre ONGs e voluntários.
+</div>
 
 >- **RF-003: Possibilitar a criação de perfil de voluntários**
 <div align="justify">
 
-A tela de formulário detalhado para voluntários (TELA 04) atende ao RF-003 ao possibilitar a criação de perfil com informações dos voluntários. A tela de perfil de voluntário (TELA 06) mostra este requisito atendido, com o resultado do perfil criado a partir do formulário. Este requisito é de prioridade alta.
+<div align="center">
+<img width="900" src="img/RF-003.png"></div> 
 
->- **RF-004: Permitir o contato direto entre ONGs e voluntários**
-<div align="justify"> 
-
-A tela de perfil da ONG (TELA 05) atende ao RF-004, de contato direto com as ONGs e os voluntários, ao apresentar botões que redirecionam o usuário para as redes sociais das organizações. No caso do WhatsApp, o botão direciona para conversa direta. Este requisito tem prioridade baixa.
-
->- **RF-005: Filtro para perfil de voluntários**
-<div align="justify"> 
-
-A tela de lista de vagas (TELA 08) atende ao RF-005, através de campo para a seleção de filtros de pesquisa de voluntários para as ONGs. Este requisito tem prioridade alta.
+A tela de formulário detalhado para voluntários (TELA 04) atende ao RF-003 ao possibilitar a criação de perfil com informações dos voluntários. Este requisito é de prioridade alta.
+</div>
 
 >- **RF-006: Filtro para perfil de ONGs e trabalhos voluntários**
-<div align="justify"> 
+<div align="justify">
+<div align="center">
+<img width="900" src="img/RF-006.png"></div> 
 
-A tela de lista de vagas (TELA 08) atende ao RF-006, através de campo para a seleção de filtros de pesquisa de ONGs e de vagas de voluntariado para os voluntários. Este requisito tem prioridade alta.
+A tela de lista de vagas (TELA 08) atende ao RF-006, através de campo de pesquisa de vagas de voluntariado. Os usuários conseguem filtrar as vagas desejadas através de pesquisa por termos que englobam nome, descrição, ONG responsável e período das vagas disponibilizadas. Este requisito tem prioridade alta.
+</div>
 
+<!--
 >- **RF-007: Permitir o compartilhamento de vagas de voluntariado em redes sociais**
 <div align="justify"> 
 
 A tela de lista de vagas (TELA 08) atende ao RF-007 para compartilhamento de vagas. O usuário tem a possibilidade de compartilhar uma vaga em suas redes sociais através de botões de compartilhamento presentes na página. Este requisito é de prioridade média.
 
-<!-- >// DESCRIÇÃO DA SEÇÃO:
+ >// DESCRIÇÃO DA SEÇÃO:
 Implementação do sistema descritas por meio dos requisitos funcionais e/ou não funcionais. Deve relacionar os requisitos atendidos os artefatos criados (código fonte) além das estruturas de dados utilizadas e as instruções para acesso e verificação da implementação que deve estar funcional no ambiente de hospedagem.
 
 Para cada requisito funcional, pode ser entregue um artefato desse tipo
