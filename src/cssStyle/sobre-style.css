@@ -64,7 +64,6 @@ main {
   flex-direction: column;
   flex: 1;
   text-align: center;
-  /*margin-left: 100px;*/
   margin-right: 15px;
 }
 
@@ -92,84 +91,55 @@ main {
 }
 
 .container .sobre .creditos .expediente {
-    display: flex;
-    flex-direction: column;
-}
-
-.container .sobre .creditos ul {
-    list-style: none;
-  }
-
-.container .sobre .creditos .orientacao-licencas {
-    margin-left: 3rem;
-    text-align: center;
-}
-
-/* FOOTER */
-
-#decFooter img {
-  opacity: 45%;
-  width: 100%;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-footer {
-  height: 20rem;
-  background: var(--darkColor);
-  color: var(--lightColor);
-}
-
-footer #footerContainer {
-  height: 20rem;
-  font-family: var(--fontSecondary);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-footer #footerContainer #logoFooter img {
-  width: 180px;
-}
-
-footer #footerContainer #formFooter {
-  font-size: var(--smallFontSize);
-}
-
-footer #footerContainer #formFooter form {
   display: flex;
   flex-direction: column;
 }
 
-footer #footerContainer #formFooter #sugestionsFooter {
-  margin-bottom: 1rem;
+.container .sobre .creditos ul {
+  list-style: none;
 }
 
-footer #footerContainer #formFooter #sugestionsFooter h3 {
-  font-size: var(--mediumFontSize);
-  margin-bottom: 5px;
-  color: var(--titleColorLight);
+.container .sobre .creditos .orientacao-licencas {
+  margin-left: 3rem;
+  text-align: center;
 }
 
-footer #footerContainer #formFooter #sugestionsFooter p {
-  font-size: var(--smallFontSize);
-}
+/* RESPONSIVIDADE */
 
-footer #footerContainer #formFooter input[type="email"] {
-  width: 100%;
-  margin: 3px auto 10px auto;
-}
+@media (max-width: 420px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    margin-left: 25px;
+  }
 
-/* footer #footerContainer #formFooter input[type="textarea"] {
-  height: 100px;
-  text-align: initial;
-} */
+  .container .sobre {
+    margin: 0;
+  }
 
-footer #footerContainer #formFooter textarea {
-  text-align: start;
-}
+  .container .sobre p {
+    margin-bottom: 1rem;
+  }
 
-footer #footerContainer #formFooter input[type="submit"] {
-  margin: 10px auto 10px auto;
-  width: 100%;
+  .container .sobre .creditos {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0;
+    font-size: var(--smallFontSize);
+  }
+
+  .container .sobre .creditos p {
+    text-align: center;
+  }
+
+  .container .sobre .creditos .orientacao-licencas {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .containerImg img {
+    margin-top: 20px;
+  }
 }

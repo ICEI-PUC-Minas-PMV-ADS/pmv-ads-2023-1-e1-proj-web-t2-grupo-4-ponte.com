@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="./cssStyle/cadVolunt.css" />
     <link rel="stylesheet" href="./componentes/navbar-style.css" />
-    <link rel="stylesheet" href="./componentes/footer-style.css">
+    <link rel="stylesheet" href="./componentes/footer-style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -56,13 +56,12 @@
             abaixo.
             <a href="#formInfBasica">
               <button class="roundBtn" title="clique para iniciar">
-              <i
-                class="fa-solid fa-arrow-down fa-sm"
-                style="color: #0b0b0b"
-              ></i>
-            </button>
+                <i
+                  class="fa-solid fa-arrow-down fa-sm"
+                  style="color: #0b0b0b"
+                ></i>
+              </button>
             </a>
-
           </p>
         </div>
 
@@ -79,7 +78,7 @@
       <form action="" class="formContainerGrande" id="formInfBasica">
         <div id="campoNome" class="regiaoInput">
           <label for="nomeUsuario" class="labels labelData"
-            >nome completo</label
+            >Nome completo</label
           >
           <input
             type="text"
@@ -90,7 +89,7 @@
         </div>
 
         <div id="campoEmail" class="regiaoInput">
-          <label for="emailUsuario" class="labels labelData">e-mail</label>
+          <label for="emailUsuario" class="labels labelData">E-mail</label>
           <input
             type="text"
             name="emailUsuario"
@@ -100,7 +99,7 @@
         </div>
 
         <div id="campoSenha" class="regiaoInput">
-          <label for="senhaUsuario" class="labels labelData">senha</label>
+          <label for="senhaUsuario" class="labels labelData">Senha</label>
           <input
             type="password"
             name="senhaUsuario"
@@ -110,9 +109,7 @@
         </div>
 
         <div id="biografia" class="regiaoInput">
-          <label for="biografia" class="labels labelData"
-            >sobre você</label
-          >
+          <label for="biografia" class="labels labelData">Sobre você</label>
           <textarea
             name="biografia"
             id="textoBiografia"
@@ -124,7 +121,9 @@
         </div>
 
         <div id="interesses">
-          <label for="inputInteresse">interesse para trabalho voluntário:</label>
+          <label for="inputInteresse"
+            >Interesse para trabalho voluntário:</label
+          >
           <input
             type="text"
             name="senhaUsuario"
@@ -180,15 +179,15 @@
           </div>
         </form> -->
 
-        <!-- <div id="listaInteresses">
+      <!-- <div id="listaInteresses">
           <h3 class="titulosH3">Interesses e prioridades</h3>
           <table id="tabelaInteresses" class="tabelaInteresses"> -->
-            <!-- <tr class="linha">
+      <!-- <tr class="linha">
                   <td>interesse 1</td>
                   <td>prioridade 1</td>
                   <td><i class="fa-solid fa-trash"></i></td>
                 </tr> -->
-              <!-- <div id="cardInteresse" class="cardInteresse">
+      <!-- <div id="cardInteresse" class="cardInteresse">
                   <ul>
                     <li>interesseeeeeeee</li>
                     <li>prioridade</li>
@@ -196,11 +195,11 @@
                   </ul>
               </div> -->
 
-          <!-- </table>
+      <!-- </table>
         </div>
       </div> -->
 
-      <h2 class="titulosH2">experiências</h2>
+      <h2 class="titulosH2">Experiências</h2>
 
       <div id="containerExperiencias">
         <form
@@ -208,9 +207,19 @@
           id="experiencias"
           class="formConainer formContainerGrande"
         >
+          <div id="campoCargoAtuacao">
+            <label for="cargoAtuacao">Cargo ocupado:</label>
+            <input
+              type="text"
+              name="cargoAtuacao"
+              id="cargoAtuacao"
+              class="inputText inputData"
+              placeholder="Informe seu cargo"
+            />
+          </div>
 
           <div id="campoAreaAtuacao">
-            <label for="areaAtuacao" class="labelForm">área de atuação:</label>
+            <label for="areaAtuacao" class="labelForm">Área de atuação:</label>
             <input
               type="text"
               name="areaAtuacao"
@@ -221,7 +230,7 @@
           </div>
 
           <div id="campoInstituicaoAtuacao">
-            <label for="instituicaoAtuacao" class="">instituição onde atuou:</label>
+            <label for="instituicaoAtuacao" class="">Local de atuação:</label>
             <input
               type="text"
               name="instituicaoAtuacao"
@@ -231,42 +240,21 @@
             />
           </div>
 
-          <div id="campoEnderecoAtuacao">
-            <label for="enderecoAtuacao" class="">endereço do local onde atuou:</label>
-            <input
-              type="text"
-              name="localAtuacao"
-              id="enderecoAtuacao"
-              class="inputText inputData"
-              placeholder="Informe o local onde atuou"
-            />
-          </div>
-
-          <div id="campoCargoAtuacao">
-            <label for="cargoAtuacao">cargo que ocupou:</label>
-            <input
-              type="text"
-              name="cargoAtuacao"
-              id="cargoAtuacao"
-              class="inputText inputData"
-              placeholder="Informe a instituição onde atuou"
-            />
-          </div>
-
           <div id="campoDescricao">
-            <label for="descricaoAtuacao"> descrição das atividades: </label>
+            <label for="descricaoAtuacao"> Descrição das atividades: </label>
 
             <textarea
               name="descricaoAtuacao"
               id="descricaoAtuacao"
               class="textArea inputData"
+              placeholder="Escreva uma breve descrição das tarefas executadas no cargo"
               cols="30"
               rows="5"
             ></textarea>
           </div>
 
           <div id="dateAreaInput" class="dateAreaInput">
-            <label for="inicioPeriodoAtuacao">de:</label>
+            <label for="inicioPeriodoAtuacao">De:</label>
             <input
               type="date"
               name="inicioPeriodoAtuacao"
@@ -274,7 +262,7 @@
               class="inputDate inputData"
             />
 
-            <label for="fimPeriodoAtuacao">até:</label>
+            <label for="fimPeriodoAtuacao">Até:</label>
             <input
               type="date"
               name="fimPeriodoAtuacao"
@@ -289,42 +277,19 @@
           </div>
         </form>
 
-        <div class="listaExp listaDetalhes" id="listaDetalhes">
-          <!-- <h3 class="titulosH3">experiências</h3> -->
-
-           <!-- <div class="campoDetalhe" class="cardExp" id="cardExp">
-
-                <h2 class="titulosH3">Experiencia 1</h2>
-
-                <ul>
-                  <li id="areaAtuacao">área de atuação: informática</li>
-                  <li id="cidadeAtuacao">cidade onde atuou: </li>
-                  <li id="instituicaoAtuacao">instituição:</li>
-                  <li id="cargoAtuacao">cargo que ocupou:</li>
-
-                  <li id="inicioAtuacao">de: dd/mm/aa </li>
-                  <li id="fimAtuacao">até: dd/mm/aa</li>
-
-
-                  <li id="descricao">descrição: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore amet blanditiis itaque neque nostrum dolorem, aliquid praesentium labore soluta doloremque in fugit nemo exercitationem expedita? Voluptates reprehenderit delectus facilis fugit?</li>
-                </ul>
-
-                <div class="groupBtn" class="btnArea" id="btnArea">
-                    <button type="submit" class="formBtn">editar</button>
-                    <button type="submit" class="formBtn" title="excluir">excluir</button>
-                </div>
-
-              </div> -->
-
-        </div>
+        <div class="listaExp listaDetalhes" id="listaDetalhes"></div>
       </div>
 
-      <h2 class="titulosH2">qualificações</h2>
+      <h2 class="titulosH2">Qualificação</h2>
 
       <div id="containerQualificacoes">
-        <form  action="" id="qualificacoes" class="formContainer formContainerGrande">
+        <form
+          action=""
+          id="qualificacoes"
+          class="formContainer formContainerGrande"
+        >
           <div id="campoNomeCurso">
-            <label for="nomeCurso" class="labelData">nome do curso</label>
+            <label for="nomeCurso" class="labelData">Nome do curso</label>
             <input
               type="text"
               name="nomeCurso"
@@ -335,7 +300,7 @@
           </div>
 
           <div id="campoTipoCurso">
-            <label for="tipoCurso" class="labelData">tipo de curso</label>
+            <label for="tipoCurso" class="labelData">Tipo de curso</label>
             <input
               type="text"
               name="tipoCurso"
@@ -346,7 +311,7 @@
           </div>
 
           <div id="campoNomeInstituicao">
-            <label for="nomeInstituicao" class="labelData">instituição</label>
+            <label for="nomeInstituicao" class="labelData">Instituição</label>
             <input
               type="text"
               name="nomeInstituicao"
@@ -357,7 +322,7 @@
           </div>
 
           <div id="campoAreaCurso">
-            <label for="areaCurso" class="labelData">área do curso</label>
+            <label for="areaCurso" class="labelData">Área do curso</label>
             <input
               type="text"
               name="areaCurso"
@@ -368,7 +333,7 @@
           </div>
 
           <div id="dateAreaInput" class="dateAreaInput">
-            <label for="inicio" class="labelData">inicio</label>
+            <label for="inicio" class="labelData">Início</label>
             <input
               type="date"
               name="inicioCurso"
@@ -376,7 +341,7 @@
               class="inputData"
             />
 
-            <label for="fim" class="labelData">fim</label>
+            <label for="fim" class="labelData">Fim</label>
             <input
               type="date"
               name="fimCurso"
@@ -392,40 +357,78 @@
         </form>
 
         <div class="popUpEditar" id="popUpEditar">
-              <h2>Editar Qualificação</h2>
-              <form id="formEditarQualificacao" class="formContainerGrande fo">
-                <div>
-                  <label for="inicioCurso" class="labels">Início do Curso:</label>
-                  <input type="date" id="inicioCurso" name="inicioCurso" class="inputText inputData" required>
-                </div>
-                <div>
-                  <label for="fimCurso" class="labels">Fim do Curso:</label>
-                  <input type="date" id="fimCurso" name="fimCurso" class="inputText inputData" required>
-                </div>
-                <div>
-                  <label for="nomeInstituicao" class="labels">Instituição:</label>
-                  <input type="text" id="nomeInstituicao" name="nomeInstituicao" class="inputText inputData"  required>
-                </div>
-                <div>
-                  <label for="nomeCurso" class="labels">Nome do Curso:</label>
-                  <input type="text" id="nomeCurso" name="nomeCurso"class="inputText inputData" required>
-                </div>
-                <div>
-                  <label for="tipoCurso" class="labels">Tipo de Curso:</label>
-                  <input type="text" id="tipoCurso" name="tipoCurso" class="inputText inputData" required>
-                </div>
-                <div>
-                  <label for="areaCurso" class="labels">Área do Curso:</label>
-                  <input type="text" id="areaCurso" name="areaCurso" class="inputText inputData" required>
-                </div>
-                <div class="groupBtn btnArea">
-                  <button type="submit" id="btnSalvarEditar" class="formBtn">Salvar</button>
-                  <button type="button" id="btnCancelarEditar" class="formBtn">Cancelar</button>
-                </div>
-              </form>
+          <h2>Editar Qualificação</h2>
+          <form id="formEditarQualificacao" class="formContainerGrande fo">
+            <div>
+              <label for="inicioCurso" class="labels">Início do Curso:</label>
+              <input
+                type="date"
+                id="inicioCurso"
+                name="inicioCurso"
+                class="inputText inputData"
+                required
+              />
+            </div>
+            <div>
+              <label for="fimCurso" class="labels">Fim do Curso:</label>
+              <input
+                type="date"
+                id="fimCurso"
+                name="fimCurso"
+                class="inputText inputData"
+                required
+              />
+            </div>
+            <div>
+              <label for="nomeInstituicao" class="labels">Instituição:</label>
+              <input
+                type="text"
+                id="nomeInstituicao"
+                name="nomeInstituicao"
+                class="inputText inputData"
+                required
+              />
+            </div>
+            <div>
+              <label for="nomeCurso" class="labels">Nome do Curso:</label>
+              <input
+                type="text"
+                id="nomeCurso"
+                name="nomeCurso"
+                class="inputText inputData"
+                required
+              />
+            </div>
+            <div>
+              <label for="tipoCurso" class="labels">Tipo de Curso:</label>
+              <input
+                type="text"
+                id="tipoCurso"
+                name="tipoCurso"
+                class="inputText inputData"
+                required
+              />
+            </div>
+            <div>
+              <label for="areaCurso" class="labels">Área do Curso:</label>
+              <input
+                type="text"
+                id="areaCurso"
+                name="areaCurso"
+                class="inputText inputData"
+                required
+              />
+            </div>
+            <div class="groupBtn btnArea">
+              <button type="submit" id="btnSalvarEditar" class="formBtn">
+                Salvar
+              </button>
+              <button type="button" id="btnCancelarEditar" class="formBtn">
+                Cancelar
+              </button>
+            </div>
+          </form>
         </div>
-
-
 
         <div id="listaQualificacoes" class="listaDetalhes">
           <!-- <h3 class="titulosH3">qualificações</h3> -->
@@ -450,7 +453,7 @@
               </div> -->
         </div>
       </div>
-
+      <button id="salvarPerfil">Salvar perfil</button>
       <!-- fim da seção de cadastros. Com 3 seções ao todo: cadastro de interesses, experiências e qualificações -->
     </main>
     <!-- fim da seção principal do site -->

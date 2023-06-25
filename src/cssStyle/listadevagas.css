@@ -83,11 +83,6 @@ body #principal {
   width: 100%;
 }
 
-#principal #containerChamada #textoChamada button {
-  margin-left: 5px;
-  cursor: pointer;
-}
-
 #principal #containerChamada img {
   width: 42%;
 }
@@ -171,8 +166,6 @@ body #principal {
   text-transform: uppercase;
 }
 
-
-
 #listaSection {
   display: flex;
   flex-direction: column;
@@ -183,99 +176,99 @@ body #principal {
   box-shadow: 50px 70px 60px -80px #4a4a4a;
 }
 
-#sessaoLista, .nomeVaga {
+#sessaoLista,
+.nomeVaga {
   background-color: #d9f8f2;
   padding: 0.5rem;
 }
 
-#sessaoLista, .campo-vagas {
+#sessaoLista,
+.campo-vagas {
   margin-bottom: 1.5rem;
 }
 
-#sessaoLista, .campo-vagas ul li {
+#sessaoLista,
+.campo-vagas ul li {
   /* background-color: #333; */
   margin: 0.5rem 0 0 0.4rem;
   list-style: none;
 }
 
-#sessaoLista, .erro {
+#sessaoLista,
+.erro {
   padding: 1.5rem;
   text-align: center;
 }
 /* Fim da área de vagas */
 
-/* FOOTER */
-#decFooter {
-  opacity: 45%;
-  width: 100%;
-  margin-bottom: 0;
-  padding-bottom: 0;
+/* RESPONSIVIDADE */
+@media (max-width: 420px) {
+  main {
+    margin-right: 30px;
+    margin-left: 25px;
+  }
+
+  #principal #containerChamada {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #principal #containerChamada #textoChamada {
+    margin: 0;
+    text-align: center;
+  }
+
+  #principal #containerChamada #textoChamada p {
+    text-align: justify;
+    font-size: var(--mediumFontSize);
+  }
+
+  #principal #containerChamada #textoChamada #decoration1 {
+    margin: -10px -120px;
+  }
+
+  #principal #containerChamada img {
+    margin-top: 20px;
+    width: 80%;
+  }
+
+  /* PESQUISA */
+  .vagasSearch-txt {
+    width: 100%;
+    padding: 1em;
+    border: solid 1px #4a4a4a;
+    border-radius: 5px;
+    color: var(--titleColorDark);
+    opacity: 0.6;
+    font-size: 1em;
+    font-family: var(--fontSecondary);
+  }
+
+  #vagasSearchButton {
+    display: none;
+  }
+
+  .containerVagas .vagasSearch {
+    width: 350px;
+    height: 1.5rem;
+  }
+
+  /* área de vagas */
+
+  #pesquise h2 {
+    width: 340px;
+  }
+
+  #listaSection {
+    width: 340px;
+  }
 }
 
-footer {
-  height: 20rem;
-  background-color: #333;
-  color: white;
-}
-
-footer #footerContainer {
-  height: 20rem;
-  font-family: "Roboto", sans-serif;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-footer #footerContainer #logoFooter img {
-  width: 180px;
-}
-
-footer #footerContainer #formFooter {
-  font-size: 12px;
-}
-
-footer #footerContainer #formFooter form {
-  display: flex;
-  flex-direction: column;
-}
-
-footer #footerContainer #formFooter #sugestionsFooter {
-  margin-bottom: 1rem;
-}
-
-footer #footerContainer #formFooter #sugestionsFooter h3 {
-  font-size: 14px;
-  margin-bottom: 5px;
-  color: #fdc886;
-}
-
-footer #footerContainer #formFooter #sugestionsFooter p {
-  font-size: "Roboto", sans-serif;
-}
-
-footer #footerContainer #formFooter input[type="email"] {
-  width: 100%;
-  margin: 3px auto 10px auto;
-}
-
-/* footer #footerContainer #formFooter input[type="textarea"] {
-  height: 100px;
-  text-align: initial;
-} */
-
-footer #footerContainer #formFooter textarea {
-  text-align: start;
-}
-
-footer #footerContainer #formFooter input[type="submit"] {
-  margin: 10px auto 10px auto;
-  width: 100%;
-  background-color: #fdc886;
-}
-
-/* FIM FOOTER */
-
-@media (max-width: 770px) 
+/*@media (max-width: 770px) 
 {
   .vagasSearch-txt {
     width: 50%;
@@ -296,4 +289,4 @@ footer #footerContainer #formFooter input[type="submit"] {
     align-items: center;
     justify-items: center;
   }
-}
+}*/
