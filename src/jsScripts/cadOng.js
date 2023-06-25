@@ -396,64 +396,6 @@ function insereCardsNaListaVagas(conjuntoCards) {
 
 }
 
-
-function geraPerfilCompletoOng() {
-
-  let acoesV = [];
-  acoesV = JSON.parse(localStorage.getItem("acoes"));
-  let vagasV = [];
-  vagasV = JSON.parse(localStorage.getItem("vagas"));
-
-  emailInput = formContatos.querySelector("#email").value;
-  senhaInput = formInfBasica.querySelector("#senha").value;
-  telefoneInput = formContatos.querySelector("#telefone").value;
-  instaInput = formContatos.querySelector("#redesSociaisInsta").value;
-  faceInput = formContatos.querySelector("#redesSociaisFace").value;
-  outroInput = formContatos.querySelector("#redesSociaisSite").value;
-
-  nomeInput = formInfBasica.querySelector("#nomeInstituicao").value;
-  missaoInput = formInfBasica.querySelector("#missao").value;
-  visaoInput = formInfBasica.querySelector("#visao").value;
-  valoresInput = formInfBasica.querySelector("#valores").value;
-
-
-  // console.log(emailInput);ok
-  // console.log(nomeInput); ok
-  // console.log(missaoInput);ok
-  // console.log(visaoInput);ok
-  // console.log(valoresInput);ok
-  // console.log(telefoneInput);ok
-  // console.log(instaInput);ok
-  // console.log(faceInput);ok
-  // console.log(outroInput);ok
-  //  console.log(acoesV);ok
-  //  console.log(vagasV);ok
-   let perfilCompletoOng = {
-     tagUsuario: "Ong",
-     nome: nomeInput,
-     email: emailInput,
-     senha: senhaInput,
-     telefone: telefoneInput,
-     insta: instaInput,
-     face: faceInput,
-     outroSite: outroInput,
-     biografia: missaoInput + visaoInput + valoresInput,
-     acoes: acoesV,
-     vagas: vagasV
-   };
-
-  // // Salvar perfilCompleto na localStorage
-   localStorage.setItem("perfilCompletoOng", JSON.stringify(perfilCompletoOng));
-
-   console.log(perfilCompletoOng);
-
-}
-
-
-// document.addEventListener("DOMContentLoaded", function(e){
-//   geraPerfilCompletoOng();
-//   e.preventDefault();
-// })
 document.addEventListener('DOMContentLoaded', function(e){
    let cardsPreenchidos = addDadosEstruturaCardVagas("vagas");
    insereCardsNaListaVagas(cardsPreenchidos);
@@ -475,7 +417,7 @@ btnSalvarContatos.addEventListener("click", function(e){
   let telefone = formContatos.querySelector("#telefone");
 
   if(validarEmail(email.value) && validarTelefone(telefone.value)){
-    alert("contatos salvos com sucesso");
+    alert("Contatos salvos com sucesso");
     salvarFormularioNoLocalStorage(formContatos, "contatos");
 
 
@@ -483,7 +425,7 @@ btnSalvarContatos.addEventListener("click", function(e){
 
   }else{
 
-    alert("verifique os campos telefone e e-mail, pois são obrigatórios");
+    alert("Verifique os campos telefone e e-mail, pois são obrigatórios");
 
   }
 
@@ -604,6 +546,51 @@ btnSalvarAcao.addEventListener("click", function(e) {
     reloadParaAlvo("containerAcoes");
 });
 
+function geraPerfilCompletoOng() {
+
+  let acoesV = [];
+  acoesV = JSON.parse(localStorage.getItem("acoes"));
+  let vagasV = [];
+  vagasV = JSON.parse(localStorage.getItem("vagas"));
+
+  emailInput = formContatos.querySelector("#email").value;
+  senhaInput = formInfBasica.querySelector("#senha").value;
+  telefoneInput = formContatos.querySelector("#telefone").value;
+  instaInput = formContatos.querySelector("#redesSociaisInsta").value;
+  faceInput = formContatos.querySelector("#redesSociaisFace").value;
+  outroInput = formContatos.querySelector("#redesSociaisSite").value;
+
+  nomeInput = formInfBasica.querySelector("#nomeInstituicao").value;
+  missaoInput = formInfBasica.querySelector("#missao").value;
+  visaoInput = formInfBasica.querySelector("#visao").value;
+  valoresInput = formInfBasica.querySelector("#valores").value;
 
 
-geraPerfilCompletoOng();
+   let perfilCompletoOng = {
+     tagUsuario: "ONG",
+     nome: nomeInput,
+     email: emailInput,
+     senha: senhaInput,
+     telefone: telefoneInput,
+     insta: instaInput,
+     face: faceInput,
+     outroSite: outroInput,
+     biografia: missaoInput + visaoInput + valoresInput,
+     acoes: acoesV,
+     vagas: vagasV
+   };
+
+  // Salvar perfilCompleto na localStorage
+  localStorage.setItem("perfilCompletoOng", JSON.stringify(perfilCompletoOng));
+
+  console.log(perfilCompletoOng);
+}
+
+// Selecionar o botão de salvar perfil pelo ID
+let botaoSalvarPerfilONG = document.querySelector("#salvarPerfilONG");
+
+// Adicionar o evento de clique ao botão
+botaoSalvarPerfilONG.addEventListener("click", function () {
+  geraPerfilCompletoOng();
+  window.location.href = "paginaFormPerfilLog.html";
+});

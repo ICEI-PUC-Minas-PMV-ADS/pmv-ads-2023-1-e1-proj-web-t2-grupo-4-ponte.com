@@ -166,7 +166,7 @@ body footer{
   margin: 10px auto 100px auto;
 }
 
-#principal #formsContainer #contatos input, label{
+#principal #formsContainer #contatos input, #principal #formsContainer #contatos label{
   border-radius: 5px;
   display: block;
   width: 100%;
@@ -309,7 +309,7 @@ body footer{
   justify-content: space-around;
 }
 
-#principal #formsContainer #containerVagas #formVagas input, label{
+#principal #formsContainer #containerVagas #formVagas input, #principal #formsContainer #containerVagas #formVagas label{
   border-radius: 5px;
   display: block;
   width: 100%;

@@ -20,6 +20,7 @@
     ></script>
     <script defer src="./jsScripts/login.js"></script>
     <script defer src="./componentes/navbar-script.js"></script>
+    <script defer src="./jsScripts/cadOng.js"></script>
     <script defer src="./jsScripts/cadVolunt.js"></script>
     <link rel="icon" type="image/png" href="img/iconPonte.png" />
     <title></title>
@@ -85,82 +86,168 @@
     </div>
     <script>
       window.addEventListener("DOMContentLoaded", function () {
-        const profileSection = document.getElementById("profileSection");
+        function paginaFormPerfilUsuario() {
+          const profileSection = document.getElementById("profileSection");
 
-        // Recuperar dados da localStorage
-        const perfilCompleto = JSON.parse(
-          localStorage.getItem("perfilCompleto")
-        );
+          // Recuperar dados da localStorage
+          const perfilCompleto = JSON.parse(
+            localStorage.getItem("perfilCompleto")
+          );
+          const perfilCompletoOng = JSON.parse(
+            localStorage.getItem("perfilCompletoOng")
+          );
 
-        if (perfilCompleto) {
-          document.title = perfilCompleto.nome;
+          let profileHtml = "";
 
-          const profileHtml = ` 
-              <div class="cabecalhoVol">
-                  <h3 id="tagUsuario">${perfilCompleto.tagUsuario}</h3>
-                  <section class="cabecalhoBio">
-                    <h1 id="nomeUsuario">${perfilCompleto.nome}</h1>
-                    <p id="bio">${perfilCompleto.biografia}</p>
-                    <div class="cabecalhoInteresses">
-                      <h3>Interesses:</h3>
-                      <ul id="campoInteresse">
-                        ${perfilCompleto.interesses}
+          if (perfilCompleto) {
+            //Perfil Voluntário
+            document.title = perfilCompleto.nome;
+
+            profileHtml = ` 
+            <div class="cabecalhoVol">
+              <h3 id="tagUsuario">${perfilCompleto.tagUsuario}</h3>
+              <section class="cabecalhoBio">
+                <h1 id="nomeUsuario">${perfilCompleto.nome}</h1>
+                <p id="bio">${perfilCompleto.biografia}</p>
+                <div class="cabecalhoInteresses">
+                  <h3>Interesses:</h3>
+                  <ul id="campoInteresse">
+                    ${perfilCompleto.interesses}
+                  </ul>
+                </div>
+              </section>
+            </div>
+            <div class="conteudo-perfilVol">
+              <h2 class="titulo">Qualificação e Experiências</h2>
+              <section class="qualificacao">
+                <h2>Qualificação</h2>
+                <div class="listaQuali">
+                  ${perfilCompleto.qualif
+                    .map(
+                      (qualif) => `
+                      <div class="campoQuali">
+                        <h3>${qualif.nomeCurso}</h3>
+                        <ul>
+                          <li>Tipo do curso: ${qualif.tipoCurso}</li>
+                          <li>Instituição: ${qualif.nomeInstituicao}</li>
+                          <li>Área do curso: ${qualif.areaCurso}</li>
+                          <li>Período: ${qualif.inicioCurso} / ${qualif.fimCurso}</li>
+                        </ul>
+                      </div>
+                    `
+                    )
+                    .join("")}
+                </div>
+              </section>
+              <h2>Experiências</h2>
+              <div class="listaExp">
+                ${perfilCompleto.exp
+                  .map(
+                    (experiencias) => `
+                    <div class="campoExp">
+                      <h3>Experiência 1</h3>
+                      <ul>
+                        <li>Cargo: ${experiencias.cargoAtuacao}</li>
+                        <li>Local: ${experiencias.endereco}</li>
+                        <li>Período: ${experiencias.inicioAtuacao}</li>
+                        <li>Descrição: </li>
                       </ul>
                     </div>
+                  `
+                  )
+                  .join("")}
+              </div>
+            </div>
+          `;
+          } else if (perfilCompletoOng) {
+            //Perfil ONG
+            document.title = perfilCompletoOng.nomeInstituicao;
+
+            profileHtml = ` 
+            <div class="cabecalhoONG">
+                  <h3 id="tagUsuario">${perfilCompletoOng.tagUsuario}</h3>
+                  <section class="cabecalhoBio">
+                    <h1 id="nomeUsuario">${perfilCompletoOng.nomeInstituicao}</h1>
+                    <p id="bio">
+                      ${perfilCompletoOng.biografia}
+                    </p>
                   </section>
+                  </div>
+                  <div class="contato">
+                    <h3>Contato:</h3>
+                    <div class="social">
+                      <a href="${perfilCompletoOng.face}" class="socialButton"
+                        ><i class="fa-brands fa-facebook fa-2xl"></i
+                      ></a>
+                      <a href="${perfilCompletoOng.insta}" class="socialButton"
+                        ><i class="fa-brands fa-instagram fa-2xl"></i
+                      ></a>
+                      <a
+                        href="https://web.whatsapp.com/send?phone=${
+                          perfilCompletoOng.telefone
+                        }"
+                        class="socialButton"
+                      >
+                        <i class="fa-brands fa-whatsapp fa-2xl"></i
+                      ></a>
+                    </div>
+                  </div>
                 </div>
-                <div class="conteudo-perfilVol">
-                  <h2 class="titulo">Qualificação e Experiências</h2>
-                  <section class="qualificacao">
-                    <h2>Qualificação</h2>
-                    <div class="listaQuali">
-                      ${perfilCompleto.qualif
+                <div class="conteudo-perfilONG">
+                  <h2 class="titulo">Ações</h2>
+                  <section class="acoes">
+                    <div class="listaAcoes">
+                      ${perfilCompletoOng.acoes
                         .map(
-                          (qualif) => `
-                          <div class="campoQuali">
-                            <h3>${qualif.nomeCurso}</h3>
-                            <ul>
-                              <li>Tipo do curso: ${qualif.tipoCurso}</li>
-                              <li>Instituição: ${qualif.nomeInstituicao}</li>
-                              <li>Área do curso: ${qualif.areaCurso}</li>
-                              <li>Período: ${qualif.inicioCurso} / ${qualif.fimCurso}</li>
-                            </ul>
-                          </div>
-                        `
+                          (acoes) => `
+                            <div class="campoAcoes">
+                              <h3 id="nomeAcao">${acoes.nomeAcao}</h3>
+                              <ul>
+                                <li id="periodoAcao">${acoes.inicio} / ${acoes.fim}</li>
+                                <li id="descricaoAcao">
+                                  ${acoes.statusAcao}
+                                </li>
+                              </ul>
+                            </div>
+                          `
                         )
                         .join("")}
                     </div>
                   </section>
-                  <h2>Experiências</h2>
-                  <div class="listaExp">
-                    ${perfilCompleto.exp
-                      .map(
-                        (experiencias) => `
-                        <div class="campoExp">
-                          <h3>Experiência 1</h3>
-                          <ul>
-                            <li>Cargo: ${experiencias.cargoAtuacao}</li>
-                            <li>Local: ${experiencias.endereco}</li>
-                            <li>Período: ${experiencias.inicioAtuacao}</li>
-                            <li>Descrição: </li>
-                          </ul>
-                        </div>
-                      `
-                      )
-                      .join("")}
-                  </div>
+                  <h2 class="titulo">Vagas abertas</h2>
+                  <section class="vagasAbertas">
+                    <div class="listaVagas">
+                      ${perfilCompletoOng.vagas
+                        .map(
+                          (vaga) => `
+                            <div class="campoVagas">
+                              <h3 id="nomeVaga">${vaga.nomeVaga}</h3>
+                              <ul>
+                                <li id="localVaga">${vaga.localVaga}</li>
+                                <li id="periodoVaga">${vaga.inicio} / ${vaga.fim}</li>
+                                <li id="descricaoVaga">
+                                  ${vaga.turnoVaga}
+                                </li>
+                              </ul>
+                            </div>
+                          `
+                        )
+                        .join("")}
+                    </div>
+                  </section>
                 </div>
               `;
+          } else {
+            // Nenhum perfil encontrado na localStorage
+            alert("Nenhum perfil encontrado.");
+          }
 
           profileSection.innerHTML = profileHtml;
-        } else {
-          // Nenhum perfil encontrado na localStorage
-          alert("Nenhum perfil encontrado.");
         }
-      });
 
-      // A função atualiza a página após 10 milisegundos para que dê tempo de ocorrer os eventos da navbar
-      //setTimeout(paginaPerfilUsuario, 10);
+        // A função atualiza a página após 10 milisegundos para que dê tempo de ocorrer os eventos da navbar
+        setTimeout(paginaFormPerfilUsuario, 10);
+      });
     </script>
   </footer>
 </html>
