@@ -428,7 +428,7 @@ body footer{
   text-align: center;
   margin:50px 0px 50px 0px;
   font-size: var(--titleFontSizeBiger);
-
+  color: var(--titleColorDark);
 }
 
 .titulosH3{
