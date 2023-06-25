@@ -398,33 +398,62 @@ function insereCardsNaListaVagas(conjuntoCards) {
 
 
 function geraPerfilCompletoOng() {
-  let acoes = [];
-  acoes = JSON.parse(localStorage.getItem("acoes"));
-  let vagas = [];
-  vagas = JSON.parse(localStorage.getItem("vagas"));
 
-  let perfilCompletoOng = {
-    nome: formInfBasica.querySelector("#nomeInstituicao").value,
-    email: formContatos.querySelector("#email").value,
-    senha: formInfBasica.querySelector("#senha").value,
-    tagUsuario: "Ong",
-    biografia: formInfBasica.querySelecto("#missao").value
-    + formInfBasica.querySelector("#visao").value
-    + formInfBasica.querySelector("valores").value,
-    interesses: formInfUser.querySelector("#interesseUsuario").value,
-    acoes: experiencias,
-    vagas: qualificacoes,
-  };
+  let acoesV = [];
+  acoesV = JSON.parse(localStorage.getItem("acoes"));
+  let vagasV = [];
+  vagasV = JSON.parse(localStorage.getItem("vagas"));
 
-  // Salvar perfilCompleto na localStorage
-  localStorage.setItem("perfilCompletoOng", JSON.stringify(perfilCompletoOng));
+  emailInput = formContatos.querySelector("#email").value;
+  senhaInput = formInfBasica.querySelector("#senha").value;
+  telefoneInput = formContatos.querySelector("#telefone").value;
+  instaInput = formContatos.querySelector("#redesSociaisInsta").value;
+  faceInput = formContatos.querySelector("#redesSociaisFace").value;
+  outroInput = formContatos.querySelector("#redesSociaisSite").value;
 
-  console.log(perfilCompletoOng);
+  nomeInput = formInfBasica.querySelector("#nomeInstituicao").value;
+  missaoInput = formInfBasica.querySelector("#missao").value;
+  visaoInput = formInfBasica.querySelector("#visao").value;
+  valoresInput = formInfBasica.querySelector("#valores").value;
+
+
+  // console.log(emailInput);ok
+  // console.log(nomeInput); ok
+  // console.log(missaoInput);ok
+  // console.log(visaoInput);ok
+  // console.log(valoresInput);ok
+  // console.log(telefoneInput);ok
+  // console.log(instaInput);ok
+  // console.log(faceInput);ok
+  // console.log(outroInput);ok
+  //  console.log(acoesV);ok
+  //  console.log(vagasV);ok
+   let perfilCompletoOng = {
+     tagUsuario: "Ong",
+     nome: nomeInput,
+     email: emailInput,
+     senha: senhaInput,
+     telefone: telefoneInput,
+     insta: instaInput,
+     face : faceInput,
+     outroSite : outroInput,
+     biografia:missaoInput + visaoInput + valoresInput,
+     acoes: acoesV,
+     vagas: vagasV
+   };
+
+  // // Salvar perfilCompleto na localStorage
+   localStorage.setItem("perfilCompletoOng", JSON.stringify(perfilCompletoOng));
+
+   console.log(perfilCompletoOng);
+
 }
 
 
-
-
+// document.addEventListener("DOMContentLoaded", function(e){
+//   geraPerfilCompletoOng();
+//   e.preventDefault();
+// })
 document.addEventListener('DOMContentLoaded', function(e){
    let cardsPreenchidos = addDadosEstruturaCardVagas("vagas");
    insereCardsNaListaVagas(cardsPreenchidos);
@@ -448,6 +477,8 @@ btnSalvarContatos.addEventListener("click", function(e){
   if(validarEmail(email.value) && validarTelefone(telefone.value)){
     alert("contatos salvos com sucesso");
     salvarFormularioNoLocalStorage(formContatos, "contatos");
+
+
     reloadParaAlvo("contatos");
 
   }else{
@@ -510,6 +541,8 @@ btnSalvarVaga.addEventListener("click", function(e) {
 btnSalvarInfBasica.addEventListener("click", function(e){
   if(!verificarCamposVazios(formInfBasica)){
     salvarFormularioNoLocalStorage(formInfBasica,"formInf");
+
+
     alert("dados salvos com sucesso");
     reloadParaAlvo("infBasica");
   }else{
@@ -570,3 +603,7 @@ btnSalvarAcao.addEventListener("click", function(e) {
      e.preventDefault(); // Evita o comportamento padrão de recarregar a página
     reloadParaAlvo("containerAcoes");
 });
+
+
+
+geraPerfilCompletoOng();
