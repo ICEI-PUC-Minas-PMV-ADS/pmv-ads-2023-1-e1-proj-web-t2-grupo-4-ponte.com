@@ -330,7 +330,7 @@ body {
     align-items: center;
     margin-bottom: 30px;
   }
-  
+
   .container .containerImage h1 {
     text-align: center;
     font-size: var(--mediumFontSize);
@@ -342,9 +342,9 @@ body {
   }
 
   .container .containerCard {
-    margin: 0;
+    margin: 0 0 30px 0;
   }
-  
+
   /* UTILS CLASSNAMES */
   .margin-flexbox {
     margin: 0;
@@ -352,29 +352,40 @@ body {
 
   .section .container-superior .texto-superior h3 {
     font-size: var(--mediumFontSize);
-    
-  }
-
-  .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 0px;
+    bottom: 0;
     margin: 0;
   }
 
-  .card .card-item {
+  .section .container-superior .parte-superior {
+    background-image: none;
+  }
+
+  .section .container-superior .parte-superior .img-right img {
+    display: none;
+  }
+
+  .section .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    margin-top: 130px;
+  }
+
+  .section .card .card-item {
     width: 300px;
     height: 250px;
     padding: 15px;
+    margin-bottom: 10px;
   }
 
-  .card .card-item img {
+  .section .card .card-item img {
     margin-bottom: 10px;
     width: 30%;
   }
 
   .bottomPlace {
+    background-image: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -384,19 +395,24 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 300px;
+    max-width: 300px;
+    margin-top: 140px;
   }
 
   .bottomPlace .instructions #principalCall p {
     font-size: var(--mediumFontSize);
-    margin: 0;
-    padding: 0;
-    text-align: center;
+    width: 100%;
+    padding: 5px;
   }
 
-  #generalContainerOfGreenCards {
+  .bottomPlace .instructions #generalContainerOfGreenCards {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+  }
+
+  .bottomPlace .instructions #generalContainerOfGreenCards .greenCard {
+    max-width: 300px;
   }
 
 }
