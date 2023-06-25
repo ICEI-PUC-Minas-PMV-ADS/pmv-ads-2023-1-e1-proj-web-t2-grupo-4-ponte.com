@@ -8,6 +8,7 @@
   font-family: var(--fontSecondary);
   text-decoration: none;
   list-style: none;
+  border: none;
 }
 
 :root {
@@ -200,7 +201,7 @@ body footer{
 }
 
 #principal #containerAcoes #formAcoes{
-  background-color: #d9d9d9;
+  background-color: rgb(174, 173, 175);
   width: 30vw;
   height: fit-content;
   border-radius: 5px;
@@ -255,7 +256,7 @@ body footer{
   height: 95vh;
   overflow: hidden;
   overflow-y: scroll;
-  background-color:#9d9d9e;
+  background-color:rgb(112, 111, 113);
   border-radius: 5px;
   margin: 30px;
 }
@@ -341,7 +342,7 @@ body footer{
   height: 95vh;
   overflow: hidden;
   overflow-y: scroll;
-  background-color:#9d9d9e;
+  background-color:rgb(112, 111, 113);
   border-radius: 5px;
   margin: 30px;
 
@@ -380,7 +381,7 @@ body footer{
 }
 
 .formContainer{
-  background-color: #d9d9d9;
+  background-color: rgb(174, 173, 175);
   width: 30vw;
   height: fit-content;
   border-radius: 5px;
