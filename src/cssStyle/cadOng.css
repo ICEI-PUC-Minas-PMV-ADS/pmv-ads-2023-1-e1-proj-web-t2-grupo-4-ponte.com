@@ -129,6 +129,7 @@ body footer{
   text-align: center;
   margin: 20px auto 10px auto;
   color: var(--titleColorDark);
+  font-size: var(--titleFontSize);
 }
 
 #principal #formsContainer #infBasica textarea{
