@@ -105,13 +105,18 @@ body footer{
 }
 
 #principal #formsContainer #infBasica{
-  background-color: #d9d9d9;
-  height: fit-content;
-  width: 60vw;
-  margin: 20px auto 100px auto;
-  border-radius: 5px;
-  padding: 50px;
 
+
+
+  margin: 20px auto 100px auto;
+  padding: 50px;
+  background-color:rgb(241, 240, 241);
+  width: 30vw;
+  height: fit-content;
+  border-radius: 5px;
+  padding: 55px;
+  border: #e2e2e2 1px solid;
+  box-shadow:  1px 1px 1px #d5d4d4;
 
 }
 #principal #formsContainer h3{
@@ -203,8 +208,13 @@ body footer{
 }
 
 #principal #containerAcoes #formAcoes{
-  background-color: rgb(174, 173, 175);
+  background-color:rgb(241, 240, 241);
   width: 30vw;
+  height: fit-content;
+  border-radius: 5px;
+  padding: 55px;
+  border: #e2e2e2 1px solid;
+  box-shadow:  1px 1px 1px #d5d4d4;
   height: fit-content;
   border-radius: 5px;
   /* margin-left: 5rem; */
@@ -413,6 +423,8 @@ body footer{
   cursor: pointer;
   text-align: center;
   margin-left: 5px;
+  background-color: #fdc886;
+  box-shadow: 1px 1px #ccc;
 }
 
 .textArea{
