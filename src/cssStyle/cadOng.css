@@ -122,11 +122,13 @@ body footer{
 #principal #formsContainer h3{
   text-align: center;
    margin: 20px auto 50px auto;
+
 }
 
 #principal #formsContainer h2{
   text-align: center;
   margin: 20px auto 10px auto;
+  color: var(--titleColorDark);
 }
 
 #principal #formsContainer #infBasica textarea{
