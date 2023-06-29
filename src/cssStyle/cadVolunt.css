@@ -113,7 +113,7 @@ body footer{
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  /* background-color: red; */
+
 }
 
 #principal #containerExperiencias #dateAreaInput{
@@ -122,7 +122,6 @@ body footer{
   gap: 10px;
   width: 100%;
   margin: 20px 0px 20px 0px;
-  /* background-color: #fdc886; */
   border: none;
 }
 
@@ -246,7 +245,7 @@ body footer{
   margin-left: 5px;
   background-color: #fdc886;
   box-shadow: 1px 1px #ccc;
-   /* color: #fff; */
+
 }
 
 .textArea{
@@ -256,11 +255,7 @@ body footer{
   border: none;
 }
 
-.labels{
-  /* color: rebeccapurple; */
 
-
-}
 
 
 
@@ -319,19 +314,16 @@ body footer{
   width: 30vw;
   height: fit-content;
   border-radius: 5px;
-  /* margin-left: 5rem; */
   padding: 55px;
   border: #e2e2e2 1px solid;
   box-shadow:  1px 1px 1px #d5d4d4;
 }
 
 .formContainerPequeno{
-  /*  */
   width: 20vw;
   height: fit-content;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: space-around;
   background-color: #d9d9d9;
   border-radius: 20px;
@@ -347,11 +339,6 @@ body footer{
 
 
 .tabelaInteresses{
-  /* background-color: #333; */
-
-  /* height: fit-content;
-  width: 30vw;
-  border-radius: 20px; */
   width: 30vw;
   border-radius: 20px;
 
@@ -390,7 +377,3 @@ body footer{
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
-/* .popUpEditar.active {
-  display: block;
-} */
