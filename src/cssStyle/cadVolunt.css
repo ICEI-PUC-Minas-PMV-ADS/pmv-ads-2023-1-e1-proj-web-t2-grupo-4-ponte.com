@@ -223,6 +223,7 @@ body footer{
   height: 4.5vh;
   width: 100%;
   margin-bottom: 20px;
+  border: 0.5px solid #d9d9d9;
 }
 
 
@@ -243,8 +244,9 @@ body footer{
   cursor: pointer;
   text-align: center;
   margin-left: 5px;
-  /* background-color: #333; */
-  /* color: #fff; */
+  background-color: #fdc886;
+  box-shadow: 1px 1px #ccc;
+   /* color: #fff; */
 }
 
 .textArea{
@@ -313,12 +315,14 @@ body footer{
 
 
 .formContainerGrande {
-  background-color:rgb(174, 173, 175);
+  background-color:rgb(241, 240, 241);
   width: 30vw;
   height: fit-content;
   border-radius: 5px;
   /* margin-left: 5rem; */
   padding: 55px;
+  border: #e2e2e2 1px solid;
+  box-shadow:  1px 1px 1px #d5d4d4;
 }
 
 .formContainerPequeno{
