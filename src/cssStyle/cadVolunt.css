@@ -26,9 +26,8 @@
   --titleFontSizeBiger: 32px;
   --textCallsWeight: 600;
   --mediuCallsWeight: 450;
-  --bgColor: #FFFEFC;
+  --bgColor: #fffefc;
 }
-
 
 /* ================================================================= */
 /* ================================================================ */
@@ -38,23 +37,19 @@
 /* ================================================================= */
 /* ================================================================ */
 
-
-
 body #principal {
   background-color: var(--bgColor);
-  height:fit-content;
+  height: fit-content;
   margin-top: 3rem;
 }
 
-body #principal h2{
-
+body #principal h2 {
 }
 
-body footer{
-  background-color: #333;
+body footer {
+  background-color: red;
   color: #fff;
 }
-
 
 /* sessão de apresentação da página */
 #principal #containerChamada {
@@ -100,23 +95,20 @@ body footer{
   width: 42%;
 }
 
-#principal #formInfBasica{
+#principal #formInfBasica {
   margin: 5px auto 5px auto;
 }
 
-
-
-#principal #containerExperiencias{
+#principal #containerExperiencias {
   width: 100%;
   height: fit-content;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-
 }
 
-#principal #containerExperiencias #dateAreaInput{
+#principal #containerExperiencias #dateAreaInput {
   display: flex;
   justify-content: space-around;
   gap: 10px;
@@ -125,29 +117,28 @@ body footer{
   border: none;
 }
 
-#principal #containerExperiencias #listaDetalhes #cardExp{
-    background-color: #333;
-    color: #fff;
-    width: 90%;
-    padding: 20px;
-    margin: 10px auto 10px auto;
-    border-radius: 5px;
-    word-wrap: break-word;
+#principal #containerExperiencias #listaDetalhes #cardExp {
+  background-color: #333;
+  color: #fff;
+  width: 90%;
+  padding: 20px;
+  margin: 10px auto 10px auto;
+  border-radius: 5px;
+  word-wrap: break-word;
 }
 
-#principal #containerExperiencias #listaDetalhes #cardExp li{
+#principal #containerExperiencias #listaDetalhes #cardExp li {
   margin-bottom: 10px;
 }
 
-#principal #containerExperiencias #listaDetalhes #cardExp #btnArea{
-
+#principal #containerExperiencias #listaDetalhes #cardExp #btnArea {
   display: flex;
   flex-direction: row;
   padding: 10px;
   justify-content: flex-end;
 }
 
-#principal #containerExperiencias #listaDetalhes{
+#principal #containerExperiencias #listaDetalhes {
   background-color: rgb(112, 111, 113);
 }
 
@@ -158,10 +149,9 @@ body footer{
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-
 }
 
-#principal #containerQualificacoes #dateAreaInput{
+#principal #containerQualificacoes #dateAreaInput {
   display: flex;
   justify-content: space-around;
   gap: 10px;
@@ -170,44 +160,41 @@ body footer{
   border: none;
 }
 
-#principal #containerQualificacoes #listaQualificacoes{
+#principal #containerQualificacoes #listaQualificacoes {
   background-color: rgb(112, 111, 113);
 }
 
-#principal #containerQualificacoes #listaQualificacoes #cardCurso{
-    background-color: #333;
-    color: #fff;
-    width: 90%;
-    padding: 20px;
-    margin: 10px auto 10px auto;
-    border-radius: 5px;
-    word-wrap: break-word;
+#principal #containerQualificacoes #listaQualificacoes #cardCurso {
+  background-color: #333;
+  color: #fff;
+  width: 90%;
+  padding: 20px;
+  margin: 10px auto 10px auto;
+  border-radius: 5px;
+  word-wrap: break-word;
 }
 
-#principal #containerQualificacoes #listaQualificacoes #cardCurso li{
+#principal #containerQualificacoes #listaQualificacoes #cardCurso li {
   margin-bottom: 10px;
 }
 
-
-#principal #containerQualificacoes #listaQualificacoes #cardCurso #btnArea{
+#principal #containerQualificacoes #listaQualificacoes #cardCurso #btnArea {
   display: flex;
   flex-direction: row;
   padding: 10px;
   justify-content: flex-end;
 }
 
-
 /* Classes para títulos */
 
-.titulosH2{
+.titulosH2 {
   text-align: center;
-  margin:50px 0px 50px 0px;
+  margin: 50px 0px 50px 0px;
   font-size: var(--titleFontSizeBiger);
   color: var(--titleColorDark);
-
 }
 
-.titulosH3{
+.titulosH3 {
   text-align: center;
   margin: 10px 0px 10px 0px;
 }
@@ -224,14 +211,13 @@ body footer{
   border: 0.5px solid #d9d9d9;
 }
 
-
 .btnArea {
-    height: fit-content;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 20px;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 20px;
 }
 
 .formBtn {
@@ -243,27 +229,20 @@ body footer{
   margin-left: 5px;
   background-color: #fdc886;
   box-shadow: 1px 1px #ccc;
-
 }
 
-.textArea{
+.textArea {
   width: 100%;
   height: 10vh;
   border-radius: 5px;
   border: none;
 }
 
-
-
-
-
 /* fim das classes para componentes de formulários */
-
-
 
 /* Classes que definem containers e regioes */
 
-.regiaoInput{
+.regiaoInput {
   margin: 5px;
   display: flex;
   flex-direction: column;
@@ -272,26 +251,26 @@ body footer{
   border: none;
 }
 
-.cardExp{
+.cardExp {
   margin: 30px;
   background-color: #fdc886;
   width: 90%;
 }
 
-.listaDetalhes{
+.listaDetalhes {
   padding: 20px;
   width: 50%;
   height: 75vh;
   overflow: hidden;
   overflow-y: scroll;
-  background-color:#9d9d9e;
+  background-color: #9d9d9e;
   border-radius: 5px;
   margin: 30px;
 }
 
-.campoDetalhe{
-   background-color: #9d9d9e;
-   border-radius: 20px;
+.campoDetalhe {
+  background-color: #9d9d9e;
+  border-radius: 20px;
 }
 
 /* .dateAreaInput{
@@ -301,21 +280,21 @@ body footer{
 
 } */
 
-.inputDate{
+.inputDate {
   height: 30px;
 }
 
 .formContainerGrande {
-  background-color:rgb(241, 240, 241);
+  background-color: rgb(241, 240, 241);
   width: 30vw;
   height: fit-content;
   border-radius: 5px;
   padding: 55px;
   border: #e2e2e2 1px solid;
-  box-shadow:  1px 1px 1px #d5d4d4;
+  box-shadow: 1px 1px 1px #d5d4d4;
 }
 
-.formContainerPequeno{
+.formContainerPequeno {
   width: 20vw;
   height: fit-content;
   display: flex;
@@ -326,26 +305,19 @@ body footer{
   padding: 30px;
 }
 
-.regiaoContainer{
+.regiaoContainer {
   height: fit-content;
   width: 100%;
   padding: 50px;
   margin-top: 100px;
 }
 
-
-.tabelaInteresses{
+.tabelaInteresses {
   width: 30vw;
   border-radius: 20px;
-
 }
 
-
 /* fim das classes que definem containers e regioes */
-
-
-
-
 
 /* classes utilitárias para uso geral */
 .roundBtn {
@@ -356,8 +328,7 @@ body footer{
   border: none;
 }
 
-
-.infBasica{
+.infBasica {
   margin: 20px auto 20px auto;
 }
 /* fim das classes utilitarias para uso geral */
